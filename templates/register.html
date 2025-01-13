@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PrOrganize - Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../static/assets/img/part_1/fav-2.png">
+
+    <style>
+        /* Reset basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0C0C0C; /* Dark background */
+            color: #F2613F; /* Main text color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        /* Logo Header */
+        .logo-header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-header img {
+            width: 150px; /* Adjust size as needed */
+        }
+
+        /* Register Box */
+        .register-box {
+            background-color: #1A1A1A; /* Darker background for the box */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            width: 350px;
+        }
+
+        /* Header */
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #F2613F; /* Accent color for headings */
+        }
+
+        /* Paragraph */
+        p {
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #F2613F; /* Subtle text color */
+        }
+
+        .text-muted {
+            color: #B9786A !important; /* Ensure the new color takes precedence */
+        }
+
+        /* Input Fields */
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #9B3922; /* Accent border color */
+            background-color: #1A1A1A;
+            color: #F2613F; /* Text color inside input */
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #F2613F;
+        }
+
+        /* Name Fields */
+        .name-fields {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .name-fields input {
+            width: 48%;
+        }
+
+        /* Styling for the date picker */
+
+
+
+        /* Signup Button */
+        .signup-btn {
+            background-color: #9B3922; /* Accent color */
+            color: #F2613F;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .signup-btn:hover {
+            background-color: #F2613F; /* Hover effect */
+            color: #1A1A1A;
+        }
+
+        /* Login Link */
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #F2613F;
+            text-decoration: none;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+          background-color: #0C0C0C;
+          padding: 10px 0;
+          text-align: center;
+          position: fixed;
+
+          bottom: 0;
+          width: 100%;
+          font-weight: 10px;
+        }
+        .footer {
+          border-top: 1px solid #9B3922;
+        }
+        /* Default styles are for larger screens */
+
+        @media (max-width: 1200px) {
+            .register-box {
+                width: 80%; /* Wider on smaller large screens */
+            }
+            .logo-header img {
+                width: 120px; /* Smaller logo */
+            }
+        }
+
+        @media (max-width: 992px) {
+            .register-box {
+                width: 70%; /* Reduce width */
+            }
+            .container {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            .register-box {
+                width: 100%; /* Full width on tablets */
+                padding: 20px;
+            }
+
+            .logo-header img {
+                width: 100px; /* Smaller logo */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .register-box {
+                width: 100%;
+                padding: 15px;
+                box-shadow: none; /* Remove shadow for a simpler look on mobile */
+            }
+
+            .logo-header {
+                margin-bottom: 10px;
+            }
+
+            h2 {
+                font-size: 20px; /* Smaller heading size */
+            }
+
+            p {
+                font-size: 12px; /* Smaller paragraph text */
+            }
+
+            input, .signup-btn {
+                padding: 10px;
+            }
+
+            .name-fields {
+                flex-direction: column;
+            }
+
+            .name-fields input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+
+        }
+        /* Style for nickname, phone number, address, and bio fields */
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #9B3922;
+            background-color: #1A1A1A;
+            color: #F2613F;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #F2613F;
+        }
+
+        /* Style for Bio field */
+        textarea {
+            border: 1px solid #9B3922;
+            background-color: #1A1A1A;
+            color: #F2613F;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+
+        .footer {
+            font-size: 12px;
+            padding: 8px 0;
+        }
+
+        /* Adjust styling for the birthdate selectors */
+        .birthdate-selectors {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        /* Adjust each dropdown to have equal width */
+        .birthdate-selectors .day,
+        .birthdate-selectors .month,
+        .birthdate-selectors .year {
+            flex: 1;
+            margin-right: 10px; /* Space between dropdowns */
+        }
+
+        /* Remove margin for the last dropdown to avoid extra spacing */
+        .birthdate-selectors .year {
+            margin-right: 0;
+        }
+
+        /* Ensure dropdowns stack vertically on smaller screens */
+        @media (max-width: 576px) {
+            .birthdate-selectors {
+                flex-direction: column;
+                gap: 10px; /* Add spacing between stacked dropdowns */
+            }
+
+            .birthdate-selectors .day,
+            .birthdate-selectors .month,
+            .birthdate-selectors .year {
+                margin-right: 0;
+            }
+        }
+
+
+
+
+        /* Custom styling for the gender dropdown */
+        /* Custom styling for the dropdown container */
+        .custom-select {
+            position: relative;
+            width: 100%;
+            max-width: 150px;
+            background-color: #1A1A1A;
+            color: #F2613F;
+            border: 2px solid #9B3922;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .custom-select-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background-color: #1A1A1A;
+            color: #F2613F;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .custom-select-box:hover {
+            background-color: #9B3922; /* Accent color on hover */
+            color: #1A1A1A; /* Text color on hover */
+        }
+
+        .custom-options {
+            display: none;
+            position: absolute;
+            width: 100%;
+            background-color: #1A1A1A;
+            border: 1px solid #9B3922;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            border-radius: 5px;
+            top: 100%;
+            z-index: 10;
+            max-height: 140px; /* Adjust the height as needed */
+            overflow-y: auto;
+        }
+
+        /* Scrollbar styling for WebKit browsers (Chrome, Safari) */
+        .custom-options::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .custom-options::-webkit-scrollbar-track {
+            background-color: #1A1A1A; /* Background color of the scrollbar track */
+            border-radius: 5px;
+        }
+
+        .custom-options::-webkit-scrollbar-thumb {
+            background-color: #9B3922; /* Color of the scrollbar thumb */
+            border-radius: 5px;
+            border: 1px solid #F2613F; /* Optional border color for thumb */
+        }
+
+        .custom-options::-webkit-scrollbar-thumb:hover {
+            background-color: #F2613F; /* Color on hover */
+        }
+
+        /* Scrollbar styling for Firefox */
+        .custom-options {
+            scrollbar-width: thin;
+            scrollbar-color: #9B3922 #1A1A1A;
+        }
+
+        .custom-options li {
+            padding: 12px;
+            color: #F2613F;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .custom-options li:hover {
+            background-color: #9B3922;
+            color: #1A1A1A;
+        }
+
+        /* Arrow styling */
+        .select-arrow {
+            font-size: 8px;
+            color: #F2613F;
+            transition: transform 0.3s;
+        }
+
+        .custom-select.open .select-arrow {
+            transform: rotate(180deg); /* Rotate the arrow when dropdown is open */
+        }
+
+        /* Hide the native select */
+        select {
+            display: none;
+        }
+
+        .flash-message .alert {
+            background-color: #1A1A1A; /* Dark background */
+            color: #F2613F;            /* Text color */
+            border: 1px solid #9B3922; /* Accent border color */
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .flash-message .alert-success {
+            border-color: #2ECC71; /* Green for success */
+            color: #2ECC71;
+        }
+
+        .flash-message .alert-danger {
+            border-color: #E74C3C; /* Red for error */
+            color: #E74C3C;
+        }
+
+        .flash-message .alert-warning {
+            border-color: #F39C12; /* Yellow for warning */
+            color: #F39C12;
+        }
+
+        .flash-message .alert-info {
+            border-color: #3498DB; /* Blue for info */
+            color: #3498DB;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <div class="container pb-5">
+        <!-- Logo Header -->
+        <div class="logo-header">
+            <a href="{{ url_for('home') }}">
+                <img src="../static/assets/img/part_1/logo_1_.png" alt="Logo">
+            </a>
+        </div>
+
+        <div class="flash-message">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} custom-flash">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+
+
+        <div class="register-box pb-5">
+            <h3>Create New Account</h3>
+            <p class="text-muted">It's free and always will be.</p>
+
+            <form action="{{ url_for('register') }}" method="POST" id="signupForm">
+                <!-- Name fields -->
+                <div class="name-fields">
+                    <input type="text" id="firstName" name="firstName" placeholder="First name" required>
+                    <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
+                </div>
+
+                <!-- Nickname (optional) -->
+                <input type="text" id="nickname" name="nickname" placeholder="Nickname (optional)">
+
+                <!-- Email and password -->
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                <input type="password" id="password" name="password" placeholder="New password" required>
+
+                <!-- Phone number (optional) -->
+                <input type="text" id="phone" name="phone" placeholder="Phone number (optional)">
+
+                <!-- Address (optional) -->
+                <input type="text" id="address" name="address" placeholder="Address (optional)">
+
+                <!-- Bio (optional) -->
+                <textarea id="bio" name="bio" placeholder=" Bio (optional)" rows="3"></textarea>
+
+
+                <!-- Birthday section as a calendar date picker -->
+                <div class="birthdate-selectors">
+                    <!-- Day Selector -->
+                    <div class="day">
+                        <div class="custom-select">
+                            <div class="custom-select-box">
+                                <span class="select-placeholder">Day</span>
+                                <span class="select-arrow">▼</span>
+                            </div>
+                            <ul class="custom-options">
+                                {% for day in range(1, 32) %}
+                                    <li data-value="{{ day }}">{{ day }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <input type="hidden" name="day" id="hidden-day" />
+                    </div>
+
+                    <!-- Month Selector -->
+                    <div class="month">
+                        <div class="custom-select">
+                            <div class="custom-select-box">
+                                <span class="select-placeholder">Month</span>
+                                <span class="select-arrow">▼</span>
+                            </div>
+                            <ul class="custom-options">
+                                {% set count = 1 %}
+                                {% for month in ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] %}
+
+                                    <li data-value="{{ count }}">{{ month }}</li>
+                                    {% set count = count + 1%}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <input type="hidden" name="month" id="hidden-month" />
+                    </div>
+
+                    <!-- Year Selector -->
+                    <div class="year">
+                        <div class="custom-select">
+                            <div class="custom-select-box">
+                                <span class="select-placeholder">Year</span>
+                                <span class="select-arrow">▼</span>
+                            </div>
+                            <ul class="custom-options">
+                                {% for year in range(1900, 2024) %}
+                                    <li data-value="{{ year }}">{{ year }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <input type="hidden" name="year" id="hidden-year" />
+                    </div>
+                </div>
+
+                <!-- Gender section -->
+                <div class="gender pb-1">
+                    <div class="custom-select">
+                        <div class="custom-select-box">
+                            <span class="select-placeholder">Select gender</span>
+                            <span class="select-arrow">▼</span>
+                        </div>
+                        <ul class="custom-options">
+                            <li data-value="female">Female</li>
+                            <li data-value="male">Male</li>
+                            <li data-value="others">Others</li>
+                            <li data-value="rather-not-say">Rather not say</li>
+                        </ul>
+                    </div>
+
+                    <!-- Hidden input to store the selected value -->
+                    <input type="hidden" name="gender" id="hidden-gender" />
+                </div>
+
+                <!-- Sign Up Button -->
+                <button type="submit" class="signup-btn">Sign Up</button>
+            </form>
+
+            <p class="login-link text-muted">Already have an account? <a href="{{ url_for('login') }}">Log In</a></p>
+        </div>
+
+    </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const customSelects = document.querySelectorAll('.custom-select');
+
+        customSelects.forEach(customSelect => {
+            const customSelectBox = customSelect.querySelector('.custom-select-box');
+            const customOptions = customSelect.querySelector('.custom-options');
+            const customSelectPlaceholder = customSelect.querySelector('.select-placeholder');
+            const options = customSelect.querySelectorAll('.custom-options li');
+            const hiddenInput = customSelect.nextElementSibling; // Get the hidden input after each custom select
+
+            // Toggle the dropdown open/close
+            customSelectBox.addEventListener('click', function() {
+                customSelect.classList.toggle('open');
+                customOptions.style.display = customSelect.classList.contains('open') ? 'block' : 'none';
+            });
+
+            // Set the selected value and close the dropdown
+            options.forEach(option => {
+                option.addEventListener('click', function() {
+                    const selectedValue = this.getAttribute('data-value');
+                    customSelectPlaceholder.textContent = this.textContent;
+                    hiddenInput.value = selectedValue; // Update hidden input with selected value
+                    customSelect.classList.remove('open');
+                    customOptions.style.display = 'none';
+                });
+            });
+
+            // Close dropdown if clicked outside
+            document.addEventListener('click', function(event) {
+                if (!customSelect.contains(event.target)) {
+                    customSelect.classList.remove('open');
+                    customOptions.style.display = 'none';
+                }
+            });
+        });
+    });
+
+
+</script>
+<script>
+    // Dropdown interactivity script
+    document.addEventListener('DOMContentLoaded', () => {
+        const customSelects = document.querySelectorAll('.custom-select');
+
+        customSelects.forEach(select => {
+            const selectBox = select.querySelector('.custom-select-box');
+            const options = select.querySelector('.custom-options');
+            const hiddenInput = select.querySelector('input[type="hidden"]');
+
+            selectBox.addEventListener('click', () => {
+                select.classList.toggle('open');
+            });
+
+            options.querySelectorAll('li').forEach(option => {
+                option.addEventListener('click', () => {
+                    hiddenInput.value = option.getAttribute('data-value');
+                    selectBox.querySelector('.select-placeholder').textContent = option.textContent;
+                    select.classList.remove('open');
+                });
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            customSelects.forEach(select => {
+                if (!select.contains(e.target)) {
+                    select.classList.remove('open');
+                }
+            });
+        });
+    });
+
+</script>
+
+
+</body>
+<footer class="footer ">
+<!--    <p>PrOrganize &copy; 2024</p>-->
+    <p>PrOrganize &copy; {{global_data.time.split(',')[1]}}</p>
+</footer>
+</html>

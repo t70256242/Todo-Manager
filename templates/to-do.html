@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% block left_aligned_icons %}
+<!-- Add User to task Button (Plus Icon) -->
+
+{% endblock %}
+
+{% block content %}
+
+<!-- Card-->
+
+<div class="board-canvas py-2 px-4" data-testid="board-canvas ">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 pb-5 mx-3 px-3">
+    <!-- To Do Card -->
+    <div class="col">
+      <div class="card card-stats card-round shadow h-100">
+          <div class="card-header bg-primary text-white rounded-top" data-testid="list-header">
+              <h2 class="card-title">To do</h2>
+          </div>
+          <div class="card-body">
+              <!-- Scrollable ordered list -->
+              <ol class="list-group list-group-flush" style="max-height: 200px; overflow-y: auto;">
+                  <li class="list-group-item bg-light">
+                      <div>
+                          <a href="/c/n77YyLqm/2-project-planning" class="text-dark">Project planning</a>
+                      </div>
+                  </li>
+                  <li class="list-group-item bg-dark">
+                      <div>
+                          <a href="/c/B1EdVbQS/1-kickoff-meeting" class="text-white">Kickoff meeting</a>
+                      </div>
+                  </li>
+                  <!-- Add more list items as needed -->
+              </ol>
+
+              <!-- Row for adding tasks -->
+              <div class="row mt-3">
+                  <div class="col-8">
+                      <input type="text" class="form-control" placeholder="Add task" aria-label="Add new task">
+                  </div>
+                  <div class="col-4">
+                      <button class="btn btn-success btn-sm w-100" type="button">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                              <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 1a6 6 0 1 1 0 12A6 6 0 0 1 8 2zm3 6a.5.5 0 0 1-.5.5H8.5v2.5a.5.5 0 0 1-1 0V8.5H5a.5.5 0 0 1 0-1h2.5V5a.5.5 0 0 1 1 0v2.5H10a.5.5 0 0 1 .5.5z"/>
+                          </svg>
+
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- Doing Card -->
+    <div class="col">
+      <div class="card card-stats card-round shadow h-100">
+          <div class="card-header bg-primary text-white rounded-top" data-testid="list-header">
+              <h2 class="card-title">Doing</h2>
+          </div>
+          <div class="card-body">
+              <!-- Scrollable ordered list -->
+              <ol class="list-group list-group-flush" style="max-height: 200px; overflow-y: auto;">
+                  <li class="list-group-item bg-light">
+                      <div>
+                          <a href="/c/n77YyLqm/2-project-planning" class="text-dark">Project planning</a>
+                      </div>
+                  </li>
+                  <li class="list-group-item bg-dark">
+                      <div>
+                          <a href="/c/B1EdVbQS/1-kickoff-meeting" class="text-white">Kickoff meeting</a>
+                      </div>
+                  </li>
+                  <!-- Add more list items as needed -->
+              </ol>
+
+              <!-- Row for adding tasks -->
+              <div class="row mt-3">
+                  <div class="col-8">
+                      <input type="text" class="form-control" placeholder="Add task" aria-label="Add new task">
+                  </div>
+                  <div class="col-4">
+                      <button class="btn btn-success btn-sm w-100" type="button">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                              <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 1a6 6 0 1 1 0 12A6 6 0 0 1 8 2zm3 6a.5.5 0 0 1-.5.5H8.5v2.5a.5.5 0 0 1-1 0V8.5H5a.5.5 0 0 1 0-1h2.5V5a.5.5 0 0 1 1 0v2.5H10a.5.5 0 0 1 .5.5z"/>
+                          </svg>
+
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- Done Card -->
+    <div class="col">
+      <div class="card card-stats card-round shadow h-100">
+          <div class="card-header bg-primary text-white rounded-top" data-testid="list-header">
+              <h2 class="card-title">Done</h2>
+          </div>
+          <div class="card-body">
+              <!-- Scrollable ordered list -->
+              <ol class="list-group list-group-flush" style="max-height: 200px; overflow-y: auto;">
+                  <li class="list-group-item bg-light">
+                      <div>
+                          <a href="/c/n77YyLqm/2-project-planning" class="text-dark">Project planning</a>
+                      </div>
+                  </li>
+                  <li class="list-group-item bg-dark">
+                      <div>
+                          <a href="/c/B1EdVbQS/1-kickoff-meeting" class="text-white">Kickoff meeting</a>
+                      </div>
+                  </li>
+                  <!-- Add more list items as needed -->
+              </ol>
+
+              <!-- Row for adding tasks -->
+              <div class="row mt-3">
+                  <div class="col-8">
+                      <input type="text" class="form-control" placeholder="Add task" aria-label="Add new task">
+                  </div>
+                  <div class="col-4">
+                      <button class="btn btn-success btn-sm w-100" type="button">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                              <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 1a6 6 0 1 1 0 12A6 6 0 0 1 8 2zm3 6a.5.5 0 0 1-.5.5H8.5v2.5a.5.5 0 0 1-1 0V8.5H5a.5.5 0 0 1 0-1h2.5V5a.5.5 0 0 1 1 0v2.5H10a.5.5 0 0 1 .5.5z"/>
+                          </svg>
+
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Card End -->
+{% endblock %}
+

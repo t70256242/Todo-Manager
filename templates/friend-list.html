@@ -1,0 +1,289 @@
+{% extends 'base.html' %}
+
+
+
+{% block center_aligned_icons %}
+  <span class="label-title">Friends</span>
+{% endblock %}
+
+
+{% block left_aligned_icons %}
+  <!-- Add User to task Button (Plus Icon) -->
+
+
+
+  <!-- Visibility Dropdown -->
+<!--  <div class="px-2">-->
+<!--    <button class="btn btn-outline-secondary btn-sm border-0 p-0 d-flex justify-content-center align-items-center" type="button" id="workspaceVisibilityDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="width: 32px; height: 32px;">-->
+<!--      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-airplane" viewBox="0 0 16 16">-->
+<!--        <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849m.894.448C7.111 2.02 7 2.569 7 3v4a.5.5 0 0 1-.276.447l-5.448 2.724a.5.5 0 0 0-.276.447v.792l5.418-.903a.5.5 0 0 1 .575.41l.5 3a.5.5 0 0 1-.14.437L6.708 15h2.586l-.647-.646a.5.5 0 0 1-.14-.436l.5-3a.5.5 0 0 1 .576-.411L15 11.41v-.792a.5.5 0 0 0-.276-.447L9.276 7.447A.5.5 0 0 1 9 7V3c0-.432-.11-.979-.322-1.401C8.458 1.159 8.213 1 8 1s-.458.158-.678.599"/>-->
+<!--      </svg>-->
+<!--    </button>-->
+
+<!--    <ul class="dropdown-menu" aria-labelledby="workspaceVisibilityDropdown">-->
+<!--      <li><a class="dropdown-item" href="#">Private</a></li>-->
+<!--      <li><a class="dropdown-item" href="#">Workspace visible</a></li>-->
+<!--      <li><a class="dropdown-item" href="#">Public</a></li>-->
+<!--      <li><hr class="dropdown-divider"></li>-->
+<!--      <li><a class="dropdown-item" href="#">Manage visibility settings</a></li>-->
+<!--    </ul>-->
+<!--  </div>-->
+
+
+<!--  &lt;!&ndash; Power-Ups Button (Bar Chart Icon) &ndash;&gt;-->
+<!--  <div class="col-auto px-2">-->
+<!--  <button class="btn btn-outline-info btn-sm border-0 p-0 d-flex justify-content-center align-items-center active" type="button" aria-label="Power-Ups" style="width: 32px; height: 32px;">-->
+<!--    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">-->
+<!--      <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>-->
+<!--    </svg>-->
+<!--  </button>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; More &ndash;&gt;-->
+<!--  <div class="col-auto px-2">-->
+<!--  <button class="btn btn-outline-info btn-sm border-0 p-0 d-flex justify-content-center align-items-center" type="button" aria-label="Power-Ups" style="width: 32px; height: 32px;">-->
+<!--    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">-->
+<!--      <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>-->
+<!--    </svg>-->
+<!--  </button>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; More &ndash;&gt;-->
+<!--  <div class="col-auto px-2">-->
+<!--  <button class="btn btn-outline-info btn-sm border-0 p-0 d-flex justify-content-center align-items-center" type="button" aria-label="Power-Ups" style="width: 32px; height: 32px;">-->
+<!--    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">-->
+<!--      <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>-->
+<!--    </svg>-->
+<!--  </button>-->
+<!--  </div>-->
+{% endblock %}
+
+{% block content %}
+    <div class="d-flex justify-content-center align-items-center">
+
+        <div class="message-list">
+            {% if friends_list %}
+            {% for friend in friends_list %}
+<!--            <a href="#" style="text-decoration: none;" >-->
+                <div class="message-item ">
+                    {% if friend.profile_picture_path %}
+                    <img src="../{{ friend.profile_picture_path }}" alt="User Avatar" class="avatar">
+                    {% else %}
+                    <span class="avatar-title rounded-circle border border-white bg-info text-white"
+                      style="display: flex; align-items: center; justify-content: center; font-size: 0.9em; font-weight: bold; line-height: 1; width: 30px; height: 30px; overflow: hidden; text-align: center;">
+                      {{ friend.first_name[0].upper() }}{{ friend.last_name[0].upper() }}
+                    </span>
+                    {% endif %}
+                    <div class="message-content">
+                        <div class="message-header">
+                            <span class="sender-name">{{ friend.first_name | title }} {{ friend.last_name | title }}</span>
+                            <div class="message-time text-muted">
+                                <button class="btn button " id="openSendMessageModalBtn" data-username="{{ friend.username }}">Chat</button>
+                                <a href="{{ url_for('delete_friend', friend_id=friend.id) }}">
+                                    <button class="btn button ">Remove</button>
+                                </a>
+                            </div>
+                        </div>
+
+<!--                        <div class="text-muted"-->
+<!--                             style="-->
+<!--                             font-weight: bold;-->
+<!--                             white-space: nowrap;-->
+<!--                             overflow: hidden;-->
+<!--                             text-overflow: ellipsis;-->
+<!--                             display: block;-->
+<!--                             max-width: 100%;">-->
+<!--                            hello-->
+<!--                        </div>-->
+
+                    </div>
+                </div>
+<!--            </a>-->
+            {% endfor %}
+            {% endif %}
+
+
+
+
+            <!-- Add more messages here -->
+        </div>
+
+    </div>
+
+
+    <!-- Send Message Form Modal -->
+  <div id="sendMessageModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" id="closeSendMessageModalBtn">&times;</span>
+
+        <!-- Form inside the modal -->
+        <h2>New Chat</h2>
+        <form id="sendMessageForm"  action="" method="post">
+            <div class="form-group">
+                <input type="hidden" name="source" value="modal">
+                <label for="sendMessageTo">To:</label>
+                <input class="form-control" id="sendMessageTo" name="sendMessageAdd" required>
+                <div id="sendMessageError" style="color: red; display: none;">
+                    User does not exist.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sendMessageMessage">Message:</label>
+                <textarea class="form-control" id="sendMessageMessage" name="sendMessageMessage" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn" id="sendMessageSubmitBtn" disabled>Send</button>
+            </div>
+        </form>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block script %}
+<!--<script>-->
+<!--    document.addEventListener("DOMContentLoaded", function () {-->
+<!--        const openModalBtn = document.getElementById("openSendMessageModalBtn");-->
+<!--        const closeModalBtn = document.getElementById("closeSendMessageModalBtn");-->
+<!--        const modal = document.getElementById("sendMessageModal");-->
+<!--        const sendMessageToInput = document.getElementById("sendMessageTo");-->
+<!--        const sendMessageSubmitBtn = document.getElementById("sendMessageSubmitBtn");-->
+<!--        const sendMessageError = document.getElementById("sendMessageError");-->
+<!--        const sendMessageForm = document.getElementById("sendMessageForm");-->
+
+<!--        // Open Modal-->
+<!--        openModalBtn.addEventListener("click", function () {-->
+<!--            modal.style.display = "block";-->
+<!--        });-->
+
+<!--        // Close Modal-->
+<!--        closeModalBtn.addEventListener("click", function () {-->
+<!--            modal.style.display = "none";-->
+<!--        });-->
+
+<!--        // Close Modal on outside click-->
+<!--        window.addEventListener("click", function (event) {-->
+<!--            if (event.target === modal) {-->
+<!--                modal.style.display = "none";-->
+<!--            }-->
+<!--        });-->
+
+<!--        // Validate user existence on input change-->
+<!--        sendMessageToInput.addEventListener("input", function () {-->
+<!--            const userId = sendMessageToInput.value.trim();-->
+
+<!--            if (userId === "") {-->
+<!--                sendMessageSubmitBtn.disabled = true;-->
+<!--                sendMessageError.style.display = "none";-->
+<!--                return;-->
+<!--            }-->
+
+<!--            fetch(`/fetch-user/${userId}`, { method: "GET" })-->
+<!--                .then((response) => {-->
+<!--                    if (response.ok) {-->
+<!--                        // Hide any previous error messages-->
+<!--                        sendMessageError.style.display = "none";-->
+
+<!--                        // Enable the submit button-->
+<!--                        sendMessageSubmitBtn.disabled = false;-->
+
+<!--                        // Update the form's action attribute-->
+<!--                        sendMessageForm.action = `/send_message/${userId}`;-->
+<!--                    } else {-->
+<!--                        throw new Error("User not found");-->
+<!--                    }-->
+<!--                })-->
+<!--                .catch((error) => {-->
+<!--                    // Display the error message-->
+<!--                    sendMessageError.textContent = "User not found";-->
+<!--                    sendMessageError.style.display = "block";-->
+
+<!--                    // Disable the submit button-->
+<!--                    sendMessageSubmitBtn.disabled = true;-->
+
+<!--                    // Clear the form's action attribute-->
+<!--                    sendMessageForm.action = "";-->
+<!--                });-->
+
+<!--        });-->
+<!--    });-->
+
+<!--</script>-->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const openModalBtn = document.getElementById("openSendMessageModalBtn");
+        const closeModalBtn = document.getElementById("closeSendMessageModalBtn");
+        const modal = document.getElementById("sendMessageModal");
+        const sendMessageToInput = document.getElementById("sendMessageTo");
+        const sendMessageSubmitBtn = document.getElementById("sendMessageSubmitBtn");
+        const sendMessageError = document.getElementById("sendMessageError");
+        const sendMessageForm = document.getElementById("sendMessageForm");
+
+        // Open Modal and preload input field with data-username
+        openModalBtn.addEventListener("click", function () {
+            const username = openModalBtn.getAttribute("data-username"); // Get data-username from button
+            sendMessageToInput.value = username; // Preload input with username
+            modal.style.display = "block";
+
+            // Trigger input event to validate the preloaded username
+            sendMessageToInput.dispatchEvent(new Event("input"));
+        });
+
+        // Close Modal
+        closeModalBtn.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
+        // Close Modal on outside click
+        window.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+
+        // Validate user existence on input change
+        sendMessageToInput.addEventListener("input", function () {
+            const userId = sendMessageToInput.value.trim();
+
+            if (userId === "") {
+                sendMessageSubmitBtn.disabled = true;
+                sendMessageError.style.display = "none";
+                return;
+            }
+
+            fetch(`/fetch-user/${userId}`, { method: "GET" })
+                .then((response) => {
+                    if (response.ok) {
+                        // Hide any previous error messages
+                        sendMessageError.style.display = "none";
+
+                        // Enable the submit button
+                        sendMessageSubmitBtn.disabled = false;
+
+                        // Update the form's action attribute
+                        sendMessageForm.action = `/send_message/${userId}`;
+                    } else {
+                        throw new Error("User not found");
+                    }
+                })
+                .catch((error) => {
+                    // Display the error message
+                    sendMessageError.textContent = "User not found";
+                    sendMessageError.style.display = "block";
+
+                    // Disable the submit button
+                    sendMessageSubmitBtn.disabled = true;
+
+                    // Clear the form's action attribute
+                    sendMessageForm.action = "";
+                });
+        });
+    });
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block center_aligned_icons %}
+  <span class="label-title">Message</span>
+{% endblock %}
+
+
+{% block left_aligned_icons %}
+  <!-- Add User to task Button (Plus Icon) -->
+<!--  <div class="col-auto px-2">-->
+<!--    <button class="btn btn-outline-info btn-sm border-0 p-0 d-flex justify-content-center align-items-center" type="button" aria-label="Add User" style="width: 32px; height: 32px;">-->
+<!--      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">-->
+<!--        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>-->
+<!--      </svg>-->
+<!--    </button>-->
+<!--  </div>-->
+
+
+<!--  &lt;!&ndash; Visibility Dropdown &ndash;&gt;-->
+<!--  <div class="px-2">-->
+<!--    <button class="btn btn-outline-secondary btn-sm border-0 p-0 d-flex justify-content-center align-items-center" type="button" id="workspaceVisibilityDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="width: 32px; height: 32px;">-->
+<!--      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-airplane" viewBox="0 0 16 16">-->
+<!--        <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849m.894.448C7.111 2.02 7 2.569 7 3v4a.5.5 0 0 1-.276.447l-5.448 2.724a.5.5 0 0 0-.276.447v.792l5.418-.903a.5.5 0 0 1 .575.41l.5 3a.5.5 0 0 1-.14.437L6.708 15h2.586l-.647-.646a.5.5 0 0 1-.14-.436l.5-3a.5.5 0 0 1 .576-.411L15 11.41v-.792a.5.5 0 0 0-.276-.447L9.276 7.447A.5.5 0 0 1 9 7V3c0-.432-.11-.979-.322-1.401C8.458 1.159 8.213 1 8 1s-.458.158-.678.599"/>-->
+<!--      </svg>-->
+<!--    </button>-->
+
+<!--    <ul class="dropdown-menu" aria-labelledby="workspaceVisibilityDropdown">-->
+<!--      <li><a class="dropdown-item" href="#">Private</a></li>-->
+<!--      <li><a class="dropdown-item" href="#">Workspace visible</a></li>-->
+<!--      <li><a class="dropdown-item" href="#">Public</a></li>-->
+<!--      <li><hr class="dropdown-divider"></li>-->
+<!--      <li><a class="dropdown-item" href="#">Manage visibility settings</a></li>-->
+<!--    </ul>-->
+<!--  </div>-->
+
+
+<!--  &lt;!&ndash; Power-Ups Button (Bar Chart Icon) &ndash;&gt;-->
+<!--  <div class="col-auto px-2">-->
+<!--  <button class="btn btn-outline-info btn-sm border-0 p-0 d-flex justify-content-center align-items-center active" type="button" aria-label="Power-Ups" style="width: 32px; height: 32px;">-->
+<!--    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">-->
+<!--      <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>-->
+<!--    </svg>-->
+<!--  </button>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; More &ndash;&gt;-->
+<!--  <div class="col-auto px-2">-->
+<!--  <button class="btn btn-outline-info btn-sm border-0 p-0 d-flex justify-content-center align-items-center" type="button" aria-label="Power-Ups" style="width: 32px; height: 32px;">-->
+<!--    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">-->
+<!--      <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>-->
+<!--    </svg>-->
+<!--  </button>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; More &ndash;&gt;-->
+<!--  <div class="col-auto px-2">-->
+<!--  <button class="btn btn-outline-info btn-sm border-0 p-0 d-flex justify-content-center align-items-center" type="button" aria-label="Power-Ups" style="width: 32px; height: 32px;">-->
+<!--    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">-->
+<!--      <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>-->
+<!--    </svg>-->
+<!--  </button>-->
+<!--  </div>-->
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="chat-container border" style="border: 0.1px solid #481E14 !important;">
+        <div class="chat-header">
+            <div class="header-left">
+                <div class="avatar-sm me-2">
+                    {% if recipient.profile_picture_path == '' %}
+                    <img src="../{{ recipient.profile_picture_path }}" alt="..." class="avatar-img rounded-circle" style="width: 30px; height: 30px;" />
+                    {% else %}
+                    <span class="avatar-title rounded-circle border border-white bg-info text-white"
+                      style="display: flex; align-items: center; justify-content: center; font-size: 0.9em; font-weight: bold; line-height: 1; width: 30px; height: 30px; overflow: hidden; text-align: center;">
+                      {{ recipient.first_name[0].upper() }}{{ recipient.last_name[0].upper() }}
+                    </span>
+                    {% endif %}
+                </div>
+                <div class="header-info">
+                    <span class="username">{{ recipient.first_name | title }} {{ recipient.last_name | title }}</span>
+                    <span class="last-seen text-muted">Last seen 2 minutes ago</span>
+                </div>
+            </div>
+<!--            <div class="header-right">-->
+<!--                <button class="options-btn">...</button>-->
+<!--            </div>-->
+            <div class="dropdown">
+                <!-- Button -->
+                <button
+                    type="button"
+                    id="messageDropdown"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    style="
+                    background: none;
+                    border: none;
+                    padding: 0;
+                    color: inherit;
+                    font-size: inherit;
+                    cursor: pointer;"
+                >
+                    .
+                    .
+                    .
+                </button>
+
+                <!-- Dropdown Menu -->
+                <ul class="dropdown-menu" aria-labelledby="messageDropdown">
+                    <li>
+                        <a class="dropdown-item" href="{{ url_for('messages') }}">
+                            All messages
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="chat-body">
+            <!-- Messages will be injected here -->
+            {% for message in conversation %}
+            {% if message.author_id == current_user.id %}
+            <div class="chat-message sent">
+                <div class="chat-message-content text-muted">
+                    {{ message.message_content  }}
+                </div>
+            </div>
+
+            {% else %}
+
+            <div class="chat-message received">
+                <div class="chat-message-content text-muted">
+                    {{ message.message_content }}
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+<!--            <div class="chat-message received text-muted">-->
+<!--                <div class="chat-message-content">-->
+<!--                    I'm doing well, just working on a new project.-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+
+        <form action="{{ url_for('send_message', recipient=recipient.username) }}" method="post" id="chat-form">
+            <div class="chat-input">
+
+                    <label for="message-input"></label>
+                    <input type="text" id="message-input" name="message-input" placeholder="Type a message..."  required/>
+                    <button id="send-btn" type="submit">Send</button>
+
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block script %}
+<script >
+    function sendMessage() {
+        const messageInput = document.getElementById('message-input');
+        const messageText = messageInput.value.trim();
+
+        if (messageText !== '') {
+            const chatBody = document.querySelector('.chat-body');
+
+            // Create the sent message element
+            const sentMessage = document.createElement('div');
+            sentMessage.classList.add('message', 'sent');
+
+            const messageContent = document.createElement('div');
+            messageContent.classList.add('message-content');
+            messageContent.textContent = messageText;
+
+            sentMessage.appendChild(messageContent);
+            chatBody.appendChild(sentMessage);
+
+            // Scroll to the bottom
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+            // Clear the input field
+            messageInput.value = '';
+        }
+    }
+
+</script>
+{% endblock %}
+<!--</body>-->
+<!--</html>-->

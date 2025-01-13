@@ -1,0 +1,1080 @@
+{% extends 'base.html' %}
+{% block styles %}
+<style>
+    .chart-container {
+      width: 100%; /* Make container responsive */
+      max-width: 100%; /* Prevent it from exceeding the parent width */
+      overflow-x: auto; /* Enable horizontal scrolling */
+      white-space: nowrap; /* Prevent items from wrapping */
+      box-sizing: border-box; /* Include padding and border in width */
+    }
+
+    .chart-item {
+      display: inline-block; /* Ensure items align horizontally */
+      width: auto; /* Allow items to size themselves naturally */
+      margin: 0 10px; /* Optional: Add spacing between items */
+      box-sizing: border-box; /* Include padding and border in width */
+    }
+
+</style>
+{% endblock %}
+
+{% block center_aligned_icons %}
+  <span class="label-title">{{ project.title | title }}</span>
+{% endblock %}
+
+
+{% block left_aligned_icons %}
+  <!-- Add User to task Button (Plus Icon) -->
+
+{% endblock %}
+
+
+{% block content %}
+  <div class="row px-4">
+    <div class="col-12">
+      <div class="card card-round">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h5 class="card-title mb-0">Project Tasks</h5>
+          <div class="card-tools">
+            <div class="dropdown">
+              <button class="dropdownMenuButton btn btn-icon btn-clean align-items-center me-0" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                </svg>
+              </button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="javascript:void(0)" id="openProjectTaskModalBtn">Add Task</a>
+                <a class="dropdown-item" href="{{ url_for('project_list') }}">All Projects</a>
+<!--                <a class="dropdown-item" href="#">Something else here</a>-->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body ">
+          <div class="table-responsive">
+            <table class="table align-items-center mb-0">
+              <thead class="thead-light">
+                <tr style="color: #9B3922; white-space: nowrap;">
+                  <th scope="col" class="text-start" style="padding-left: 48px;">Task Name</th>
+                  <th scope="col" class="text-end" style="width: 150px;">Description</th>
+                  <th scope="col" class="text-end">Start Date</th>
+                  <th scope="col" class="text-end">Due Date</th>
+                  <th scope="col" class="text-end">Dependencies</th>
+                  <th scope="col" class="text-end">Estimated Time</th>
+                  <th scope="col" class="text-end">Actual Time</th>
+                  <th scope="col" class="text-end">Priority</th>
+                  <th scope="col" class="text-end">Status</th>
+                </tr>
+              </thead>
+              <tbody class="text-muted">
+                  {% for task in project.tasks %}
+                  <tr class="openTaskSelectModalBtn" style="cursor: pointer;" data-task-id="{{ task.id }}">
+                    <th scope="row">
+                      <div class="task-status d-flex align-items-center">
+                        {% if task.status == 'todo' %}
+                        <span class="badge bg-danger me-2">📌</span>{{ task.task_name }}
+                        {% elif task.status == 'doing' %}
+                        <span class="badge bg-warning me-2">⏳</span>{{ task.task_name }}
+                        {% else %}
+                        <span class="badge bg-success me-2">✔</span>{{ task.task_name }}
+                        {% endif %}
+                      </div>
+                    </th>
+
+                    <td class="text-end">{{ task.description }}</td>
+                    <td class="text-end">{{ task.start_date | format_date }}</td>
+                    <td class="text-end">{{ task.due_date | format_date }}</td>
+                    <td class="text-end">{{ task.dependencies }}</td>
+                    <td class="text-end">{{ task.estimated_time }}</td>
+                    <td class="text-end">{{ task.actual_time }}</td>
+
+                    <td class="text-end">
+                      {% if task.priority == 'high' %}
+                      <span class="badge bg-danger">{{ task.priority }}</span>
+                      {% elif task.priority == 'medium' %}
+                      <span class="badge bg-warning">{{ task.priority }}</span>
+                      {% else %}
+                      <span class="badge bg-success">{{ task.priority }}</span>
+                      {% endif %}
+                    </td>
+                    <td class="text-end">
+                      {% if task.status == 'todo' %}
+                      <span class="badge bg-danger">{{ task.status }}</span>
+                      {% elif task.status == 'doing' %}
+                      <span class="badge bg-warning">{{ task.status }}</span>
+                      {% else %}
+                      <span class="badge bg-success">{{ task.status }}</span>
+                      {% endif %}
+                    </td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="ch-chart-data-container">
+
+
+  <div class="chart-container">
+    <div class="chart-item">
+      <h5>Project Timeline</h5>
+      <canvas id="ganttChart"></canvas>
+    </div>
+    <div class="chart-item" style="text-align: center; overflow: hidden; padding: 0;">
+      <h5>Task Distribution</h5>
+      <canvas id="donutChart"
+              style="max-height: 80%; max-width: 100%; display: inline-block; margin: 0 auto;">
+      </canvas>
+    </div>
+
+    <div class="chart-item">
+      <h5>Task Status Trend</h5>
+      <canvas id="lineChart"></canvas>
+    </div>
+    <div class="chart-item">
+      <h5>Resource Allocation</h5>
+      <canvas id="stackedBarChart"></canvas>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Project Task Form Modal -->
+  <div id="projectTaskModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" id="closeProjectTaskModalBtn">&times;</span>
+
+        <!-- Form inside the modal -->
+        <h2>Next Task</h2>
+        <form action="{{ url_for('add_project_task', number=project.id) }}" method="post">
+            <div class="form-group">
+                <label for="projectName" >Project Title:</label>
+                <input type="text" class="form-control" id="projectName" name="projectName" value="{{ project.title }}" disabled required>
+            </div>
+            <div class="form-group">
+                <label for="taskName">Task Name:</label>
+                <input type="text" class="form-control" id="taskName" name="taskName" required>
+            </div>
+            <div class="form-group">
+                <label for="taskDescription">Description:</label>
+                <textarea class="form-control" id="taskDescription" name="taskDescription" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="startTaskDate">Start Date:</label>
+                <div class="custom-date-picker">
+                    <input id="startTaskDate" type="text" class="form-control custom-date-input" name="startTaskDate" placeholder="Select Start Date" readonly data-calendar-id="startTaskDateCalendar">
+                    <div id="startTaskDateCalendar" class="calendar">
+                        <!-- Calendar will be dynamically rendered here -->
+                        <div class="calendar-header">
+                            <span class="month"></span>
+                            <div class="navigation">
+                                <button type="button"  class="prev-month">←</button>
+                                <button type="button"  class="next-month">→</button>
+                            </div>
+                        </div>
+                        <div class="calendar-days"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="dueTaskDate">Due Date:</label>
+                <div class="custom-date-picker">
+                    <input id="dueTaskDate" type="text" class="form-control custom-date-input" name="dueTaskDate" placeholder="Select Due Date" readonly data-calendar-id="dueTaskDateCalendar">
+                    <div id="dueTaskDateCalendar" class="calendar">
+                        <!-- Calendar will be dynamically rendered here -->
+                        <div class="calendar-header">
+                            <span class="month"></span>
+                            <div class="navigation">
+                                <button type="button"  class="prev-month">←</button>
+                                <button type="button"  class="next-month">→</button>
+                            </div>
+                        </div>
+                        <div class="calendar-days"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="custom-select mb-3">
+                <div class="custom-select-box">
+                    <span class="select-placeholder">Dependencies:</span>
+                    <span class="select-arrow">▼</span>
+                </div>
+                {% if project.tasks | length > 0 %}
+                <ul class="custom-options">
+                    {% for task in project.tasks %}
+                    <li data-value="{{ task.task_name }}">{{ task.task_name }}</li>
+                    <li data-value="none">None</li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <ul class="custom-options">
+                    <li data-value="">Not available</li>
+                </ul>
+                {% endif %}
+            </div>
+            <input type="hidden" name="dependencies" id="hidden-dependencies" required>
+
+
+            <div class="row align-items-center mb-3">
+              <!-- Estimated Time Input -->
+              <div class="col form-group">
+                <label for="estimatedTime">Estimated Time:</label>
+                <input id="estimatedTime" name="estimatedTime" type="text" class="form-control" required/>
+              </div>
+
+
+              <!-- Select Time Range Dropdown -->
+              <div class="col">
+                <div class="custom-select" >
+                    <div class="custom-select-box" style="display: flex; align-items: center;">
+                      <span class="select-placeholder" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                        Time Range:
+                      </span>
+                      <span class="select-arrow" style="margin-left: auto;">▼</span>
+                    </div>
+
+                  <ul class="custom-options">
+                    <li data-value="hours">Hour(s)</li>
+                    <li data-value="days">Day(s)</li>
+                    <li data-value="weeks">Week(s)</li>
+                    <li data-value="months">Month(s)</li>
+                    <li data-value="years">Year(s)</li>
+                  </ul>
+                </div>
+                <input type="hidden" name="timeRange" id="hidden-timeRange" required>
+              </div>
+            </div>
+
+
+            <div class="custom-select mb-3">
+
+                <div class="custom-select-box">
+                    <span class="select-placeholder">Select Priority:</span>
+                    <span class="select-arrow">▼</span>
+                </div>
+                <ul class="custom-options">
+                    <li data-value="high">High</li>
+                    <li data-value="medium">Medium</li>
+                    <li data-value="low">Low</li>
+                </ul>
+            </div>
+            <input type="hidden" name="priority" id="hidden-priority" required>
+
+
+
+
+<!--            <div class="form-group">-->
+<!--                <label for="assignedTo">Assigned To:</label>-->
+<!--                <input type="text" class="form-control" id="assignedTo" name="assignedTo" >-->
+<!--            </div>-->
+            <div class="custom-select mb-3">
+
+                <div class="custom-select-box">
+                    <span class="select-placeholder">Assigned To:</span>
+                    <span class="select-arrow">▼</span>
+                </div>
+                {% if friends_list | length > 0 %}
+                {% for friend in friends_list %}
+                <ul class="custom-options">
+                    <li data-value="{{ friend.username }}">{{ friend.first_name | title }} {{ friend.last_name | title }}</li>
+                    <li data-value="none">None</li>
+                </ul>
+
+                {% endfor %}
+                {% else %}
+                <ul class="custom-options">
+                    <li data-value="">Add Friend</li>
+                </ul>
+                {% endif %}
+            </div>
+            <input type="hidden" name="assignedTo" id="assignedTo" required>
+
+<!--            <div class="form-group">-->
+<!--                <label for="tags">Tags:</label>-->
+<!--                <input type="text" class="form-control" id="tags" name="tags" >-->
+<!--            </div>-->
+            <div class="form-group">
+                <label for="taskComments">Comments:</label>
+                <textarea class="form-control" id="taskComments" name="taskComments" rows="3"></textarea>
+            </div>
+
+            <div class="status pb-3">
+                <div class="custom-select">
+                    <div class="custom-select-box">
+                        <span class="select-placeholder">Select Status:</span>
+                        <span class="select-arrow">▼</span>
+                    </div>
+                    <ul class="custom-options">
+                        <li data-value="todo">Todo</li>
+                        <li data-value="doing">Doing</li>
+                        <li data-value="done">Done</li>
+                    </ul>
+                </div>
+
+                <!-- Hidden input to store the selected value -->
+                <input type="hidden" name="status" id="hidden-status" required/>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn">Submit</button>
+            </div>
+        </form>
+    </div>
+  </div>
+
+
+  <!-- Project Select Task Form Modal -->
+  <div id="taskSelectModal" class="modal">
+
+
+        <div class="modal-content">
+            <span class="close" id="closeTaskSelectModalBtn" data-bs-dismiss="modal" aria-label="Close">&times;</span>
+
+            <h2>{{ project.title | title }}</h2>
+            <form action="{{ url_for('save_task_details', task_id=0, project_id=project.id) }}"
+                  method="post"
+                  data-project-id="{{ project.id }}"
+                  id="taskSelectForm">
+                <input type="hidden" id="selectedTaskId" name="taskId" value="">
+
+
+
+                <div class="form-group">
+                    <label for="projectTitle">Project Title</label>
+                    <input type="text" id="projectTitle" name="projectTitle" value="" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="taskSelectName">Task Name</label>
+                    <input type="text" id="taskSelectName" name="taskSelectName" value="" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="taskSelectDescription">Description</label>
+                    <textarea id="taskSelectDescription" name="taskSelectDescription" class="form-control" disabled></textarea>
+                </div>
+
+
+                <div class="custom-select mb-3">
+                    <div class="custom-select-box">
+                        <span class="select-placeholder">Select Priority:</span>
+                        <span class="select-arrow">▼</span>
+                    </div>
+                    <ul class="custom-options">
+                        <li data-value="high">High</li>
+                        <li data-value="medium">Medium</li>
+                        <li data-value="low">Low</li>
+                    </ul>
+                </div>
+                <input type="hidden" name="taskSelectPriority" id="hidden-taskSelectPriority" value="high" required disabled>
+
+                <div class="status pb-3">
+                    <div class="custom-select">
+                        <div class="custom-select-box">
+                            <span class="select-placeholder">Select Status:</span>
+                            <span class="select-arrow">▼</span>
+                        </div>
+                        <ul class="custom-options">
+                            <li data-value="todo">Todo</li>
+                            <li data-value="doing">Doing</li>
+                            <li data-value="done">Done</li>
+                        </ul>
+                    </div>
+
+                    <!-- Hidden input to store the selected value -->
+                    <input type="hidden" name="taskSelectStatus" id="hidden-taskSelectStatus" value="" required disabled/>
+                </div>
+
+                <div class="form-group">
+                    <label for="startTaskSelectDate">Start Date:</label>
+                    <div class="custom-date-picker">
+                        <input id="startTaskSelectDate" type="text" value="" class="form-control custom-date-input" name="startTaskSelectDate" placeholder="Select Start Date" readonly data-calendar-id="startTaskSelectDateCalendar" required disabled>
+                        <div id="startTaskSelectDateCalendar" class="calendar">
+                            <!-- Calendar will be dynamically rendered here -->
+                            <div class="calendar-header">
+                                <span class="month"></span>
+                                <div class="navigation">
+                                    <button type="button"  class="prev-month">←</button>
+                                    <button type="button"  class="next-month">→</button>
+                                </div>
+                            </div>
+                            <div class="calendar-days"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="dueTaskSelectDate">Due Date:</label>
+                    <div class="custom-date-picker">
+                        <input id="dueTaskSelectDate" type="text" value="" class="form-control custom-date-input" name="dueTaskSelectDate" placeholder="Select Due Date" readonly data-calendar-id="dueTaskSelectDateCalendar" disabled required>
+                        <div id="dueTaskSelectDateCalendar" class="calendar">
+                            <!-- Calendar will be dynamically rendered here -->
+                            <div class="calendar-header">
+                                <span class="month"></span>
+                                <div class="navigation">
+                                    <button type="button"  class="prev-month">←</button>
+                                    <button type="button"  class="next-month">→</button>
+                                </div>
+                            </div>
+                            <div class="calendar-days"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="custom-select mb-3">
+                    <div class="custom-select-box">
+                        <span class="select-placeholder">Dependencies:</span>
+                        <span class="select-arrow">▼</span>
+                    </div>
+
+
+                    {% if project.tasks | length > 0 %}
+                    <ul class="custom-options">
+                        {% for task in project.tasks %}
+                        <li data-value="{{ task.task_name }}">{{ task.task_name }}</li>
+<!--                        <li data-value="medium">Medium</li>-->
+<!--                        <li data-value="low">Low</li>-->
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <ul class="custom-options">
+                        <li data-value="">Not available</li>
+                    </ul>
+                    {% endif %}
+
+                </div>
+                <input type="hidden" name="taskSelectDependencies" id="hidden-taskSelectDependencies" value="" disabled required>
+
+
+                <div class="row align-items-center mb-3">
+                  <!-- Estimated Time Input -->
+                  <div class="col form-group">
+                    <label for="estimatedTimeTaskSelect">Estimated Time:</label>
+                    <input id="estimatedTimeTaskSelect" name="estimatedTimeTaskSelect" type="text" class="form-control" value="" disabled required/>
+                  </div>
+
+                  <div class="col">
+                    <div class="custom-select" >
+                        <div class="custom-select-box" style="display: flex; align-items: center;">
+                          <span class="select-placeholder" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            Time Range:
+                          </span>
+                          <span class="select-arrow" style="margin-left: auto;">▼</span>
+                        </div>
+
+                      <ul class="custom-options">
+                        <li data-value="hours">Hour(s)</li>
+                        <li data-value="days">Day(s)</li>
+                        <li data-value="weeks">Week(s)</li>
+                        <li data-value="months">Month(s)</li>
+                        <li data-value="years">Year(s)</li>
+                      </ul>
+                    </div>
+                    <input type="hidden" name="timeRangeTaskSelect" id="hidden-ttimeRangeTaskSelect" value="" disabled required>
+                  </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="actualTimeTaskSelect">Actual Time</label>
+                    <input type="text" id="actualTimeTaskSelect" name="actualTimeTaskSelect" value="" disabled>
+                </div>
+<!--                <div class="form-group">-->
+<!--                    <label for="assignedToTaskSelect">Assigned To</label>-->
+<!--                    <input type="text" id="assignedToTaskSelect" name="assignedToTaskSelect" value="" disabled>-->
+<!--                </div>-->
+                <div class="custom-select mb-3">
+
+                    <div class="custom-select-box">
+                        <span class="select-placeholder">Assigned To:</span>
+                        <span class="select-arrow">▼</span>
+                    </div>
+                    {% if friends_list | length > 0 %}
+                    {% for friend in friends_list %}
+                    <ul class="custom-options">
+                        <li data-value="{{ friend.username }}">{{ friend.first_name | title }} {{ friend.last_name | title }}</li>
+                        <li data-value="">None</li>
+                    </ul>
+                    {% endfor %}
+                    {% else %}
+                    <ul class="custom-options">
+                        <li data-value="">Add Friend</li>
+                    </ul>
+                    {% endif %}
+
+                </div>
+                <input type="text" id="assignedToTaskSelect" name="assignedToTaskSelect" value="" disabled hidden>
+
+
+                <div class="form-group">
+                    <label for="taskSelectComments">Comments</label>
+                    <textarea id="taskSelectComments" name="taskSelectComments" rows="4" disabled>This is my Comments.</textarea>
+                </div>
+
+<!--                <div>-->
+<!--                    <button type="button" id="editBtn" class="btn button form-group">Edit</button>-->
+<!--                    <button type="button" id="saveBtn" class="btn button form-group" style="display: none;">Save</button>-->
+<!--                </div>-->
+                <!-- Buttons Section -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                <!-- Delete Button -->
+                <button type="button" id="deleteBtn" class="btn button form-group" data-task-id="" data-project-id="{{ project.id }}">
+                    Delete
+                </button>
+
+                <!-- Edit/Save Buttons -->
+                <div>
+                    <button type="button" id="editBtn" class="btn button form-group">Edit</button>
+                    <button type="submit" id="saveBtn" class="btn button form-group" style="display: none;">Save</button>
+                </div>
+            </div>
+
+            </form>
+        </div>
+
+    </div>
+
+
+{% endblock %}
+
+{% block script %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const customSelects = document.querySelectorAll('.custom-select');
+
+        customSelects.forEach(customSelect => {
+            const customSelectBox = customSelect.querySelector('.custom-select-box');
+            const customOptions = customSelect.querySelector('.custom-options');
+            const customSelectPlaceholder = customSelect.querySelector('.select-placeholder');
+            const options = customSelect.querySelectorAll('.custom-options li');
+            const hiddenInput = customSelect.nextElementSibling; // Get the hidden input after each custom select
+
+            // Toggle the dropdown open/close
+            customSelectBox.addEventListener('click', function() {
+                customSelect.classList.toggle('open');
+                customOptions.style.display = customSelect.classList.contains('open') ? 'block' : 'none';
+            });
+
+            // Set the selected value and close the dropdown
+            options.forEach(option => {
+                option.addEventListener('click', function() {
+                    const selectedValue = this.getAttribute('data-value');
+                    customSelectPlaceholder.textContent = this.textContent;
+                    hiddenInput.value = selectedValue; // Update hidden input with selected value
+                    customSelect.classList.remove('open');
+                    customOptions.style.display = 'none';
+                });
+            });
+
+            // Close dropdown if clicked outside
+            document.addEventListener('click', function(event) {
+                if (!customSelect.contains(event.target)) {
+                    customSelect.classList.remove('open');
+                    customOptions.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('projectTaskModal');
+    const openModalBtn = document.getElementById('openProjectTaskModalBtn'); // Specific button to open modal
+    const closeModalBtn = document.getElementById('closeProjectTaskModalBtn');
+
+    // Open modal
+    openModalBtn.addEventListener('click', () => {
+        modal.style.display = 'block';
+    });
+
+    // Close modal when clicking the close button
+    closeModalBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+
+</script>
+
+
+
+<!--<script>-->
+<!--document.addEventListener("DOMContentLoaded", () => {-->
+<!--    const modal = document.getElementById("taskSelectModal");-->
+<!--    const closeModalBtn = document.getElementById("closeTaskSelectModalBtn");-->
+<!--    const editBtn = document.getElementById("editBtn");-->
+<!--    const saveBtn = document.getElementById("saveBtn");-->
+<!--    const deleteBtn = document.getElementById("deleteBtn");-->
+<!--    const formFields = document.querySelectorAll("#taskSelectForm input, #taskSelectForm textarea");-->
+<!--    const nonEditableFields = ["projectTitle", "taskSelectName", "actualTimeTaskSelect"];-->
+<!--    const openModalBtns = document.querySelectorAll(".openTaskSelectModalBtn");-->
+
+<!--    function openModal(taskId) {-->
+<!--        // Show the modal-->
+<!--        modal.style.display = "block";-->
+
+<!--        const form = document.getElementById("taskSelectForm");-->
+<!--        const projectId = deleteBtn.getAttribute("data-project-id"); // Retrieve the project ID from the delete button-->
+
+<!--        // Update the form's action attribute-->
+<!--        form.setAttribute("action", `/save_task_details/${projectId}/${taskId}`);-->
+
+<!--        // Update the delete button with the correct task ID-->
+<!--        deleteBtn.setAttribute("data-task-id", taskId);-->
+<!--        deleteBtn.setAttribute("data-project-id", projectId);-->
+
+<!--        // Populate the hidden field with the task ID-->
+<!--        document.getElementById("selectedTaskId").value = taskId;-->
+
+<!--        // Fetch task details-->
+<!--        fetch(`/get-task-details/${taskId}`) // Adjust endpoint to match your backend route-->
+<!--            .then(response => {-->
+<!--                if (!response.ok) {-->
+<!--                    throw new Error("Failed to fetch task details");-->
+<!--                }-->
+<!--                return response.json();-->
+<!--            })-->
+<!--            .then(data => {-->
+<!--                // Populate modal fields with data returned by the server-->
+<!--                document.getElementById("projectTitle").value = data.projectTitle;-->
+<!--                document.getElementById("taskSelectName").value = data.taskSelectName;-->
+<!--                document.getElementById("taskSelectDescription").value = data.taskSelectDescription;-->
+
+<!--                // Handle select dropdowns (e.g., Priority and Status)-->
+<!--                document.getElementById("hidden-taskSelectPriority").value = data.taskSelectPriority;-->
+<!--                document.querySelector(".custom-select .select-placeholder").textContent = data.taskSelectPriority;-->
+
+<!--                document.getElementById("hidden-taskSelectStatus").value = data.taskSelectStatus;-->
+<!--                document.querySelector(".status .custom-select .select-placeholder").textContent = data.taskSelectStatus;-->
+
+<!--                // Populate other fields-->
+<!--                document.getElementById("startTaskSelectDate").value = data.startTaskSelectDate;-->
+<!--                document.getElementById("dueTaskSelectDate").value = data.dueTaskSelectDate;-->
+<!--                document.getElementById("hidden-taskSelectDependencies").value = data.taskSelectDependencies;-->
+
+<!--                document.getElementById("estimatedTimeTaskSelect").value = data.estimatedTimeTaskSelect;-->
+<!--                document.getElementById("hidden-ttimeRangeTaskSelect").value = data.timeRangeTaskSelect;-->
+
+<!--                document.getElementById("actualTimeTaskSelect").value = data.actualTimeTaskSelect;-->
+<!--                document.getElementById("taskSelectComments").value = data.taskSelectComments;-->
+
+<!--                // Handle assigned to field-->
+<!--                document.getElementById("assignedToTaskSelect").value = data.assignedToTaskSelect;-->
+<!--            })-->
+<!--            .catch(error => {-->
+<!--                console.error("Error fetching task details:", error);-->
+<!--                alert("Failed to load task details. Please try again.");-->
+<!--            });-->
+<!--    }-->
+
+<!--    // Close Modal-->
+<!--    function closeModal() {-->
+<!--        modal.style.display = "none";-->
+<!--    }-->
+
+<!--    // Enable form fields for editing, except non-editable ones-->
+<!--    function enableFields() {-->
+<!--        formFields.forEach(field => {-->
+<!--            if (!nonEditableFields.includes(field.id)) {-->
+<!--                field.removeAttribute("disabled");-->
+<!--            }-->
+<!--        });-->
+<!--    }-->
+
+<!--    // Disable all form fields-->
+<!--    function disableFields() {-->
+<!--        formFields.forEach(field => {-->
+<!--            field.setAttribute("disabled", "disabled");-->
+<!--        });-->
+<!--    }-->
+
+<!--    // Handle Edit Button Click-->
+<!--    editBtn.addEventListener("click", () => {-->
+<!--        enableFields();-->
+<!--        editBtn.style.display = "none";-->
+<!--        saveBtn.style.display = "inline-block";-->
+<!--    });-->
+
+<!--    // Handle Delete Button Click-->
+<!--    deleteBtn.addEventListener("click", () => {-->
+<!--        const taskId = deleteBtn.getAttribute("data-task-id");-->
+<!--        const projectId = deleteBtn.getAttribute("data-project-id");-->
+
+<!--        if (!taskId || !projectId) {-->
+<!--            alert("Task or Project ID is missing.");-->
+<!--            return;-->
+<!--        }-->
+
+<!--        const confirmed = confirm("Are you sure you want to delete this task?");-->
+<!--        if (confirmed) {-->
+<!--            // Redirect to the delete route-->
+<!--            window.location.href = `/delete_project_task/${taskId}/${projectId}`;-->
+<!--        }-->
+<!--    });-->
+
+<!--    // Attach event listeners to all rows-->
+<!--    openModalBtns.forEach(btn => {-->
+<!--        btn.addEventListener("click", () => {-->
+<!--            const taskId = btn.getAttribute("data-task-id"); // Fetch task ID from the `data-task-id` attribute-->
+<!--            openModal(taskId);-->
+<!--        });-->
+<!--    });-->
+
+<!--    // Close Modal Event-->
+<!--    closeModalBtn.addEventListener("click", closeModal);-->
+
+<!--    // Close modal if user clicks outside of it-->
+<!--    window.addEventListener("click", (event) => {-->
+<!--        if (event.target === modal) {-->
+<!--            closeModal();-->
+<!--        }-->
+<!--    });-->
+<!--});-->
+<!--</script>-->
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("taskSelectModal");
+    const closeModalBtn = document.getElementById("closeTaskSelectModalBtn");
+    const editBtn = document.getElementById("editBtn");
+    const saveBtn = document.getElementById("saveBtn");
+    const deleteBtn = document.getElementById("deleteBtn");
+    const formFields = document.querySelectorAll("#taskSelectForm input, #taskSelectForm textarea");
+    const nonEditableFields = ["projectTitle", "taskSelectName", "actualTimeTaskSelect"];
+    const openModalBtns = document.querySelectorAll(".openTaskSelectModalBtn");
+
+    function openModal(taskId) {
+        // Show the modal
+        modal.style.display = "block";
+
+        const form = document.getElementById("taskSelectForm");
+        const projectId = deleteBtn.getAttribute("data-project-id"); // Retrieve the project ID from the delete button
+
+        // Update the form's action attribute
+        form.setAttribute("action", `/save_task_details/${projectId}/${taskId}`);
+
+        // Update the delete button with the correct task ID
+        deleteBtn.setAttribute("data-task-id", taskId);
+        deleteBtn.setAttribute("data-project-id", projectId);
+
+        // Populate the hidden field with the task ID
+        document.getElementById("selectedTaskId").value = taskId;
+
+        // Fetch task details
+        fetch(`/get-task-details/${taskId}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to fetch task details");
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Helper function to safely set values
+                const setFieldValue = (fieldId, value) => {
+                    const field = document.getElementById(fieldId);
+                    if (field) {
+                        field.value = value || ""; // Default to empty string if null or undefined
+                    }
+                };
+
+                // Helper function to safely set text content
+                const setTextContent = (selector, value) => {
+                    const element = document.querySelector(selector);
+                    if (element) {
+                        element.textContent = value || "N/A"; // Default to "N/A" if null or undefined
+                    }
+                };
+
+                // Populate modal fields with data returned by the server
+                setFieldValue("projectTitle", data.projectTitle);
+                setFieldValue("taskSelectName", data.taskSelectName);
+                setFieldValue("taskSelectDescription", data.taskSelectDescription);
+
+                // Handle select dropdowns (e.g., Priority and Status)
+                setFieldValue("hidden-taskSelectPriority", data.taskSelectPriority);
+                setTextContent(".custom-select .select-placeholder", data.taskSelectPriority);
+
+                setFieldValue("hidden-taskSelectStatus", data.taskSelectStatus);
+                setTextContent(".status .custom-select .select-placeholder", data.taskSelectStatus);
+
+                // Populate other fields
+                setFieldValue("startTaskSelectDate", data.startTaskSelectDate);
+                setFieldValue("dueTaskSelectDate", data.dueTaskSelectDate);
+                setFieldValue("hidden-taskSelectDependencies", data.taskSelectDependencies);
+
+                setFieldValue("estimatedTimeTaskSelect", data.estimatedTimeTaskSelect);
+                setFieldValue("hidden-ttimeRangeTaskSelect", data.timeRangeTaskSelect);
+
+                setFieldValue("actualTimeTaskSelect", data.actualTimeTaskSelect);
+                setFieldValue("taskSelectComments", data.taskSelectComments);
+
+                // Handle assigned to field
+                setFieldValue("assignedToTaskSelect", data.assignedToTaskSelect);
+            })
+            .catch(error => {
+                console.error("Error fetching task details:", error);
+                alert("Failed to load task details. Please try again.");
+            });
+    }
+
+    // Close Modal
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // Enable form fields for editing, except non-editable ones
+    function enableFields() {
+        formFields.forEach(field => {
+            if (!nonEditableFields.includes(field.id)) {
+                field.removeAttribute("disabled");
+            }
+        });
+    }
+
+    // Disable all form fields
+    function disableFields() {
+        formFields.forEach(field => {
+            field.setAttribute("disabled", "disabled");
+        });
+    }
+
+    // Handle Edit Button Click
+    editBtn.addEventListener("click", () => {
+        enableFields();
+        editBtn.style.display = "none";
+        saveBtn.style.display = "inline-block";
+    });
+
+    // Handle Delete Button Click
+    deleteBtn.addEventListener("click", () => {
+        const taskId = deleteBtn.getAttribute("data-task-id");
+        const projectId = deleteBtn.getAttribute("data-project-id");
+
+        if (!taskId || !projectId) {
+            alert("Task or Project ID is missing.");
+            return;
+        }
+
+        const confirmed = confirm("Are you sure you want to delete this task?");
+        if (confirmed) {
+            // Redirect to the delete route
+            window.location.href = `/delete_project_task/${taskId}/${projectId}`;
+        }
+    });
+
+    // Attach event listeners to all rows
+    openModalBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const taskId = btn.getAttribute("data-task-id"); // Fetch task ID from the `data-task-id` attribute
+            openModal(taskId);
+        });
+    });
+
+    // Close Modal Event
+    closeModalBtn.addEventListener("click", closeModal);
+
+    // Close modal if user clicks outside of it
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+});
+</script>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Assuming project_data is available as a JavaScript object
+      const projectData = {{ project_data | tojson }};
+
+      // Gantt Chart
+      const ganttCtx = document.getElementById("ganttChart").getContext("2d");
+      const ganttLabels = projectData.gantt.map((task) => task.label);
+      const ganttStartDates = projectData.gantt.map((task) => new Date(task.start).getTime());
+      const ganttEndDates = projectData.gantt.map((task) => new Date(task.end).getTime());
+      const ganttDurations = ganttEndDates.map((end, i) => (end - ganttStartDates[i]) / (1000 * 60 * 60 * 24));
+
+      new Chart(ganttCtx, {
+        type: "bar",
+        data: {
+          labels: ganttLabels,
+          datasets: [
+            {
+              label: "Duration (days)",
+              data: ganttDurations,
+              backgroundColor: "rgba(75, 192, 192, 0.6)"
+            }
+          ]
+        },
+        options: {
+          indexAxis: "y",
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: "Days"
+              }
+            },
+            y: {
+              title: {
+                display: true,
+                text: "Tasks"
+              }
+            }
+          }
+        }
+      });
+
+      // Donut Chart
+      const donutCtx = document.getElementById("donutChart").getContext("2d");
+      new Chart(donutCtx, {
+        type: "doughnut",
+        data: {
+          labels: ["Todo", "Doing", "Done"],
+          datasets: [
+            {
+              data: [projectData.donut.todo, projectData.donut.doing, projectData.donut.done],
+              backgroundColor: ["#FF6384", "#FFCE56", "#36A2EB"]
+            }
+          ]
+        },
+        options: {
+          plugins: {
+            legend: {
+              position: "top"
+            }
+          }
+        }
+      });
+
+      // Line Chart
+      const lineCtx = document.getElementById("lineChart").getContext("2d");
+      const lineLabels = projectData.line.map((entry) => entry.date);
+      const todoData = projectData.line.map((entry) => entry.todo);
+      const doingData = projectData.line.map((entry) => entry.doing);
+      const doneData = projectData.line.map((entry) => entry.done);
+
+      new Chart(lineCtx, {
+        type: "line",
+        data: {
+          labels: lineLabels,
+          datasets: [
+            {
+              label: "Todo",
+              data: todoData,
+              borderColor: "#FF6384",
+              fill: false
+            },
+            {
+              label: "Doing",
+              data: doingData,
+              borderColor: "#FFCE56",
+              fill: false
+            },
+            {
+              label: "Done",
+              data: doneData,
+              borderColor: "#36A2EB",
+              fill: false
+            }
+          ]
+        },
+        options: {
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: "Date"
+              }
+            },
+            y: {
+              title: {
+                display: true,
+                text: "Tasks"
+              }
+            }
+          }
+        }
+      });
+
+      // Stacked Bar Chart
+      const stackedCtx = document.getElementById("stackedBarChart").getContext("2d");
+      const teamMembers = projectData.stacked.map((entry) => entry.team_member);
+      const stackedTodo = projectData.stacked.map((entry) => entry.todo);
+      const stackedDoing = projectData.stacked.map((entry) => entry.doing);
+      const stackedDone = projectData.stacked.map((entry) => entry.done);
+
+      new Chart(stackedCtx, {
+        type: "bar",
+        data: {
+          labels: teamMembers,
+          datasets: [
+            {
+              label: "Todo",
+              data: stackedTodo,
+              backgroundColor: "#FF6384"
+            },
+            {
+              label: "Doing",
+              data: stackedDoing,
+              backgroundColor: "#FFCE56"
+            },
+            {
+              label: "Done",
+              data: stackedDone,
+              backgroundColor: "#36A2EB"
+            }
+          ]
+        },
+        options: {
+          plugins: {
+            legend: {
+              position: "top"
+            }
+          },
+          scales: {
+            x: {
+              stacked: true
+            },
+            y: {
+              stacked: true
+            }
+          }
+        }
+      });
+    });
+
+</script>
+
+
+{% endblock %}

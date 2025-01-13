@@ -1,0 +1,449 @@
+{% extends 'base.html' %}
+{% block styles %}
+
+<style>
+    .projects {
+        background-color: #3E7C5E; /* Muted green for projects */
+        color: #F5F5F5; /* Light text for contrast */
+    }
+
+    .birthdays {
+        background-color: #3A647D; /* Muted blue for birthdays */
+        color: #F5F5F5; /* Light text for contrast */
+    }
+
+    .todos {
+        background-color: #7C4D57; /* Muted pink for todos */
+        color: #F5F5F5; /* Light text for contrast */
+    }
+
+    .highlight {
+        border: 4px solid #F2613F; /* Accent orange-red for selected date */
+        background-color: #1E1E1E; /* Slightly lighter background to indicate focus */
+    }
+
+
+    td[data-title] {
+        position: relative;
+        cursor: pointer;
+        color: #F2613F;
+    }
+
+    td[data-title]:hover::after {
+        content: attr(data-title);
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #481E14;
+        color: #F2613F;
+        padding: 5px 10px;
+        border-radius: 4px;
+        white-space: nowrap;
+
+        z-index: 10;
+        font-size: 0.85em;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        opacity: 1;
+    }
+
+    td[data-title]:hover::before {
+        content: "";
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 5px;
+        border-style: solid;
+        border-color: #481E14 transparent transparent transparent;
+        z-index: 9;
+    }
+
+    /* Adjust tooltip position dynamically (space at edges) */
+    td[data-title].tooltip-left:hover::after {
+        transform: translateX(0);
+        left: 0;
+    }
+
+    td[data-title].tooltip-right:hover::after {
+        transform: translateX(-100%);
+        left: 100%;
+    }
+
+
+    #calendar {
+      width: 100%; /* Ensure it fits within its parent container */
+      max-width: 100%; /* Prevent it from exceeding the parent width */
+      overflow: hidden; /* Hide any content that spills outside */
+      box-sizing: border-box; /* Include padding and border in the width calculation */
+    }
+
+    #calendar * {
+      box-sizing: border-box; /* Prevent child elements from exceeding the container */
+    }
+
+    @media (max-width: 768px) {
+      #calendar {
+        padding: 0 15px; /* Optional: Add padding to prevent content from touching edges */
+      }
+      #calendar .btn {
+        padding: 4px 8px; /* Reduce button padding */
+        font-size: 0.75rem; /* Smaller font size */
+        border-radius: 3px; /* Adjust border radius */
+      }
+    }
+
+</style>
+
+{% endblock %}
+
+
+{% block center_aligned_icons %}
+  <span class="label-title">Calender</span>
+{% endblock %}
+
+{% block left_aligned_icons %}
+
+  <!-- Add User to task Button (Plus Icon) -->
+<!--  <div class="col-auto px-2">-->
+<!--    <button class="btn btn-outline-info btn-sm border-0 p-0 d-flex justify-content-center align-items-center" type="button" aria-label="Add User" style="width: 32px; height: 32px;">-->
+<!--      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">-->
+<!--        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>-->
+<!--      </svg>-->
+<!--    </button>-->
+<!--  </div>-->
+
+
+<!--  &lt;!&ndash; Visibility Dropdown &ndash;&gt;-->
+<!--  <div class="px-2">-->
+<!--    <button class="btn btn-outline-secondary btn-sm border-0 p-0 d-flex justify-content-center align-items-center" type="button" id="workspaceVisibilityDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="width: 32px; height: 32px;">-->
+<!--      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-airplane" viewBox="0 0 16 16">-->
+<!--        <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849m.894.448C7.111 2.02 7 2.569 7 3v4a.5.5 0 0 1-.276.447l-5.448 2.724a.5.5 0 0 0-.276.447v.792l5.418-.903a.5.5 0 0 1 .575.41l.5 3a.5.5 0 0 1-.14.437L6.708 15h2.586l-.647-.646a.5.5 0 0 1-.14-.436l.5-3a.5.5 0 0 1 .576-.411L15 11.41v-.792a.5.5 0 0 0-.276-.447L9.276 7.447A.5.5 0 0 1 9 7V3c0-.432-.11-.979-.322-1.401C8.458 1.159 8.213 1 8 1s-.458.158-.678.599"/>-->
+<!--      </svg>-->
+<!--    </button>-->
+
+<!--    <ul class="dropdown-menu" aria-labelledby="workspaceVisibilityDropdown">-->
+<!--      <li><a class="dropdown-item" href="#">Private</a></li>-->
+<!--      <li><a class="dropdown-item" href="#">Workspace visible</a></li>-->
+<!--      <li><a class="dropdown-item" href="#">Public</a></li>-->
+<!--      <li><hr class="dropdown-divider"></li>-->
+<!--      <li><a class="dropdown-item" href="#">Manage visibility settings</a></li>-->
+<!--    </ul>-->
+<!--  </div>-->
+
+
+<!--  &lt;!&ndash; Power-Ups Button (Bar Chart Icon) &ndash;&gt;-->
+<!--  <div class="col-auto px-2">-->
+<!--  <button class="btn btn-outline-info btn-sm border-0 p-0 d-flex justify-content-center align-items-center " type="button" aria-label="Power-Ups" style="width: 32px; height: 32px;">-->
+<!--    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">-->
+<!--      <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>-->
+<!--    </svg>-->
+<!--  </button>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; Calender &ndash;&gt;-->
+<!--  <div class="col-auto px-2">-->
+<!--  <button class="btn btn-outline-info btn-sm border-0 p-0 d-flex justify-content-center align-items-center active" type="button" aria-label="Power-Ups" style="width: 32px; height: 32px;">-->
+<!--    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">-->
+<!--      <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z"/>-->
+<!--      <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>-->
+<!--    </svg>-->
+<!--  </button>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; More &ndash;&gt;-->
+<!--  <div class="col-auto px-2">-->
+<!--  <button class="btn btn-outline-info btn-sm border-0 p-0 d-flex justify-content-center align-items-center" type="button" aria-label="Power-Ups" style="width: 32px; height: 32px;">-->
+<!--    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">-->
+<!--      <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>-->
+<!--    </svg>-->
+<!--  </button>-->
+<!--  </div>-->
+{% endblock %}
+
+
+{% block content %}
+    <div class="calender-container py-2 px-4">
+        <div id="calendar">
+            <div id="calendar-header">
+                <button id="prev-month">Prev</button>
+                <span id="month-year"></span>
+                <button id="next-month">Next</button>
+            </div>
+            <table id="calendar-body">
+                <thead>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+<!--    <script>-->
+<!--        document.addEventListener("DOMContentLoaded", function () {-->
+<!--            const calendarBody = document.querySelector("#calendar-body tbody");-->
+<!--            const monthYearText = document.getElementById("month-year");-->
+<!--            const prevMonthBtn = document.getElementById("prev-month");-->
+<!--            const nextMonthBtn = document.getElementById("next-month");-->
+
+<!--            let currentDate = new Date();-->
+<!--            let selectedDate = null;-->
+
+<!--            function displayCalendar(date) {-->
+<!--                const month = date.getMonth();-->
+<!--                const year = date.getFullYear();-->
+<!--                const firstDayOfMonth = new Date(year, month, 1).getDay();-->
+<!--                const daysInMonth = new Date(year, month + 1, 0).getDate();-->
+
+<!--                calendarBody.innerHTML = ""; // Clear previous calendar-->
+<!--                monthYearText.textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;-->
+
+<!--                let row = document.createElement("tr");-->
+<!--                let dayCount = 0;-->
+
+<!--                for (let i = 0; i < firstDayOfMonth; i++) {-->
+<!--                    let cell = document.createElement("td");-->
+<!--                    row.appendChild(cell);-->
+<!--                    dayCount++;-->
+<!--                }-->
+
+<!--                for (let day = 1; day <= daysInMonth; day++) {-->
+<!--                    if (dayCount === 7) {-->
+<!--                        calendarBody.appendChild(row);-->
+<!--                        row = document.createElement("tr");-->
+<!--                        dayCount = 0;-->
+<!--                    }-->
+
+<!--                    let cell = document.createElement("td");-->
+<!--                    cell.textContent = day;-->
+
+<!--                    cell.addEventListener("click", function () {-->
+<!--                        if (selectedDate) {-->
+<!--                            selectedDate.classList.remove("highlight");-->
+<!--                        }-->
+<!--                        selectedDate = cell;-->
+<!--                        cell.classList.add("highlight");-->
+<!--                    });-->
+
+<!--                    row.appendChild(cell);-->
+<!--                    dayCount++;-->
+<!--                }-->
+
+<!--                if (dayCount > 0) {-->
+<!--                    calendarBody.appendChild(row);-->
+<!--                }-->
+<!--            }-->
+
+<!--            prevMonthBtn.addEventListener("click", function () {-->
+<!--                currentDate.setMonth(currentDate.getMonth() - 1);-->
+<!--                displayCalendar(currentDate);-->
+<!--            });-->
+
+<!--            nextMonthBtn.addEventListener("click", function () {-->
+<!--                currentDate.setMonth(currentDate.getMonth() + 1);-->
+<!--                displayCalendar(currentDate);-->
+<!--            });-->
+
+<!--            displayCalendar(currentDate);-->
+<!--        });-->
+<!--    </script>-->
+
+
+<!--<script>-->
+<!--    document.addEventListener("DOMContentLoaded", async function () {-->
+<!--        const calendarBody = document.querySelector("#calendar-body tbody");-->
+<!--        const monthYearText = document.getElementById("month-year");-->
+<!--        const prevMonthBtn = document.getElementById("prev-month");-->
+<!--        const nextMonthBtn = document.getElementById("next-month");-->
+
+<!--        let currentDate = new Date();-->
+<!--        let selectedDate = null;-->
+<!--        let events = [];-->
+
+<!--        // Fetch events from the server-->
+<!--        async function fetchEvents() {-->
+<!--            const response = await fetch("/events");-->
+<!--            events = await response.json();-->
+<!--        }-->
+
+<!--        function isEventDate(dateString) {-->
+<!--            return events.find(event => event.date === dateString);-->
+<!--        }-->
+
+<!--        function displayCalendar(date) {-->
+<!--            const month = date.getMonth();-->
+<!--            const year = date.getFullYear();-->
+<!--            const firstDayOfMonth = new Date(year, month, 1).getDay();-->
+<!--            const daysInMonth = new Date(year, month + 1, 0).getDate();-->
+
+<!--            calendarBody.innerHTML = ""; // Clear previous calendar-->
+<!--            monthYearText.textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;-->
+
+<!--            let row = document.createElement("tr");-->
+<!--            let dayCount = 0;-->
+
+<!--            for (let i = 0; i < firstDayOfMonth; i++) {-->
+<!--                let cell = document.createElement("td");-->
+<!--                row.appendChild(cell);-->
+<!--                dayCount++;-->
+<!--            }-->
+
+<!--            for (let day = 1; day <= daysInMonth; day++) {-->
+<!--                if (dayCount === 7) {-->
+<!--                    calendarBody.appendChild(row);-->
+<!--                    row = document.createElement("tr");-->
+<!--                    dayCount = 0;-->
+<!--                }-->
+
+<!--                let cell = document.createElement("td");-->
+<!--                cell.textContent = day;-->
+
+<!--                const dateString = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;-->
+<!--                const event = isEventDate(dateString);-->
+
+<!--                if (event) {-->
+<!--                    cell.classList.add(event.type); // Add class based on event type-->
+<!--                }-->
+
+<!--                cell.addEventListener("click", function () {-->
+<!--                    if (selectedDate) {-->
+<!--                        selectedDate.classList.remove("highlight");-->
+<!--                    }-->
+<!--                    selectedDate = cell;-->
+<!--                    cell.classList.add("highlight");-->
+<!--                });-->
+
+<!--                row.appendChild(cell);-->
+<!--                dayCount++;-->
+<!--            }-->
+
+<!--            if (dayCount > 0) {-->
+<!--                calendarBody.appendChild(row);-->
+<!--            }-->
+<!--        }-->
+
+<!--        prevMonthBtn.addEventListener("click", function () {-->
+<!--            currentDate.setMonth(currentDate.getMonth() - 1);-->
+<!--            displayCalendar(currentDate);-->
+<!--        });-->
+
+<!--        nextMonthBtn.addEventListener("click", function () {-->
+<!--            currentDate.setMonth(currentDate.getMonth() + 1);-->
+<!--            displayCalendar(currentDate);-->
+<!--        });-->
+
+<!--        await fetchEvents();-->
+<!--        displayCalendar(currentDate);-->
+<!--    });-->
+<!--</script>-->
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", async function () {
+        const calendarBody = document.querySelector("#calendar-body tbody");
+        const monthYearText = document.getElementById("month-year");
+        const prevMonthBtn = document.getElementById("prev-month");
+        const nextMonthBtn = document.getElementById("next-month");
+
+        let currentDate = new Date();
+        let selectedDate = null;
+        let events = [];
+
+        // Fetch events from the server
+        async function fetchEvents() {
+            const response = await fetch("/events");
+            events = await response.json();
+        }
+
+        function getEventForDate(dateString) {
+            return events.filter(event => event.date === dateString);
+        }
+
+        function displayCalendar(date) {
+            const month = date.getMonth();
+            const year = date.getFullYear();
+            const firstDayOfMonth = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            calendarBody.innerHTML = ""; // Clear previous calendar
+            monthYearText.textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;
+
+            let row = document.createElement("tr");
+            let dayCount = 0;
+
+            for (let i = 0; i < firstDayOfMonth; i++) {
+                let cell = document.createElement("td");
+                row.appendChild(cell);
+                dayCount++;
+            }
+
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                if (dayCount === 7) {
+                    calendarBody.appendChild(row);
+                    row = document.createElement("tr");
+                    dayCount = 0;
+                }
+
+                let cell = document.createElement("td");
+                cell.textContent = day;
+
+                const dateString = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+                const eventsForDate = getEventForDate(dateString);
+
+                if (eventsForDate.length > 0) {
+                    eventsForDate.forEach(event => {
+                        cell.classList.add(event.type); // Add class based on event type
+                        cell.setAttribute("data-title", event.title); // Add custom attribute for tooltip
+                    });
+
+                    // Adjust tooltip position based on cell's location in the calendar
+                    const colIndex = dayCount;
+                    if (colIndex === 0) {
+                        cell.classList.add("tooltip-left"); // First column
+                    } else if (colIndex === 6) {
+                        cell.classList.add("tooltip-right"); // Last column
+                    }
+                }
+
+                cell.addEventListener("click", function () {
+                    if (selectedDate) {
+                        selectedDate.classList.remove("highlight");
+                    }
+                    selectedDate = cell;
+                    cell.classList.add("highlight");
+                });
+
+                row.appendChild(cell);
+                dayCount++;
+            }
+            if (dayCount > 0) {
+                calendarBody.appendChild(row);
+            }
+        }
+
+        prevMonthBtn.addEventListener("click", function () {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            displayCalendar(currentDate);
+        });
+
+        nextMonthBtn.addEventListener("click", function () {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            displayCalendar(currentDate);
+        });
+
+        await fetchEvents();
+        displayCalendar(currentDate);
+    });
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+
+{% block center_aligned_icons %}
+  <span class="label-title">Settings</span>
+{% endblock %}
+
+
+{% block left_aligned_icons %}
+  <!-- Add User to task Button (Plus Icon) -->
+
+{% endblock %}
+
+{% block content%}
+
+<div class="settings-page container px-5 pb-5">
+
+    <!-- Account Settings -->
+    <section class="settings-section" id="accountSettings">
+        <h4>Account Settings</h4>
+        <form>
+            <div class="settings-form  col-md-4">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="johndoe@example.com">
+            </div>
+            <div class="settings-form col-md-4">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="••••••••">
+            </div>
+            <button type="submit" class="btn btn">Save Account Settings</button>
+        </form>
+    </section>
+    <hr>
+
+    <!-- Project Preferences -->
+    <section class="settings-section" id="projectPreferences">
+        <h4>Project Preferences</h4>
+        <form>
+            <div class="settings-form col-md-4">
+                <label for="defaultView">Default Project View</label>
+                <select id="defaultView" name="defaultView">
+                    <option value="board">Board</option>
+                    <option value="list">List</option>
+                    <option value="calendar">Calendar</option>
+                </select>
+            </div>
+            <div class="settings-form col-md-4">
+                <label for="theme">App Theme</label>
+                <select id="theme" name="theme">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn">Save Preferences</button>
+        </form>
+    </section>
+    <hr>
+
+    <!-- Notification Settings -->
+    <section class="settings-section" id="notificationSettings">
+        <h4>Notification Settings</h4>
+        <form>
+            <div class="settings-form-check">
+                <input type="checkbox" id="emailNotifications" name="emailNotifications" checked>
+                <label for="emailNotifications">Email Notifications</label>
+            </div>
+            <div class="settings-form-check">
+                <input type="checkbox" id="smsNotifications" name="smsNotifications">
+                <label for="smsNotifications">SMS Notifications</label>
+            </div>
+            <div class="settings-form-check">
+                <input type="checkbox" id="taskReminders" name="taskReminders" checked>
+                <label for="taskReminders">Task Reminders</label>
+            </div>
+            <button type="submit" class="btn btn">Save Notification Settings</button>
+        </form>
+    </section>
+    <hr>
+
+    <!-- Advanced Settings -->
+    <section class="settings-section" id="advancedSettings">
+        <h4>Advanced Settings</h4>
+        <form>
+            <!-- Integration Settings -->
+            <div class="settings-form col-md-4">
+
+                <label for="thirdPartyIntegrations">Third-Party Integrations</label>
+                <select id="thirdPartyIntegrations" name="thirdPartyIntegrations">
+                    <option value="none">None</option>
+                    <option value="google">Google Workspace</option>
+                    <option value="slack">Slack</option>
+                    <option value="microsoft">Microsoft Teams</option>
+                </select>
+            </div>
+
+            <!-- Data Export -->
+            <div class="settings-form col-md-4">
+
+                <label for="dataFormat">Export Data As</label>
+                <select id="dataFormat" name="dataFormat">
+                    <option value="csv">CSV</option>
+                    <option value="pdf">PDF</option>
+                    <option value="json">JSON</option>
+                </select>
+                <button type="button" class="btn button mt-2 ms-3" id="exportDataBtn">Export Data</button>
+            </div>
+
+            <!-- Security Settings -->
+            <div class="settings-form col-md-4">
+
+                <label for="twoFactorAuth">Two-Factor Authentication</label>
+                <select class="secondary ms-4" id="twoFactorAuth" name="twoFactorAuth">
+                    <option class="" value="disabled" style="background-color: #F2613F !important;">Disabled</option>
+                    <option value="sms">SMS</option>
+                    <option value="email">Email</option>
+                    <option value="authApp">Authenticator App</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn">Save Advanced Settings</button>
+        </form>
+    </section>
+</div>
+
+{% endblock %}

@@ -1,0 +1,213 @@
+/* Body styling to ensure the layout accommodates the sidebar */
+body {
+  margin-left: 250px; /* Leave space for the sidebar */
+  background-color: #0C0C0C; /* Dark background */
+  color: #E5E5E5; /* Light gray text */
+  font-family: 'Arial', sans-serif; /* Ensure a readable font */
+  transition: margin-left 0.3s ease; /* Smooth transition when sidebar collapses */
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed; /* Sidebar stays fixed on the left */
+  top: 0;
+  left: 0;
+  width: 250px; /* Sidebar width */
+  height: 100vh; /* Full viewport height */
+  background-color: #481E14; /* Deep brown background */
+  z-index: 1000; /* Keep it above other content */
+  overflow-y: auto; /* Scrollable if the content exceeds the height */
+  transition: width 0.3s ease; /* Smooth transition for collapsible sidebar */
+}
+
+/* Sidebar Logo Header */
+.sidebar-logo {
+  background-color: #9B3922; /* Muted red background for logo section */
+  padding: 20px;
+  text-align: center;
+}
+
+.sidebar-logo img {
+  max-width: 100%;
+  height: auto; /* Keep logo responsive */
+}
+
+/* Sidebar Content */
+.sidebar-wrapper.scrollbar-inner {
+  scrollbar-color: #9B3922 #333333; /* Custom scrollbar colors */
+}
+
+/* Sidebar Scrollbar */
+.sidebar-wrapper.scrollbar-inner::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar-wrapper.scrollbar-inner::-webkit-scrollbar-track {
+  background-color: #333333; /* Scrollbar track */
+}
+
+.sidebar-wrapper.scrollbar-inner::-webkit-scrollbar-thumb {
+  background-color: #9B3922; /* Scrollbar thumb */
+}
+
+/* Sidebar navigation items */
+.nav.nav-secondary {
+  padding: 0;
+}
+
+.sidebar .nav-item a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px; /* Padding for clickable area */
+  color: #E5E5E5; /* Light gray text */
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar .nav-item a svg {
+  margin-right: 10px; /* Space between icons and text */
+  fill: #FFFFFF; /* White icons */
+}
+
+/* Hover and focus states for sidebar links */
+.sidebar .nav-item a:hover, .sidebar .nav-item a:focus {
+  background-color: #9B3922; /* Muted red on hover */
+  color: #FFFFFF;
+}
+
+.sidebar .nav-item a:hover svg, .sidebar .nav-item a:focus svg {
+  fill: #F2613F; /* Bright orange icons on hover */
+}
+
+/* Active sidebar items */
+.sidebar .nav-item.active a {
+  background-color: #333333; /* Dark background for active items */
+  color: #FFFFFF;
+  border-left: 4px solid #F2613F; /* Orange left border for active item */
+}
+
+.sidebar .nav-item.active svg {
+  fill: #F2613F; /* Bright orange for active icons */
+}
+
+/* Section titles */
+.sidebar .nav-section h4 {
+  padding: 10px 15px;
+  color: #F2613F; /* Bright orange section titles */
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* Collapsible submenu */
+.sidebar .nav-item .collapse .nav-collapse {
+  background-color: #333333; /* Dark background for submenus */
+  border-left: 4px solid #9B3922; /* Muted red border for submenu items */
+}
+
+.sidebar .nav-item .collapse .nav-collapse li a {
+  padding-left: 35px; /* Indent submenu items */
+  font-size: 14px;
+  color: #E5E5E5; /* Sub-item color */
+}
+
+.sidebar .nav-item .collapse .nav-collapse li a:hover {
+  color: #F2613F; /* Bright orange on hover */
+}
+
+/* Sidebar buttons */
+button {
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+button:hover {
+  color: #F2613F; /* Bright orange on hover */
+}
+
+button svg {
+  fill: #FFFFFF;
+}
+
+button:hover svg {
+  fill: #F2613F; /* Bright orange icons in buttons on hover */
+}
+
+/* Topbar button (toggler) */
+.topbar-toggler.more {
+  background-color: #9B3922; /* Muted red background */
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #FFFFFF;
+}
+
+.topbar-toggler.more:hover {
+  background-color: #B5472E; /* Darker red on hover */
+}
+
+.topbar-toggler.more svg {
+  fill: #FFFFFF;
+}
+
+/* Card styles */
+.card {
+  background-color: #333333; /* Dark gray background */
+  color: #E5E5E5; /* Light gray text */
+  border: 1px solid #9B3922; /* Muted red border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-bottom: 20px;
+}
+
+.card-header {
+  background-color: #9B3922; /* Muted red header */
+  color: #F5F5F5; /* Light gray text */
+  padding: 15px;
+  font-size: 18px;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #F2613F; /* Bright orange */
+  border: none;
+  color: #FFFFFF;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #FF8664; /* Lighter orange on hover */
+}
+
+.btn-secondary {
+  background-color: #9B3922; /* Muted red secondary button */
+  border: none;
+  color: #FFFFFF;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #B5472E; /* Darker red on hover */
+}
+
+/* Card buttons */
+.card .btn-primary {
+  background-color: #F2613F; /* Bright orange button */
+}
+
+.card .btn-primary:hover {
+  background-color: #FF8664; /* Light orange on hover */
+}
+
+/* General text styling */
+h1, h2, h3, h4, h5, h6 {
+  color: #F2613F; /* Bright orange for headings */
+}
+
+p, span, a, li {
+  color: #E5E5E5; /* Light gray text */
+}

@@ -1,0 +1,300 @@
+{% extends 'base.html' %}
+
+
+{% block styles %}
+<style>
+    .ch-chart-data-container {
+        padding: 20px;
+    }
+    .the-project-header-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .chart-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+    .chart-item {
+        flex: 1 1 300px;
+        display: flex;
+        flex-direction: column; /* Ensure header and chart are stacked vertically */
+        justify-content: center;
+        align-items: center;
+    }
+    .chart-item canvas {
+        width: 60%;
+        max-width: 180px; /* Adjust the max-width to resize the chart */
+        height: auto; /* Maintain the aspect ratio */
+    }
+
+</style>
+{% endblock%}
+{% block center_aligned_icons %}
+  <span class="label-title">Charts</span>
+{% endblock %}
+
+
+{% block left_aligned_icons %}
+  <!-- Add User to task Button (Plus Icon) -->
+<!--  <div class="col-auto px-2">-->
+<!--    <button class="btn btn-outline-info btn-sm border-0 p-0 d-flex justify-content-center align-items-center" type="button" aria-label="Add User" style="width: 32px; height: 32px;">-->
+<!--      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">-->
+<!--        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>-->
+<!--      </svg>-->
+<!--    </button>-->
+<!--  </div>-->
+
+
+<!--  &lt;!&ndash; Visibility Dropdown &ndash;&gt;-->
+<!--  <div class="px-2">-->
+<!--    <button class="btn btn-outline-secondary btn-sm border-0 p-0 d-flex justify-content-center align-items-center" type="button" id="workspaceVisibilityDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="width: 32px; height: 32px;">-->
+<!--      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-airplane" viewBox="0 0 16 16">-->
+<!--        <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849m.894.448C7.111 2.02 7 2.569 7 3v4a.5.5 0 0 1-.276.447l-5.448 2.724a.5.5 0 0 0-.276.447v.792l5.418-.903a.5.5 0 0 1 .575.41l.5 3a.5.5 0 0 1-.14.437L6.708 15h2.586l-.647-.646a.5.5 0 0 1-.14-.436l.5-3a.5.5 0 0 1 .576-.411L15 11.41v-.792a.5.5 0 0 0-.276-.447L9.276 7.447A.5.5 0 0 1 9 7V3c0-.432-.11-.979-.322-1.401C8.458 1.159 8.213 1 8 1s-.458.158-.678.599"/>-->
+<!--      </svg>-->
+<!--    </button>-->
+
+<!--    <ul class="dropdown-menu" aria-labelledby="workspaceVisibilityDropdown">-->
+<!--      <li><a class="dropdown-item" href="#">Private</a></li>-->
+<!--      <li><a class="dropdown-item" href="#">Workspace visible</a></li>-->
+<!--      <li><a class="dropdown-item" href="#">Public</a></li>-->
+<!--      <li><hr class="dropdown-divider"></li>-->
+<!--      <li><a class="dropdown-item" href="#">Manage visibility settings</a></li>-->
+<!--    </ul>-->
+<!--  </div>-->
+
+
+<!--  &lt;!&ndash; Power-Ups Button (Bar Chart Icon) &ndash;&gt;-->
+<!--  <div class="col-auto px-2">-->
+<!--  <button class="btn btn-outline-info btn-sm border-0 p-0 d-flex justify-content-center align-items-center active" type="button" aria-label="Power-Ups" style="width: 32px; height: 32px;">-->
+<!--    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">-->
+<!--      <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>-->
+<!--    </svg>-->
+<!--  </button>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; More &ndash;&gt;-->
+<!--  <div class="col-auto px-2">-->
+<!--  <button class="btn btn-outline-info btn-sm border-0 p-0 d-flex justify-content-center align-items-center" type="button" aria-label="Power-Ups" style="width: 32px; height: 32px;">-->
+<!--    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">-->
+<!--      <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>-->
+<!--    </svg>-->
+<!--  </button>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; More &ndash;&gt;-->
+<!--  <div class="col-auto px-2">-->
+<!--  <button class="btn btn-outline-info btn-sm border-0 p-0 d-flex justify-content-center align-items-center" type="button" aria-label="Power-Ups" style="width: 32px; height: 32px;">-->
+<!--    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">-->
+<!--      <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>-->
+<!--    </svg>-->
+<!--  </button>-->
+<!--  </div>-->
+{% endblock %}
+
+
+
+
+{% block content %}
+  <div class="ch-chart-data-container">
+    <!-- Header with navigation buttons -->
+    <div class="the-project-header-nav">
+      <button class="btn btn-outline-secondary rounded" onclick="previousData()">← Previous</button>
+      <h5 id="data-title">Data Item 1</h5>
+      <button class="btn btn-outline-secondary rounded" onclick="nextData()">Next →</button>
+    </div>
+    <div class="chart-container">
+      <div class="chart-item">
+        <h5>Bar Chart</h5>
+        <canvas id="barChart"></canvas>
+      </div>
+      <div class="chart-item">
+        <h5>Pie Chart</h5>
+        <canvas id="pieChart"></canvas>
+      </div>
+      <div class="chart-item">
+        <h5>Horizontal Bar Chart</h5>
+        <canvas id="horizontalBarChart"></canvas>
+      </div>
+      <div class="chart-item">
+        <h5>Scatter Plot</h5>
+        <canvas id="scatterPlot"></canvas>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+{% block script %}
+<!--<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>-->
+<!--<script> const dataList = [ { title: "Data Item 1", values: [12, 19, 3, 5, 2, 3] }, { title: "Data Item 2", values: [7, 11, 5, 8, 3, 7] }, { title: "Data Item 3", values: [15, 10, 9, 6, 11, 4] }, ]; let currentIndex = 0; const barCtx = document.getElementById('barChart').getContext('2d'); const pieCtx = document.getElementById('pieChart').getContext('2d'); const horizontalBarCtx = document.getElementById('horizontalBarChart').getContext('2d'); const scatterCtx = document.getElementById('scatterPlot').getContext('2d'); let barChart = new Chart(barCtx, { type: 'bar', data: { labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], datasets: [{ label: 'Values', data: dataList[currentIndex].values, backgroundColor: 'rgba(75, 192, 192, 0.2)', borderColor: 'rgba(75, 192, 192, 1)', borderWidth: 1 }] }, options: { scales: { y: { beginAtZero: true } } } }); let pieChart = new Chart(pieCtx, { type: 'pie', data: { labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], datasets: [{ data: dataList[currentIndex].values, backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40'] }] } }); let horizontalBarChart = new Chart(horizontalBarCtx, { type: 'bar', data: { labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], datasets: [{ label: 'Values', data: dataList[currentIndex].values, backgroundColor: 'rgba(153, 102, 255, 0.2)', borderColor: 'rgba(153, 102, 255, 1)', borderWidth: 1 }] }, options: { indexAxis: 'y', scales: { x: { beginAtZero: true } } } }); let scatterPlot = new Chart(scatterCtx, { type: 'scatter', data: { datasets: [{ label: 'Data Points', data: dataList[currentIndex].values.map((y, i) => ({ x: i + 1, y })), backgroundColor: 'rgba(255, 99, 132, 1)' }] }, options: { scales: { x: { type: 'linear', position: 'bottom', beginAtZero: true } } } }); function updateCharts() { document.getElementById('data-title').innerText = dataList[currentIndex].title; const values = dataList[currentIndex].values; barChart.data.datasets[0].data = values; pieChart.data.datasets[0].data = values; horizontalBarChart.data.datasets[0].data = values; scatterPlot.data.datasets[0].data = values.map((y, i) => ({ x: i + 1, y })); barChart.update(); pieChart.update(); horizontalBarChart.update(); scatterPlot.update(); } function previousData() { currentIndex = (currentIndex > 0) ? currentIndex - 1 : dataList.length - 1; updateCharts(); } function nextData() { currentIndex = (currentIndex < dataList.length - 1) ? currentIndex + 1 : 0; updateCharts(); }-->
+<!--</script>-->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  let dataList = []; // This will be populated with the data fetched from the backend
+  let currentIndex = 0;
+
+  // Initialize chart contexts
+  const barCtx = document.getElementById("barChart").getContext("2d");
+  const pieCtx = document.getElementById("pieChart").getContext("2d");
+  const horizontalBarCtx = document.getElementById("horizontalBarChart").getContext("2d");
+  const scatterCtx = document.getElementById("scatterPlot").getContext("2d");
+
+  // Placeholder charts (empty initialization)
+  let barChart, pieChart, horizontalBarChart, scatterPlot;
+
+  // Function to initialize charts once data is fetched
+  function initializeCharts() {
+    if (dataList.length === 0) {
+      console.error("No data available to initialize charts.");
+      return;
+    }
+
+    const progress = dataList[currentIndex].progress || { todo: 0, doing: 0, done: 0 };
+    const tasks = dataList[currentIndex].tasks || [];
+
+    barChart = new Chart(barCtx, {
+      type: "bar",
+      data: {
+        labels: ["Todo", "Doing", "Done"],
+        datasets: [
+          {
+            label: "Progress",
+            data: Object.values(progress),
+            backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+            borderColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true },
+        },
+      },
+    });
+
+    pieChart = new Chart(pieCtx, {
+      type: "pie",
+      data: {
+        labels: ["Todo", "Doing", "Done"],
+        datasets: [
+          {
+            data: Object.values(progress),
+            backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+          },
+        ],
+      },
+    });
+
+    horizontalBarChart = new Chart(horizontalBarCtx, {
+      type: "bar",
+      data: {
+        labels: tasks.map((task) => task.task_name),
+        datasets: [
+          {
+            label: "Estimated Time",
+            data: tasks.map((task) => task.estimated_time),
+            backgroundColor: "rgba(75, 192, 192, 0.2)",
+            borderColor: "rgba(75, 192, 192, 1)",
+            borderWidth: 1,
+          },
+          {
+            label: "Actual Time",
+            data: tasks.map((task) => task.actual_time),
+            backgroundColor: "rgba(153, 102, 255, 0.2)",
+            borderColor: "rgba(153, 102, 255, 1)",
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        indexAxis: "y",
+        scales: {
+          x: { beginAtZero: true },
+        },
+      },
+    });
+
+    scatterPlot = new Chart(scatterCtx, {
+      type: "scatter",
+      data: {
+        datasets: [
+          {
+            label: "Estimated Time",
+            data: tasks.map((task, i) => ({ x: i + 1, y: task.estimated_time })),
+            backgroundColor: "rgba(75, 192, 192, 1)",
+          },
+          {
+            label: "Actual Time",
+            data: tasks.map((task, i) => ({ x: i + 1, y: task.actual_time })),
+            backgroundColor: "rgba(153, 102, 255, 1)",
+          },
+        ],
+      },
+      options: {
+        scales: {
+          x: { type: "linear", position: "bottom", beginAtZero: true },
+        },
+      },
+    });
+  }
+
+  // Function to update charts when navigating data
+  function updateCharts() {
+    if (dataList.length === 0) return;
+
+    document.getElementById("data-title").innerText = dataList[currentIndex].title;
+
+    const progress = dataList[currentIndex].progress || { todo: 0, doing: 0, done: 0 };
+    const tasks = dataList[currentIndex].tasks || [];
+
+    barChart.data.datasets[0].data = Object.values(progress);
+    pieChart.data.datasets[0].data = Object.values(progress);
+    horizontalBarChart.data.labels = tasks.map((task) => task.task_name);
+    horizontalBarChart.data.datasets[0].data = tasks.map((task) => task.estimated_time);
+    horizontalBarChart.data.datasets[1].data = tasks.map((task) => task.actual_time);
+    scatterPlot.data.datasets[0].data = tasks.map((task, i) => ({ x: i + 1, y: task.estimated_time }));
+    scatterPlot.data.datasets[1].data = tasks.map((task, i) => ({ x: i + 1, y: task.actual_time }));
+
+    barChart.update();
+    pieChart.update();
+    horizontalBarChart.update();
+    scatterPlot.update();
+  }
+
+  // Navigation functions
+  function previousData() {
+    if (dataList.length === 0) return;
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : dataList.length - 1;
+    updateCharts();
+  }
+
+  function nextData() {
+    if (dataList.length === 0) return;
+    currentIndex = (currentIndex < dataList.length - 1) ? currentIndex + 1 : 0;
+    updateCharts();
+  }
+
+  // Fetch data from the backend
+  function fetchData() {
+    fetch("/project-progress")
+      .then((response) => response.json())
+      .then((data) => {
+        dataList = data;
+        initializeCharts();
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }
+
+  // Fetch data on page load
+  document.addEventListener("DOMContentLoaded", fetchData);
+</script>
+
+{% endblock %}

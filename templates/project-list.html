@@ -1,0 +1,369 @@
+{% extends 'base.html' %}
+{% block center_aligned_icons %}
+  <span class="label-title">Project Boards</span>
+{% endblock %}
+
+{% block left_aligned_icons %}
+
+{% endblock %}
+
+
+
+{% block content %}
+    <div class="px-5">
+      <!-- Project Row-->
+      <div class="row">
+        <!-- Header Section -->
+        <div class="col-sm-12 pb-4">
+          <h4 class="text-decoration-underline">Manage your projects and keep track of progress</h4>
+        </div>
+      </div>
+
+      <!-- Cards Section -->
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 pb-5">
+
+        <!-- Create New Board Card -->
+        <div class="col" style="height: 120px;">
+          <div class="project card card-stats card-round h-100 shadow border-0">
+            <div class="open-modal-btn card-link text-decoration-none" id="secondCreateBoardBtn">
+              <div class="card-body d-flex align-items-center justify-content-center" style="transition: transform 0.2s;">
+                <div class="text-center">
+                  <div class="icon-big bubble-shadow-small p-3  mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-plus-lg">
+                      <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+                    </svg>
+                  </div>
+                  <p class="fw-bold">Create New Board</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% for project in projects %}
+<!--         Sales Tracking Board Card -->
+        <div class="col">
+          <div class="project card card-stats card-round h-100 shadow border-0">
+            <a href="{{ url_for('project_select', number=project.id) }}" class="card-link text-decoration-none">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-2">
+                  <div class="icon-big text-center icon-success bubble-shadow-small">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-clipboard2">
+                      <path d="M3.5 2a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5H12a.5.5 0 0 1 0-1h.5A1.5 1.5 0 0 1 14 2.5v12a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-12A1.5 1.5 0 0 1 3.5 1H4a.5.5 0 0 1 0 1z"/>
+                      <path d="M10 .5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5.5.5 0 0 1-.5.5.5.5 0 0 0-.5.5V2a.5.5 0 0 0 .5.5h5A.5.5 0 0 0 11 2v-.5a.5.5 0 0 0-.5-.5.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                  </div>
+                  <h5 class="card-title fw-bold mb-0 ms-2">{{ project.title | title }}</h5>
+                </div>
+                <div class="border border-1 rounded p-1" style="border: 1px solid #9B3922 !important;">
+                    <p class="text-muted mb-1">Progress Tracking</p>
+                    {% if progress[project.id]['progress'] %}
+                    <div class="progress bg-secondary">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: {{ progress[project.id]['progress'] }}%;" aria-valuenow="{{ progress[project.id]['progress'] }}" aria-valuemin="0" aria-valuemax="100">
+                          {{ progress[project.id]['progress'] }}%</div>
+                    </div>
+                    {% else %}
+                    <div class="progress bg-secondary">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    {% endif %}
+                </div>
+              </div>
+            </a>
+            <div style="text-align: right;">
+                <button class="btn button " data-project-id="{{ project.id }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                      <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                      <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                    </svg>
+                </button>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+
+
+
+    </div>
+
+
+    <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" id="closeModalBtn">&times;</span>
+
+      <!-- Form inside the modal -->
+      <h2>Next Project</h2>
+        <form action="{{ url_for('add_project') }}" method="post">
+            <div class="form-group">
+                <label for="projectTitle">Project Title</label>
+                <input type="text" class="form-control" id="projectTitle" name="projectTitle" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+            </div>
+
+
+            <div class="form-group">
+                <label for="startDate">Start Date</label>
+                <div class="custom-date-picker">
+                    <input id="startDate" type="text" class="form-control custom-date-input" name="startDate" placeholder="Select Start Date" readonly data-calendar-id="startDateCalendar">
+                    <div id="startDateCalendar" class="calendar">
+                        <!-- Calendar will be dynamically rendered here -->
+                        <div class="calendar-header">
+                            <span class="month"></span>
+                            <div class="navigation">
+                                <button type="button"  class="prev-month">←</button>
+                                <button type="button"  class="next-month">→</button>
+                            </div>
+                        </div>
+                        <div class="calendar-days"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="dueDate">Due Date</label>
+                <div class="custom-date-picker">
+                    <input id="dueDate" type="text" class="form-control custom-date-input" name="dueDate" placeholder="Select Due Date" readonly data-calendar-id="dueDateCalendar">
+                    <div id="dueDateCalendar" class="calendar">
+                        <!-- Calendar will be dynamically rendered here -->
+                        <div class="calendar-header">
+                            <span class="month"></span>
+                            <div class="navigation">
+                                <button type="button"  class="prev-month">←</button>
+                                <button type="button"  class="next-month">→</button>
+                            </div>
+                        </div>
+                        <div class="calendar-days"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="comments">Comments/Notes</label>
+                <textarea class="form-control" id="comments" name="comments" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn">Submit</button>
+            </div>
+        </form>
+    </div>
+  </div>
+
+
+
+<!--Edit Board Modal-->
+ <div id="editBoardModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" id="closeEditBoardModalBtn">&times;</span>
+
+      <!-- Form inside the modal -->
+      <h2>Edit Project</h2>
+        <form id="editProjectForm" action="" method="post">
+            <div class="form-group">
+                <label for="editProjectTitle">Project Title</label>
+                <input type="text" class="form-control" id="editProjectTitle" name="editProjectTitle" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="editProjectDescription">Description</label>
+                <textarea class="form-control" id="editProjectDescription" name="editProjectDescription" rows="3"></textarea>
+            </div>
+
+
+            <div class="form-group">
+                <label for="editProjectStartDate">Start Date</label>
+                <div class="custom-date-picker">
+                    <input id="editProjectStartDate" type="text" class="form-control custom-date-input" name="editProjectStartDate" placeholder="Select Start Date" readonly data-calendar-id="editProjectStartDateCalendar" value="">
+                    <div id="editProjectStartDateCalendar" class="calendar">
+                        <!-- Calendar will be dynamically rendered here -->
+                        <div class="calendar-header">
+                            <span class="month"></span>
+                            <div class="navigation">
+                                <button type="button"  class="prev-month">←</button>
+                                <button type="button"  class="next-month">→</button>
+                            </div>
+                        </div>
+                        <div class="calendar-days"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="editProjectDueDate">Due Date</label>
+                <div class="custom-date-picker">
+                    <input id="editProjectDueDate" type="text" class="form-control custom-date-input" name="editProjectDueDate" placeholder="Select Due Date" readonly data-calendar-id="editProjectDueDateCalendar">
+                    <div id="editProjectDueDateCalendar" class="calendar">
+                        <!-- Calendar will be dynamically rendered here -->
+                        <div class="calendar-header">
+                            <span class="month"></span>
+                            <div class="navigation">
+                                <button type="button"  class="prev-month">←</button>
+                                <button type="button"  class="next-month">→</button>
+                            </div>
+                        </div>
+                        <div class="calendar-days"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="editProjectComments">Comments/Notes</label>
+                <textarea class="form-control" id="editProjectComments" name="editProjectComments" rows="3"></textarea>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                <a href=""  id="deleteBtnAnchor">
+                    <button type="button" id="deleteBtn" class="btn button form-group" >
+                        Delete
+                    </button>
+                </a>
+                <button type="submit" class="btn button form-group">Submit</button>
+            </div>
+        </form>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block script %}
+<!--  <script>-->
+<!--      // Select all cards-->
+<!--      const cards = document.querySelectorAll('.card');-->
+
+<!--      // Add hover and active effects-->
+<!--      cards.forEach(card => {-->
+<!--        // Hover effect-->
+<!--        card.addEventListener('mouseenter', () => {-->
+<!--          card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';-->
+<!--          card.style.transform = 'translateY(-5px)';  // Lifts the card slightly-->
+<!--          card.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.3)';  // Stronger shadow on hover-->
+<!--        });-->
+
+<!--        // Remove hover effect-->
+<!--        card.addEventListener('mouseleave', () => {-->
+<!--          card.style.transform = 'translateY(0)';-->
+<!--          card.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.15)';  // Reset to default shadow-->
+<!--        });-->
+
+<!--        // Active (click) effect-->
+<!--        card.addEventListener('mousedown', () => {-->
+<!--          card.style.transition = 'transform 0.1s ease, box-shadow 0.1s ease';-->
+<!--          card.style.transform = 'translateY(-2px)';  // Less lift on click-->
+<!--          card.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.35)';  // Stronger shadow when active-->
+<!--        });-->
+
+<!--        // Reset after click-->
+<!--        card.addEventListener('mouseup', () => {-->
+<!--          card.style.transform = 'translateY(-5px)';  // Return to hover state lift-->
+<!--          card.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.3)';  // Return to hover shadow-->
+<!--        });-->
+<!--      });-->
+
+<!--  </script>-->
+  <script>
+    // Get modal element and buttons
+    const modal = document.getElementById('myModal');
+    const openFormBtn = document.getElementById('secondCreateBoardBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    // When the user clicks on the button, open the modal
+    openFormBtn.onclick = function() {
+      modal.style.display = 'block';
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    closeModalBtn.onclick = function() {
+
+      modal.style.display = 'none';
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("editBoardModal");
+    const closeModalBtn = document.getElementById("closeEditBoardModalBtn");
+    const editProjectForm = document.getElementById("editProjectForm");
+    const editProjectTitle = document.getElementById("editProjectTitle");
+    const editProjectDescription = document.getElementById("editProjectDescription");
+    const editProjectStartDate = document.getElementById("editProjectStartDate");
+    const editProjectDueDate = document.getElementById("editProjectDueDate");
+    const editProjectComments = document.getElementById("editProjectComments");
+    const editProjectDeleteAnchor = document.getElementById("deleteBtnAnchor");
+
+    // Open modal function
+    function openEditModal(projectId) {
+        // Set the form action dynamically
+        editProjectForm.setAttribute("action", `/edit_project/${projectId}`);
+        editProjectDeleteAnchor.setAttribute("href", `/delete_project/${projectId}`);
+
+        // Fetch project details from the server
+        fetch(`/edit_project/${projectId}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to fetch project details.");
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Populate the form fields with the fetched data
+                editProjectTitle.value = data.editProjectTitle || "";
+                editProjectDescription.value = data.editProjectDescription || "";
+                editProjectStartDate.value = data.editProjectStartDate || "";
+                editProjectDueDate.value = data.editProjectDueDate || "";
+                editProjectComments.value = data.editProjectComments || "";
+
+                // Display the modal
+                modal.style.display = "block";
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Unable to load project details. Please try again.");
+            });
+    }
+
+    // Close modal function
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // Attach click event to edit buttons
+    document.querySelectorAll(".btn[data-project-id]").forEach(button => {
+        button.addEventListener("click", () => {
+            const projectId = button.getAttribute("data-project-id");
+            openEditModal(projectId);
+        });
+    });
+
+    // Close the modal when the close button is clicked
+    closeModalBtn.addEventListener("click", closeModal);
+
+    // Close the modal if the user clicks outside of it
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+});
+</script>
+
+
+{% endblock %}

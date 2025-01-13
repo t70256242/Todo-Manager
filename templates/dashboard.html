@@ -1,0 +1,601 @@
+{% extends 'base.html' %}
+
+{% block center_aligned_icons %}
+  <span class="label-title">Dashboard</span>
+{% endblock %}
+
+{% block left_aligned_icons %}
+
+{% endblock %}
+
+{% block content %}
+<div class="px-5">
+  <!-- Project Row-->
+  <div class="row">
+    <!-- Header Section -->
+    <div class="col-sm-12">
+      <h5 class="fw-bold mb-3">Project Boards</h5>
+    </div>
+  </div>
+
+  <!-- Cards Section -->
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 pb-5">
+    <!-- Create New Board Card -->
+    <div class="col">
+      <div class="project card card-stats card-round h-100">
+        <div class="open-modal-btn card-link text-decoration-none" id="createBoardBtn">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-auto">
+                <div class="icon-big text-center icon-primary bubble-shadow-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="col">
+                <p class="card-category mb-0">Create New Board</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Another Board Card -->
+    {% for project in projects %}
+    <div class="col">
+      <div class="project card card-stats card-round h-100">
+        <a href="{{ url_for('project_select', number=project.id) }}" class="card-link text-decoration-none">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-auto">
+                <div class="icon-big text-center icon-success bubble-shadow-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-clipboard2" viewBox="0 0 16 16">
+                    <path d="M3.5 2a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5H12a.5.5 0 0 1 0-1h.5A1.5 1.5 0 0 1 14 2.5v12a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-12A1.5 1.5 0 0 1 3.5 1H4a.5.5 0 0 1 0 1z"/>
+                    <path d="M10 .5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5.5.5 0 0 1-.5.5.5.5 0 0 0-.5.5V2a.5.5 0 0 0 .5.5h5A.5.5 0 0 0 11 2v-.5a.5.5 0 0 0-.5-.5.5.5 0 0 1-.5-.5"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="col" >
+                <h5 class="card-title mb-0">{{ project.title }}</h5>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+
+    </div>
+    {% endfor %}
+  </div>
+  <!-- Cards Section End -->
+
+  <!-- To do Row -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card card-round">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h5 class="card-title mb-0">Todo</h5>
+          <div class="card-tools">
+            <div class="dropdown">
+              <button class="dropdownMenuButton btn btn-icon btn-clean align-items-center me-0" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                </svg>
+              </button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="javascript:void(0)" id="createTaskBtn">Add Task</a>
+                <a class="dropdown-item" href="{{ url_for('todo_list') }}">View All</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body ">
+          <div class="table-responsive">
+            <table class="table align-items-center mb-0">
+              <thead class="thead-light">
+                <tr style="color: #9B3922">
+                  <th scope="col" class="text-start" style="padding-left: 48px;">Task Name</th>
+                  <th scope="col" class="text-end">Due Date</th>
+                  <th scope="col" class="text-end">Priority</th>
+                  <th scope="col" class="text-end">Status</th>
+                </tr>
+              </thead>
+              <tbody class="text-muted">
+                {% for todo in todos %}
+                <tr>
+                  <th scope="row">
+                    <div class="task-status d-flex align-items-center">
+                      {% if todo.status == 'todo' %}
+                      <span class="badge bg-danger me-2">📌</span>{{ todo.task_name }}
+                      {% elif todo.status == 'doing' %}
+                      <span class="badge bg-warning me-2">⏳</span>{{ todo.task_name }}
+                      {% else %}
+                      <span class="badge bg-success me-2">✔</span>{{ todo.task_name }}
+                      {% endif %}
+                    </div>
+                  </th>
+                  <td class="text-end">{{ todo.due_date }}</td>
+
+                  <td class="text-end">
+                      {% if todo.priority == 'high' %}
+                      <span class="badge bg-danger">{{ todo.priority }}</span>
+                      {% elif todo.priority == 'medium' %}
+                      <span class="badge bg-warning">{{ todo.priority }}</span>
+                      {% else %}
+                      <span class="badge bg-success">{{ todo.priority }}</span>
+                      {% endif %}
+                  </td>
+                  <td class="text-end">
+                      {% if todo.status == 'todo' %}
+                      <span class="badge bg-danger">{{ todo.status }}</span>
+                      {% elif todo.status == 'doing' %}
+                      <span class="badge bg-warning">{{ todo.status }}</span>
+                      {% else %}
+                      <span class="badge bg-success">{{ todo.status }}</span>
+                      {% endif %}
+
+                  </td>
+                </tr>
+                <!-- Additional rows here -->
+              {% endfor %}
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- To do Row End -->
+
+  <!-- Upcoming Birthdays Section -->
+  <div class="up-birthday col-md-4 pt-5 pb-5">
+    <div class="card card-round">
+      <div class="card-body">
+        <div class="card-head-row d-flex justify-content-between align-items-center py-3">
+          <h5 class="card-title mb-0">Upcoming Birthdays</h5>
+
+          <div class="card-tools">
+            <div class="dropdown">
+              <button class="btn btn-icon btn-clean me-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                </svg>
+              </button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="javascript:void(0)"  id="createBirthdayBtn">Add Birthday</a>
+                <a class="dropdown-item" href="{{ url_for('birthday_list') }}">View All</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-0" >
+        <!--  Upcoming birthday List-->
+        <div class="item-list d-flex align-items-center justify-content-between my-3">
+          <!-- User Information -->
+          <ul class="list-unstyled w-100" style="max-height: 280px; overflow-y: auto;">
+            {% for birthday in birthdays %}
+            {% if birthday.ignore == 'false' %}
+            <li class="d-flex align-items-center mb-3">
+              <!-- Avatar -->
+              <div class="">
+                <span class="avatar-title rounded-circle border border-white bg-info text-white">
+                  {{ birthday.first_name[0].upper() }}{{ birthday.last_name[0].upper() }}
+                </span>
+              </div>
+
+              <!-- User Info -->
+              <div class="info-user ms-3 flex-grow-1">
+                <div class="username">{{ birthday.first_name | title }} 🎉</div>
+                <div class="text-muted">Turning {{ birthday.birth_date | calculate_age }}!</div> <!-- Additional information -->
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="d-flex align-items-center">
+
+                    <button data-id="{{ birthday.id }}" class="btn btn-icon btn-link me-1" title="Send Birthday Message" id="openBirthdayMessageBtn">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-paper-heart" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1.133l.941.502A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765L2 3.133zm0 2.267-.47.25A1 1 0 0 0 1 5.4v.817l1 .6zm1 3.15 3.75 2.25L8 8.917l1.25.75L13 7.417V2a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1zm11-.6 1-.6V5.4a1 1 0 0 0-.53-.882L14 4.267zM8 2.982C9.664 1.309 13.825 4.236 8 8 2.175 4.236 6.336 1.31 8 2.982m7 4.401-4.778 2.867L15 13.117zm-.035 6.88L8 10.082l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738ZM1 13.116l4.778-2.867L1 7.383v5.734Z"/>
+                      </svg>
+                    </button>
+                <a href="{{ url_for('ignore_birth_date', number=birthday.id) }}">
+                <button class="btn btn-icon btn-link text-muted" title="Ignore">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ban" viewBox="0 0 16 16">
+                    <path d="M15 8a6.97 6.97 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8M2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0"/>
+                  </svg>
+                </button>
+                </a>
+
+              </div>
+            </li>
+
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+        <!--  Upcoming birthday List End-->
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" id="closeModalBtn">&times;</span>
+
+      <!-- Form inside the modal -->
+      <h2>Next Project</h2>
+        <form action="{{ url_for('add_project') }}" method="post">
+            <div class="form-group">
+                <label for="projectTitle">Project Title</label>
+                <input type="text" class="form-control" id="projectTitle" name="projectTitle" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+            </div>
+
+
+            <div class="form-group">
+                <label for="startDate">Start Date</label>
+                <div class="custom-date-picker">
+                    <input id="startDate" type="text" class="form-control custom-date-input" name="startDate" placeholder="Select Start Date" readonly data-calendar-id="startDateCalendar">
+                    <div id="startDateCalendar" class="calendar">
+                        <!-- Calendar will be dynamically rendered here -->
+                        <div class="calendar-header">
+                            <span class="month"></span>
+                            <div class="navigation">
+                                <button type="button"  class="prev-month">←</button>
+                                <button type="button"  class="next-month">→</button>
+                            </div>
+                        </div>
+                        <div class="calendar-days"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="dueDate">Due Date</label>
+                <div class="custom-date-picker">
+                    <input id="dueDate" type="text" class="form-control custom-date-input" name="dueDate" placeholder="Select Due Date" readonly data-calendar-id="dueDateCalendar">
+                    <div id="dueDateCalendar" class="calendar">
+                        <!-- Calendar will be dynamically rendered here -->
+                        <div class="calendar-header">
+                            <span class="month"></span>
+                            <div class="navigation">
+                                <button type="button"  class="prev-month">←</button>
+                                <button type="button"  class="next-month">→</button>
+                            </div>
+                        </div>
+                        <div class="calendar-days"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="comments">Comments/Notes</label>
+                <textarea class="form-control" id="comments" name="comments" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn">Submit</button>
+            </div>
+        </form>
+
+    </div>
+  </div>
+  <!-- Task Form Modal -->
+  <div id="taskModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" id="closeTaskModalBtn">&times;</span>
+
+        <!-- Form inside the modal -->
+        <h2>New Task</h2>
+        <form action="{{ url_for('add_todo_task') }}" method="post">
+            <div class="form-group">
+                <label for="taskName">Title:</label>
+                <input type="text" class="form-control" id="taskName" name="taskName" required>
+            </div>
+            <div class="form-group">
+                <label for="taskDescription">Description:</label>
+                <textarea class="form-control" id="taskDescription" name="taskDescription" rows="3"></textarea>
+            </div>
+            <div class="custom-select mb-3">
+                <div class="custom-select-box">
+                    <span class="select-placeholder">Select Priority:</span>
+                    <span class="select-arrow">▼</span>
+                </div>
+                <ul class="custom-options">
+                    <li data-value="high">High</li>
+                    <li data-value="medium">Medium</li>
+                    <li data-value="low">Low</li>
+                </ul>
+            </div>
+            <input type="hidden" name="priority" id="hidden-priority">
+            <div class="form-group">
+                <label for="dueTaskDate">Due Date:</label>
+                <div class="custom-date-picker">
+                    <input id="dueTaskDate" type="text" class="form-control custom-date-input" name="dueTaskDate" placeholder="Select Due Date" readonly data-calendar-id="dueTaskDateCalendar">
+                    <div id="dueTaskDateCalendar" class="calendar">
+                        <!-- Calendar will be dynamically rendered here -->
+                        <div class="calendar-header">
+                            <span class="month"></span>
+                            <div class="navigation">
+                                <button type="button"  class="prev-month">←</button>
+                                <button type="button"  class="next-month">→</button>
+                            </div>
+                        </div>
+                        <div class="calendar-days"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label for="assignedTo">Assigned To:</label>
+                <input type="text" class="form-control" id="assignedTo" name="assignedTo" >
+            </div>
+            <div class="form-group">
+                <label for="tags">Tags:</label>
+                <input type="text" class="form-control" id="tags" name="tags" >
+            </div>
+            <div class="form-group">
+                <label for="taskComments">Comments:</label>
+                <textarea class="form-control" id="taskComments" name="taskComments" rows="3"></textarea>
+            </div>
+            <div class="status pb-3">
+                <div class="custom-select">
+                    <div class="custom-select-box">
+                        <span class="select-placeholder">Select Status:</span>
+                        <span class="select-arrow">▼</span>
+                    </div>
+                    <ul class="custom-options">
+                        <li data-value="todo">Todo</li>
+                        <li data-value="doing">Doing</li>
+                        <li data-value="done">Done</li>
+                    </ul>
+                </div>
+
+                <!-- Hidden input to store the selected value -->
+                <input type="hidden" name="status" id="hidden-status" />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn">Submit</button>
+            </div>
+        </form>
+    </div>
+  </div>
+<!-- Birthday Form Modal -->
+  <div id="birthdateModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" id="closeBirthdateModalBtn">&times;</span>
+
+        <!-- Form inside the modal -->
+        <h2>New Birthday</h2>
+        <form action="{{ url_for('add_birth_date') }}" method="post">
+            <div class="form-group">
+                <label for="birthFirstName">First Name:</label>
+                <input type="text" class="form-control" id="birthFirstName" name="birthFirstName" required>
+            </div>
+            <div class="form-group">
+                <label for="birthLastName">Last Name:</label>
+                <input type="text" class="form-control" id="birthLastName" name="birthLastName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="birthDate">Birthday:</label>
+                <div class="custom-date-picker">
+                    <input id="birthDate" type="text" class="form-control custom-date-input" name="birthDate" placeholder="Select Birth Date" readonly data-calendar-id="birthDateCalendar">
+                    <div id="birthDateCalendar" class="calendar">
+                        <!-- Calendar will be dynamically rendered here -->
+                        <div class="calendar-header">
+                            <span class="month"></span>
+                            <div class="navigation">
+                                <button type="button" class="prev-month">←</button>
+                                <button type="button" class="next-month">→</button>
+                            </div>
+                        </div>
+                        <div class="calendar-days"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label for="birthDateMessage">Message:</label>
+                <textarea class="form-control" id="birthDateMessage" name="birthDateMessage" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="birthEmail">Email:</label>
+                <input type="text" class="form-control" id="birthEmail" name="birthEmail" required>
+            </div>
+
+
+            <div class="form-group">
+                <button type="submit" class="btn">Submit</button>
+            </div>
+        </form>
+    </div>
+  </div>
+
+
+<!-- Birthday Message Add Form Modal -->
+  <div id="birthdateMessageModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" id="closeBirthdateMessageModalBtn">&times;</span>
+
+        <!-- Form inside the modal -->
+        <h2>Birthday Message</h2>
+        <form id="birthdayMessageForm"  action="" method="post">
+            <div class="form-group">
+                <label for="birthDateMessageAdd">Message:</label>
+                <textarea class="form-control" id="birthDateMessageAdd" name="birthDateMessageAdd" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn">Submit</button>
+            </div>
+        </form>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block script %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const customSelects = document.querySelectorAll('.custom-select');
+
+        customSelects.forEach(customSelect => {
+            const customSelectBox = customSelect.querySelector('.custom-select-box');
+            const customOptions = customSelect.querySelector('.custom-options');
+            const customSelectPlaceholder = customSelect.querySelector('.select-placeholder');
+            const options = customSelect.querySelectorAll('.custom-options li');
+            const hiddenInput = customSelect.nextElementSibling; // Get the hidden input after each custom select
+
+            // Toggle the dropdown open/close
+            customSelectBox.addEventListener('click', function() {
+                customSelect.classList.toggle('open');
+                customOptions.style.display = customSelect.classList.contains('open') ? 'block' : 'none';
+            });
+
+            // Set the selected value and close the dropdown
+            options.forEach(option => {
+                option.addEventListener('click', function() {
+                    const selectedValue = this.getAttribute('data-value');
+                    customSelectPlaceholder.textContent = this.textContent;
+                    hiddenInput.value = selectedValue; // Update hidden input with selected value
+                    customSelect.classList.remove('open');
+                    customOptions.style.display = 'none';
+                });
+            });
+
+            // Close dropdown if clicked outside
+            document.addEventListener('click', function(event) {
+                if (!customSelect.contains(event.target)) {
+                    customSelect.classList.remove('open');
+                    customOptions.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+
+<script>
+    // Get elements for the project modal
+    const projectModal = document.getElementById('myModal');
+    const openProjectBtn = document.getElementById('createBoardBtn');
+    const closeProjectModalBtn = document.getElementById('closeModalBtn');
+
+    // Get elements for the task modal
+    const taskModal = document.getElementById('taskModal');
+    const openTaskBtn = document.getElementById('createTaskBtn');
+    const closeTaskModalBtn = document.getElementById('closeTaskModalBtn');
+
+    // Get elements for the birthday modal
+    const birthdayModal = document.getElementById('birthdateModal');
+    const openBirthdayBtn = document.getElementById('createBirthdayBtn');
+    const closeBirthdayModalBtn = document.getElementById('closeBirthdateModalBtn');
+
+    // Get elements for the birthday message modal
+    const birthdayMessageForm = document.getElementById('birthdayMessageForm');
+    const birthdayMessageModal = document.getElementById('birthdateMessageModal');
+    const closeBirthdayMessageModalBtn = document.getElementById('closeBirthdateMessageModalBtn');
+
+    // Open project modal
+    openProjectBtn.onclick = function() {
+        projectModal.style.display = 'block';
+    };
+
+    // Close project modal
+    closeProjectModalBtn.onclick = function() {
+        projectModal.style.display = 'none';
+    };
+
+    // Open task modal
+    openTaskBtn.onclick = function() {
+        taskModal.style.display = 'block';
+    };
+
+    // Close task modal
+    closeTaskModalBtn.onclick = function() {
+        taskModal.style.display = 'none';
+    };
+
+    // Open birthday modal
+    openBirthdayBtn.onclick = function() {
+        birthdayModal.style.display = 'block';
+    };
+
+    // Close birthday modal
+    closeBirthdayModalBtn.onclick = function() {
+        birthdayModal.style.display = 'none';
+    };
+
+    // Open birthday message modal (Updated for dynamic button event)
+    document.querySelectorAll('#openBirthdayMessageBtn').forEach((button) => {
+        button.addEventListener('click', function () {
+            // Get the birthday.id from the button's data-id attribute
+            const birthdayId = this.getAttribute('data-id');
+
+            // Update the form's action URL with the birthday.id
+            birthdayMessageForm.action = `/add_birth_date_message/${birthdayId}`;
+
+            // Optionally set a hidden input value
+            const hiddenInput = document.getElementById('birthdayIdInput');
+            if (hiddenInput) {
+                hiddenInput.value = birthdayId;
+            }
+
+            // Show the modal
+            birthdayMessageModal.style.display = 'block';
+        });
+    });
+
+    // Close birthday message modal
+    closeBirthdayMessageModalBtn.onclick = function() {
+        birthdayMessageModal.style.display = 'none';
+    };
+
+    // Close modals when clicking outside
+    window.onclick = function(event) {
+        if (event.target === projectModal) {
+            projectModal.style.display = 'none';
+        } else if (event.target === taskModal) {
+            taskModal.style.display = 'none';
+        } else if (event.target === birthdayModal) {
+            birthdayModal.style.display = 'none';
+        } else if (event.target === birthdayMessageModal) {
+            birthdayMessageModal.style.display = 'none';
+        }
+    };
+</script>
+
+
+
+{% endblock %}
+
+
+
+

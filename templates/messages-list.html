@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+
+
+
+{% block center_aligned_icons %}
+  <span class="label-title">Messages</span>
+{% endblock %}
+
+
+{% block left_aligned_icons %}
+  <!-- Add User to task Button (Plus Icon) -->
+
+
+
+
+{% endblock %}
+
+{% block content %}
+    <div class="d-flex justify-content-center align-items-center">
+
+        <div class="message-list">
+            {% if message_list %}
+            {% for message in message_list %}
+            <a href="{{ url_for('message_select', message_id=message['conversation'][0].id) }}" style="text-decoration: none;" >
+                <div class="message-item ">
+                    {% if message['recipient'].profile_picture_path %}
+                    <img src="../{{ message['recipient'].profile_picture_path }}" alt="User Avatar" class="avatar">
+                    {% else %}
+                    <span class="avatar-title rounded-circle border border-white bg-info text-white"
+                      style="display: flex; align-items: center; justify-content: center; font-size: 0.9em; font-weight: bold; line-height: 1; width: 30px; height: 30px; overflow: hidden; text-align: center;">
+                      {{ message['recipient'].first_name[0].upper() }}{{ message['recipient'].last_name[0].upper() }}
+                    </span>
+                    {% endif %}
+                    <div class="message-content">
+                        <div class="message-header">
+                            <span class="sender-name">{{ message['recipient'].first_name | title }} {{ message['recipient'].last_name | title }}</span>
+                            <span class="message-time text-muted">10:30 AM</span>
+                        </div>
+                        {% if message['conversation'][0].author_id != current_user.id and message['conversation'][0].read == 0 %}
+
+                        <div class="text-muted"
+                             style="
+                             font-weight: bold;
+                             white-space: nowrap;
+                             overflow: hidden;
+                             text-overflow: ellipsis;
+                             display: block;
+                             max-width: 100%;">
+                            {{ message['conversation'][0].message_content }}
+                        </div>
+                        {% else %}
+                        <div class="text-muted"
+                             style="
+                             white-space: nowrap;
+                             overflow: hidden;
+                             text-overflow: ellipsis;
+                             display: block;
+                             max-width: 100%;">
+                            {{ message['conversation'][0].message_content }}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+            {% endif %}
+
+
+
+
+            <!-- Add more messages here -->
+        </div>
+
+    </div>
+    <div class="pt-3" style="text-align: right !important; margin-right: 260px;">
+        <button class="btn button" id="openSendMessageModalBtn">
+            New Chat️
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots-fill" viewBox="0 0 16 16">
+              <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Send Message Form Modal -->
+  <div id="sendMessageModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" id="closeSendMessageModalBtn">&times;</span>
+
+        <!-- Form inside the modal -->
+        <h2>New Chat</h2>
+        <form id="sendMessageForm"  action="" method="post">
+            <div class="form-group">
+                <label for="sendMessageTo">To:</label>
+                <input class="form-control" id="sendMessageTo" name="sendMessageAdd" required>
+                <div id="sendMessageError" style="color: red; display: none;">
+                    User does not exist.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sendMessageMessage">Message:</label>
+                <textarea class="form-control" id="sendMessageMessage" name="sendMessageMessage" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn" id="sendMessageSubmitBtn" disabled>Send</button>
+            </div>
+        </form>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block script %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const openModalBtn = document.getElementById("openSendMessageModalBtn");
+        const closeModalBtn = document.getElementById("closeSendMessageModalBtn");
+        const modal = document.getElementById("sendMessageModal");
+        const sendMessageToInput = document.getElementById("sendMessageTo");
+        const sendMessageSubmitBtn = document.getElementById("sendMessageSubmitBtn");
+        const sendMessageError = document.getElementById("sendMessageError");
+        const sendMessageForm = document.getElementById("sendMessageForm");
+
+        // Open Modal
+        openModalBtn.addEventListener("click", function () {
+            modal.style.display = "block";
+        });
+
+        // Close Modal
+        closeModalBtn.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
+        // Close Modal on outside click
+        window.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+
+        // Validate user existence on input change
+        sendMessageToInput.addEventListener("input", function () {
+            const userId = sendMessageToInput.value.trim();
+
+            if (userId === "") {
+                sendMessageSubmitBtn.disabled = true;
+                sendMessageError.style.display = "none";
+                return;
+            }
+
+            fetch(`/fetch-user/${userId}`, { method: "GET" })
+                .then((response) => {
+                    if (response.ok) {
+                        // Hide any previous error messages
+                        sendMessageError.style.display = "none";
+
+                        // Enable the submit button
+                        sendMessageSubmitBtn.disabled = false;
+
+                        // Update the form's action attribute
+                        sendMessageForm.action = `/send_message/${userId}`;
+                    } else {
+                        throw new Error("User not found");
+                    }
+                })
+                .catch((error) => {
+                    // Display the error message
+                    sendMessageError.textContent = "User not found";
+                    sendMessageError.style.display = "block";
+
+                    // Disable the submit button
+                    sendMessageSubmitBtn.disabled = true;
+
+                    // Clear the form's action attribute
+                    sendMessageForm.action = "";
+                });
+
+        });
+    });
+
+</script>
+{% endblock %}

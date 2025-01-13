@@ -1,0 +1,2885 @@
+/* General Body Background */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #0C0C0C;
+  color: #F2613F;
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+}
+
+.main-header .search-bar {
+  width: 250px;
+}
+
+.main-header .navbar-nav .nav-link {
+  color: #F2613F;
+}
+
+/* navbar */
+.navbar {
+  background-color: #481E14;
+  color: #F2613F;
+}
+
+
+/* Sidebar */
+
+
+/* Header */
+.header {
+  background-color: #481E14;
+  color: #F2613F;
+}
+
+/* Logo Header */
+.logo-header {
+  background-color: #481E14;
+  color: #F2613F;
+  position: relative;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* Add a smooth transition for logo and button */
+.logo img {
+  transition: all 0.3s ease;
+}
+
+/* Card */
+
+
+/* Buttons */
+.btn {
+  background-color: #9B3922;
+  color: #F2613F;
+  border: none;
+}
+
+.btn:hover, .btn:active, .btn:focus {
+  background-color: #F2613F;
+  color: #0C0C0C;
+  outline: none;
+}
+
+/* Breadcrumbs */
+.breadcrumb {
+  background-color: #1A1A1A;
+  color: #F2613F;
+}
+
+.breadcrumb-item a {
+  color: #F2613F;
+}
+
+.breadcrumb-item.active {
+  color: #9B3922;
+}
+
+/* SVG Icons */
+svg {
+  fill: #F2613F;
+  transition: fill 0.3s;
+}
+
+svg:hover, svg:focus, svg:active {
+  fill: #9B3922;
+}
+
+/* Dropdown Menus */
+.dropdown-menu {
+  background-color: #0C0C0C;
+  color: #F2613F;
+}
+
+.dropdown-item {
+  color: #F2613F;
+}
+
+.dropdown-item:hover, .dropdown-item:active {
+  background-color: #9B3922;
+  color: #0C0C0C;
+}
+
+/* Footer */
+.footer {
+  background-color: #0C0C0C;
+  color: #9B3922;
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px
+}
+
+.footer {
+      padding: 10px 0;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+/* Navbar Dropdowns */
+.navbar .dropdown-menu {
+  background-color: #481E14;
+  color: #F2613F;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #F2613F;
+}
+
+/* Form Controls */
+input, select, textarea {
+  background-color: #1A1A1A;
+  color: #F2613F;
+  border: 1px solid #9B3922;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #F2613F;
+  box-shadow: 0 0 0 0.2rem rgba(242, 97, 63, 0.25);
+}
+
+/* Caret Icon */
+.caret {
+  color: #F2613F;
+}
+
+/* Scrollbar Styling for All Scrollable Sections */
+body, .main-content, .card-body, .list-group, ol {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #2F1C17 rgb(33 37 41 / 75%); /* Muted thumb and track colors */
+}
+
+/* Webkit Browsers (Chrome, Safari) Scrollbar Styling */
+body::-webkit-scrollbar,
+.main-content::-webkit-scrollbar,
+.card-body::-webkit-scrollbar,
+.list-group::-webkit-scrollbar,
+ol::-webkit-scrollbar {
+  width: 6px; /* Scrollbar width */
+}
+
+/* Scrollbar Track */
+body::-webkit-scrollbar-track,
+.main-content::-webkit-scrollbar-track,
+.card-body::-webkit-scrollbar-track,
+.list-group::-webkit-scrollbar-track,
+ol::-webkit-scrollbar-track {
+  background: #2F1C17; /* Muted track background color */
+}
+
+/* Scrollbar Thumb */
+body::-webkit-scrollbar-thumb,
+.main-content::-webkit-scrollbar-thumb,
+.card-body::-webkit-scrollbar-thumb,
+.list-group::-webkit-scrollbar-thumb,
+ol::-webkit-scrollbar-thumb {
+  background-color: #A35448; /* Muted thumb color */
+  border-radius: 6px; /* Rounded corners */
+  border: 2px solid #2F1C17; /* Border to match track background */
+}
+
+/* Scrollbar Thumb Hover Effect */
+body::-webkit-scrollbar-thumb:hover,
+.main-content::-webkit-scrollbar-thumb:hover,
+.card-body::-webkit-scrollbar-thumb:hover,
+.list-group::-webkit-scrollbar-thumb:hover,
+ol::-webkit-scrollbar-thumb:hover {
+  background-color: #B56D61; /* Slightly lighter muted color on hover */
+}
+
+
+
+
+
+
+/* General Text */
+body, p, span, li, a, .dropdown-item {
+  color: #F2613F;
+}
+
+/* Header Text */
+.header, .logo-header, .navbar-brand, .footer {
+  color: #F2613F;
+}
+
+
+
+/* Card Text */
+.card {
+  color: #F2613F;
+}
+
+.card .card-header, .card .card-footer {
+  color: #F2613F;
+  background-color: #481E14;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #F2613F;
+}
+
+/* Buttons */
+.btn {
+  color: #F2613F;
+}
+
+.btn:hover, .btn:active, .btn:focus {
+  color: #0C0C0C;
+}
+
+/* Breadcrumbs */
+.breadcrumb-item, .breadcrumb-item a {
+  color: #F2613F;
+}
+
+.breadcrumb-item.active {
+  color: #9B3922;
+}
+
+/* Form Controls */
+input, select, textarea {
+  color: #F2613F;
+}
+
+input::placeholder, select::placeholder, textarea::placeholder {
+  color: #9B3922;
+}
+
+/* General styling for the input */
+
+
+
+
+
+/* Footer Text */
+.footer, .footer a {
+  color: #9B3922;
+}
+
+/* Dropdown Menus */
+.dropdown-menu .dropdown-item {
+  color: #F2613F;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  color: #0C0C0C;
+}
+
+
+
+
+/* Modal Overlay */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(12, 12, 12, 0.8); /* Black with more transparency to match background */
+    padding-top: 60px;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #1A1A1A; /* Match breadcrumb background */
+    color: #F2613F; /* Modal text color */
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #9B3922; /* Match border color */
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+/* Close Button */
+.close {
+    color: #F2613F; /* Match overall color scheme */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #9B3922; /* Highlight close button on hover */
+    cursor: pointer;
+}
+
+/* Form Styles */
+/* General Styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    color: #F2613F; /* Match text color in labels */
+    margin-bottom: 5px;
+}
+
+/* Input, Textarea, and Select Styling */
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #9B3922; /* Match input border color */
+    background-color: #0C0C0C; /* Dark background */
+    color: #F2613F; /* Input text color */
+    border-radius: 4px;
+    -webkit-appearance: none; /* Ensure cross-browser consistency */
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none; /* Remove browser-specific focus effects */
+}
+
+/* Focus Styles */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #F2613F !important; /* Change border color on focus */
+    background-color: #0C0C0C !important; /* Maintain dark background */
+    color: #F2613F !important; /* Ensure text color stays consistent */
+    outline: none !important; /* Remove blue outline */
+    box-shadow: none !important; /* Remove any focus shadow */
+}
+
+/* Select Element Customization */
+.form-group select {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23F2613F' d='M2 0L0 2h4z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+}
+
+/* Submit Button */
+.form-group button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #9B3922; /* Theme button color */
+    color: #F2613F; /* Theme button text color */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-group button:hover {
+    background-color: #F2613F; /* Hover effect to theme accent */
+    color: #0C0C0C; /* Darker text for contrast */
+}
+
+
+
+
+
+.open-modal-btn {
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+.open-modal-btn {
+  color: #F2613F; /* Or any accent color you prefer */
+  text-decoration: underline; /* Or change background, shadow, etc. */
+}
+
+.modal .profile-picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.profile-pic-preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5em;
+}
+
+#changePicBtn {
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+#profileModal {
+    z-index: 1060; /* Adjust this number as necessary */
+}
+#myModal {
+    z-index: 1060; /* Adjust this number as necessary */
+}
+#taskModal {
+    z-index: 1060; /* Adjust this number as necessary */
+}
+#projectTaskModal {
+    z-index: 1060; /* Adjust this number as necessary */
+}
+#taskSelectModal {
+    z-index: 1060; /* Adjust this number as necessary */
+}
+#editBoardModal {
+    z-index: 1060; /* Adjust this number as necessary */
+}
+
+#taskAddModal {
+    z-index: 1060; /* Adjust this number as necessary */
+}
+
+#taskEditModal {
+    z-index: 1060; /* Adjust this number as necessary */
+}
+
+#notificationsModal {
+    z-index: 1060; /* Adjust this number as necessary */
+}
+
+#passwordModal {
+    z-index: 1070; /* Adjust this number as necessary */
+}
+
+
+
+
+
+
+
+
+
+/* Chart Data Container */
+.ch-chart-data-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #9B3922;
+  background-color: #1A1A1A;
+  color: #F2613F;
+  text-align: center;
+}
+
+/* Project Header Navigation */
+.the-project-header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.the-project-header-nav button {
+  background-color: #9B3922;
+  color: #F2613F;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.the-project-header-nav button:hover,
+.the-project-header-nav button:focus {
+  background-color: #F2613F;
+  color: #0C0C0C;
+  outline: none;
+}
+
+/* Chart Container and Items */
+.chart-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.chart-item {
+  position: relative;
+  height: 300px;
+  background-color: #0C0C0C;
+  border: 1px solid #9B3922;
+  border-radius: 8px;
+}
+
+/* Tooltip Styling for Charts */
+.chartjs-tooltip {
+  background-color: #1A1A1A;
+  color: #F2613F;
+  border: 1px solid #9B3922;
+  padding: 5px;
+  border-radius: 4px;
+  opacity: 0.9;
+}
+
+
+/* Media query for screens 768px and smaller */
+@media (max-width: 768px) {
+  /* Chart Data Container */
+  .ch-chart-data-container {
+    max-width: 90%;
+    padding: 18px;
+    margin: 18px auto;
+    font-size: 16px;
+  }
+
+  /* Project Header Navigation */
+  .the-project-header-nav {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .the-project-header-nav button {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  /* Chart Container and Items */
+  .chart-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .chart-item {
+    height: 275px;
+    border-radius: 8px;
+  }
+
+  /* Tooltip Styling for Charts */
+  .chartjs-tooltip {
+    font-size: 14px;
+    padding: 6px;
+  }
+}
+
+/* Media query for screens 567px and smaller */
+@media (max-width: 567px) {
+  /* Chart Data Container */
+  .ch-chart-data-container {
+    max-width: 95%;
+    padding: 15px;
+    margin: 15px auto;
+    font-size: 15px;
+  }
+
+  /* Project Header Navigation */
+  .the-project-header-nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .the-project-header-nav button {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 15px;
+  }
+
+  /* Chart Container and Items */
+  .chart-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .chart-item {
+    height: 250px;
+    border-radius: 6px;
+  }
+
+  /* Tooltip Styling for Charts */
+  .chartjs-tooltip {
+    font-size: 13px;
+    padding: 5px;
+  }
+}
+
+/* Media query for screens 320px and smaller */
+@media (max-width: 320px) {
+  /* Chart Data Container */
+  .ch-chart-data-container {
+    max-width: 90%;
+    padding: 10px;
+    margin: 10px auto;
+    font-size: 14px;
+  }
+
+  /* Project Header Navigation */
+  .the-project-header-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .the-project-header-nav button {
+    width: 100%;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  /* Chart Container and Items */
+  .chart-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .chart-item {
+    height: 200px;
+    border-radius: 6px;
+  }
+
+  /* Tooltip Styling for Charts */
+  .chartjs-tooltip {
+    font-size: 12px;
+    padding: 4px;
+  }
+}
+
+
+
+
+
+
+
+
+/* Settings Page Container */
+.settings-page {
+  background-color: #0C0C0C;
+  color: #F2613F;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+/* Section Titles */
+.settings-section h4 {
+  color: #F2613F;
+  border-bottom: 2px solid #9B3922;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Form Groups - Row Alignment */
+.settings-form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.settings-form label {
+  font-weight: bold;
+  color: #F2613F;
+  width: 150px;
+  margin-right: 1rem;
+}
+
+.settings-form input[type="email"],
+.settings-form input[type="password"],
+.settings-form select {
+  flex: 1;
+  padding: 0.5rem;
+  background-color: #1A1A1A;
+  border: 1px solid #481E14;
+  color: #F2613F;
+  border-radius: 4px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.settings-form input[type="email"]:focus,
+.settings-form input[type="password"]:focus,
+.settings-form select:focus {
+  background-color: #333333;
+  border-color: #9B3922;
+}
+
+/* Dropdown Styling */
+.settings-form select {
+  background-color: #1A1A1A;
+  color: #F2613F;
+}
+
+.settings-form select option {
+  background-color: #0C0C0C;
+  color: #F2613F;
+}
+
+/* Checkboxes */
+.settings-form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.settings-form-check input[type="checkbox"] {
+  background-color: #1A1A1A;
+  border: 1px solid #481E14;
+  color: #F2613F;
+  margin-right: 0.5rem;
+}
+
+.settings-form-check label {
+  color: #F2613F;
+}
+
+/* Buttons */
+.settings-page .btn {
+  background-color: #9B3922;
+  color: #F2613F;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.settings-page .btn:hover {
+  background-color: #F2613F;
+  color: #0C0C0C;
+}
+
+/* Section Divider */
+hr {
+  border-top: 1px solid #9B3922;
+  margin: 2rem 0;
+}
+
+/* Advanced Section Styling */
+/* Advanced Settings Section */
+.settings-section h5 {
+  color: #F2613F;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-right: 1rem; /* Space between heading and label */
+}
+
+/* Flex layout for rows in advanced settings */
+.settings-section .settings-form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+/* Wider labels to keep items inline without wrapping */
+.settings-section .settings-form label {
+  font-weight: bold;
+  color: #F2613F;
+  width: 180px; /* Adjust for inline alignment */
+  margin-right: 1rem;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Inputs, select elements inline with flex layout */
+.settings-section .settings-form input,
+.settings-section .settings-form select {
+  flex: 1;
+  padding: 0.5rem;
+  background-color: #1A1A1A;
+  border: 1px solid #481E14;
+  color: #F2613F;
+  border-radius: 4px;
+}
+
+/* Export Data Button aligned to the right and kept inline */
+#exportDataBtn {
+  background-color: #481E14;
+  color: #F2613F;
+  border: 1px solid #9B3922;
+  margin-left: auto; /* Push to the right */
+  padding: 0.5rem 1rem;
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Advanced Settings Buttons and Dropdowns */
+.settings-section .btn,
+.settings-sectionselect {
+  background-color: #481E14;
+  color: #F2613F;
+  border: 1px solid #9B3922;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.settings-section .btn:hover,
+.settings-section .btn:focus,
+.settings-section select:hover,
+.settings-section select:focus {
+  background-color: #F2613F;
+  color: #0C0C0C;
+  outline: none;
+}
+
+/* Additional Hover Styling for Export Data Button */
+#exportDataBtn {
+  margin-left: auto; /* Align to the right */
+}
+
+/* Dropdown Hover Effect */
+.settings-section select {
+  appearance: none; /* Remove default browser styling for consistency */
+  padding-right: 1.5rem; /* Space for dropdown arrow */
+  cursor: pointer;
+}
+
+.settings-section select:hover,
+.settings-section select:focus {
+  background-color: #F2613F;
+  color: #0C0C0C;
+}
+
+
+
+
+
+
+
+/* Modal and Content Styling */
+.message-modal .modal-content {
+    width: 90%;
+    max-width: 400px;
+    background-color: #ece5dd;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header Styling */
+.message-modal .header {
+    background-color: #075e54;
+    color: #ffffff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Message List Styling */
+.message-list {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Message Bubble */
+.message-list li {
+    background-color: #dcf8c6;
+    color: #333;
+    padding: 10px 12px;
+    border-radius: 8px;
+    max-width: 70%;
+    align-self: flex-start; /* Align left by default */
+    position: relative;
+}
+
+.message-list li.sent {
+    background-color: #ffffff;
+    align-self: flex-end; /* Align to the right */
+}
+
+/* Triangle-like arrow */
+.message-list li::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.message-list li.received::after {
+    left: -8px;
+    top: 10px;
+    border-width: 8px 8px 8px 0;
+    border-color: transparent #dcf8c6 transparent transparent;
+}
+
+.message-list li.sent::after {
+    right: -8px;
+    top: 10px;
+    border-width: 8px 0 8px 8px;
+    border-color: transparent transparent transparent #ffffff;
+}
+
+/* Input and Send Button */
+.message-input-container {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #ffffff;
+}
+
+.message-input-container input[type="text"] {
+    flex: 1;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    margin-right: 8px;
+}
+
+.message-input-container button {
+    background-color: #075e54;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.message-input-container button:hover {
+    background-color: #128c7e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Real message  */
+/* Main Content Area */
+/* Main Content Area */
+/* Main Content Area */
+/* General Message Container */
+.message-list {
+    width: 100%;
+    max-width: 600px;
+    background-color: #1A1A1A; /* Darker background color */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.message-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #481E14; /* Border color to fit theme */
+    color: #F2613F; /* Text color matching the theme */
+}
+
+.message-item:last-child {
+    border-bottom: none;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Shadow for avatar */
+}
+
+.message-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.sender-name {
+    font-weight: bold;
+    font-size: 14px;
+    color: #F2613F; /* Main color for sender's name */
+}
+
+.message-time {
+    font-size: 12px;
+    color: #9B3922; /* Muted red for time */
+}
+
+.message-text {
+    font-size: 14px;
+    color: #D3D3D3; /* Lighter color for message text */
+}
+
+.message-item:hover {
+    background-color: #481E14; /* Darker hover effect */
+    border-radius: 8px;
+}
+
+
+
+
+/* General Reset */
+.chat-container {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+
+
+/* Chat Container */
+.chat-container {
+    width: 400px;
+    height: 600px;
+    background-color: #1A1A1A;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #481E14;
+    color: #F2613F;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.last-seen {
+    font-size: 12px;
+    color: #9B3922;
+}
+
+.options-btn {
+    background: none;
+    border: none;
+    color: #F2613F;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Chat Body */
+.chat-body {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-message {
+    max-width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.received {
+    background-color: #1A1A1A;
+    color: #D3D3D3;
+    align-self: flex-start;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sent {
+    background-color: #9B3922;
+    color: #F2613F;
+    align-self: flex-end;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Chat Input */
+.chat-input {
+    display: flex;
+    padding: 10px;
+    background-color: #0C0C0C;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#message-input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #9B3922;
+    background-color: #1A1A1A;
+    color: #F2613F;
+    font-size: 14px;
+}
+
+#send-btn {
+    background-color: #9B3922;
+    color: #F2613F;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+#send-btn:hover {
+    background-color: #F2613F;
+    color: #0C0C0C;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Borders */
+body, .card, .container, .dropdown-menu, .input, .btn, .sidebar, .navbar, .footer {
+  border-color: #481E14; /* Main border color for containers and cards */
+}
+
+/* Sidebar Borders */
+.sidebar {
+  border-right: 1px solid #9B3922;
+}
+
+/* Card Borders */
+.card {
+  border: 1px solid #9B3922;
+}
+
+.card-header, .card-footer {
+  border-top: 1px solid #9B3922;
+  border-bottom: 1px solid #9B3922;
+}
+
+/* Button Borders */
+.btn {
+  border: 1px solid #F2613F;
+}
+
+.btn:hover, .btn:active, .btn:focus {
+  border: 1px solid #9B3922;
+}
+
+/* Input Borders */
+input, select, textarea {
+  border: 1px solid #9B3922;
+  color: #F2613F;
+  background-color: #1A1A1A;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #F2613F;
+}
+
+/* Dropdown Menu Borders */
+.dropdown-menu {
+  border: 1px solid #9B3922;
+}
+
+.dropdown-item:hover {
+  border-color: #F2613F;
+}
+
+/* Breadcrumb Borders */
+.breadcrumb {
+  border-bottom: 1px solid #9B3922;
+}
+
+.breadcrumb-item, .breadcrumb-item a {
+  border-right: 1px solid #481E14;
+}
+
+.breadcrumb-item:last-child {
+  border-right: none;
+}
+
+/* Footer Borders */
+.footer {
+  border-top: 1px solid #9B3922;
+}
+
+
+
+
+.main-birthday {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.main-birthday .card {
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-birthday .card-body {
+    padding: 1.5rem;
+}
+
+.main-birthday .card-head-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.main-birthday .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.main-birthday .card-tools .btn-icon {
+    padding: 0.3rem;
+    color: #6c757d;
+}
+
+.main-birthday .dropdown-menu {
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.main-birthday .item-list {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.main-birthday .list-unstyled {
+    list-style: none;
+    padding-left: 0;
+}
+
+.main-birthday .avatar {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.main-birthday .info-user .username {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.main-birthday .info-user .text-muted {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+.main-birthday .btn-icon {
+    padding: 0.3rem;
+}
+
+.main-birthday .btn-link {
+    color: #007bff;
+}
+
+.main-birthday .btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.main-birthday .btn-link.text-muted {
+    color: #6c757d;
+}
+
+.main-birthday .countdown {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+.main-birthday .calendar-preview {
+    font-size: 0.875rem;
+    color: #495057;
+}
+
+.main-birthday .calendar-preview .day {
+    background: #f8f9fa;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.main-birthday .social-sharing .btn {
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+}
+
+.main-birthday .social-sharing svg {
+    margin-right: 5px;
+}
+
+
+
+
+
+
+
+
+#calendar {
+    width: 60vw; /* Increased to make the calendar responsive */
+    max-width: 800px; /* Restricting the max width */
+    overflow-x: auto;
+    background-color: #1A1A1A; /* Dark background to match theme */
+    border: 1px solid #9B3922; /* Theme color for border */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); /* Darker shadow for theme */
+    margin: 0 auto; /* Center the calendar */
+    color: #F2613F; /* Theme font color */
+}
+
+#calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#calendar-header button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #9B3922; /* Theme button color */
+    color: #F2613F; /* Theme button text color */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#calendar-header button:hover {
+    background-color: #F2613F; /* Hover effect to theme accent */
+    color: #0C0C0C; /* Darker text for contrast */
+}
+
+#month-year {
+    font-size: 32px;
+    font-weight: bold;
+    color: #F2613F; /* Theme color */
+}
+
+#calendar-body {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#calendar-body th, #calendar-body td {
+    padding: 10px; /* Reduced padding to fit better */
+    text-align: center;
+    border: 1px solid #9B3922; /* Theme color border */
+    font-size: 18px; /* Reduced font size for better fit */
+    color: #F2613F; /* Theme color text */
+}
+
+#calendar-body th {
+    background-color: #481E14; /* Dark header color */
+    color: #F2613F; /* Theme color */
+}
+
+#calendar-body td {
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 80px; /* Reduced height to fit better */
+}
+
+#calendar-body td:hover {
+    background-color: #9B3922; /* Highlight on hover to match theme */
+    border-radius: 10px;
+}
+
+#calendar-body td.highlight {
+    background-color: #F2613F; /* Highlighted dates in theme accent */
+    color: #0C0C0C; /* Contrast color */
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    #calendar {
+        width: 95vw; /* Adjust width for smaller screens */
+    }
+
+    #calendar-header button {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    #month-year {
+        font-size: 24px;
+    }
+
+    #calendar-body th, #calendar-body td {
+        font-size: 14px;
+        padding: 8px;
+        height: 60px; /* Smaller height for mobile */
+    }
+}
+
+@media (max-width: 567px) {
+    #calendar {
+        width: 90vw; /* Slightly reduced width for smaller screens */
+        padding: 15px; /* Moderate padding for compactness */
+    }
+
+    #calendar-header button {
+        font-size: 16px; /* Slightly reduced font size */
+        padding: 8px 12px; /* Adjusted padding */
+    }
+
+    #month-year {
+        font-size: 24px; /* Adjust font size for readability */
+    }
+
+    #calendar-body th, #calendar-body td {
+        font-size: 14px; /* Smaller text in calendar cells */
+        padding: 6px; /* Reduced padding */
+        height: 65px; /* Slightly reduced cell height */
+    }
+}
+
+
+@media (max-width: 320px) {
+    #calendar {
+        width: 100vw; /* Take full width on very small screens */
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
+
+    #calendar-header button {
+        font-size: 14px; /* Smaller font for buttons */
+        padding: 6px 10px; /* Adjusted padding for small screens */
+    }
+
+    #month-year {
+        font-size: 20px; /* Smaller font for month-year */
+    }
+
+    #calendar-body th, #calendar-body td {
+        font-size: 12px; /* Smaller text in calendar cells */
+        padding: 5px; /* Less padding to fit content */
+        height: 50px; /* Reduced cell height */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    background-color: #1A1A1A; /* Card background color for dropdown */
+    border: 1px solid #481E14; /* Border color to match theme */
+    color: #F2613F; /* Text color inside dropdown */
+    border-radius: 4px; /* Rounded corners for dropdown */
+}
+
+/* Dropdown item styling */
+.dropdown-menu .dropdown-item {
+    color: #F2613F;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #9B3922; /* Hover background color for dropdown items */
+    color: #0C0C0C; /* Text color on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.text-muted {
+    color: #B9786A !important; /* Ensure the new color takes precedence */
+}
+
+.settings-calendar svg {
+    fill: #B9786A; /* Set the text color */
+}
+
+
+
+.settings-calendar {
+    border-top: 1px solid #F2613F; /* Optional: add a border for separation */
+}
+
+.settings-calendar h6 {
+    margin-bottom: 1rem; /* Space between heading and list */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media query for main header*/
+
+/* For screens 768px and above */
+@media (min-width: 768px) {
+  /* Retain full layout; no specific styles needed here */
+}
+
+/* For screens 768px and below */
+@media (max-width: 767px) {
+  /* Hide the left-aligned icon search bar */
+  .left-aligned-search-bar {
+    display: none;
+  }
+
+  /* Ensure the empty middle column remains visible */
+  .empty-middle-column {
+    display: block;
+  }
+
+  .main-header .dropdown-menu {
+    width: 12px ; /* Smaller image */
+    height: 12px;
+    padding: 0; /* Remove padding for minimal size */
+    transform: scale(0.8); /* Further reduce visual size*/
+    background-color: #9B3922 !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow for layering effect */
+    position: absolute;
+    z-index: 999; /* Ensures it layers over other elements */
+  }
+
+  .main-header .dropdown-item {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for layering */
+    background-color: #9B3922 !important; /* Solid background with no transparency */
+    color: #000; /* Optional: sets text color for visibility */
+    z-index: 999; /* Ensures it layers over other elements */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Optional: subtle border for better visibility */
+  }
+
+  .main-header .dropdown-header {
+    font-size: 0.875rem; /* Reduces font size */
+    padding: 4px 8px; /* Reduces padding for a compact look */
+    white-space: nowrap; /* Prevents the text from breaking to a new line */
+    overflow: hidden; /* Hides any overflowing text */
+    text-overflow: ellipsis; /* Adds ellipsis if text overflows */
+    max-width: 100%; /* Ensures it doesn’t exceed the container width */
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+
+}
+
+/* For screens 467px and below */
+@media (max-width: 467px) {
+  .navbar-nav .topbar-icon {
+    display: none;
+  }
+  .main-header .dropdown-menu {
+    width: 6px ; /* Smaller image */
+    height: 6px;
+    padding: 0; /* Remove padding for minimal size */
+    transform: scale(0.6); /* Further reduce visual size*/
+    background-color: #9B3922 !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow for layering effect */
+    position: absolute;
+    z-index: 999; /* Ensures it layers over other elements */
+  }
+
+  .main-header .dropdown-item {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for layering */
+    background-color: #9B3922 !important; /* Solid background with no transparency */
+    color: #000; /* Optional: sets text color for visibility */
+    z-index: 999; /* Ensures it layers over other elements */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Optional: subtle border for better visibility */
+  }
+}
+
+@media (max-width: 365px) {
+  .main-header {
+    width: 100%; /* Set header to full width */
+    padding: 0; /* Remove any padding to maintain width */
+    margin: 0; /* Remove margin if present */
+  }
+
+  .main-header .profile-username {
+    display: none !important;
+  }
+
+  .main-header .profile-pic {
+    padding-top: 10 !important; /* Reduce padding */
+    border: none !important;
+  }
+
+
+
+  .main-header .avatar-sm .avatar-img {
+    width: 8px ; /* Smaller image */
+    height: 8px;
+  }
+
+  /* For containers inside the header */
+  .main-header .container, .main-header .container-fluid {
+    max-width: 100%; /* Prevent containers from limiting width */
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .main-header .dropdown-menu {
+    width: 6px ; /* Smaller image */
+    height: 6px;
+    padding: 0; /* Remove padding for minimal size */
+    transform: scale(0.6); /* Further reduce visual size*/
+    background-color: #9B3922 !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow for layering effect */
+    position: absolute;
+    z-index: 999; /* Ensures it layers over other elements */
+  }
+
+  .main-header .dropdown-item {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for layering */
+    background-color: #9B3922 !important; /* Solid background with no transparency */
+    color: #000; /* Optional: sets text color for visibility */
+    z-index: 999; /* Ensures it layers over other elements */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Optional: subtle border for better visibility */
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Default styling for second header to occupy full width */
+.second-header {
+  width: 100%;
+  transition: all 0.3s ease; /* Smooth resizing */
+}
+
+.second-header .d-flex.justify-content-between.align-items-center {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/* Media Query for screens smaller than 576px */
+@media (max-width: 576px) {
+  .second-header .d-flex.justify-content-between.align-items-center {
+    flex-wrap: wrap;
+  }
+
+  .second-header .px-3 {
+    display: none;
+  }
+
+  second-header .px-3 {
+    padding-left: 1rem;
+  }
+
+  .second-header .d-flex.align-items-center.ms-auto {
+    margin-top: 0.5rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Media Query for screens smaller than 365px */
+@media (max-width: 365px) {
+  .second-header .d-flex.justify-content-between.align-items-center {
+    flex-direction: column;
+  }
+
+  .second-header .px-3 {
+    width: 100%;
+    text-align: center;
+    padding: 0.25rem;
+  }
+
+  .second-header .d-flex.align-items-center.ms-auto {
+    width: 100%;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .second-header .col-auto button {
+    width: 28px;
+    height: 28px; /* Slightly smaller buttons for very narrow screens */
+  }
+}
+
+
+
+
+
+@media (max-width: 576px) {
+  .card-tools svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .card-tools svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .table-responsive-md {
+    overflow-x: auto; /* Enable horizontal scroll */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+  }
+
+  .table {
+    min-width: 700px; /* Set a minimum width for the table */
+  }
+}
+
+@media (max-width: 1200px) {
+  .table th, .table td {
+    font-size: 1rem; /* Adjust for large screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .table th, .table td {
+    font-size: 0.9rem; /* Adjust for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .table-responsive-md {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table {
+    min-width: 700px;
+  }
+
+  .table th, .table td {
+    font-size: 0.85rem; /* Smaller font for small screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .table th, .table td {
+    font-size: 0.8rem; /* Adjust for extra small screens */
+  }
+}
+
+
+
+
+/* Card */
+.card {
+  background-color: #1A1A1A;
+  color: #F2613F;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Subtle shadow for inactive state */
+  transition: box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.card .card-header,
+.card .card-footer {
+  background-color: #481E14;
+  color: #F2613F;
+}
+
+/* Card hover effect */
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); /* Slightly stronger shadow on hover */
+}
+
+/* Card active effect */
+.card:active {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35); /* Stronger shadow when active */
+}
+
+
+.card .btn {
+    width: 32px; /* Set button width */
+    height: 32px; /* Set button height */
+    border: none; /* Remove border */
+    background: transparent; /* Make background transparent */
+    color: #F2613F; /* Set SVG or icon color */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and icon color */
+}
+
+/* Change background on hover */
+.card .btn:hover {
+    background-color: #F2613F; /* Hover color as per theme */
+    color: #0C0C0C; /* Set icon color to main background on hover */
+}
+
+/* Active or focus state styling */
+.card .btn:focus,
+.card .btn:active {
+    outline: none; /* Remove outline */
+    background-color: rgba(242, 97, 63, 0.3); /* Slightly transparent active background */
+    color: #9B3922; /* Darker icon color for active state */
+}
+
+/* Style for the dropdown button */
+.card .btn.dropdown-toggle::after {
+    display: none; /* Hide the default dropdown arrow */
+}
+
+
+
+
+.project.card.card-stats.card-round.h-100 svg,
+.project.card.card-stats.card-round.h-100 h5 {
+  color: #9B3922 !important;
+}
+
+.project.card.card-stats.card-round.h-100 h5:hover {
+  color: #C54B39; /* Adjust to your preferred hover color */
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+/* Small devices (tablets, 768px and below) */
+@media (max-width: 768px) {
+  .project.card.card-stats.card-round.h-100 .row {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .project.card.card-stats.card-round.h-100 .card-title {
+    font-size: 1rem;
+  }
+}
+
+/* Extra small devices (phones, 576px and below) */
+@media (max-width: 576px) {
+  .project.card.card-stats.card-round.h-100 .row {
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .project.card.card-stats.card-round.h-100 .icon-big svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .project.card.card-stats.card-round.h-100 .card-title {
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+}
+
+/* Extra extra small devices (345px and below) */
+@media (max-width: 345px) {
+  .project.card.card-stats.card-round.h-100 .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project.card.card-stats.card-round.h-100 .icon-big svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .project.card.card-stats.card-round.h-100 .card-title {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+/* Default styling for larger screens (768px and above) */
+/* General styling for .up-birthday section */
+.up-birthday {
+  display: block;
+  padding: 2rem 0;
+}
+
+.up-birthday .card {
+  max-width: 100%;
+}
+
+.up-birthday .card-body {
+  padding: 1.5rem;
+}
+
+.up-birthday .item-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.up-birthday .avatar-title {
+  font-size: 1rem;
+}
+
+.up-birthday .username {
+  font-size: 1.1rem;
+}
+
+/* Media Queries */
+
+/* Large tablets to small desktops (768px to 1067px) */
+@media (min-width: 768px) and (max-width: 1067px) {
+  .up-birthday .item-list {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .up-birthday .card-body {
+    padding: 1.25rem;
+  }
+
+  .up-birthday .username {
+    font-size: 1rem;
+  }
+
+  .up-birthday .info-user {
+    margin-left: 0.5rem;
+    text-align: left;
+  }
+}
+
+/* Tablets and below (768px and below) */
+@media (max-width: 768px) {
+  .up-birthday {
+    padding: 1.5rem 0;
+  }
+
+  .up-birthday .item-list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .up-birthday .username {
+    font-size: 1rem;
+  }
+
+  .up-birthday .info-user {
+    margin-left: 1rem;
+    text-align: left;
+  }
+}
+
+/* Small screens (576px and below) */
+@media (max-width: 576px) {
+  .up-birthday .card-body {
+    padding: 1rem;
+  }
+
+  .up-birthday .item-list {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .up-birthday .avatar-title {
+    font-size: 0.9rem;
+  }
+
+  .up-birthday .username {
+    font-size: 0.9rem;
+  }
+
+  .up-birthday .info-user {
+    margin-left: 0;
+  }
+}
+
+/* Extra small screens (345px and below) */
+@media (max-width: 345px) {
+  .up-birthday .avatar-title {
+    font-size: 0.8rem;
+  }
+
+  .up-birthday .username {
+    font-size: 0.8rem;
+  }
+
+  .up-birthday .item-list {
+    flex-direction: column;
+  }
+
+  .up-birthday .info-user {
+    text-align: center;
+  }
+}
+
+
+
+
+#board-columns {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden; /* prevents vertical overflow for horizontal scrolling */
+  white-space: nowrap; /* keeps columns on a single row */
+}
+
+#board-columns .col {
+  min-width: 300px;
+}
+
+.project .card-body ol {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sidebar {
+  background-color: #481E14;
+  color: #F2613F;
+  min-height: 100vh;
+  transition: width 0.3s ease;
+  width: 250px;
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+/* Hide logo in collapsed mode */
+.sidebar.collapsed .logo img {
+  display: none;
+}
+
+/* Hide text in collapsed mode */
+.sidebar.collapsed .nav-link span {
+  display: none;
+}
+
+.sidebar.collapsed .settings-calendar h6 {
+    display: none; /* Hide the heading when the sidebar is collapsed */
+}
+
+
+.sidebar.expanded .nav-link span {
+  display: inline;
+}
+
+/* Center icons when sidebar is collapsed */
+.sidebar.collapsed .nav-link {
+  text-align: center;
+}
+
+.sidebar .nav-link {
+  color: #F2613F;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .nav-link svg {
+  margin-right: 10px;
+}
+
+/* Sidebar Links */
+.sidebar a {
+  color: #F2613F;
+}
+
+/* Hover and Active states for links */
+.sidebar a:hover, .sidebar a.active {
+  background-color: #9B3922;
+  color: #F2613F;
+}
+
+/* Sidebar Borders */
+.sidebar {
+  border-right: 1px solid #9B3922;
+}
+
+/* Button styles */
+.sidebar .btn {
+  width: 32px; /* Set button width */
+  height: 32px; /* Set button height */
+  border: none; /* Remove border */
+  background: transparent; /* Make background transparent */
+  color: #F2613F; /* Set SVG or icon color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background color and icon color */
+}
+
+/* Change background on hover */
+.sidebar .btn:hover {
+  background-color: #F2613F; /* Lighten #F2613F for hover */
+  color: #9B3922; /* Slightly darker icon color on hover */
+}
+
+/* Active or focus state styling */
+.sidebar .btn:focus,
+.sidebar .btn:active {
+  outline: none; /* Remove outline */
+  background-color: rgba(242, 97, 63, 0.3); /* Darken slightly for active state */
+  color: #9B3922; /* Darker icon color for active state */
+}
+
+/* Style for the dropdown button */
+.sidebar .btn.dropdown-toggle::after {
+  display: none; /* Hide the default dropdown arrow */
+}
+
+/* Dropdown menu styling */
+.sidebar .dropdown-menu {
+  background-color: #1A1A1A; /* Card background color for dropdown */
+  border: 1px solid #481E14; /* Border color to match theme */
+  color: #F2613F; /* Text color inside dropdown */
+  border-radius: 4px; /* Rounded corners for dropdown */
+}
+
+/* Dropdown item styling */
+.sidebar .dropdown-menu .dropdown-item {
+  color: #F2613F;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar .dropdown-menu .dropdown-item:hover {
+  background-color: #9B3922; /* Hover background color for dropdown items */
+  color: #0C0C0C; /* Text color on hover */
+}
+
+#sidebar {
+    transition: width 0.3s ease, display 0.3s ease;
+}
+
+.sidebar.collapsed .dropdown-toggle {
+  pointer-events: none; /* Disables click events */
+  cursor: default;      /* Changes cursor to default */
+  color: #6c757d;       /* Optional: Grays out the text to indicate disabled state */
+}
+
+/* Hide dropdown menu when sidebar is collapsed */
+.sidebar.collapsed .dropdown-menu {
+  display: none !important;
+}
+
+
+
+
+
+/* Base Styles for Sidebar */
+
+
+/* Base Styles for Sidebar */
+.sidebar {
+  transition: width 0.3s ease;
+}
+
+/* Expanded Sidebar */
+.sidebar.expanded {
+  width: 250px; /* Set the width for the expanded sidebar */
+}
+
+/* Collapsed Sidebar */
+.sidebar.collapsed {
+  width: 80px; /* Set the width for the collapsed sidebar */
+}
+
+
+
+/* Media Queries */
+
+/* For screens larger than 768px */
+/* For screens larger than 768px */
+@media (min-width: 769px) {
+  /* Sidebar in expanded state */
+  .sidebar {
+    width: 250px; /* Full expanded width */
+    transition: width 0.3s ease; /* Smooth transition for width changes */
+    overflow: visible; /* Ensure content is visible */
+  }
+
+  /* When sidebar is collapsed */
+  .sidebar.collapsed {
+    width: 100px; /* Adjust width for collapsed state */
+
+  }
+
+  /* Hide text labels on icons when collapsed */
+  .sidebar.collapsed .nav-link span {
+    display: none; /* Ensure text is hidden */
+  }
+
+  /* Ensure icons remain visible in collapsed state */
+  .sidebar.collapsed .nav-link svg {
+    display: inline-block; /* Show icons */
+    margin: auto; /* Center icons */
+  }
+
+  /* Show text labels when expanded */
+  .sidebar .nav-link span {
+    display: inline; /* Show text in expanded state */
+    margin-left: 10px; /* Add spacing between icons and text */
+  }
+
+  /* Ensure proper alignment of icons and text */
+  .sidebar .nav-link {
+    display: flex; /* Align icons and text in a row */
+    align-items: center; /* Vertically center */
+    padding: 10px 15px; /* Adjust padding for better spacing */
+  }
+
+  /* Hover effect for better UX */
+  .sidebar .nav-link:hover {
+    background-color: #9B3922; /* Highlight on hover */
+    border-radius: 4px; /* Add rounded corners for hover effect */
+  }
+
+  /* Smooth collapse/expand animation */
+  .sidebar.collapsed .nav-link {
+    justify-content: center; /* Center icons in collapsed state */
+  }
+}
+
+
+
+
+
+/* For Medium to Small Screens (768px and below) */
+/* For Medium to Small Screens (768px and below) */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 80px; /* Collapsed width by default */
+    overflow: hidden; /* Hide text */
+    transition: width 0.3s ease; /* Smooth transition for width changes */
+  }
+
+  /* Expanded sidebar */
+  .sidebar.expanded {
+    width: 250px; /* Expanded width */
+    overflow: visible; /* Allow content to be visible */
+  }
+  .sidebar.collapsed {
+    width: 80px; /* Expanded width */
+    overflow: visible; /* Allow content to be visible */
+  }
+
+
+  /* Show only the toggle button */
+  .sidebar .btn {
+    display: block; /* Keep toggle button visible */
+  }
+
+  /* Hide text labels on icons when collapsed */
+  .sidebar:not(.expanded) .nav-link span {
+    display: none;
+  }
+
+  /* Ensure icons are always visible */
+  .nav-link svg {
+    display: inline; /* Show only icons */
+  }
+
+  /* Show text labels when expanded */
+  .sidebar.expanded .nav-link span {
+    display: inline;
+    font-size: 0.85rem; /* Adjust font size for expanded view */
+  }
+
+}
+
+
+
+
+
+/* For Extra Small Screens (576px and below) */
+/* For Extra Small Screens (576px and below) */
+@media (max-width: 576px) {
+  /* Default state for small screens */
+  .sidebar {
+    width: 80px; /* Collapsed width by default */
+    overflow: hidden; /* Hide text */
+    transition: width 0.3s ease; /* Smooth transition for width changes */
+  }
+
+  .sidebar.collapsed {
+    width: 120px; /* Expanded width */
+    overflow: visible; /* Allow content to be visible */
+  }
+
+  .footer {
+    position: fixed;
+    z-index: 1001; /* Higher than the sidebar */
+  }
+
+  /* Collapsed state */
+  .sidebar.collapsed {
+    width: 80px; /* Ensure collapsed width is enforced */
+  }
+
+  /* Adjust main-content based on sidebar state */
+  .main-content {
+    transition: margin-left 0.3s ease; /* Smooth transition for margin */
+    margin-left: 50px; /* Default margin for expanded sidebar */
+  }
+
+  /* When sidebar is collapsed */
+  .sidebar.collapsed + .main-content {
+    margin-left: 10px; /* Adjust main-content margin for collapsed sidebar */
+  }
+
+  /* Expand sidebar to full width on toggle */
+  .sidebar.expanded {
+    width: 150px;
+  }
+
+  /* Display full text and icons when expanded */
+  .sidebar.expanded .nav-link span {
+    display: inline;
+    font-size: 0.85rem; /* Reduced font size */
+  }
+
+  /* Resize SVG icons for better fit */
+  .sidebar.expanded .nav-link svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Adjust badge size and font */
+  .sidebar.expanded .nav-link .badge {
+    font-size: 0.75rem;
+    padding: 0.2em 0.4em;
+    min-width: auto;
+  }
+
+  /* Hide main header logo when sidebar is expanded */
+  .main-header .logo {
+    display: none;
+  }
+
+  /* Reduce logo header size */
+  .sidebar.expanded .logo-header {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+
+  /* Adjust size of sidebar toggle button */
+  .sidebar.expanded .btn#menu-toggle {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  /* Reduce size of logo image in sidebar */
+  .sidebar.expanded .logo img.navbar-brand {
+    height: 16px; /* Adjust logo height for better fit */
+  }
+
+
+}
+
+
+
+
+/* For Very Extra Small Screens (467px and below) */
+/* For screens smaller than 467px */
+/* For screens smaller than 467px */
+@media (max-width: 467px) {
+  .sidebar {
+    display: none; /* Hide the sidebar */
+  }
+
+  .sidebar.collapsed {
+    width: 80px; /* Ensure collapsed width is enforced */
+  }
+
+  /* Show sidebar with icons only when expanded */
+  .sidebar.expanded {
+    display: block;
+    width: 70px; /* Width for icon-only view */
+  }
+
+
+  /* Adjust sidebar links to display icons only */
+  .sidebar.expanded .nav-link span {
+    display: none; /* Hide text */
+  }
+
+
+   /* Adjust the size of sidebar icons */
+  .sidebar.expanded .nav-link svg {
+    font-size: 2px; /* Smaller icon size */
+    width: 16px; /* Reduce width */
+    height: 16px; /* Reduce height */
+    display: inline; /* Show icons */
+    margin: 0 ;
+  }
+
+  /* Adjust the size of the logo */
+  .sidebar.expanded .logo img {
+    height: 1px; /* Smaller logo height */
+    width: auto; /* Maintain aspect ratio */
+  }
+
+
+
+  /* Style adjustments for the sidebar toggle button */
+  #menu-toggle {
+    font-size: 14px; /* Adjust font size */
+    padding: 4px 6px; /* Smaller padding */
+    width: 30px; /* Reduce width */
+    height: 30px; /* Reduce height */
+    display: inline-flex; /* Align inline with logo */
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Align button and logo in the same row */
+  .main-header .col-4 {
+    display: flex;
+    align-items: left;
+     /* Adjusts spacing between logo and button */
+  }
+
+
+
+}
+
+
+@media (max-width: 330px) {
+  .sidebar {
+    display: none; /* Hide the sidebar by default */
+  }
+
+  /* Expanded sidebar with full width */
+  .sidebar.expanded {
+    display: block;
+    width: 65px; /* Set the sidebar width */
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 1000; /* Ensure it's above other content */
+  }
+
+  /* Hide sidebar text for icons-only view */
+  .sidebar.expanded .nav-link span {
+    display: none;
+  }
+
+  /* Adjust main header to allow full sidebar view */
+  .sidebar.expanded .main-header {
+    margin-left: 180px; /* Offset main content to accommodate sidebar */
+  }
+
+  /* Adjust main content area width */
+  .sidebar.expanded .main-section {
+    margin-left: 180px; /* Shift main content for sidebar width */
+  }
+
+
+  /* Sidebar toggle button adjustments */
+  #menu-toggle {
+    font-size: 10px;
+    padding: 2px 4px;
+    width: 26px;
+    height: 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Align toggle button and logo with minimal spacing */
+  .main-header .col-4 {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+
+}
+
+
+
+/* Style for Bio field */
+
+
+
+
+/* Custom Date Picker Container */
+.custom-date-picker {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.calendar {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #1A1A1A;
+    border: 1px solid #9B3922;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    z-index: 100;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #F2613F;
+}
+
+.calendar-header .month {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.calendar-header .navigation button {
+    background: none;
+    color: #F2613F;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.calendar-header .navigation button:hover {
+    color: #9B3922;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+    margin-top: 10px;
+}
+
+.day, .day-number {
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.day {
+    font-weight: bold;
+    color: #F2613F;
+}
+
+.day-number {
+    background-color: #1A1A1A;
+    color: #F2613F;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.day-number:hover {
+    background-color: #9B3922;
+    color: #1A1A1A;
+}
+
+.day-number.selected {
+    background-color: #9B3922;
+    color: #1A1A1A;
+}
+
+
+
+.custom-select {
+    position: relative;
+    width: 100%;
+    max-width: 150px;
+    background-color: #1A1A1A;
+    color: #F2613F;
+    border: 2px solid #9B3922;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.custom-select-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background-color: #1A1A1A;
+    color: #F2613F;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-select-box:hover {
+    background-color: #9B3922; /* Accent color on hover */
+    color: #1A1A1A; /* Text color on hover */
+}
+
+.custom-options {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: #1A1A1A;
+    border: 1px solid #9B3922;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    top: 100%;
+    z-index: 10;
+    max-height: 140px; /* Adjust the height as needed */
+    overflow-y: auto;
+}
+
+/* Scrollbar styling for WebKit browsers (Chrome, Safari) */
+.custom-options::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-options::-webkit-scrollbar-track {
+    background-color: #1A1A1A; /* Background color of the scrollbar track */
+    border-radius: 5px;
+}
+
+.custom-options::-webkit-scrollbar-thumb {
+    background-color: #9B3922; /* Color of the scrollbar thumb */
+    border-radius: 5px;
+    border: 1px solid #F2613F; /* Optional border color for thumb */
+}
+
+.custom-options::-webkit-scrollbar-thumb:hover {
+    background-color: #F2613F; /* Color on hover */
+}
+
+/* Scrollbar styling for Firefox */
+.custom-options {
+    scrollbar-width: thin;
+    scrollbar-color: #9B3922 #1A1A1A;
+}
+
+.custom-options li {
+    padding: 12px;
+    color: #F2613F;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.custom-options li:hover {
+    background-color: #9B3922;
+    color: #1A1A1A;
+}
+
+/* Arrow styling */
+.select-arrow {
+    font-size: 8px;
+    color: #F2613F;
+    transition: transform 0.3s;
+}
+
+.custom-select.open .select-arrow {
+    transform: rotate(180deg); /* Rotate the arrow when dropdown is open */
+}
+
+/* Hide the native select */
+select {
+    display: none;
+}
+
+
+
+
+
+
+
+.flash-message .alert {
+    background-color: #1A1A1A; /* Dark background */
+    color: #F2613F;            /* Text color */
+    border: 1px solid #9B3922; /* Accent border color */
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.flash-message .alert-success {
+    border-color: #2ECC71; /* Green for success */
+    color: #2ECC71;
+}
+
+.flash-message .alert-danger {
+    border-color: #E74C3C; /* Red for error */
+    color: #E74C3C;
+}
+
+.flash-message .alert-warning {
+    border-color: #F39C12; /* Yellow for warning */
+    color: #F39C12;
+}
+
+.flash-message .alert-info {
+    border-color: #3498DB; /* Blue for info */
+    color: #3498DB;
+}
+
+
+
+
+
+
+
+/* Basic styles for the custom alert */
+.custom-alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.alert-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#alertMessage {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.close-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.close-btn:hover {
+    background-color: #0056b3;
+}

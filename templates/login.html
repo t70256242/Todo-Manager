@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrOrganize - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="../static/assets/img/part_1/fav-2.png">
+
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: var(--bs-font-sans-serif);
+            background-color: #0C0C0C; /* Dark background for the login box */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Logo Header */
+        .logo-header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px; /* Space between logo and login form */
+        }
+
+        .logo-header .logo {
+            max-width: 200px;
+            height: auto;
+        }
+
+        /* Login Container */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .login-box {
+
+            background-color: #1A1A1A; /* Dark background */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(26, 26, 26, 0.4), 0 2px 4px rgba(26, 26, 26, 0.6); /* Darker shadow for more contrast */
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #F2613F; /* Main color for headings */
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            font-size: 14px;
+            color: #F2613F ; /* Main color for label text */
+        }
+
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #9B3922; /* Border color matching theme */
+            border-radius: 8px;
+            margin-top: 5px;
+            font-size: 16px;
+            background-color: #1A1A1A ; /* Dark input background */
+            color: #F2613F; /* Main color for input text */
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #9B3922; /* Button background color */
+            color: #F2613F; /* Text color for button */
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #F2613F; /* Lighter background on hover */
+            color: #1A1A1A; /* Text color changes on hover */
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .forgot-password a {
+            font-size: 14px;
+            color: #F2613F; /* Link color */
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .signup {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signup p {
+            font-size: 14px;
+            color: #D3D3D3; /* Subtle color for sign-up text */
+        }
+
+        .signup a {
+            color: #F2613F; /* Link color */
+            text-decoration: none;
+        }
+
+        .signup a:hover {
+            text-decoration: underline;
+        }
+
+        .text-muted {
+            color: #B9786A !important; /* Ensure the new color takes precedence */
+        }
+
+        hr {
+            width: 100%;
+            border: 0;
+            height: 1px;
+            background-color: #9B3922; /* Color matching theme */
+            margin: 20px 0; /* Space around the horizontal rule */
+            opacity: 0.7; /* Slight transparency for a softer effect */
+        }
+
+        .flash-message .alert {
+            background-color: #1A1A1A; /* Dark background */
+            color: #F2613F;            /* Text color */
+            border: 1px solid #9B3922; /* Accent border color */
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .flash-message .alert-success {
+            border-color: #2ECC71; /* Green for success */
+            color: #2ECC71;
+        }
+
+        .flash-message .alert-danger {
+            border-color: #E74C3C; /* Red for error */
+            color: #E74C3C;
+        }
+
+        .flash-message .alert-warning {
+            border-color: #F39C12; /* Yellow for warning */
+            color: #F39C12;
+        }
+
+        .flash-message .alert-info {
+            border-color: #3498DB; /* Blue for info */
+            color: #3498DB;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Logo Header -->
+    <header class="logo-header">
+        <a href="{{ url_for('home') }}">
+            <img src="../static/assets/img/part_1/logo_1_.png" alt="MySite Logo" class="logo">
+        </a>
+    </header>
+
+    <div class="flash-message">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} custom-flash">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login to PrOrganize</h2>
+            <hr class="my-0">
+            <form action="#" method="post" id="loginForm">
+                <div class="input-group">
+                    <label for="email">Email </label>
+                    <input type="text" id="email" name="email" required placeholder="Email">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Password">
+                </div>
+                <button type="submit" id="loginBtn">Log In</button>
+            </form>
+            <div class="forgot-password text-muted">
+                <a href="{{ url_for('reset_password') }}">Forgotten password?</a>
+            </div>
+            <div class="signup">
+                <p class="text-muted">Don't have an account? <a href="{{ url_for('register') }}">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

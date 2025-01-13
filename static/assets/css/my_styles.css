@@ -1,0 +1,7108 @@
+/* General Font Styling */
+.alert, .brand, .btn-simple, .h1, .h2, .h3, .h4, .h5, .h6, .navbar, .td-name, a, body, button.close, h1, h2, h3, h4, h5, h6, p, td {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Raleway', sans-serif; /* Updated body font */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif; /* Updated heading font */
+}
+
+body, html {
+    font-size: 14px;
+    color: #E5E5E5; /* Light Gray body text */
+    background-color: #0C0C0C; /* Dark background */
+}
+
+/* Link Styles */
+a {
+    color: #F2613F; /* Bright Orange for links */
+    text-decoration: none !important;
+}
+
+a:focus, a:hover {
+    color: #FF8664; /* Hover state for links */
+}
+
+/* Headings */
+.h1, h1 {
+    font-size: 2.15rem;
+}
+
+.h2, h2 {
+    font-size: 1.85rem;
+}
+
+.h3, h3 {
+    font-size: 1.64rem;
+}
+
+.h4, h4 {
+    font-size: 1.48rem;
+}
+
+.h5, h5 {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.h6, h6 {
+    font-size: 1.07rem;
+    font-weight: 400;
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 1.07rem;
+    line-height: 1.82;
+    margin-bottom: 1rem;
+    word-break: break-word;
+}
+
+/* Headings Line Height */
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5;
+}
+
+/* Small Text */
+.small, small {
+    font-size: 13px;
+}
+
+/* Bold Text */
+.b, .strong, b, strong {
+    font-weight: 600;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #F2613F; /* Primary Button color */
+    color: #FFFFFF; /* Text color for buttons */
+}
+
+.btn-primary:hover {
+    background-color: #FF8664; /* Hover state for Primary Button */
+}
+
+.btn-secondary {
+    background-color: #9B3922; /* Secondary Button color */
+    color: #FFFFFF; /* Text color for secondary buttons */
+}
+
+.btn-secondary:hover {
+    background-color: #B5472E; /* Hover state for Secondary Button */
+}
+
+/* SVG Icon Styles */
+svg {
+    fill: #FFFFFF; /* SVG icon color */
+}
+
+/* SVGs in Button Areas */
+.btn-primary svg, .btn-secondary svg {
+    fill: #F2613F; /* SVGs in button areas color */
+}
+
+
+/* Page Titles and Categories */
+.page-pretitle {
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #E5E5E5; /* Light Gray */
+}
+
+.page-title {
+    font-size: 23px;
+    font-weight: 600;
+    color: #F2613F; /* Bright Orange */
+    line-height: 30px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif; /* Updated font for titles */
+}
+
+.page-category {
+    color: #E5E5E5; /* Light Gray */
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* Text Colors */
+.text-primary, .text-primary a {
+    color: #F2613F !important; /* Bright Orange */
+}
+
+.text-primary:hover, .text-primary a:hover {
+    color: #FF8664 !important; /* Hover state for primary text */
+}
+
+.text-secondary, .text-secondary a {
+    color: #9B3922 !important; /* Muted Red */
+}
+
+.text-secondary:hover, .text-secondary a:hover {
+    color: #B5472E !important; /* Hover state for secondary text */
+}
+
+/* More Text Colors */
+.text-info, .text-info a {
+    color: #F2613F !important; /* Bright Orange for info text */
+}
+
+.text-info:hover, .text-info a:hover {
+    color: #FF8664 !important; /* Hover state for info text */
+}
+
+.text-success, .text-success a {
+    color: #31ce36 !important; /* Success color */
+}
+
+.text-success:hover, .text-success a:hover {
+    color: #31ce36 !important; /* Hover state for success text */
+}
+
+.text-warning, .text-warning a {
+    color: #ffad46 !important; /* Warning color */
+}
+
+.text-warning:hover, .text-warning a:hover {
+    color: #ffad46 !important; /* Hover state for warning text */
+}
+
+.text-danger, .text-danger a {
+    color: #f25961 !important; /* Danger color */
+}
+
+.text-danger:hover, .text-danger a:hover {
+    color: #f25961 !important; /* Hover state for danger text */
+}
+
+/* Label Styling */
+label {
+    color: #E5E5E5 !important; /* Light Gray */
+    font-size: 14px !important;
+}
+
+/* Miscellaneous Text */
+.text-small {
+    font-size: 11px;
+}
+
+/* Apply font for body text */
+body, html {
+    font-family: 'Raleway', sans-serif; /* Body font */
+    background-color: #0C0C0C; /* Dark background */
+    color: #E5E5E5; /* Light Gray body text */
+}
+
+.metric-value {
+    margin-bottom: 5px;
+    line-height: 1;
+    white-space: nowrap;
+    color: #E5E5E5; /* Light Gray for metric values */
+}
+
+.metric-label {
+    font-size: .975rem;
+    font-weight: 500;
+    color: #E5E5E5; /* Light Gray for metric labels */
+    white-space: nowrap;
+    margin-bottom: 0;
+}
+
+/* Font Weight Variations */
+.fw-light {
+    font-weight: 300 !important;
+}
+
+.fw-normal {
+    font-weight: 400 !important;
+}
+
+.fw-mediumbold {
+    font-weight: 500 !important;
+}
+
+.fw-bold {
+    font-weight: 600 !important;
+}
+
+.fw-extrabold {
+    font-weight: 700 !important;
+}
+
+/* Opacity Classes */
+.op-9 {
+    opacity: .9 !important;
+}
+
+.op-8 {
+    opacity: .8 !important;
+}
+
+.op-7 {
+    opacity: .7 !important;
+}
+
+.op-6 {
+    opacity: .6 !important;
+}
+
+.op-5 {
+    opacity: .5 !important;
+}
+
+.op-4 {
+    opacity: .4 !important;
+}
+
+.op-3 {
+    opacity: .3 !important;
+}
+
+/* Body Styling */
+body {
+    min-height: 100vh;
+    position: relative;
+    background: #0C0C0C; /* Dark background */
+    color: #E5E5E5; /* Light Gray for body text */
+    font-family: 'Raleway', sans-serif; /* Body font */
+}
+
+/* Sidebar and Navbar Styling */
+.sidebar {
+    background-color: #481E14; /* Deep Brown */
+}
+
+.navbar {
+    background-color: #9B3922; /* Muted Red */
+}
+/* Overlay */
+.body-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .15;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+}
+
+/* Focus Styling */
+:focus {
+    outline: 0 !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+/* Borders */
+.border-bottom, .border-left, .border-right, .border-top {
+    border-color: #F2613F !important; /* Bright Orange for borders */
+}
+
+/* Box Shadows */
+.no-box-shadow {
+    box-shadow: none !important;
+}
+
+.no-box-shadow-style * {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.no-box-shadow-style .card, .no-box-shadow-style .row-card-no-pd {
+    border: 1px solid #eaeaea; /* Light Gray border */
+}
+
+/* Margins */
+.mt--5, .my--5 {
+    margin-top: -3rem !important;
+}
+
+.mt--4, .my--4 {
+    margin-top: -1.5rem !important;
+}
+
+.mt--3, .my--3 {
+    margin-top: -1rem !important;
+}
+
+.mt--2, .my--2 {
+    margin-top: -.5rem !important;
+}
+
+.mt--1, .my--1 {
+    margin-top: -.25rem !important;
+}
+
+/* Floats */
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+/* Wrapper and Flexbox */
+.wrapper {
+    min-height: 100vh;
+    position: relative;
+    top: 0;
+    height: 100vh;
+    background: #0C0C0C; /* Dark background for wrapper */
+}
+
+/* Flexbox Adjustment */
+.flex-1 {
+    -ms-flex: 1;
+    flex: 1;
+}
+
+/* Sidebar and Navbar Styles */
+.sidebar {
+    background-color: #481E14; /* Deep Brown */
+}
+
+.navbar {
+    background-color: #9B3922; /* Muted Red */
+}
+
+/* Apply font for body text */
+body {
+    font-family: 'Raleway', sans-serif; /* Body font */
+    color: #E5E5E5; /* Light Gray for body text */
+}
+
+/* Headings and Button Font */
+h1, h2, h3, h4, h5, h6, .btn {
+    font-family: 'Playfair Display', serif; /* Heading and button font */
+    color: #F2613F; /* Bright Orange for headings and buttons */
+}
+/* Metric Display */
+.metric {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    color: #E5E5E5; /* Light Gray for metric text */
+}
+
+/* Main Header */
+.main-header {
+    background: #9B3922; /* Muted Red for navbar */
+    min-height: 60px;
+    width: calc(100% - 250px);
+    position: fixed;
+    z-index: 1001;
+}
+
+.main-header .navbar-header {
+    min-height: 70px;
+}
+
+.main-header .navbar-header .btn-toggle {
+    margin-right: 30px;
+    margin-left: 20px;
+    color: #FFFFFF; /* White icons in navbar */
+}
+
+/* Search Bar */
+#search-nav {
+    flex: 1;
+    max-width: 300px;
+    transition: all .4s;
+    background-color: #481E14; /* Deep Brown background */
+    color: #E5E5E5; /* Light Gray text */
+}
+
+#search-nav.focus {
+    max-width: 400px;
+}
+
+/* Main Panel */
+.main-panel {
+    position: relative;
+    width: calc(100% - 265px);
+    height: 100vh;
+    min-height: 100%;
+    float: right;
+    transition: all .3s;
+    background-color: #0C0C0C; /* Dark background for main panel */
+    color: #E5E5E5; /* Light Gray body text */
+    font-family: 'Raleway', sans-serif; /* Body font */
+}
+
+.main-panel > .container {
+    min-height: calc(100% - 123px);
+    margin-top: 69px;
+    overflow: hidden;
+    width: 100%;
+    max-width: unset;
+    padding: 0 !important;
+}
+
+.main-panel > .container-full {
+    padding: 0 !important;
+    min-height: calc(100% - 123px);
+    margin-top: 70px;
+    overflow: hidden;
+    width: 100%;
+    max-width: unset;
+}
+
+.main-panel .row {
+    --bs-gutter-x: 30px;
+}
+
+/* Headings and Buttons */
+h1, h2, h3, h4, h5, h6, .btn {
+    font-family: 'Playfair Display', serif; /* Headings and button font */
+    color: #F2613F; /* Bright Orange for headings and buttons */
+}
+
+/* Primary Button (Call-to-Action) */
+.btn-primary {
+    background-color: #F2613F; /* Bright Orange */
+    color: #FFFFFF; /* White text */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #FF8664; /* Hover state for primary button */
+    color: #FFFFFF; /* White text */
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background-color: #9B3922; /* Muted Red */
+    color: #FFFFFF; /* White text */
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #B5472E; /* Hover state for secondary button */
+    color: #FFFFFF; /* White text */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background-color: #481E14; /* Deep Brown for sidebar */
+    color: #E5E5E5; /* Light Gray text in sidebar */
+}
+
+/* SVG Icon Colors */
+svg {
+    fill: #FFFFFF; /* White SVG icons */
+}
+
+.btn svg {
+    fill: #F2613F; /* Bright Orange SVG icons in buttons */
+}
+
+/* Page Header */
+.page-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #E5E5E5; /* Light Gray text */
+    font-family: 'Playfair Display', serif; /* Playfair for titles */
+}
+
+.page-header .page-title {
+    margin-bottom: 0;
+    font-family: 'Playfair Display', serif; /* Playfair Display for titles */
+    color: #F2613F; /* Bright Orange for headings */
+}
+
+.page-header .btn-page-header-dropdown {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+    padding: 0;
+    color: #FFFFFF; /* White for dropdown button */
+    background-color: #9B3922; /* Muted Red for dropdown background */
+    box-shadow: 0 2px 14px 0 rgba(144, 116, 212, .1) !important;
+    border: 0;
+}
+
+.page-header .btn-page-header-dropdown:after {
+    display: none;
+}
+
+.page-header .dropdown-menu {
+    margin-top: 15px;
+    top: 0 !important;
+    background-color: #FFFFFF; /* White dropdown background */
+    color: #0C0C0C; /* Dark dropdown text */
+}
+
+.page-header .dropdown-menu:after {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #FFFFFF; /* White for dropdown arrow */
+    position: absolute;
+    top: -8px;
+    right: 32px;
+    content: '';
+}
+
+/* Divider */
+.page-divider {
+    height: 0;
+    margin: .3rem 0 1rem;
+    overflow: hidden;
+    border-top: 1px solid #ebecec;
+}
+
+/* Page Wrapper */
+.page-wrapper {
+    min-height: calc(100vh - 57px);
+    position: relative;
+    background-color: #0C0C0C; /* Dark background */
+    color: #E5E5E5; /* Light Gray body text */
+    font-family: 'Raleway', sans-serif; /* Raleway for body */
+}
+
+.page-wrapper.has-sidebar .page-inner {
+    margin-left: 22.5rem;
+    background-color: #0C0C0C; /* Dark background */
+}
+
+/* Navigation */
+.page-navs {
+    position: relative;
+    display: block;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .07);
+    z-index: 1;
+    background-color: #9B3922; /* Muted Red for nav background */
+}
+
+.page-navs .nav .nav-link {
+    padding: 1rem !important;
+    color: #F5F5F5; /* Light Gray nav text */
+}
+
+.page-navs .nav-line {
+    border: 0 !important;
+}
+
+.page-navs .nav-line .nav-link {
+    border-bottom-width: 3px !important;
+    color: #F2613F; /* Bright Orange for active links */
+}
+
+/* SVG Icons */
+svg {
+    fill: #FFFFFF; /* White SVG icons */
+}
+
+.btn svg {
+    fill: #F2613F; /* Bright Orange SVG icons in buttons */
+}
+
+/* Importing Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500;700&display=swap');
+
+/* General Styling */
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #0C0C0C;
+    color: #E5E5E5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    color: #F2613F;
+}
+
+/* SVG Icons */
+svg {
+    fill: #FFFFFF;
+}
+
+/* Sidebar */
+.page-sidebar {
+    background-color: #481E14;
+    color: #E5E5E5;
+}
+
+/* Navbar */
+.nav-scroller {
+    background-color: #9B3922;
+}
+
+.nav-scroller .nav {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+/* Buttons */
+button, .btn-primary {
+    background-color: #F2613F;
+    color: #FFFFFF;
+    font-family: 'Raleway', sans-serif;
+}
+
+button:hover, .btn-primary:hover {
+    background-color: #FF8664;
+}
+
+.btn-secondary {
+    background-color: #9B3922;
+    color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background-color: #B5472E;
+}
+
+/* Main Panel */
+@media (min-width: 991px) {
+    .main-panel > .container-full {
+        padding: 24px !important;
+    }
+    .page-wrapper {
+        overflow: hidden;
+    }
+    .page-navs {
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+}
+
+.page-inner {
+    padding: 24px 0;
+    color: #E5E5E5;
+}
+
+@media (min-width: 576px) {
+    .page-inner {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+}
+
+.page-inner-fill {
+    padding: 0;
+    height: calc(100% - 57px);
+    display: flex;
+    flex-direction: column;
+}
+
+.page-sidebar-section {
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Responsive Sidebar */
+@media (min-width: 1200.5px) {
+    .page-sidebar {
+        transform: translateZ(0);
+        left: 0;
+    }
+}
+
+@media (max-width: 1200.5px) {
+    .page-wrapper.has-sidebar .page-inner {
+        margin-left: 0;
+    }
+    .pagesidebar_open .page-sidebar {
+        transform: translate3d(0, 0, 0) !important;
+        max-width: unset;
+    }
+}
+
+/* Page With Aside */
+.page-with-aside {
+    display: flex;
+}
+
+.page-with-aside .page-aside {
+    width: 280px;
+    min-height: 100vh;
+    border-right: 1px solid #f1f1f1;
+    padding: 15px 0;
+}
+
+.page-with-aside .page-aside .aside-header {
+    padding: 15px 22px;
+}
+
+.page-with-aside .page-aside .aside-header .title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+}
+
+.page-with-aside .page-aside .aside-header .description {
+    font-size: 12px;
+}
+
+.page-with-aside .page-aside .aside-nav .nav {
+    flex-direction: column;
+}
+
+.page-with-aside .page-aside .aside-nav .nav > li {
+    padding: 8px 22px;
+    margin-bottom: 5px;
+}
+
+.page-with-aside .page-aside .aside-nav .nav > li.active,
+.page-with-aside .page-aside .aside-nav .nav > li:focus,
+.page-with-aside .page-aside .aside-nav .nav > li:hover {
+    background: rgba(51, 51, 51, 0.08);
+}
+
+.page-with-aside .page-aside .aside-nav .nav > li.active {
+    padding: 12px 22px;
+    font-weight: 600;
+}
+
+.page-with-aside .page-aside .aside-nav .nav > li.active > a {
+    color: #575962 !important;
+}
+
+.page-with-aside .page-aside .aside-nav .nav > li > a {
+    color: #83848a;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.page-with-aside .page-aside .aside-nav .nav > li > a:focus,
+.page-with-aside .page-aside .aside-nav .nav > li > a:hover {
+    text-decoration: none;
+}
+
+.page-with-aside .page-aside .aside-nav .nav > li > a svg {
+    margin-right: 15px;
+    fill: #a1a2a6;
+}
+
+.page-with-aside .page-aside .aside-nav .label {
+    padding: 5px 22px;
+    margin-top: 22px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.page-with-aside .page-aside .aside-compose {
+    padding: 25px 22px;
+}
+
+.page-with-aside .page-content {
+    width: calc(100% - 280px);
+}
+
+.footer {
+    border-top: 1px solid #9B3922; /* Using sidebar deep brown for a classic look */
+    padding: 15px;
+    background: #0C0C0C; /* Dark background */
+    position: absolute;
+    width: 100%;
+}
+
+.footer .container,
+.footer .container-fluid {
+    display: flex;
+    align-items: center;
+}
+
+.footer svg {
+    fill: #FFFFFF; /* White SVG icons in the footer */
+}
+
+
+.sidebar,
+.sidebar[data-background-color=white] {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 265px;
+    display: block;
+    z-index: 1002;
+    color: #E5E5E5; /* Light Gray for text */
+    font-weight: 200;
+    background: #481E14; /* Deep Brown for the sidebar background */
+    box-shadow: 4px 4px 10px rgba(69, 65, 78, 0.06);
+    transition: all 0.3s;
+}
+
+.sidebar .user,
+.sidebar[data-background-color=white] .user {
+    padding: 15px;
+    border-top: 1px solid #9B3922; /* Muted Red */
+    border-bottom: 1px solid #9B3922; /* Muted Red */
+    display: block;
+    margin: 0 15px;
+}
+
+.sidebar .user .info a,
+.sidebar[data-background-color=white] .user .info a {
+    white-space: nowrap;
+    display: block;
+    position: relative;
+    color: #E5E5E5; /* Light Gray for links */
+}
+
+.sidebar .user .info a:focus,
+.sidebar .user .info a:hover,
+.sidebar[data-background-color=white] .user .info a:focus,
+.sidebar[data-background-color=white] .user .info a:hover {
+    text-decoration: none;
+    color: #FF8664; /* Hover State Color */
+}
+
+.sidebar .user .info a > span,
+.sidebar[data-background-color=white] .user .info a > span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #E5E5E5; /* Light Gray for text */
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .user .info a > span .user-level,
+.sidebar[data-background-color=white] .user .info a > span .user-level {
+    color: #F5F5F5; /* Slightly lighter gray for user level */
+    font-weight: 600;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.sidebar .user .info a .link-collapse,
+.sidebar[data-background-color=white] .user .info a .link-collapse {
+    padding: 7px 0;
+}
+
+.sidebar .user .info .caret,
+.sidebar[data-background-color=white] .user .info .caret {
+    position: absolute;
+    top: 17px;
+    right: 0;
+    border-top-color: #F2613F; /* Bright Orange */
+}
+
+.sidebar .sidebar-wrapper,
+.sidebar[data-background-color=white] .sidebar-wrapper {
+    position: relative;
+    max-height: calc(100vh - 75px);
+    min-height: 100%;
+    overflow: auto;
+    width: 100%;
+    z-index: 4;
+    transition: all 0.3s;
+}
+
+.sidebar .sidebar-wrapper .sidebar-content,
+.sidebar[data-background-color=white] .sidebar-wrapper .sidebar-content {
+    padding: 0;
+    padding-bottom: 100px;
+}
+
+.sidebar .sidebar-wrapper .scroll-element.scroll-y,
+.sidebar[data-background-color=white] .sidebar-wrapper .scroll-element.scroll-y {
+    top: 5px !important;
+}
+
+.sidebar .nav,
+.sidebar[data-background-color=white] .nav {
+    display: block;
+    margin-top: 20px;
+}
+
+.sidebar .nav .nav-section,
+.sidebar[data-background-color=white] .nav .nav-section {
+    margin: 15px 0 0;
+}
+
+.sidebar .nav .nav-section .sidebar-mini-icon,
+.sidebar[data-background-color=white] .nav .nav-section .sidebar-mini-icon {
+    text-align: center;
+    font-size: 15px;
+    color: #FFFFFF; /* White SVG icons */
+    display: none;
+}
+
+
+.sidebar .nav .nav-section .text-section,
+.sidebar[data-background-color=white] .nav .nav-section .text-section {
+    padding: 2px 30px;
+    font-size: 12px;
+    color: #E5E5E5; /* Light Gray */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 20px 0 12px;
+}
+
+.sidebar .nav > .nav-item,
+.sidebar[data-background-color=white] .nav > .nav-item {
+    display: list-item;
+}
+
+.sidebar .nav > .nav-item.active > a,
+.sidebar[data-background-color=white] .nav > .nav-item.active > a {
+    background: rgba(255, 134, 100, 0.1); /* Light Hover State */
+    color: #F2613F !important; /* Bright Orange */
+}
+
+.sidebar .nav > .nav-item.active > a:before,
+.sidebar[data-background-color=white] .nav > .nav-item.active > a:before {
+    background: #F2613F; /* Bright Orange */
+}
+
+.sidebar .nav > .nav-item.active > a p,
+.sidebar[data-background-color=white] .nav > .nav-item.active > a p {
+    color: #F5F5F5 !important; /* Light Gray */
+    font-weight: 600;
+}
+
+/* Replaced i elements with svg icons */
+.sidebar .nav > .nav-item a svg,
+.sidebar[data-background-color=white] .nav > .nav-item a svg {
+    color: #FFFFFF; /* White for SVG icons */
+    margin-right: 15px;
+    width: 25px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.sidebar .nav > .nav-item a svg[class^=flaticon-],
+.sidebar[data-background-color=white] .nav > .nav-item a svg[class^=flaticon-] {
+    font-size: 20px;
+}
+
+.sidebar .nav > .nav-item a p,
+.sidebar[data-background-color=white] .nav > .nav-item a p {
+    font-size: 1rem;
+    margin-bottom: 0;
+    margin-right: 5px;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.sidebar .nav > .nav-item a .caret,
+.sidebar[data-background-color=white] .nav > .nav-item a .caret {
+    margin-left: auto;
+    margin-right: 6px;
+    transition: all 0.5s;
+    color: #F5F5F5; /* Light Gray */
+}
+
+.sidebar .nav > .nav-item a[data-toggle=collapse][aria-expanded=true],
+.sidebar[data-background-color=white] .nav > .nav-item a[data-toggle=collapse][aria-expanded=true] {
+    background: none;
+}
+
+.sidebar .nav > .nav-item a[data-toggle=collapse][aria-expanded=true] p,
+.sidebar[data-background-color=white] .nav > .nav-item a[data-toggle=collapse][aria-expanded=true] p {
+    color: #E5E5E5; /* Light Gray */
+}
+
+.sidebar .nav > .nav-item a[data-toggle=collapse][aria-expanded=true] svg,
+.sidebar[data-background-color=white] .nav > .nav-item a[data-toggle=collapse][aria-expanded=true] svg {
+    color: #F2613F; /* Bright Orange for active SVGs */
+}
+
+.sidebar .nav > .nav-item a[data-toggle=collapse][aria-expanded=true] .caret,
+.sidebar[data-background-color=white] .nav > .nav-item a[data-toggle=collapse][aria-expanded=true] .caret {
+    transform: rotate(-180deg);
+}
+
+/* Color for hover and active states */
+.sidebar .nav > .nav-item a:focus svg,
+.sidebar .nav > .nav-item a:hover svg,
+.sidebar[data-background-color=white] .nav > .nav-item a:focus svg,
+.sidebar[data-background-color=white] .nav > .nav-item a:hover svg {
+    color: #FF8664 !important; /* Hover state color */
+}
+
+.sidebar .nav > .nav-item a:focus p,
+.sidebar .nav > .nav-item a:hover p,
+.sidebar[data-background-color=white] .nav > .nav-item a:focus p,
+.sidebar[data-background-color=white] .nav > .nav-item a:hover p {
+    color: #F5F5F5 !important; /* Hover state text color */
+    font-weight: 600;
+}
+
+.sidebar .nav > .nav-item.active a svg,
+.sidebar[data-background-color=white] .nav > .nav-item.active a svg {
+    color: #F2613F !important; /* Bright Orange for active SVG icons */
+}
+
+/* Secondary and Info nav sections */
+.sidebar .nav.nav-secondary > .nav-item a:focus svg,
+.sidebar .nav.nav-secondary > .nav-item a:hover svg,
+.sidebar[data-background-color=white] .nav.nav-secondary > .nav-item a:focus svg,
+.sidebar[data-background-color=white] .nav.nav-secondary > .nav-item a:hover svg {
+    color: #B5472E !important; /* Secondary button hover */
+}
+
+.sidebar .nav.nav-info > .nav-item a:focus svg,
+.sidebar .nav.nav-info > .nav-item a:hover svg,
+.sidebar[data-background-color=white] .nav.nav-info > .nav-item a:focus svg,
+.sidebar[data-background-color=white] .nav.nav-info > .nav-item a:hover svg {
+    color: #48abf7 !important; /* Info nav hover */
+}
+/* Success navigation item colors */
+.sidebar .nav.nav-success > .nav-item a:focus svg,
+.sidebar .nav.nav-success > .nav-item a:hover svg,
+.sidebar .nav.nav-success > .nav-item a[data-toggle=collapse][aria-expanded=true] svg,
+.sidebar[data-background-color=white] .nav.nav-success > .nav-item a:focus svg,
+.sidebar[data-background-color=white] .nav.nav-success > .nav-item a:hover svg,
+.sidebar[data-background-color=white] .nav.nav-success > .nav-item a[data-toggle=collapse][aria-expanded=true] svg {
+    color: #FFFFFF !important; /* Changed to white for SVG */
+}
+
+.sidebar .nav.nav-success > .nav-item a[data-toggle=collapse][aria-expanded=true]:before,
+.sidebar[data-background-color=white] .nav.nav-success > .nav-item a[data-toggle=collapse][aria-expanded=true]:before {
+    background: #31ce36 !important;
+}
+
+.sidebar .nav.nav-success > .nav-item.active a:before,
+.sidebar[data-background-color=white] .nav.nav-success > .nav-item.active a:before {
+    background: #31ce36 !important;
+}
+
+.sidebar .nav.nav-success > .nav-item.active a svg,
+.sidebar[data-background-color=white] .nav.nav-success > .nav-item.active a svg {
+    color: #31ce36 !important; /* Success SVG color */
+}
+
+.sidebar .nav.nav-success > .nav-item .nav-collapse li.active > a,
+.sidebar[data-background-color=white] .nav.nav-success > .nav-item .nav-collapse li.active > a {
+    color: #31ce36 !important;
+}
+
+/* Warning navigation item colors */
+.sidebar .nav.nav-warning > .nav-item a:focus svg,
+.sidebar .nav.nav-warning > .nav-item a:hover svg,
+.sidebar .nav.nav-warning > .nav-item a[data-toggle=collapse][aria-expanded=true] svg,
+.sidebar[data-background-color=white] .nav.nav-warning > .nav-item a:focus svg,
+.sidebar[data-background-color=white] .nav.nav-warning > .nav-item a:hover svg,
+.sidebar[data-background-color=white] .nav.nav-warning > .nav-item a[data-toggle=collapse][aria-expanded=true] svg {
+    color: #FFFFFF !important; /* Changed to white for SVG */
+}
+
+.sidebar .nav.nav-warning > .nav-item a[data-toggle=collapse][aria-expanded=true]:before,
+.sidebar[data-background-color=white] .nav.nav-warning > .nav-item a[data-toggle=collapse][aria-expanded=true]:before {
+    background: #ffad46 !important;
+}
+
+.sidebar .nav.nav-warning > .nav-item.active a:before,
+.sidebar[data-background-color=white] .nav.nav-warning > .nav-item.active a:before {
+    background: #ffad46 !important;
+}
+
+.sidebar .nav.nav-warning > .nav-item.active a svg,
+.sidebar[data-background-color=white] .nav.nav-warning > .nav-item.active a svg {
+    color: #ffad46 !important;
+}
+
+/* Danger navigation item colors */
+.sidebar .nav.nav-danger > .nav-item a:focus svg,
+.sidebar .nav.nav-danger > .nav-item a:hover svg,
+.sidebar .nav.nav-danger > .nav-item a[data-toggle=collapse][aria-expanded=true] svg,
+.sidebar[data-background-color=white] .nav.nav-danger > .nav-item a:focus svg,
+.sidebar[data-background-color=white] .nav.nav-danger > .nav-item a:hover svg,
+.sidebar[data-background-color=white] .nav.nav-danger > .nav-item a[data-toggle=collapse][aria-expanded=true] svg {
+    color: #FFFFFF !important;
+}
+
+.sidebar .nav.nav-danger > .nav-item a[data-toggle=collapse][aria-expanded=true]:before,
+.sidebar[data-background-color=white] .nav.nav-danger > .nav-item a[data-toggle=collapse][aria-expanded=true]:before {
+    background: #f25961 !important;
+}
+
+.sidebar .nav.nav-danger > .nav-item.active a:before,
+.sidebar[data-background-color=white] .nav.nav-danger > .nav-item.active a:before {
+    background: #f25961 !important;
+}
+
+.sidebar .nav.nav-danger > .nav-item.active a svg,
+.sidebar[data-background-color=white] .nav.nav-danger > .nav-item.active a svg {
+    color: #f25961 !important;
+}
+
+/* Collapse indicator for navigation items */
+.sidebar .nav > .nav-item a[data-toggle=collapse][aria-expanded=true]:before,
+.sidebar .nav > .nav-item.active:hover > a:before,
+.sidebar .nav > .nav-item.active > a:before,
+.sidebar[data-background-color=white] .nav > .nav-item a[data-toggle=collapse][aria-expanded=true]:before,
+.sidebar[data-background-color=white] .nav > .nav-item.active:hover > a:before,
+.sidebar[data-background-color=white] .nav > .nav-item.active > a:before {
+    opacity: 1 !important;
+    position: absolute;
+    z-index: 1;
+    width: 2px;
+    height: 100%;
+    content: '';
+    left: 0;
+    top: 0;
+}
+
+/* Navigation collapse styles */
+.sidebar .nav-collapse,
+.sidebar[data-background-color=white] .nav-collapse {
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+
+.sidebar .nav-collapse li.active > a,
+.sidebar[data-background-color=white] .nav-collapse li.active > a {
+    font-weight: 600;
+}
+
+.sidebar .nav-collapse li a:before,
+.sidebar .nav-collapse li a:hover:before,
+.sidebar[data-background-color=white] .nav-collapse li a:before,
+.sidebar[data-background-color=white] .nav-collapse li a:hover:before {
+    opacity: 0 !important;
+}
+
+.sidebar .nav-collapse li a,
+.sidebar[data-background-color=white] .nav-collapse li a {
+    margin-bottom: 3px !important;
+    padding: 10px 25px !important;
+}
+
+/* Sub-item styles */
+.sidebar .nav-collapse li a .sub-item,
+.sidebar[data-background-color=white] .nav-collapse li a .sub-item {
+    font-size: 1rem;
+    position: relative;
+    margin-left: 25px;
+    opacity: .85;
+}
+
+.sidebar .nav-collapse li a .sub-item:before,
+.sidebar[data-background-color=white] .nav-collapse li a .sub-item:before {
+    content: '';
+    height: 4px;
+    width: 4px;
+    background: rgba(131, 132, 138, .89);
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 100%;
+}
+
+.sidebar .nav-collapse li a:hover .sub-item,
+.sidebar[data-background-color=white] .nav-collapse li a:hover .sub-item {
+    opacity: 1;
+}
+
+
+/* Sidebar mini icon styles */
+.sidebar .nav-collapse li a .sidebar-mini-icon,
+.sidebar[data-background-color=white] .nav-collapse li a .sidebar-mini-icon {
+    font-size: 16px;
+    color: #FFFFFF; /* Changed to white for SVG */
+    margin-right: 15px;
+    width: 25px;
+    text-align: center;
+    vertical-align: middle;
+    float: left;
+    font-weight: 300 !important;
+}
+
+/* Sub-navigation styles */
+.sidebar .nav-collapse.subnav,
+.sidebar[data-background-color=white] .nav-collapse.subnav {
+    padding-bottom: 10px;
+    margin-bottom: 0;
+}
+
+.sidebar .nav-collapse.subnav li a,
+.sidebar[data-background-color=white] .nav-collapse.subnav li a {
+    padding-left: 40px !important;
+}
+
+/* Profile section borders */
+.sidebar .profile-section .border-bottom,
+.sidebar .profile-section .border-left,
+.sidebar .profile-section .border-right,
+.sidebar .profile-section .border-top,
+.sidebar[data-background-color=white] .profile-section .border-bottom,
+.sidebar[data-background-color=white] .profile-section .border-left,
+.sidebar[data-background-color=white] .profile-section .border-right,
+.sidebar[data-background-color=white] .profile-section .border-top {
+    border-color: rgba(255, 255, 255, .3) !important;
+}
+
+/* User profile styles */
+.sidebar .user-profile .user-name,
+.sidebar[data-background-color=white] .user-profile .user-name {
+    font-size: 16px;
+}
+
+.sidebar .user-profile .user-level,
+.sidebar[data-background-color=white] .user-profile .user-level {
+    font-size: 13px;
+}
+
+/* Menubar styles */
+.sidebar .menubar,
+.sidebar[data-background-color=white] .menubar {
+    color: #FFFFFF; /* Changed to white */
+    line-height: 80px;
+    font-size: 18px;
+    opacity: .9;
+}
+
+/* Background colors for dark themes */
+.sidebar[data-background-color=dark2] .nav .nav-item.submenu,
+.sidebar[data-background-color=dark2] .nav .nav-item > a:focus,
+.sidebar[data-background-color=dark2] .nav .nav-item > a:hover,
+.sidebar[data-background-color=dark] .nav .nav-item.submenu,
+.sidebar[data-background-color=dark] .nav .nav-item > a:focus,
+.sidebar[data-background-color=dark] .nav .nav-item > a:hover {
+    background: rgba(0, 0, 0, .16);
+}
+
+.sidebar[data-background-color=dark2] .nav .nav-item.submenu > a,
+.sidebar[data-background-color=dark] .nav .nav-item.submenu > a {
+    background: 0 0 !important;
+}
+
+.sidebar[data-background-color=dark2] .nav .nav-item.active > a,
+.sidebar[data-background-color=dark] .nav .nav-item.active > a {
+    background: rgba(0, 0, 0, .16);
+}
+
+/* Logo Header Styles */
+.logo-header {
+    background: #9B3922 !important; /* Navbar background color */
+    float: left;
+    width: 265px;
+    height: 70px;
+    line-height: 60px;
+    color: #FFFFFF; /* Text color in logo */
+    z-index: 1001;
+    font-size: 17px;
+    font-weight: 400;
+    padding-left: 25px;
+    padding-right: 25px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s; /* Added a space for clarity */
+}
+
+.logo-header .big-logo {
+    margin-right: 8px;
+}
+
+.logo-header .big-logo:hover {
+    text-decoration: none;
+}
+
+.logo-header .big-logo .logo-img {
+    width: 35px;
+    height: 35px;
+}
+
+.logo-header .logo {
+    color: #FFFFFF; /* Logo text color */
+    opacity: 1;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo-header .logo:hover {
+    text-decoration: none;
+}
+
+.logo-header .logo .navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-right: 0;
+}
+
+.logo-header .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 18px;
+    z-index: 5;
+}
+
+.logo-header .navbar-toggler {
+    padding-left: 0;
+    padding-right: 0;
+    opacity: 0;
+    display: none;
+}
+
+.logo-header .navbar-toggler .navbar-toggler-icon {
+    height: unset;
+    width: unset;
+    display: block;
+    color: #545454;
+    font-size: 22px;
+}
+
+.logo-header .more {
+    background: 0 0;
+    border: 0;
+    font-size: 22px;
+    padding: 0;
+    opacity: 0;
+    width: 0;
+    display: none;
+}
+
+/* Primary button (call-to-action) styles */
+.button-primary {
+    background-color: #F2613F; /* Bright orange */
+    color: #FFFFFF; /* Text color in primary button */
+}
+
+.button-primary:hover {
+    background-color: #FF8664; /* Hover state */
+    color: #FFFFFF;
+}
+
+/* Secondary button styles */
+.button-secondary {
+    background-color: #9B3922; /* Muted red */
+    color: #FFFFFF;
+}
+
+.button-secondary:hover {
+    background-color: #B5472E; /* Hover state */
+    color: #FFFFFF;
+}
+
+/* SVG icon styles */
+.sidebar svg,
+.logo-header svg {
+    color: #FFFFFF !important; /* SVG icons are white */
+}
+
+button svg {
+    color: #F2613F !important; /* SVGs in button areas use bright orange */
+}
+
+
+
+/* Button Toggle Styles */
+.btn-toggle {
+    font-size: 20px !important;
+    line-height: 20px;
+    padding: 0 !important;
+    background: 0 0 !important;
+    color: #F2613F !important; /* Bright Orange */
+}
+
+.btn-toggle:focus,
+.btn-toggle:hover {
+    opacity: 1;
+}
+
+/* Sidebar Styles */
+.sidebar.sidebar-style-2 .nav .nav-item {
+    padding: 0 15px;
+}
+
+.sidebar.sidebar-style-2 .nav .nav-item a {
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+.sidebar.sidebar-style-2 .nav .nav-item a:focus,
+.sidebar.sidebar-style-2 .nav .nav-item a:hover,
+.sidebar.sidebar-style-2 .nav .nav-item a[data-toggle=collapse][aria-expanded=true] {
+    background: rgba(199, 199, 199, .2);
+}
+
+.sidebar.sidebar-style-2 .nav .nav-item a:focus svg,
+.sidebar.sidebar-style-2 .nav .nav-item a:focus p,
+.sidebar.sidebar-style-2 .nav .nav-item a:hover svg,
+.sidebar.sidebar-style-2 .nav .nav-item a:hover p,
+.sidebar.sidebar-style-2 .nav .nav-item a[data-toggle=collapse][aria-expanded=true] svg,
+.sidebar.sidebar-style-2 .nav .nav-item a[data-toggle=collapse][aria-expanded=true] p {
+    color: #575962 !important;
+}
+
+.sidebar.sidebar-style-2 .nav .nav-item.active a:before {
+    background: 0 0;
+}
+
+.sidebar.sidebar-style-2 .nav .nav-item .active a {
+    background: rgba(199, 199, 199, .2);
+}
+
+.sidebar.sidebar-style-2 .nav .nav-item .active a svg,
+.sidebar.sidebar-style-2 .nav .nav-item .active a p {
+    color: #575962 !important;
+}
+
+.sidebar.sidebar-style-2 .nav .nav-item.submenu {
+    background: 0 0 !important;
+}
+
+.sidebar.sidebar-style-2 .nav .nav-item a[data-toggle=collapse][aria-expanded=true]:before {
+    background: 0 0 !important;
+}
+
+/* Primary Navigation Active Styles */
+.sidebar.sidebar-style-2 .nav.nav-primary > .nav-item.active > a {
+    background: #1572e8 !important;
+    box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, .1),
+                4px 4px 15px -5px rgba(21, 114, 232, .4);
+}
+
+.sidebar.sidebar-style-2 .nav.nav-primary > .nav-item.active > a:before {
+    background: 0 0 !important;
+}
+
+.sidebar.sidebar-style-2 .nav.nav-primary > .nav-item.active > a .caret,
+.sidebar.sidebar-style-2 .nav.nav-primary > .nav-item.active > a svg,
+.sidebar.sidebar-style-2 .nav.nav-primary > .nav-item.active > a p,
+.sidebar.sidebar-style-2 .nav.nav-primary > .nav-item.active > a span {
+    color: #fff !important;
+}
+
+/* Secondary Navigation Active Styles */
+.sidebar.sidebar-style-2 .nav.nav-secondary > .nav-item.active > a {
+    background: #6861ce !important;
+    box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, .1),
+                4px 4px 15px -5px rgba(104, 97, 206, .4);
+}
+
+.sidebar.sidebar-style-2 .nav.nav-secondary > .nav-item.active > a:before {
+    background: 0 0 !important;
+}
+
+.sidebar.sidebar-style-2 .nav.nav-secondary > .nav-item.active > a .caret,
+.sidebar.sidebar-style-2 .nav.nav-secondary > .nav-item.active > a svg,
+.sidebar.sidebar-style-2 .nav.nav-secondary > .nav-item.active > a p,
+.sidebar.sidebar-style-2 .nav.nav-secondary > .nav-item.active > a span {
+    color: #fff !important;
+}
+
+/* Info Navigation Active Styles */
+.sidebar.sidebar-style-2 .nav.nav-info > .nav-item.active > a {
+    background: #48abf7 !important;
+    box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, .1),
+                4px 4px 15px -5px rgba(72, 171, 247, .4);
+}
+
+.sidebar.sidebar-style-2 .nav.nav-info > .nav-item.active > a:before {
+    background: 0 0 !important;
+}
+
+.sidebar.sidebar-style-2 .nav.nav-info > .nav-item.active > a .caret,
+.sidebar.sidebar-style-2 .nav.nav-info > .nav-item.active > a svg,
+.sidebar.sidebar-style-2 .nav.nav-info > .nav-item.active > a p,
+.sidebar.sidebar-style-2 .nav.nav-info > .nav-item.active > a span {
+    color: #fff !important;
+}
+
+/* Success Navigation Active Styles */
+.sidebar.sidebar-style-2 .nav.nav-success > .nav-item.active > a {
+    background: #31ce36 !important;
+    box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, .1),
+                4px 4px 15px -5px rgba(49, 206, 54, .4);
+}
+
+.sidebar.sidebar-style-2 .nav.nav-success > .nav-item.active > a:before {
+    background: 0 0 !important;
+}
+
+.sidebar.sidebar-style-2 .nav.nav-success > .nav-item.active > a .caret,
+.sidebar.sidebar-style-2 .nav.nav-success > .nav-item.active > a svg,
+.sidebar.sidebar-style-2 .nav.nav-success > .nav-item.active > a p,
+.sidebar.sidebar-style-2 .nav.nav-success > .nav-item.active > a span {
+    color: #fff !important;
+}
+
+/* Warning Navigation Active Styles */
+.sidebar.sidebar-style-2 .nav.nav-warning > .nav-item.active > a {
+    background: #ffad46 !important;
+    box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, .1),
+                4px 4px 15px -5px rgba(255, 173, 70, .4);
+}
+
+.sidebar.sidebar-style-2 .nav.nav-warning > .nav-item.active > a:before {
+    background: 0 0 !important;
+}
+
+.sidebar.sidebar-style-2 .nav.nav-warning > .nav-item.active > a .caret,
+.sidebar.sidebar-style-2 .nav.nav-warning > .nav-item.active > a svg,
+.sidebar.sidebar-style-2 .nav.nav-warning > .nav-item.active > a p,
+.sidebar.sidebar-style-2 .nav.nav-warning > .nav-item.active > a span {
+    color: #fff !important;
+}
+
+/* Danger Navigation Active Styles */
+.sidebar.sidebar-style-2 .nav.nav-danger > .nav-item.active > a {
+    background: #f25961 !important;
+    box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, .1),
+                4px 4px 15px -5px rgba(242, 89, 97, .4);
+}
+
+.sidebar.sidebar-style-2 .nav.nav-danger > .nav-item.active > a:before {
+    background: 0 0 !important;
+}
+
+.sidebar.sidebar-style-2 .nav.nav-danger > .nav-item.active > a .caret,
+.sidebar.sidebar-style-2 .nav.nav-danger > .nav-item.active > a svg,
+.sidebar.sidebar-style-2 .nav.nav-danger > .nav-item.active > a p,
+.sidebar.sidebar-style-2 .nav.nav-danger > .nav-item.active > a span {
+    color: #fff !important;
+}
+
+/* Color Styles for Dark Backgrounds */
+.sidebar.sidebar-style-2[data-background-color=dark2] .nav .nav-item a:focus svg,
+.sidebar.sidebar-style-2[data-background-color=dark2] .nav .nav-item a:focus p,
+.sidebar.sidebar-style-2[data-background-color=dark2] .nav .nav-item a:hover svg,
+.sidebar.sidebar-style-2[data-background-color=dark2] .nav .nav-item a:hover p,
+.sidebar.sidebar-style-2[data-background-color=dark2] .nav .nav-item a[data-toggle=collapse][aria-expanded=true] svg,
+.sidebar.sidebar-style-2[data-background-color=dark2] .nav .nav-item a[data-toggle=collapse][aria-expanded=true] p,
+.sidebar.sidebar-style-2[data-background-color=dark] .nav .nav-item a:focus svg,
+.sidebar.sidebar-style-2[data-background-color=dark] .nav .nav-item a:focus p,
+.sidebar.sidebar-style-2[data-background-color=dark] .nav .nav-item a:hover svg,
+.sidebar.sidebar-style-2[data-background-color=dark] .nav .nav-item a:hover p,
+.sidebar.sidebar-style-2[data-background-color=dark] .nav .nav-item a[data-toggle=collapse][aria-expanded=true] svg,
+.sidebar.sidebar-style-2[data-background-color=dark] .nav .nav-item a[data-toggle=collapse][aria-expanded=true] p {
+    color: #b9babf !important;
+}
+
+.sidebar.sidebar-style-2[data-background-color=dark2] .nav .nav-item.active a,
+.sidebar.sidebar-style-2[data-background-color=dark] .nav .nav-item.active a {
+    color: #fff;
+}
+
+
+/* Active Item Styles for Dark Backgrounds */
+.sidebar.sidebar-style-2[data-background-color=dark2] .nav .nav-item.active a .caret,
+.sidebar.sidebar-style-2[data-background-color=dark2] .nav .nav-item.active a svg,
+.sidebar.sidebar-style-2[data-background-color=dark2] .nav .nav-item.active a p,
+.sidebar.sidebar-style-2[data-background-color=dark2] .nav .nav-item.active a span,
+.sidebar.sidebar-style-2[data-background-color=dark] .nav .nav-item.active a .caret,
+.sidebar.sidebar-style-2[data-background-color=dark] .nav .nav-item.active a svg,
+.sidebar.sidebar-style-2[data-background-color=dark] .nav .nav-item.active a p,
+.sidebar.sidebar-style-2[data-background-color=dark] .nav .nav-item.active a span {
+    color: #fff;
+}
+
+/* Active Collapse Item Styles for Dark Backgrounds */
+.sidebar.sidebar-style-2[data-background-color=dark2] .nav .nav-item.active a[data-toggle=collapse][aria-expanded=true] .caret,
+.sidebar.sidebar-style-2[data-background-color=dark2] .nav .nav-item.active a[data-toggle=collapse][aria-expanded=true] svg,
+.sidebar.sidebar-style-2[data-background-color=dark2] .nav .nav-item.active a[data-toggle=collapse][aria-expanded=true] p,
+.sidebar.sidebar-style-2[data-background-color=dark2] .nav .nav-item.active a[data-toggle=collapse][aria-expanded=true] span,
+.sidebar.sidebar-style-2[data-background-color=dark] .nav .nav-item.active a[data-toggle=collapse][aria-expanded=true] .caret,
+.sidebar.sidebar-style-2[data-background-color=dark] .nav .nav-item.active a[data-toggle=collapse][aria-expanded=true] svg,
+.sidebar.sidebar-style-2[data-background-color=dark] .nav .nav-item.active a[data-toggle=collapse][aria-expanded=true] p,
+.sidebar.sidebar-style-2[data-background-color=dark] .nav .nav-item.active a[data-toggle=collapse][aria-expanded=true] span {
+    color: #fff;
+}
+
+/* Primary Theme Colors */
+body {
+    background-color: #0C0C0C;
+    color: #E5E5E5; /* or #F5F5F5 for light gray text */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #481E14;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #9B3922;
+}
+
+/* Headings and Buttons */
+h1, h2, h3, h4, h5, h6,
+button {
+    color: #F2613F; /* Bright orange for headings and buttons */
+}
+
+/* Primary Button (call-to-action) */
+button.primary {
+    background-color: #F2613F;
+    color: #fff;
+}
+
+button.primary:hover {
+    background-color: #FF8664;
+}
+
+/* Secondary Button */
+button.secondary {
+    background-color: #9B3922;
+    color: #fff;
+}
+
+button.secondary:hover {
+    background-color: #B5472E;
+}
+
+/* SVG Icons in General */
+svg {
+    fill: #FFFFFF; /* White SVG icons */
+}
+
+/* SVG Icons in Button Areas */
+button svg {
+    fill: #F2613F; /* Bright orange for SVGs in button areas */
+}
+
+/* Sidebar Minimized Styles */
+@media screen and (min-width: 992px) {
+
+    .sidebar_minimize .main-header,
+    .sidebar_minimize .main-panel {
+        width: calc(100% - 75px);
+        transition: all 0.3s;
+    }
+
+    .sidebar_minimize .logo-header {
+        width: 75px;
+        transition: all 0.3s;
+        padding: 0;
+        text-align: center;
+    }
+
+    .sidebar_minimize .logo-header .big-logo {
+        margin-right: 0;
+    }
+
+    .sidebar_minimize .logo-header .logo {
+        position: absolute;
+        transform: translate3d(25px, 0, 0);
+        opacity: 0;
+    }
+
+    .sidebar_minimize .logo-header .logo img {
+        display: none;
+    }
+
+    .sidebar_minimize .logo-header .nav-toggle {
+        position: absolute;
+        left: 50% !important;
+        transform: translateX(-50%);
+        height: 100%;
+        right: 0 !important;
+    }
+
+    .sidebar_minimize .sidebar {
+        width: 75px;
+        transition: all 0.3s;
+    }
+
+    .sidebar_minimize .sidebar .sidebar-wrapper {
+        width: 75px;
+        transition: all 0.3s;
+    }
+
+    .sidebar_minimize .sidebar .sidebar-wrapper .user {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .sidebar_minimize .sidebar .sidebar-wrapper .user [class^=avatar-] {
+        float: none !important;
+    }
+
+    .sidebar_minimize .sidebar .sidebar-wrapper .user .info {
+        display: none;
+    }
+
+    .sidebar_minimize .sidebar .sidebar-wrapper .user .info span {
+        display: none;
+    }
+
+    .sidebar_minimize .sidebar .sidebar-wrapper .nav-item {
+        position: relative;
+    }
+
+    .sidebar_minimize .sidebar .sidebar-wrapper .nav-item a .letter-icon {
+        display: block !important;
+    }
+
+    .sidebar_minimize .sidebar .sidebar-wrapper .nav-item a svg {
+        margin-right: unset;
+    }
+
+    .sidebar_minimize .sidebar .sidebar-wrapper .nav-item a .badge,
+    .sidebar_minimize .sidebar .sidebar-wrapper .nav-item a .caret,
+    .sidebar_minimize .sidebar .sidebar-wrapper .nav-item a p,
+    .sidebar_minimize .sidebar .sidebar-wrapper .nav-item a span {
+        display: none;
+        transition: all 0.3s;
+    }
+
+    .sidebar_minimize .sidebar .sidebar-wrapper .nav-item a .sidebar-mini-icon {
+        display: block !important;
+        margin-right: 0;
+    }
+
+    .sidebar_minimize .sidebar .sidebar-wrapper .nav-item.active .nav-collapse,
+    .sidebar_minimize .sidebar .sidebar-wrapper .nav-item.submenu .nav-collapse {
+        display: none;
+    }
+
+    .sidebar_minimize .sidebar .sidebar-wrapper .nav-section .text-section {
+        display: none;
+    }
+
+    .sidebar_minimize .sidebar .sidebar-wrapper .nav-section .sidebar-mini-icon {
+        display: block;
+    }
+
+    .sidebar_minimize .sidebar .user-profile .user-level,
+    .sidebar_minimize .sidebar .user-profile .user-name {
+        display: none;
+    }
+
+    .sidebar_minimize .sidebar .user-profile .avatar {
+        display: none;
+    }
+
+    .sidebar_minimize .sidebar .user-profile .avatar.avatar-minimize {
+        display: block !important;
+    }
+
+    .sidebar_minimize .sidebar .menubars {
+        display: none;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar {
+        width: 265px;
+        position: fixed;
+        height: 100vh;
+        top: 0;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .logo-header {
+        width: 265px;
+        padding-left: 25px;
+        padding-right: 25px;
+        text-align: left;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .logo-header .logo {
+        opacity: 1 !important;
+        transform: translate3d(0, 0, 0) !important;
+        position: relative !important;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .logo-header .logo img {
+        display: inline-block !important;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .logo-header .nav-toggle {
+        right: 18px !important;
+        transform: translateX(0) !important;
+        left: unset !important;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .sidebar-wrapper {
+        width: 265px;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .sidebar-wrapper .user {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .sidebar-wrapper .user [class^=avatar-] {
+        float: left !important;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .sidebar-wrapper .user .info {
+        display: block;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .sidebar-wrapper .user .info span {
+        display: flex;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .sidebar-wrapper .nav-item a svg {
+        margin-right: 15px;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .sidebar-wrapper .nav-item a .badge,
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .sidebar-wrapper .nav-item a .caret,
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .sidebar-wrapper .nav-item a p,
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .sidebar-wrapper .nav-item a span {
+        display: block;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .sidebar-wrapper .nav-item a .sidebar-mini-icon {
+        display: block !important;
+        margin-right: 15px;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .sidebar-wrapper .nav-item.active .nav-collapse,
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .sidebar-wrapper .nav-item.submenu .nav-collapse {
+        display: block;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .sidebar-wrapper .nav-section .sidebar-mini-icon {
+        display: none;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .sidebar-wrapper .nav-section .text-section {
+        display: block;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .user-profile .user-level,
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .user-profile .user-name {
+        display: block;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .user-profile .avatar {
+        display: block;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .user-profile .avatar.avatar-minimize {
+        display: none !important;
+    }
+
+    .sidebar_minimize.sidebar_minimize_hover .sidebar .menubars {
+        display: flex;
+    }
+}
+
+
+/* Global Color and Background Settings */
+body {
+    background-color: #0C0C0C; /* Dark Background */
+    color: #E5E5E5; /* Light Gray Text */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #F2613F; /* Bright Orange for headings */
+}
+
+/* Navbar Styles */
+.main-header {
+    background-color: #9B3922; /* Muted Red Navbar */
+    color: #FFFFFF;
+}
+
+/* Navbar Input Group */
+.main-header .navbar-header[data-background-color]:not([data-background-color=white]) .nav-search .input-group,
+.main-header[data-background-color=custom] .navbar-header .nav-search .input-group {
+    border: 0;
+    background: rgba(0, 0, 0, 0.18) !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.4s;
+}
+
+/* Navbar Input Text and Placeholder Color */
+.main-header .navbar-header[data-background-color]:not([data-background-color=white]) .nav-search .input-group .form-control,
+.main-header[data-background-color=custom] .navbar-header .nav-search .input-group .form-control {
+    color: #FFFFFF !important;
+}
+
+.main-header .navbar-header[data-background-color]:not([data-background-color=white]) .nav-search .input-group .form-control::placeholder,
+.main-header[data-background-color=custom] .navbar-header .nav-search .input-group .form-control::placeholder {
+    opacity: 1;
+    color: #bfbfbf !important;
+}
+
+/* Navbar Search Icon Color */
+.main-header .navbar-header[data-background-color]:not([data-background-color=white]) .nav-search .input-group .search-icon,
+.main-header[data-background-color=custom] .navbar-header .nav-search .input-group .search-icon {
+    color: #FFFFFF !important;
+}
+
+/* Navbar Focus Styles */
+.main-header .navbar-header[data-background-color]:not([data-background-color=white]) #search-nav.focus .nav-search .input-group,
+.main-header[data-background-color=custom] .navbar-header #search-nav.focus .nav-search .input-group {
+    background: #FFFFFF !important;
+}
+
+.main-header .navbar-header[data-background-color]:not([data-background-color=white]) #search-nav.focus .nav-search .input-group .form-control,
+.main-header[data-background-color=custom] .navbar-header #search-nav.focus .nav-search .input-group .form-control {
+    color: inherit !important;
+}
+
+/* Navbar Nav Link Hover and Focus */
+.main-header .navbar-header[data-background-color]:not([data-background-color=white]) .navbar-nav .nav-item .nav-link,
+.main-header[data-background-color=custom] .navbar-header .navbar-nav .nav-item .nav-link {
+    color: #FFFFFF !important;
+}
+
+.main-header .navbar-header[data-background-color]:not([data-background-color=white])
+.navbar-nav .nav-item .nav-link:focus,
+.main-header .navbar-header[data-background-color]:not([data-background-color=white])
+.navbar-nav .nav-item .nav-link:hover,
+.main-header[data-background-color=custom]
+.navbar-header .navbar-nav .nav-item .nav-link:focus,
+.main-header[data-background-color=custom]
+.navbar-header .navbar-nav .nav-item .nav-link:hover {
+    background: rgba(31, 30, 30, 0.12);
+}
+
+/* Active Navbar Nav Link */
+.main-header .navbar-header[data-background-color]:not([data-background-color=white])
+.navbar-nav .nav-item.active .nav-link,
+.main-header[data-background-color=custom]
+.navbar-header .navbar-nav .nav-item.active .nav-link {
+    background: rgba(31, 30, 30, 0.12);
+}
+
+/* Replace <i> with <svg> in Navbar and Buttons */
+.main-header .navbar-header .nav-item a svg {
+    width: 25px;
+    height: 25px;
+    fill: #FFFFFF; /* Navbar svg icons color */
+}
+
+.main-header .navbar-header .nav-item.active a svg {
+    fill: #F2613F; /* Bright Orange for active icons in Navbar */
+}
+
+.btn svg {
+    fill: #F2613F; /* Bright Orange SVG in button areas */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #481E14; /* Deep Brown Sidebar */
+    color: #FFFFFF; /* Sidebar text */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 265px;
+    z-index: 1002;
+    box-shadow: 4px 4px 10px rgba(69, 65, 78, 0.06);
+    transition: all 0.3s;
+}
+
+.sidebar .nav > .nav-item a svg {
+    margin-right: 15px;
+    width: 25px;
+    height: 25px;
+    fill: #FFFFFF; /* Sidebar svg icons color */
+}
+
+.sidebar .nav > .nav-item.active > a svg {
+    fill: #F2613F; /* Bright Orange for active icons */
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #F2613F; /* Bright Orange */
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: #FF8664; /* Hover state for primary button */
+}
+
+.btn-secondary {
+    background-color: #9B3922; /* Muted Red */
+    color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background-color: #B5472E; /* Hover state for secondary button */
+}
+
+/* Body Text */
+body, p, span {
+    color: #E5E5E5; /* Light Gray for body text */
+}
+
+a {
+    color: #F2613F; /* Link color */
+}
+
+a:hover {
+    color: #FF8664; /* Hover state for links */
+}
+/* Profile Pic Color */
+.main-header .navbar-header[data-background-color]:not([data-background-color=white])
+.navbar-nav .topbar-user .profile-pic,
+.main-header[data-background-color=custom]
+.navbar-header .navbar-nav .topbar-user .profile-pic {
+    color: #FFFFFF !important; /* White Profile Picture Text */
+}
+
+/* Border Color for Dark Background */
+body[data-background-color=dark] .border-bottom,
+body[data-background-color=dark] .border-left,
+body[data-background-color=dark] .border-right,
+body[data-background-color=dark] .border-top {
+    border-color: rgba(181, 181, 181, 0.1) !important;
+}
+
+/* Dropdown Menu for Dark Background */
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .dropdown-menu,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .dropdown-menu {
+    background: #202940 !important; /* Dark Blue for Dropdown Menu */
+}
+
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .dropdown-menu:after,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .dropdown-menu:after {
+    border-bottom-color: #202940;
+}
+
+/* Dropdown Title and Divider */
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .dropdown-menu .dropdown-title,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .dropdown-menu .dropdown-title,
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .dropdown-menu .dropdown-divider,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .dropdown-menu .dropdown-divider {
+    border-color: rgba(181, 181, 181, 0.1) !important;
+    color: #FFFFFF; /* White Text for Titles and Dividers */
+}
+
+/* Dropdown Item */
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .dropdown-menu .dropdown-item,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .dropdown-menu .dropdown-item {
+    color: #FFFFFF; /* White Text */
+}
+
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .dropdown-menu .dropdown-item:hover,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .dropdown-menu .dropdown-item:hover {
+    background: rgba(0, 0, 0, 0.1) !important; /* Slightly Darker on Hover */
+}
+
+/* Notification Box */
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .messages-notif-box .notif-center a,
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .messages-notif-box .see-all,
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .notif-box .see-all,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .messages-notif-box .notif-center a,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .messages-notif-box .see-all,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .notif-box .see-all {
+    border-color: rgba(181, 181, 181, 0.1) !important;
+    color: #FFFFFF; /* White Text for Notifications */
+}
+
+/* Notification Links */
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .messages-notif-box .notif-center a,
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .notif-box .notif-center a,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .messages-notif-box .notif-center a,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .notif-box .notif-center a {
+    color: #FFFFFF; /* White Notification Links */
+}
+
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .messages-notif-box .notif-center a:hover,
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .notif-box .notif-center a:hover,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .messages-notif-box .notif-center a:hover,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .notif-box .notif-center a:hover {
+    background: rgba(0, 0, 0, 0.1) !important; /* Slightly Darker on Hover */
+}
+
+/* Notification Time */
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .messages-notif-box .notif-center a .notif-content .time,
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .notif-box .notif-center a .notif-content .time,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .messages-notif-box .notif-center a .notif-content .time,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .notif-box .notif-center a .notif-content .time {
+    color: #b9babf !important; /* Lighter Gray for Notification Time */
+}
+
+/* Scrollbar */
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .scrollbar-outer > .scroll-element,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .scrollbar-outer > .scroll-element {
+    background: none;
+}
+
+/* Profile Pic */
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .topbar-user .profile-pic,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .topbar-user .profile-pic {
+    color: #FFFFFF !important; /* White Profile Pic Text */
+}
+
+/* Nav Search */
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .nav-search .input-group,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .nav-search .input-group {
+    background: rgba(185, 185, 185, 0.18) !important; /* Light Gray Background for Search */
+}
+
+/* Navbar Nav Link Hover and Focus for Dark */
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .navbar-nav .nav-item .nav-link:focus,
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .navbar-nav .nav-item .nav-link:hover,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .navbar-nav .nav-item .nav-link:focus,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .navbar-nav .nav-item .nav-link:hover {
+    background: rgba(185, 185, 185, 0.18) !important; /* Light Gray Hover */
+}
+
+/* Replace <i> with <svg> */
+.main-header .navbar-header .nav-item a svg {
+    width: 25px;
+    height: 25px;
+    fill: #FFFFFF; /* White Icons */
+}
+
+.main-header .navbar-header .nav-item.active a svg {
+    fill: #F2613F; /* Bright Orange for Active Icons */
+}
+
+.btn svg {
+    fill: #F2613F; /* Bright Orange SVG for Buttons */
+}
+/* General Color Themes */
+body {
+    background-color: #0C0C0C; /* Dark Background */
+    color: #E5E5E5; /* Light Gray Body Text */
+}
+
+/* Sidebar */
+.sidebar[data-background-color] {
+    background-color: #481E14 !important; /* Deep Brown Sidebar */
+}
+
+/* Navbar */
+.navbar-header[data-background-color] {
+    background-color: #9B3922 !important; /* Muted Red Navbar */
+}
+
+/* Active Navbar Nav Link for Dark */
+.main-header .navbar-header[data-background-color][data-background-color=dark2] .navbar-nav .nav-item.active .nav-link,
+.main-header .navbar-header[data-background-color][data-background-color=dark] .navbar-nav .nav-item.active .nav-link {
+    background: rgba(185, 185, 185, 0.18) !important; /* Light Gray Active Background */
+}
+
+/* Headings and Buttons */
+h1, h2, h3, h4, h5, h6, .btn, .button {
+    color: #F2613F !important; /* Bright Orange Headings and Buttons */
+}
+
+/* Primary Buttons */
+.btn-primary {
+    background-color: #F2613F; /* Bright Orange Primary Button */
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: #FF8664; /* Lighter Orange on Hover */
+}
+
+/* Secondary Buttons */
+.btn-secondary {
+    background-color: #9B3922; /* Muted Red Secondary Button */
+    color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background-color: #B5472E; /* Darker Red on Hover */
+}
+
+/* Button Toggles */
+.btn-toggle {
+    color: #FFFFFF !important; /* White Text for Button Toggles */
+}
+
+.logo-header .btn-toggle,
+.logo-header .more,
+.logo-header .navbar-toggler .navbar-toggler-icon {
+    color: #8D9498 !important; /* Light Gray Icon */
+}
+
+/* Toggler Icon Color */
+.logo-header[data-background-color] .navbar-toggler .navbar-toggler-icon {
+    color: #FFFFFF !important; /* White Toggler Icon */
+}
+
+/* Dark Backgrounds */
+.logo-header[data-background-color=dark] {
+    background-color: #1A2035 !important; /* Dark Background */
+}
+
+.logo-header[data-background-color=dark2] {
+    background-color: #151A2B !important; /* Darker Background */
+}
+
+/* Replace <i> with <svg> */
+.main-header .navbar-header .nav-item a svg {
+    width: 25px;
+    height: 25px;
+    fill: #FFFFFF; /* White Icons in Navbar */
+}
+
+.main-header .navbar-header .nav-item.active a svg {
+    fill: #F2613F; /* Bright Orange for Active Icons */
+}
+
+/* SVG Icons in Button Areas */
+.btn svg {
+    fill: #F2613F; /* Bright Orange SVG for Buttons */
+}
+
+/* Logo Header and Navbar Backgrounds */
+.logo-header[data-background-color=white],
+.navbar-header[data-background-color=white] {
+    background-color: #FFFFFF !important;
+}
+
+/* Color Variations for Logos */
+.logo-header[data-background-color=blue] {
+    background-color: #1572E8 !important; /* Blue Logo Header */
+}
+
+.navbar-header[data-background-color=blue] {
+    background-color: #1572E8 !important; /* Blue Navbar Header */
+}
+
+/* Light Blue Backgrounds */
+.logo-header[data-background-color=light-blue] {
+    background-color: #48ABF7 !important; /* Light Blue Logo Header */
+}
+
+.navbar-header[data-background-color=light-blue] {
+    background-color: #48ABF7 !important; /* Light Blue Navbar Header */
+}
+/* General Color Themes */
+body {
+    background-color: #0C0C0C; /* Dark Background */
+    color: #E5E5E5; /* Light Gray Body Text */
+}
+
+/* Sidebar */
+.sidebar[data-background-color] {
+    background-color: #481E14 !important; /* Deep Brown Sidebar */
+}
+
+/* Navbar */
+.navbar-header[data-background-color] {
+    background-color: #9B3922 !important; /* Muted Red Navbar */
+}
+
+/* Headings and Buttons */
+h1, h2, h3, h4, h5, h6, .btn, .button {
+    color: #F2613F !important; /* Bright Orange Headings and Buttons */
+}
+
+/* Primary Buttons */
+.btn-primary {
+    background-color: #F2613F; /* Bright Orange Primary Button */
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: #FF8664; /* Lighter Orange Hover State */
+}
+
+/* Secondary Buttons */
+.btn-secondary {
+    background-color: #9B3922; /* Muted Red Secondary Button */
+    color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background-color: #B5472E; /* Darker Red Hover State */
+}
+
+/* Button Toggles */
+.btn-toggle {
+    color: #FFFFFF !important; /* White Text for Button Toggles */
+}
+
+.logo-header .btn-toggle,
+.logo-header .more,
+.logo-header .navbar-toggler .navbar-toggler-icon {
+    color: #8D9498 !important; /* Light Gray Icon */
+}
+
+/* Toggler Icon Color */
+.logo-header[data-background-color] .navbar-toggler .navbar-toggler-icon {
+    color: #FFFFFF !important; /* White Toggler Icon */
+}
+
+/* Dark Backgrounds */
+.logo-header[data-background-color=dark] {
+    background-color: #1A2035 !important; /* Dark Background */
+}
+
+.logo-header[data-background-color=dark2] {
+    background-color: #151A2B !important; /* Darker Background */
+}
+
+/* Replace <i> with <svg> */
+.main-header .navbar-header .nav-item a svg {
+    width: 25px;
+    height: 25px;
+    fill: #FFFFFF; /* White SVG Icons */
+}
+
+.main-header .navbar-header .nav-item.active a svg {
+    fill: #F2613F; /* Bright Orange for Active Icons */
+}
+
+/* SVG Icons in Button Areas */
+.btn svg {
+    fill: #F2613F; /* Bright Orange SVG for Buttons */
+}
+
+/* Green Backgrounds */
+.logo-header[data-background-color=green] {
+    background: #31ce36 !important; /* Green Header */
+}
+
+.logo-header[data-background-color=green2] {
+    background: #2bb930 !important; /* Dark Green Header */
+}
+
+.navbar-header[data-background-color=green] {
+    background: #31ce36 !important; /* Green Navbar */
+}
+
+.navbar-header[data-background-color=green2] {
+    background: #2bb930 !important; /* Dark Green Navbar */
+}
+
+/* Orange Backgrounds */
+.logo-header[data-background-color=orange] {
+    background: #ffad46 !important; /* Orange Header */
+}
+
+.logo-header[data-background-color=orange2] {
+    background: #ff9e27 !important; /* Dark Orange Header */
+}
+
+.navbar-header[data-background-color=orange] {
+    background: #ffad46 !important; /* Orange Navbar */
+}
+
+.navbar-header[data-background-color=orange2] {
+    background: #ff9e27 !important; /* Dark Orange Navbar */
+}
+
+/* Red Backgrounds */
+.logo-header[data-background-color=red] {
+    background: #f25961 !important; /* Red Header */
+}
+
+.logo-header[data-background-color=red2] {
+    background: #ea4d56 !important; /* Dark Red Header */
+}
+
+.navbar-header[data-background-color=red] {
+    background: #f25961 !important; /* Red Navbar */
+}
+
+.navbar-header[data-background-color=red2] {
+    background: #ea4d56 !important; /* Dark Red Navbar */
+}
+/* General Color Themes */
+body {
+    background-color: #0C0C0C; /* Dark Background */
+    color: #E5E5E5; /* Light Gray Body Text */
+}
+
+/* Sidebar */
+.sidebar[data-background-color] {
+    background-color: #481E14 !important; /* Deep Brown Sidebar */
+}
+
+.sidebar .nav > .nav-item a {
+    color: #F5F5F5 !important; /* Light Gray Text in Sidebar */
+}
+
+.sidebar .nav > .nav-item.active > a {
+    background-color: #9B3922 !important; /* Muted Red Active Nav Item */
+    color: #FFFFFF !important; /* White Active Text */
+}
+
+/* Navbar */
+.navbar-header[data-background-color] {
+    background-color: #9B3922 !important; /* Muted Red Navbar */
+}
+
+/* Headings and Buttons */
+h1, h2, h3, h4, h5, h6, .btn, .button {
+    color: #F2613F !important; /* Bright Orange Headings and Buttons */
+}
+
+/* Primary Buttons */
+.btn-primary {
+    background-color: #F2613F; /* Bright Orange Primary Button */
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: #FF8664; /* Hover State for Primary Button */
+}
+
+/* Secondary Buttons */
+.btn-secondary {
+    background-color: #9B3922; /* Muted Red Secondary Button */
+    color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background-color: #B5472E; /* Darker Red Hover State */
+}
+
+/* SVG Icons */
+svg {
+    width: 24px;
+    height: 24px;
+    fill: #FFFFFF; /* White SVG Icons */
+}
+
+.btn svg {
+    fill: #F2613F; /* Bright Orange SVG Icons in Buttons */
+}
+
+.navbar-header svg {
+    fill: #FFFFFF; /* White SVG Icons in Navbar */
+}
+
+.sidebar .nav-item a svg {
+    fill: #F5F5F5; /* Light Gray SVG Icons in Sidebar */
+}
+
+.sidebar .nav-item.active a svg {
+    fill: #F2613F; /* Bright Orange SVG for Active Sidebar Item */
+}
+
+/* Sidebar Grey and Dark Backgrounds */
+.sidebar[data-background-color=grey] {
+    background: #fafafe;
+}
+
+.sidebar[data-background-color=dark] {
+    background: #1a2035 !important;
+}
+
+.sidebar[data-background-color=dark] .user {
+    border-color: rgba(181, 181, 181, 0.1) !important;
+}
+
+.sidebar[data-background-color=dark] .user .info a > span {
+    color: #b9babf;
+}
+
+.sidebar[data-background-color=dark] .user .info a > span .user-level {
+    color: #8d9498;
+}
+
+.sidebar[data-background-color=dark] .nav > .nav-item.active a:focus p,
+.sidebar[data-background-color=dark] .nav > .nav-item.active a:hover p,
+.sidebar[data-background-color=dark] .nav > .nav-item.active > a p {
+    color: #fff !important;
+}
+
+.sidebar[data-background-color=dark] .nav > .nav-item a {
+    color: #b9babf !important;
+}
+
+/* Sidebar Dark2 */
+.sidebar[data-background-color=dark2] {
+    background: #151a2b !important;
+}
+
+.sidebar[data-background-color=dark2] .user {
+    border-color: rgba(181, 181, 181, 0.1) !important;
+}
+
+.sidebar[data-background-color=dark2] .user .info a > span {
+    color: #b9babf;
+}
+
+.sidebar[data-background-color=dark2] .user .info a > span .user-level {
+    color: #8d9498;
+}
+
+.sidebar[data-background-color=dark2] .nav > .nav-item.active a:focus p,
+.sidebar[data-background-color=dark2] .nav > .nav-item.active a:hover p,
+.sidebar[data-background-color=dark2] .nav > .nav-item.active > a p {
+    color: #fff !important;
+}
+
+.sidebar[data-background-color=dark2] .nav > .nav-item a {
+    color: #b9babf !important;
+}
+
+/* Scrollbar */
+.sidebar[data-background-color=dark2] .scrollbar-inner > .scroll-element .scroll-bar {
+    background-color: #f7f7f7;
+}
+
+.sidebar[data-background-color=dark2] .scrollbar-inner > .scroll-element.scroll-draggable .scroll-bar,
+.sidebar[data-background-color=dark2] .scrollbar-inner > .scroll-element:hover .scroll-bar {
+    background-color: #dcdbdb;
+}
+/* General Color Themes */
+body {
+    background-color: #0C0C0C; /* Dark Background */
+    color: #E5E5E5; /* Light Gray Body Text */
+}
+
+/* Sidebar */
+.sidebar[data-background-color] {
+    background-color: #481E14 !important; /* Deep Brown Sidebar */
+}
+
+/* Navbar */
+.navbar-header[data-background-color] {
+    background-color: #9B3922 !important; /* Muted Red Navbar */
+}
+
+/* Headings and Buttons */
+h1, h2, h3, h4, h5, h6, .btn, .button {
+    color: #F2613F !important; /* Bright Orange Headings and Buttons */
+}
+
+/* Primary Buttons */
+.btn-primary {
+    background-color: #F2613F; /* Bright Orange Primary Button */
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: #FF8664; /* Hover State for Primary Button */
+}
+
+/* Secondary Buttons */
+.btn-secondary {
+    background-color: #9B3922; /* Muted Red Secondary Button */
+    color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background-color: #B5472E; /* Darker Red Hover State */
+}
+
+/* SVG Icons */
+svg {
+    width: 24px;
+    height: 24px;
+    fill: #FFFFFF; /* White SVG Icons */
+}
+
+.btn svg {
+    fill: #F2613F; /* Bright Orange SVG Icons in Buttons */
+}
+
+.navbar-header svg {
+    fill: #FFFFFF; /* White SVG Icons in Navbar */
+}
+
+.sidebar .nav-item a svg {
+    fill: #F5F5F5; /* Light Gray SVG Icons in Sidebar */
+}
+
+.sidebar .nav-item.active a svg {
+    fill: #F2613F; /* Bright Orange SVG for Active Sidebar Item */
+}
+
+/* Avatar Styles */
+.avatar {
+    position: relative;
+    display: inline-block;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-title {
+    width: 100%;
+    height: 100%;
+    background-color: #F2613F; /* Bright Orange for Avatar Title Background */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-away::before,
+.avatar-offline::before,
+.avatar-online::before {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 25%;
+    height: 25%;
+    border-radius: 50%;
+    content: '';
+    border: 2px solid #fff;
+}
+
+.avatar-online::before {
+    background-color: #31ce36; /* Online Status */
+}
+
+.avatar-offline::before {
+    background-color: #97a2b1; /* Offline Status */
+}
+
+.avatar-away::before {
+    background-color: #ffad46; /* Away Status */
+}
+
+/* Avatar Sizes */
+.avatar {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+
+.avatar .border {
+    border-width: 3px !important;
+}
+
+.avatar .rounded {
+    border-radius: 6px !important;
+}
+
+.avatar .avatar-title {
+    font-size: 18px;
+}
+
+/* Extra Small Avatar */
+.avatar-xs {
+    width: 1.95rem;
+    height: 1.95rem;
+}
+
+.avatar-xs .border {
+    border-width: 2px !important;
+}
+
+.avatar-xs .rounded {
+    border-radius: 4px !important;
+}
+
+.avatar-xs .avatar-title {
+    font-size: 12px;
+}
+
+.avatar-xs.avatar-away::before,
+.avatar-xs.avatar-offline::before,
+.avatar-xs.avatar-online::before {
+    border-width: 1px;
+}
+
+/* Small Avatar */
+.avatar-sm {
+    width: 2.75rem;
+    height: 2.75rem;
+}
+
+.avatar-sm .border {
+    border-width: 3px !important;
+}
+
+.avatar-sm .rounded {
+    border-radius: 4px !important;
+}
+
+.avatar-sm .avatar-title {
+    font-size: 15px;
+}
+
+.avatar-sm.avatar-away::before,
+.avatar-sm.avatar-offline::before,
+.avatar-sm.avatar-online::before {
+    border-width: 2px;
+}
+
+/* Large Avatar */
+.avatar-lg {
+    width: 3.95rem;
+    height: 3.95rem;
+}
+
+.avatar-lg .border {
+    border-width: 3px !important;
+}
+
+.avatar-lg .rounded {
+    border-radius: 8px !important;
+}
+
+.avatar-lg .avatar-title {
+    font-size: 24px;
+}
+
+.avatar-lg.avatar-away::before,
+.avatar-lg.avatar-offline::before,
+.avatar-lg.avatar-online::before {
+    border-width: 3px;
+}
+
+/* Extra Large Avatar */
+.avatar-xl {
+    width: 5.2rem;
+    height: 5.2rem;
+}
+
+.avatar-xl .border {
+    border-width: 4px !important;
+}
+
+.avatar-xl .rounded {
+    border-radius: 8px !important;
+}
+
+.avatar-xl .avatar-title {
+    font-size: 28px;
+}
+
+.avatar-xl.avatar-away::before,
+.avatar-xl.avatar-offline::before,
+.avatar-xl.avatar-online::before {
+    border-width: 4px;
+}
+
+/* Avatar XXL */
+.avatar-xxl {
+    width: 5.325rem;
+    height: 5.325rem;
+}
+
+.avatar-xxl .border {
+    border-width: 6px !important;
+}
+
+.avatar-xxl .rounded {
+    border-radius: 8px !important;
+}
+
+.avatar-xxl .avatar-title {
+    font-size: 30px;
+}
+
+.avatar-xxl.avatar-away::before,
+.avatar-xxl.avatar-offline::before,
+.avatar-xxl.avatar-online::before {
+    border-width: 4px;
+}
+/* General Color Themes */
+body {
+    background-color: #0C0C0C; /* Dark Background */
+    color: #E5E5E5; /* Light Gray Body Text */
+}
+
+/* Sidebar */
+.sidebar[data-background-color] {
+    background-color: #481E14 !important; /* Deep Brown Sidebar */
+}
+
+/* Navbar */
+.navbar-header[data-background-color] {
+    background-color: #9B3922 !important; /* Muted Red Navbar */
+}
+
+/* Headings and Buttons */
+h1, h2, h3, h4, h5, h6, .btn, .button {
+    color: #F2613F !important; /* Bright Orange Headings and Buttons */
+}
+
+/* Primary Buttons */
+.btn-primary {
+    background-color: #F2613F; /* Bright Orange Primary Button */
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: #FF8664; /* Hover State for Primary Button */
+}
+
+/* Secondary Buttons */
+.btn-secondary {
+    background-color: #9B3922; /* Muted Red Secondary Button */
+    color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+    background-color: #B5472E; /* Darker Red Hover State */
+}
+
+/* SVG Icons */
+svg {
+    width: 24px;
+    height: 24px;
+    fill: #FFFFFF; /* White SVG Icons */
+}
+
+.btn svg {
+    fill: #F2613F; /* Bright Orange SVG Icons in Buttons */
+}
+
+.navbar-header svg {
+    fill: #FFFFFF; /* White SVG Icons in Navbar */
+}
+
+.sidebar .nav-item a svg {
+    fill: #F5F5F5; /* Light Gray SVG Icons in Sidebar */
+}
+
+.sidebar .nav-item.active a svg {
+    fill: #F2613F; /* Bright Orange SVG for Active Sidebar Item */
+}
+
+/* Media Queries for XXL Avatar */
+@media (min-width: 768px) {
+    .avatar-xxl {
+        width: 8rem;
+        height: 8rem;
+    }
+    .avatar-xxl .border {
+        border-width: 4px !important;
+    }
+    .avatar-xxl .rounded {
+        border-radius: 12px !important;
+    }
+    .avatar-xxl .avatar-title {
+        font-size: 42px;
+    }
+    .avatar-xxl.avatar-away::before,
+    .avatar-xxl.avatar-offline::before,
+    .avatar-xxl.avatar-online::before {
+        border-width: 4px;
+    }
+}
+
+/* Avatar Group */
+.avatar-group {
+    display: inline-flex;
+}
+.avatar-group .avatar + .avatar {
+    margin-left: -0.75rem;
+}
+.avatar-group .avatar-xs + .avatar-xs {
+    margin-left: -0.40625rem;
+}
+.avatar-group .avatar-sm + .avatar-sm {
+    margin-left: -0.625rem;
+}
+.avatar-group .avatar-lg + .avatar-lg {
+    margin-left: -1rem;
+}
+.avatar-group .avatar-xl + .avatar-xl {
+    margin-left: -1.28125rem;
+}
+.avatar-group .avatar:hover {
+    z-index: 1;
+}
+
+/* Borders */
+.border-dark {
+    border-color: #202940 !important;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    list-style: none;
+    display: inline;
+    width: auto;
+    border-left: 1px solid #efefef;
+    margin-left: 25px;
+    padding-left: 25px;
+    margin-bottom: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    height: 100%;
+}
+
+.breadcrumbs li {
+    display: inline-block;
+}
+
+.breadcrumbs li a {
+    color: #2a2f5b;
+    font-size: 13px;
+}
+
+.breadcrumbs li a svg {
+    font-size: 16px;
+}
+
+.breadcrumbs li a:hover {
+    text-decoration: none;
+}
+
+.breadcrumbs li.separator {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+}
+/* Cards */
+.card,
+.card-light {
+    border-radius: 10px;
+    background-color: #333333; /* Dark gray background for cards */
+    margin-bottom: 30px;
+    box-shadow: 2px 6px 15px 0 rgba(155, 57, 34, 0.3); /* Muted red for shadow */
+    border: 1px solid #9B3922; /* Muted red for card border */
+    color: #E5E5E5; /* Light gray text */
+}
+.card .card-header,
+.card-light .card-header {
+    padding: 1rem 1.25rem;
+    background-color: transparent;
+    border-bottom: 1px solid #9B3922 !important; /* Muted Red for border */
+}
+.card .card-header:first-child,
+.card-light .card-header:first-child {
+    border-radius: 0;
+}
+.card .card-head-row,
+.card-light .card-head-row {
+    display: flex;
+    align-items: center;
+}
+.card .card-head-row .card-tools,
+.card-light .card-head-row .card-tools {
+    margin-left: auto;
+    float: right;
+    padding-left: 15px;
+}
+.card .card-head-row .card-tools .btn,
+.card-light .card-head-row .card-tools .btn {
+    margin-right: 10px;
+    background-color: #F2613F; /* Bright Orange for buttons */
+    color: #FFFFFF; /* White text */
+}
+.card .card-head-row .card-tools .btn:hover,
+.card-light .card-head-row .card-tools .btn:hover {
+    background-color: #FF8664; /* Hover state for buttons */
+}
+.card .card-head-row .card-tools svg,
+.card-light .card-head-row .card-tools svg {
+    fill: #F2613F; /* Bright Orange icons for buttons */
+}
+.card .separator-solid,
+.card-light .separator-solid {
+    border-top: 1px solid #9B3922; /* Muted Red separators */
+    margin: 15px 0;
+}
+.card .separator-dashed,
+.card-light .separator-dashed {
+    border-top: 1px dashed #9B3922; /* Muted Red dashed separators */
+    margin: 15px 0;
+}
+.card .separator-dot,
+.card-light .separator-dot {
+    border-top: 1px dotted #9B3922; /* Muted Red dotted separators */
+    margin: 15px 0;
+}
+.card .full-width-separator,
+.card-light .full-width-separator {
+    margin: 15px -20px 15px;
+}
+.card .b-b1,
+.card-light .b-b1 {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.card .card-body,
+.card-light .card-body {
+    padding: 1.25rem;
+    color: #E5E5E5; /* Light gray for card body text */
+}
+.card .card-footer,
+.card-light .card-footer {
+    background-color: transparent;
+    line-height: 30px;
+    border-top: 1px solid #9B3922 !important; /* Muted Red for footer border */
+    font-size: 13px;
+}
+.card .pull-in,
+.card-light .pull-in {
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+}
+.card .pull-in.sparkline-fix,
+.card-light .pull-in.sparkline-fix {
+    margin-left: -1.35rem;
+    margin-right: -1.35rem;
+    margin-bottom: -3px;
+}
+.card .chart-as-background,
+.card-light .chart-as-background {
+    position: absolute;
+    bottom: 0;
+    width: calc(100% + 2px);
+}
+.card .card-action,
+.card-light .card-action {
+    padding: 30px;
+    background-color: transparent;
+    line-height: 30px;
+    border-top: 1px solid #9B3922 !important;
+    font-size: 1rem;
+}
+.card .card-footer hr,
+.card-light .card-footer hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.card .card-footer .legend,
+.card-light .card-footer .legend {
+    display: inline-block;
+    color: #F2613F; /* Bright Orange for legends */
+}
+
+/* Primary Button */
+.card .btn-primary {
+    background-color: #F2613F; /* Bright Orange */
+    color: #FFFFFF; /* White text */
+}
+.card .btn-primary:hover {
+    background-color: #FF8664; /* Hover state for primary button */
+}
+
+/* Secondary Button */
+.card .btn-secondary {
+    background-color: #9B3922; /* Muted Red */
+    color: #FFFFFF; /* White text */
+}
+.card .btn-secondary:hover {
+    background-color: #B5472E; /* Hover state for secondary button */
+}
+
+/* SVG Icons */
+.card svg {
+    fill: #FFFFFF; /* White icons */
+}
+
+/* Responsive Card Head Row */
+@media screen and (max-width: 476px) {
+    .card .card-head-row:not(.card-tools-still-right) {
+        flex-direction: column;
+        align-items: unset;
+    }
+    .card .card-head-row:not(.card-tools-still-right) .card-tools {
+        margin-left: 0;
+        float: left;
+        padding-left: 0;
+        padding-top: 10px;
+    }
+}
+
+/* Full Height Card */
+.card.full-height {
+    height: calc(100% - 30px);
+}
+
+/* Card Spacing */
+.card-space {
+    padding: 0 30px;
+}
+.card-space > .card-action,
+.card-space > .card-body,
+.card-space > .card-footer,
+.card-space > .card-header {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Card with Navigation */
+.card-with-nav .card-header {
+    border-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+/* Card With Navigation */
+.card-with-nav .card-body {
+    padding: 15px 25px !important;
+}
+
+/* Card List */
+.card-list {
+    padding: 10px 0;
+}
+.card-list .item-list {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+    align-items: center;
+}
+.card-list .item-list .info-user {
+    flex: 1;
+}
+.card-list .item-list .info-user .username,
+.card-list .item-list .info-user a.username {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.card-list .item-list .info-user .status {
+    font-size: 12px;
+    color: #7d7b7b;
+}
+
+/* Card Title */
+.card-title {
+    margin: 0;
+    color: #E5E5E5; /* Light Gray for card title text */
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+.card-title a,
+.card-title a:focus,
+.card-title a:hover {
+    color: #F2613F; /* Bright Orange for hover/focus */
+    text-decoration: none;
+}
+
+/* Card Sub */
+.card-sub {
+    display: block;
+    margin: 5px 0 10px 0;
+    font-size: 0.9rem;
+    background: #F7F8FA; /* Light background for sub content */
+    color: #E5E5E5; /* Light Gray text */
+    padding: 0.85rem 1.5rem;
+    border-radius: 4px;
+    line-height: 1.82;
+}
+
+/* Card Category */
+.card-category {
+    margin-top: 8px;
+    font-size: 1rem;
+    color: #8d9498; /* Neutral gray for category text */
+    margin-bottom: 0;
+    word-break: normal;
+}
+
+/* Label */
+label {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #8d9498; /* Neutral gray for label text */
+    margin-bottom: 0;
+}
+
+/* Transparent Card */
+.card-transparent {
+    background: none !important;
+    box-shadow: none;
+    border-color: transparent !important;
+}
+
+/* Card Stats */
+.card-stats .card-body {
+    padding: 15px !important;
+}
+.card-stats .card-title {
+    margin-bottom: 0 !important;
+}
+.card-stats .card-category {
+    margin-top: 0;
+}
+.card-stats .col-icon {
+    width: 65px;
+    height: 65px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 15px;
+}
+.card-stats .icon-big {
+    width: 100%;
+    height: 100%;
+    font-size: 2.2em;
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-stats .icon-big.round {
+    border-radius: 50% !important;
+}
+
+/* Replace i with SVGs and apply color themes */
+svg {
+    color: #FFFFFF; /* White for SVG icons */
+    fill: #FFFFFF;  /* Ensures SVG fill is white */
+}
+button svg {
+    color: #F2613F; /* Bright Orange for SVG icons in button areas */
+    fill: #F2613F;
+}
+
+/* Card Tasks */
+.card-tasks .table {
+    margin-bottom: 0;
+}
+.card-tasks .table .form-check {
+    padding: 0 0 0 0.75rem !important;
+}
+.card-tasks .table .form-check label {
+    margin-bottom: 0 !important;
+}
+
+/* Pricing Cards */
+.card-pricing {
+    padding: 20px 5px;
+    text-align: center;
+    border-radius: 10px;
+    background: #333333; /* Dark Gray for card background */
+    border: 1px solid #9B3922; /* Muted Red for card border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.card-pricing .card-header {
+    border-bottom: 0 !important;
+}
+.card-pricing .card-footer {
+    border-top: 0 !important;
+    padding: 15px 15px 10px 15px;
+}
+.card-pricing .card-title {
+    font-weight: 400;
+    font-size: 20px;
+    color: #E5E5E5; /* Light Gray for pricing card title */
+}
+.card-pricing .card-price .price {
+    font-size: 36px;
+    font-weight: 400;
+    color: #F2613F; /* Bright Orange for price */
+}
+.card-pricing .card-price .text {
+    font-size: 18px;
+    font-weight: 400;
+    color: #D1D7E3; /* Light grayish blue for supporting price text */
+}
+
+/* Primary Button */
+.btn-primary {
+    background-color: #F2613F;
+    color: #FFFFFF;
+}
+.btn-primary:hover {
+    background-color: #FF8664;
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background-color: #9B3922;
+    color: #FFFFFF;
+}
+.btn-secondary:hover {
+    background-color: #B5472E;
+}
+/* More Card Pricing Styles */
+.card-pricing2 {
+    padding-bottom: 10px;
+    background: #333333 !important; /* Dark gray for card background */
+    border-bottom: 7px solid #9B3922; /* Muted Red for the card border */
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 1px 15px 1px rgba(69,65,78,0.08); /* Subtle shadow */
+}
+
+/* Card Pricing Styles */
+.card-pricing2 .pricing-content {
+    padding: 50px 0 0 80px;
+    margin-bottom: 20px;
+    list-style: none;
+    text-align: left;
+    transition: all .3s ease 0s;
+}
+
+.card-pricing2 .pricing-content li {
+    padding: 7px 0;
+    font-size: 13px;
+    color: #E5E5E5; /* Light Gray for text */
+    position: relative;
+}
+
+/* Replace i with SVG for Pricing List Icons */
+.card-pricing2 .pricing-content li.disable svg:before,
+.card-pricing2 .pricing-content li svg:before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    background: #98c458; /* Green background for checkmark */
+    text-align: center;
+    color: #fff; /* White for the icon */
+    position: absolute;
+    left: -50px;
+    font-size: 9px;
+    fill: #FFFFFF; /* Ensure SVG fill is white */
+}
+
+/* Disabled Pricing List Icon */
+.card-pricing2 .pricing-content li.disable svg:before {
+    background: #fe6c6c; /* Red for disabled state */
+}
+
+/* Card Variants */
+.card-pricing2.card-black {
+    border-bottom-color: #1a2035;
+}
+
+.card-pricing2.card-black .price-value:before,
+.card-pricing2.card-black .value:before {
+    border-left-color: #1a2035;
+    border-top-color: #1a2035;
+}
+
+.card-pricing2.card-black .price-value,
+.card-pricing2.card-black .value {
+    border-right-color: #1a2035;
+}
+
+.card-pricing2.card-black .price-value:after,
+.card-pricing2.card-black .value:after {
+    border-right-color: #1a2035;
+    border-bottom-color: #1a2035;
+}
+
+/* Card Text Color */
+.card-pricing2.card-black .value {
+    color: #E5E5E5; /* Light Gray for text */
+}
+
+/* Background for Black Card */
+.card-pricing2.card-black:before {
+    background: #1a2035;
+}
+
+/* Pricing Colors - Primary */
+.card-pricing2.card-primary {
+    border-bottom-color: #F2613F; /* Bright Orange for the card border */
+}
+
+.card-pricing2.card-primary .price-value:before,
+.card-pricing2.card-primary .value:before {
+    border-left-color: #F2613F;
+    border-top-color: #F2613F;
+}
+
+.card-pricing2.card-primary .price-value,
+.card-pricing2.card-primary .value {
+    border-right-color: #F2613F;
+}
+
+.card-pricing2.card-primary .price-value:after,
+.card-pricing2.card-primary .value:after {
+    border-right-color: #F2613F;
+    border-bottom-color: #F2613F;
+}
+
+.card-pricing2.card-primary .value {
+    color: #F2613F; /* Bright Orange for pricing text */
+}
+
+.card-pricing2.card-primary:before {
+    background: #F2613F;
+}
+
+.card-pricing2.card-primary .price-value,
+.card-pricing2.card-primary .value {
+    border-left-color: #F2613F;
+}
+
+/* Secondary Variant */
+.card-pricing2.card-secondary {
+    border-bottom-color: #9B3922; /* Muted Red for the border */
+}
+
+.card-pricing2.card-secondary .price-value:before,
+.card-pricing2.card-secondary .value:before {
+    border-left-color: #9B3922;
+    border-top-color: #9B3922;
+}
+
+.card-pricing2.card-secondary .price-value,
+.card-pricing2.card-secondary .value {
+    border-right-color: #9B3922;
+}
+
+.card-pricing2.card-secondary .price-value:after,
+.card-pricing2.card-secondary .value:after {
+    border-right-color: #9B3922;
+    border-bottom-color: #9B3922;
+}
+
+.card-pricing2.card-secondary .value {
+    color: #9B3922; /* Muted Red for text */
+}
+
+.card-pricing2.card-secondary:before {
+    background: #9B3922;
+}
+
+/* Replace all <i> with <svg> and apply SVG colors */
+svg {
+    color: #FFFFFF; /* White for SVG icons */
+    fill: #FFFFFF;  /* Ensures SVG fill is white */
+}
+button svg {
+    color: #F2613F; /* Bright Orange for SVG icons in button areas */
+    fill: #F2613F;
+}
+
+/* Primary Button */
+.btn-primary {
+    background-color: #F2613F;
+    color: #FFFFFF;
+}
+.btn-primary:hover {
+    background-color: #FF8664;
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background-color: #9B3922;
+    color: #FFFFFF;
+}
+.btn-secondary:hover {
+    background-color: #B5472E;
+}
+/* Row Card Product */
+.row-cardProduct {
+    padding: 0 5px;
+    white-space: nowrap;
+    overflow-x: auto;
+    display: block !important;
+    margin-right: -2rem;
+    width: unset !important;
+}
+
+.col-cardProduct {
+    width: 225px;
+    padding: 0 10px;
+    display: inline-block;
+}
+
+/* Card Product */
+.card-product {
+    background: #333333; /* Card background color */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 7px 15px rgba(155, 57, 34, .5); /* Card shadow with muted red */
+    margin-bottom: 15px;
+    border: 1px solid #9B3922; /* Card border color */
+}
+
+/* Product Summary */
+.card-product .product-summary {
+    padding: 15px;
+    color: #E5E5E5; /* Card text color */
+}
+
+/* Replace i with SVG */
+svg {
+    fill: #FFFFFF; /* SVG icons should be white */
+}
+
+button svg {
+    fill: #F2613F; /* Bright orange for SVGs in button areas */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .col-cardProduct {
+        width: 175px;
+    }
+
+    .card-product .title-product {
+        font-size: 1rem;
+    }
+
+    .card-product .price-product {
+        font-size: 18px;
+    }
+}
+
+/* Shadows */
+.skew-shadow {
+    position: relative;
+    overflow: hidden;
+}
+
+.skew-shadow:before {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, .1);
+    width: 50%;
+    min-width: 150px;
+    height: 100%;
+    top: 0;
+    right: -25%;
+    transform: skewX(-32.5deg);
+}
+
+/* Media queries for smaller screen sizes */
+@media only screen and (min-width: 991px) {
+    .card-list-messages {
+        margin-left: -14px;
+        margin-right: -14px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .card-pricing2 {
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .card-pricing2:before {
+        transform: skewY(-15deg);
+    }
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #F2613F; /* Bright orange for primary button */
+    color: #FFFFFF;
+}
+.btn-primary:hover {
+    background-color: #FF8664; /* Hover state */
+}
+
+.btn-secondary {
+    background-color: #9B3922; /* Muted red for secondary button */
+    color: #FFFFFF;
+}
+.btn-secondary:hover {
+    background-color: #B5472E; /* Hover state for secondary button */
+}
+
+/* Additional Product Styles (Following the same color scheme) */
+/* Form Radio Styles */
+.form-radio [type=radio]:checked, .form-radio [type=radio]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+.form-radio [type=radio]:checked + .form-radio-sign, .form-radio [type=radio]:not(:checked) + .form-radio-sign {
+    color: #E5E5E5; /* Light Gray Body Text */
+    position: relative;
+    padding-left: 2em;
+    cursor: pointer;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+/* Replacing icon with SVG */
+.form-radio [type=radio]:not(:checked) + .form-radio-sign:before {
+    content: ''; /* Remove the Font Awesome content */
+    position: absolute;
+    left: 0;
+    line-height: 1;
+    color: #bbb;
+}
+
+.form-radio [type=radio]:checked + .form-radio-sign:before {
+    content: ''; /* Remove the Font Awesome content */
+    position: absolute;
+    left: 0;
+    display: none;
+}
+
+/* Use an SVG for radio buttons */
+.form-radio [type=radio]:checked + .form-radio-sign:after,
+.form-radio [type=radio]:not(:checked) + .form-radio-sign:after {
+    content: ''; /* Use your SVG icon here */
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 22px;
+    color: #F2613F; /* Bright Orange */
+    transition: all .2s;
+}
+
+.form-radio [type=radio]:not(:checked) + .form-radio-sign:after {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.form-radio [type=radio]:checked + .form-radio-sign:after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.form-radio [type=radio]:disabled:not(:checked) + .form-radio-sign:before,
+.form-radio [type=radio]:disabled:checked + .form-radio-sign:before {
+    box-shadow: none;
+    opacity: 0.65;
+}
+
+.form-radio [type=radio]:disabled:checked + .form-radio-sign:after {
+    opacity: 0.65;
+}
+
+.form-radio [type=radio]:disabled + .form-radio-sign {
+    color: #aaa;
+    opacity: 0.65;
+}
+
+.form-radio [type=radio]:checked:focus + .form-radio-sign:before,
+.form-radio [type=radio]:not(:checked):focus + .form-radio-sign:before {
+    border: 1px solid #ccc;
+}
+
+.form-radio {
+    padding-left: .75rem;
+}
+
+/* Form Radio Input */
+.form-radio-input {
+    position: relative;
+    margin-top: .3rem;
+}
+
+/* Custom Checkbox */
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #F2613F; /* Bright Orange for checked */
+}
+
+.custom-checkbox.checkbox-black .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #1a2035;
+}
+
+.custom-checkbox.checkbox-primary .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #9B3922; /* Muted Red */
+}
+
+.custom-checkbox.checkbox-secondary .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #B5472E; /* Hover state for secondary button */
+}
+
+/* Checkbox Colors */
+.custom-checkbox.checkbox-info .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #48abf7;
+}
+
+.custom-checkbox.checkbox-success .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #31ce36;
+}
+
+.custom-checkbox.checkbox-warning .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #ffad46;
+}
+
+.custom-checkbox.checkbox-danger .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #f25961;
+}
+/* Label Styles */
+.col-form-label {
+    line-height: 1.8;
+}
+
+.required-label {
+    color: #F2613F; /* Bright Orange for required labels */
+}
+
+.label-align-left {
+    text-align: left;
+}
+
+.label-align-right {
+    text-align: right;
+}
+
+.label-align-center {
+    text-align: center;
+}
+
+/* Form Check and Group */
+.form-check, .form-group {
+    margin-bottom: 0;
+    padding: 10px;
+}
+
+.form-check label, .form-group label {
+    margin-bottom: .5rem;
+    color: #E5E5E5; /* Light Gray for form labels */
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+/* Form Group Default */
+.form-group-default {
+    background-color: #333333; /* Card Background */
+    border: 1px solid #9B3922; /* Card Border/Shadow */
+    border-radius: 4px;
+    padding-top: 7px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 4px;
+    overflow: hidden;
+    width: 100%;
+    transition: background-color .2s ease;
+    margin-bottom: 15px;
+}
+
+/* Floating Custom Form */
+.form-floating-custom {
+    position: relative;
+}
+
+.form-floating-custom .form-control, .form-floating-custom .form-select {
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    padding-left: 0;
+    background: none !important;
+    color: #E5E5E5; /* Light Gray text */
+}
+
+/* Success and Error States */
+.has-success label {
+    color: #31ce36 !important;
+}
+
+.has-error label {
+    color: #F2613F !important; /* Bright Orange */
+}
+
+.has-success .form-control, .has-success .input-group-text {
+    border-color: #31ce36 !important;
+    color: #31ce36 !important;
+}
+
+.has-error .form-control, .has-error .input-group-text {
+    border-color: #F2613F !important; /* Bright Orange for errors */
+    color: #F2613F !important;
+}
+
+/* Replacing Icons with SVGs */
+/* Assuming SVGs will be in the required elements */
+svg {
+    fill: #FFFFFF; /* Default white for svg icons */
+}
+
+button svg {
+    fill: #F2613F; /* Bright Orange SVGs in button areas */
+}
+
+button:hover svg {
+    fill: #FF8664; /* Hover state for buttons */
+}
+/* File Input Styles */
+.input-file .form-control, .input-file input[type=file] {
+    width: .1px;
+    height: .1px;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.input-file label {
+    font-weight: 600;
+    letter-spacing: .02em;
+    color: #E5E5E5 !important; /* Light Gray for labels */
+    display: inline-block;
+}
+
+/* Dropzone Styles */
+.dropzone {
+    padding: 70px 60px 80px !important;
+    border: 2px dashed rgba(255, 255, 255, .13) !important; /* Lighter border for dropzone */
+    background: #333333 !important; /* Card Background */
+}
+
+.dropzone:hover {
+    background: #9B3922 !important; /* Muted Red on hover */
+    transition: all .5s !important;
+}
+
+/* Additional Input Styles */
+.input-icon {
+    position: relative;
+}
+
+.input-icon .form-control:not(:first-child) {
+    padding-left: 2.5rem;
+}
+
+.input-icon .form-control:not(:last-child) {
+    padding-right: 2.5rem;
+}
+
+.input-icon .input-icon-addon {
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* SVG Icons */
+svg {
+    fill: #FFFFFF; /* Default white for svg icons */
+}
+
+button svg {
+    fill: #F2613F; /* Bright Orange SVGs in button areas */
+}
+
+button:hover svg {
+    fill: #FF8664; /* Hover state for buttons */
+}
+
+/* Note Editor Styles */
+.note-editor.note-frame {
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.note-editor.note-frame .note-toolbar {
+    padding: 0 !important;
+    border-bottom: 0 !important;
+}
+
+.note-editor.note-frame .note-btn {
+    border: 1px solid #9B3922 !important; /* Muted Red border */
+    background: #333333 !important; /* Card Background */
+    color: #E5E5E5 !important; /* Light Gray text */
+}
+
+.note-editor.note-frame .note-placeholder,
+.note-editor.note-frame .note-codable,
+.note-editor.note-frame .note-editing-area .note-editable {
+    margin-top: 15px !important;
+}
+
+.note-editor.note-frame .note-editing-area .note-editable {
+    border: 2px solid #9B3922 !important; /* Muted Red border */
+    color: #E5E5E5 !important; /* Light Gray text */
+}
+/* Table Styles */
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > tfoot > tr > td,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+    vertical-align: middle;
+}
+
+.table > tbody > tr > td,
+.table > tbody > tr > th {
+    padding: 16px 24px !important;
+}
+
+.table > tfoot > tr > td,
+.table > tfoot > tr > th {
+    padding: 12px 24px !important;
+}
+
+.table thead th {
+    font-size: .95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 24px !important;
+    border-bottom-width: 1px;
+    font-weight: 600;
+}
+
+.table td,
+.table th {
+    font-size: 1rem;
+    border-top-width: 0;
+    border-bottom: 1px solid;
+    border-color: #ebedf2 !important;
+    vertical-align: middle !important;
+}
+
+/* Table Light and Dark Headers */
+.table .thead-light th {
+    background-color: #f6f9fc;
+    color: #8898aa;
+    border-color: #ebecec !important;
+}
+
+.table .thead-dark th {
+    background-color: #1a2035;
+    color: #fff;
+}
+
+/* Full Width Table */
+.table-full-width {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+/* Bordered Table Variants */
+.table-bordered-bd-black td,
+.table-bordered-bd-black th {
+    border: 1px solid #1a2035 !important;
+}
+
+.table-bordered-bd-primary td,
+.table-bordered-bd-primary th {
+    border: 1px solid #F2613F !important; /* Bright Orange border for primary */
+}
+
+.table-bordered-bd-secondary td,
+.table-bordered-bd-secondary th {
+    border: 1px solid #9B3922 !important; /* Muted Red for secondary */
+}
+
+/* Table Striped Background Colors */
+.table-striped td,
+.table-striped th {
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+}
+
+/* Table Headers with Background Color Variants */
+.table-head-bg-black thead {
+    border: 1px solid #1a2035 !important;
+}
+
+.table-head-bg-primary thead {
+    border: 1px solid #F2613F !important;
+}
+
+.table-head-bg-secondary thead {
+    border: 1px solid #9B3922 !important;
+}
+
+/* Table Head and Row Styling */
+.table-head-bg-black thead th,
+.table-striped-bg-black tbody tr:nth-of-type(odd) {
+    background: #333333 !important; /* Card Background */
+    color: #E5E5E5 !important; /* Light Gray */
+    border: 0 !important;
+}
+
+.table-head-bg-primary thead th,
+.table-striped-bg-primary tbody tr:nth-of-type(odd) {
+    background: #F2613F !important; /* Bright Orange */
+    color: #fff !important;
+    border: 0 !important;
+}
+
+.table-head-bg-secondary thead th,
+.table-striped-bg-secondary tbody tr:nth-of-type(odd) {
+    background: #9B3922 !important; /* Muted Red */
+    color: #fff !important;
+    border: 0 !important;
+}
+
+/* Table Responsiveness */
+.table-responsive {
+    width: 100% !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+/* Navbar Styles */
+.navbar .navbar-nav .nav-item {
+    padding: 0 4px;
+}
+
+/* SVG Icons */
+svg {
+    fill: #FFFFFF; /* Default SVG icon color */
+}
+
+button svg {
+    fill: #F2613F; /* Bright Orange SVGs in buttons */
+}
+
+button:hover svg {
+    fill: #FF8664; /* Hover state for buttons */
+}
+/* Navbar Links */
+.navbar .navbar-nav .nav-item .nav-link {
+    display: inline-block;
+    vertical-align: middle;
+    color: #E5E5E5; /* Light Gray for body text */
+    padding: 8px 14px;
+    border-radius: 3px;
+    position: relative;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    transition: all .3s;
+}
+
+.navbar .navbar-nav .nav-item .nav-link:focus,
+.navbar .navbar-nav .nav-item .nav-link:hover {
+    background: #9B3922; /* Muted Red for hover state */
+}
+
+.navbar .navbar-nav .nav-item .nav-link svg {
+    font-size: 16px;
+    vertical-align: middle;
+    line-height: 1 !important;
+    fill: #FFFFFF; /* White SVG icons */
+}
+
+/* Active Nav Link */
+.navbar .navbar-nav .nav-item.active .nav-link {
+    background: #9B3922; /* Muted Red for active state */
+}
+
+/* Topbar Icons */
+.navbar .navbar-nav .topbar-icon {
+    padding: 0;
+}
+
+.navbar .navbar-nav .topbar-icon .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: unset;
+    height: 44px;
+    width: 44px;
+}
+
+/* Profile Picture */
+.navbar .navbar-nav .topbar-user .profile-pic {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    height: 44px;
+    border-radius: 3px;
+    color: #000;
+}
+
+.navbar .navbar-nav .topbar-user .profile-pic:focus,
+.navbar .navbar-nav .topbar-user .profile-pic:hover {
+    background: #B5472E; /* Hover state for secondary elements */
+}
+
+.navbar .navbar-nav .topbar-user .profile-username {
+    margin-left: 8px;
+    color: #E5E5E5; /* Light Gray for body text */
+}
+
+/* Dropdown Menu */
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    left: auto;
+    right: 0;
+    z-index: 1001;
+    background-color: #333333; /* Card background color for dropdown */
+    border: 1px solid #9B3922; /* Card border color */
+}
+
+/* Dropdown Items */
+.dropdown-item {
+    font-size: 13px;
+    color: #E5E5E5; /* Light Gray for text */
+}
+
+.dropdown-item:hover {
+    background-color: #9B3922; /* Muted Red for hover */
+    color: #FFFFFF; /* White text on hover */
+}
+
+/* Notification Badge */
+.navbar .navbar-nav .notification {
+    position: absolute;
+    background-color: #31ce36; /* Success Green */
+    text-align: center;
+    border-radius: 10px;
+    min-width: 17px;
+    height: 17px;
+    font-size: 10px;
+    color: #fff;
+    font-weight: 300;
+    line-height: 17px;
+    top: 3px;
+    right: 3px;
+    letter-spacing: -1px;
+}
+
+/* Button SVGs */
+button svg {
+    fill: #F2613F; /* Bright Orange for SVGs in buttons */
+}
+
+button:hover svg {
+    fill: #FF8664; /* Lighter Orange for hover state */
+}
+/* Additional styles with updated colors and replaced <i> with <svg> */
+
+/* Notification Icons */
+.messages-notif-box .notif-center a .notif-icon.notif-black,
+.notif-box .notif-center a .notif-icon.notif-black {
+    background: #1a2035 !important;
+}
+
+.messages-notif-box .notif-center a .notif-icon.notif-primary,
+.notif-box .notif-center a .notif-icon.notif-primary {
+    background: #1572e8 !important;
+}
+
+.messages-notif-box .notif-center a .notif-icon.notif-secondary,
+.notif-box .notif-center a .notif-icon.notif-secondary {
+    background: #6861ce !important;
+}
+
+.messages-notif-box .notif-center a .notif-icon.notif-info,
+.notif-box .notif-center a .notif-icon.notif-info {
+    background: #48abf7 !important;
+}
+
+.messages-notif-box .notif-center a .notif-icon.notif-success,
+.notif-box .notif-center a .notif-icon.notif-success {
+    background: #31ce36 !important;
+}
+
+.messages-notif-box .notif-center a .notif-icon.notif-warning,
+.notif-box .notif-center a .notif-icon.notif-warning {
+    background: #ffad46 !important;
+}
+
+.messages-notif-box .notif-center a .notif-icon.notif-danger,
+.notif-box .notif-center a .notif-icon.notif-danger {
+    background: #f25961 !important;
+}
+
+/* Replacing i elements with svg */
+.messages-notif-box .notif-center a .notif-icon svg,
+.notif-box .notif-center a .notif-icon svg {
+    font-size: 15px;
+    fill: #FFFFFF; /* SVG icon color */
+}
+
+/* Notification Content */
+.messages-notif-box .notif-center a .notif-content,
+.notif-box .notif-center a .notif-content {
+    padding: 10px 15px 10px 0;
+}
+
+.messages-notif-box .notif-center a .message-content,
+.notif-box .notif-center a .message-content {
+    padding: 7px 15px 10px 0;
+}
+
+.messages-notif-box .notif-center a .notif-content .subject,
+.notif-box .notif-center a .notif-content .subject {
+    font-size: 13px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.messages-notif-box .notif-center a .notif-content .block,
+.notif-box .notif-center a .notif-content .block {
+    font-size: 13px;
+    line-height: 20px;
+    display: block;
+}
+
+.messages-notif-box .notif-center a .notif-content .time,
+.notif-box .notif-center a .notif-content .time {
+    color: #7d8c95;
+    font-size: 11px;
+}
+
+/* "See All" Section */
+.messages-notif-box .see-all,
+.notif-box .see-all {
+    border-top: 1px solid #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    color: #555;
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.messages-notif-box .see-all:hover,
+.notif-box .see-all:hover {
+    color: #555;
+    text-decoration: none;
+}
+
+/* Replacing i elements with svg for "See All" section */
+.messages-notif-box .see-all svg,
+.notif-box .see-all svg {
+    float: right;
+    fill: #FFFFFF; /* White SVG icon */
+}
+
+/* Notification Scroll */
+.notif-box .notif-scroll {
+    max-height: 256px;
+}
+
+.messages-notif-box .message-notif-scroll {
+    max-height: 250px;
+}
+
+/* Notification Borders */
+.messages-notif-box .notif-center a {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.messages-notif-box .notif-center a:last-child {
+    border-bottom: 0;
+}
+
+.messages-notif-box .notif-center a .notif-content {
+    padding: 7px 15px 7px 5px;
+}
+
+/* User Dropdown */
+.dropdown-user {
+    width: 260px;
+}
+
+.user-box {
+    display: flex;
+    padding: .25rem 1rem;
+}
+
+.user-box .u-text {
+    padding: 0 10px;
+}
+
+.user-box .u-text h4 {
+    margin-bottom: 5px;
+    margin-top: 4px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.user-box .u-text .text-muted {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.user-box .u-text .btn {
+    font-size: 11px;
+}
+
+/* Caret */
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+
+/* stopped here */
+/* Quick Actions */
+.quick-actions {
+    width: 350px;
+    padding: 0;
+    background-color: #333333; /* Card Background */
+    border: 1px solid #9B3922; /* Card Border */
+    color: #E5E5E5; /* Card Text */
+}
+
+.quick-actions:after {
+    border-bottom-color: #9B3922 !important; /* Sidebar */
+}
+
+.quick-actions .quick-actions-header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: #9B3922; /* Navbar */
+    color: #FFFFFF; /* SVG Icons */
+    padding: 15px;
+    border-radius: 3px 3px 0 0;
+}
+
+.quick-actions .quick-actions-header .title {
+    font-size: 16px;
+    color: #F2613F; /* Bright Orange for Headings */
+}
+
+.quick-actions .quick-actions-header .subtitle {
+    font-size: 13px;
+    color: #F5F5F5; /* Light Gray */
+}
+
+.quick-actions .quick-actions-items {
+    padding: 7.5px 0;
+}
+
+.quick-actions a:hover {
+    text-decoration: none;
+    background-color: #FF8664; /* Hover State */
+}
+
+.quick-actions .quick-actions-item {
+    display: flex;
+    flex-direction: column;
+    margin: 7.5px 10px;
+    padding: 10px;
+    align-items: center;
+    color: #F2613F; /* Primary Button */
+}
+
+.quick-actions .quick-actions-item svg {
+    fill: #FFFFFF; /* General SVG Icons */
+    width: 18px;
+    height: 18px;
+}
+
+.quick-actions .quick-actions-item .text {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 12px;
+    color: #E5E5E5; /* Light Gray Text */
+}
+
+.quick-actions .quick-actions-item:hover .avatar-item {
+    transform: scale(1.1);
+}
+
+.quick-actions .avatar-item {
+    display: inline-flex;
+    width: 48px;
+    height: 48px;
+    color: #FFFFFF; /* SVG Icon */
+    border-radius: .375rem;
+    background-color: #F2613F; /* Bright Orange */
+    align-items: center;
+    justify-content: center;
+    transition: all .15s;
+    box-shadow: 2px 2px 8px 0 rgba(31, 30, 30, .13) !important;
+}
+
+/* Quick Actions Themes */
+.quick-actions.quick-actions-black:after {
+    border-bottom-color: #1a2035 !important;
+}
+
+.quick-actions.quick-actions-black .quick-actions-header {
+    background: #1a2035;
+}
+
+.quick-actions.quick-actions-black .quick-actions-item {
+    color: #1a2035;
+}
+
+.quick-actions.quick-actions-primary:after {
+    border-bottom-color: #9B3922 !important; /* Navbar color */
+}
+
+.quick-actions.quick-actions-primary .quick-actions-header {
+    background: #9B3922; /* Navbar color */
+}
+
+.quick-actions.quick-actions-primary .quick-actions-item {
+    color: #F2613F; /* Bright Orange */
+}
+
+.quick-actions-quick-actions-primary svg {
+    fill: #FFFFFF; /* SVG Icon */
+}
+
+.quick-actions.quick-actions-danger:after {
+    border-bottom-color: #f25961 !important;
+}
+
+.quick-actions.quick-actions-danger .quick-actions-header {
+    background: #f25961;
+}
+
+.quick-actions.quick-actions-danger .quick-actions-item {
+    color: #f25961;
+}
+/* Media Queries */
+@media screen and (max-width: 991.5px) {
+    .messages-notif-box .message-notif-scroll,
+    .notif-box .notif-scroll,
+    .quick-actions .quick-actions-scroll {
+        max-height: calc(100vh - 200px);
+    }
+
+    .dropdown-user .dropdown-user-scroll {
+        max-height: calc(100vh - 132px);
+    }
+}
+
+@media screen and (min-width: 991px) {
+    .navbar-header .dropdown-menu {
+        margin-top: 13px;
+        background-color: #9B3922; /* Navbar color */
+    }
+
+    .navbar-header .dropdown-menu:after {
+        border-bottom: 8px solid #fff;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        content: "";
+        right: 10px;
+        top: -8px;
+        position: absolute;
+        z-index: 1001;
+    }
+}
+
+/* Chart */
+.chart-circle {
+    display: flex;
+    justify-content: center;
+    background-color: #333333; /* Card Background */
+    border: 1px solid #9B3922; /* Card Border */
+    color: #E5E5E5; /* Card Text */
+}
+
+.chart-circle .circles-text {
+    font-size: 25px !important;
+    color: #F2613F; /* Bright Orange for text */
+}
+
+.chart-container {
+    min-height: 300px;
+    position: relative;
+    background-color: #0C0C0C; /* Dark background */
+}
+
+/* HTML Legend */
+.html-legend {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    list-style: none;
+    cursor: pointer;
+    padding-left: 0;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.html-legend li {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    vertical-align: middle;
+    padding: 0 5px;
+    margin-right: 5px;
+    margin-bottom: 6px;
+    text-align: center;
+    border-radius: .375rem;
+    font-size: 10px;
+    height: 15px;
+    color: #fff;
+    background-color: #9B3922; /* Navbar color for legend */
+}
+
+.html-legend li span {
+    font-size: 14px;
+    padding-left: 6px;
+    color: #FFFFFF; /* SVG Icon */
+}
+
+/* SVG Icons */
+.svg-icon {
+    fill: #FFFFFF; /* Default SVG icon color */
+    width: 18px;
+    height: 18px;
+}
+
+.button-svg-icon {
+    fill: #F2613F; /* SVG Icons in button areas */
+}
+
+.button-svg-icon:hover {
+    fill: #FF8664; /* Hover State */
+}
+/* Button Styles */
+.btn-warning {
+    background: #ffad46 !important; /* Using Bright Orange for warning buttons */
+    border-color: #ffad46 !important;
+}
+
+.btn-warning:disabled,
+.btn-warning:focus,
+.btn-warning:hover {
+    background: #ffad46 !important;
+    border-color: #ffad46 !important;
+}
+
+.btn-danger {
+    background: #f25961 !important; /* Bright Red for danger buttons */
+    border-color: #f25961 !important;
+}
+
+.btn-danger:disabled,
+.btn-danger:focus,
+.btn-danger:hover {
+    color: #fff !important; /* White text */
+    background: #f25961 !important;
+    border-color: #f25961 !important;
+}
+
+.btn-light {
+    background: #fff !important;
+    border-color: transparent;
+}
+
+.btn-light:disabled,
+.btn-light:focus,
+.btn-light:hover {
+    background: #ebecec !important;
+    border-color: transparent;
+}
+
+.btn-dropdown-card-header {
+    padding: 0;
+    background: 0 0;
+    color: inherit;
+    font-size: 15px;
+}
+
+.btn-dropdown-card-header:after {
+    display: none;
+}
+
+.btn-clean {
+    background: 0 0;
+}
+
+.btn-clean:disabled,
+.btn-clean:focus,
+.btn-clean:hover {
+    color: #F2613F; /* Bright Orange hover state */
+    background: rgba(242, 97, 63, .05); /* Hover state for clean button */
+    opacity: 1;
+}
+
+/* Button Label Styles */
+.btn-label-primary {
+    background: rgba(242, 97, 63, .1); /* Muted background for primary */
+    color: #F2613F !important; /* Bright Orange for primary buttons */
+    border-color: transparent;
+}
+
+.btn-label-primary:disabled,
+.btn-label-primary:focus,
+.btn-label-primary:hover {
+    background: #F2613F; /* Bright Orange on hover */
+    color: #fff !important;
+    opacity: 1;
+}
+
+.btn-label-secondary {
+    background: rgba(155, 57, 34, .1); /* Muted red for secondary button */
+    color: #9B3922 !important; /* Muted red */
+    border-color: transparent;
+}
+
+.btn-label-secondary:disabled,
+.btn-label-secondary:focus,
+.btn-label-secondary:hover {
+    background: #9B3922;
+    color: #fff !important;
+    opacity: 1;
+}
+
+/* Other Label Styles */
+.btn-label-info {
+    background: rgba(72, 171, 247, .1); /* Blue info button */
+    color: #48abf7 !important;
+    border-color: transparent;
+}
+
+.btn-label-info:disabled,
+.btn-label-info:focus,
+.btn-label-info:hover {
+    background: #48abf7;
+    color: #fff !important;
+    opacity: 1;
+}
+
+.btn-label-success {
+    background: rgba(49, 206, 54, .1); /* Green success button */
+    color: #31ce36 !important;
+    border-color: transparent;
+}
+
+.btn-label-success:disabled,
+.btn-label-success:focus,
+.btn-label-success:hover {
+    background: #31ce36;
+    color: #fff !important;
+    opacity: 1;
+}
+
+.btn-label-warning {
+    background: rgba(255, 173, 70, .1); /* Orange warning button */
+    color: #ffad46 !important;
+    border-color: transparent;
+}
+
+.btn-label-warning:disabled,
+.btn-label-warning:focus,
+.btn-label-warning:hover {
+    background: #ffad46;
+    color: #fff !important;
+    opacity: 1;
+}
+
+.btn-label-danger {
+    background: rgba(242, 89, 97, .1); /* Red danger button */
+    color: #f25961 !important;
+    border-color: transparent;
+}
+
+.btn-label-danger:disabled,
+.btn-label-danger:focus,
+.btn-label-danger:hover {
+    background: #f25961;
+    color: #fff !important;
+    opacity: 1;
+}
+
+/* SVG Icon Styles */
+.svg-icon {
+    fill: #FFFFFF; /* Default SVG icon color for buttons */
+    width: 18px;
+    height: 18px;
+}
+
+.button-svg-icon {
+    fill: #F2613F; /* SVG Icons in button areas */
+}
+
+.button-svg-icon:hover {
+    fill: #FF8664; /* Hover State for icons */
+}
+/* Button Border Styles */
+.btn-border {
+    background: transparent !important; /* Transparent background */
+}
+
+.btn-border:focus,
+.btn-border:hover {
+    background: transparent !important;
+}
+
+/* White Border Button */
+.btn-border.btn-white {
+    color: #fff !important;
+    border: 1px solid #fff !important;
+}
+
+/* Black Border Button */
+.btn-border.btn-black {
+    color: #1a2035 !important; /* Dark color for black buttons */
+    border: 1px solid #1a2035 !important;
+}
+
+/* Primary Border Button */
+.btn-border.btn-primary {
+    color: #F2613F !important; /* Bright Orange for primary */
+    border: 1px solid #F2613F !important; /* Bright Orange border */
+}
+
+.btn-border.btn-primary:hover {
+    background-color: #FF8664 !important; /* Hover state for primary button */
+    border-color: #FF8664 !important;
+}
+
+/* Secondary Border Button */
+.btn-border.btn-secondary {
+    color: #9B3922 !important; /* Muted Red for secondary */
+    border: 1px solid #9B3922 !important;
+}
+
+.btn-border.btn-secondary:hover {
+    background-color: #B5472E !important; /* Hover state for secondary */
+    border-color: #B5472E !important;
+}
+
+/* Info Border Button */
+.btn-border.btn-info {
+    color: #48abf7 !important;
+    border: 1px solid #48abf7 !important;
+}
+
+/* Success Border Button */
+.btn-border.btn-success {
+    color: #31ce36 !important;
+    border: 1px solid #31ce36 !important;
+}
+
+/* Warning Border Button */
+.btn-border.btn-warning {
+    color: #ffad46 !important;
+    border: 1px solid #ffad46 !important;
+}
+
+/* Danger Border Button */
+.btn-border.btn-danger {
+    color: #f25961 !important;
+    border: 1px solid #f25961 !important;
+}
+
+/* Light Border Button */
+.btn-border.btn-light {
+    border: 1px solid #efefef;
+    background: #fff !important;
+}
+
+/* Button Shapes */
+.btn-round {
+    border-radius: 100px !important; /* Round shape */
+}
+
+.btn-rounded {
+    border-radius: 60px !important; /* Rounded corners */
+}
+
+.btn-full {
+    width: 100%; /* Full-width button */
+}
+
+.btn-no-radius {
+    border-radius: 0; /* No border radius */
+}
+
+/* Link Buttons */
+.btn-link {
+    border: 0 !important;
+    background: 0 0 !important;
+}
+
+.btn-link:focus,
+.btn-link:hover {
+    text-decoration: underline !important; /* Underline on hover */
+    background: 0 0 !important;
+    border: 0 !important;
+}
+
+/* Link Button Colors */
+.btn-link.btn-black {
+    color: #1a2035 !important;
+}
+
+.btn-link.btn-black:hover {
+    color: #1a2035 !important;
+}
+
+.btn-link.btn-primary {
+    color: #F2613F !important; /* Bright Orange for link button */
+}
+
+.btn-link.btn-primary:hover {
+    color: #FF8664 !important; /* Bright Orange hover */
+}
+
+.btn-link.btn-secondary {
+    color: #9B3922 !important; /* Muted Red for link button */
+}
+
+.btn-link.btn-secondary:hover {
+    color: #B5472E !important; /* Muted Red hover */
+}
+
+/* SVG Icon Styles */
+.svg-icon {
+    fill: #FFFFFF; /* Default SVG icon color */
+    width: 18px;
+    height: 18px;
+}
+
+.button-svg-icon {
+    fill: #F2613F; /* Bright Orange for SVG icons in buttons */
+}
+
+.button-svg-icon:hover {
+    fill: #FF8664; /* Bright Orange hover state for SVG icons */
+}
+/* Toggle & Misc */
+.toggle-on.btn {
+    color: #E5E5E5 !important; /* Light Gray for toggle-on button text */
+}
+
+.toggle-handle {
+    background: #FFFFFF !important; /* White handle */
+}
+
+.toggle-handle:hover {
+    background: #FFFFFF !important;
+}
+
+.btn-round .toggle-handle {
+    border-radius: 50px;
+}
+
+/* Nav Pills */
+.nav-pills>li:first-child>.nav-link {
+    border-radius: 4px 0 0 4px !important;
+}
+
+.nav-pills>li:last-child>.nav-link {
+    border-radius: 0 4px 4px 0 !important;
+}
+
+.nav-link.disabled {
+    color: #6c757d !important;
+}
+
+.nav-pills .nav-link {
+    padding: 10px 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #9B3922; /* Muted Red for nav pills border */
+    color: #E5E5E5; /* Light Gray text */
+}
+
+.nav-pills>li>.nav-link.active {
+    background: #9B3922; /* Muted Red for active nav link */
+    color: #E5E5E5; /* Light Gray text */
+}
+
+.nav-pills>li>.nav-link:hover {
+    background: rgba(222, 222, 222, .4);
+}
+
+/* Additional Nav Styles */
+.nav-pills.nav-pills-no-bd li {
+    margin-left: 15px !important;
+}
+
+.nav-pills.nav-pills-no-bd li .nav-link {
+    border: 0 !important;
+    border-radius: 50px !important;
+    background: rgba(222, 222, 222, .4);
+}
+
+.nav-pills.flex-column .nav-link {
+    border-radius: 0 !important;
+    border: 1px solid #9B3922; /* Muted Red border */
+    color: #E5E5E5; /* Light Gray text */
+    text-align: center;
+    word-wrap: normal;
+    padding: 10px 0;
+}
+
+.nav-pills.flex-column .nav-link:hover {
+    background: rgba(222, 222, 222, .4);
+}
+
+.nav-pills.flex-column .nav-link.active {
+    background: #9B3922; /* Muted Red for active flex-column nav link */
+}
+
+/* Danger & Warning Nav Styles */
+.nav.nav-line.nav-color-danger .nav-link:focus,
+.nav.nav-line.nav-color-danger .nav-link:hover {
+    color: #f25961;
+}
+
+.nav.nav-line.nav-color-danger .nav-link.active {
+    color: #f25961;
+    border-color: #f25961;
+}
+
+.nav.nav-line.nav-color-warning .nav-link:focus,
+.nav.nav-line.nav-color-warning .nav-link:hover {
+    color: #ffad46;
+}
+
+.nav.nav-line.nav-color-warning .nav-link.active {
+    color: #ffad46;
+    border-color: #ffad46;
+}
+
+/* Light Color Nav Styles */
+.nav.nav-line.nav-color-light .nav-link:focus,
+.nav.nav-line.nav-color-light .nav-link:hover {
+    color: #FFFFFF;
+}
+
+.nav.nav-line.nav-color-light .nav-link.active {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+.nav.nav-line.nav-color-light .nav-link {
+    color: #E5E5E5;
+}
+
+/* Small Nav Link */
+.nav-sm .nav-link {
+    font-size: 11px !important;
+    padding: 8px 16px !important;
+}
+
+/* Popover Styles */
+.popover {
+    max-width: 240px;
+    line-height: 1.7;
+    border: 0;
+    box-shadow: 0 0 20px 1px rgba(69, 65, 78, .2);
+}
+
+.popover .popover-header {
+    background: 0 0;
+    font-size: 1rem;
+    border-bottom: 0;
+    text-transform: capitalize;
+    margin-top: 5px;
+    color: #aaa;
+    font-weight: 400;
+}
+
+.popover .popover-body {
+    margin-bottom: 5px;
+}
+
+.popover .popover-body p {
+    font-size: 13px;
+    margin-bottom: 1rem;
+}
+
+/* Progress Bar */
+.progress {
+    border-radius: 100px;
+    height: 14px;
+}
+
+.progress .progress-bar {
+    border-radius: 100px;
+    background-color: #F2613F; /* Bright Orange for progress bar */
+}
+
+.progress.progress-sm {
+    height: 8px;
+}
+
+.progress.progress-lg {
+    height: 20px;
+}
+
+/* Pagination */
+.pagination>li:first-child>a,
+.pagination>li:first-child>span,
+.pagination>li:last-child>a,
+.pagination>li:last-child>span,
+.pagination>li>a,
+.pagination>li>span {
+    border-radius: 100px !important;
+    margin: 0 2px;
+    color: #777;
+    border-color: #ddd;
+}
+
+.pagination>li>a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination.pg-primary>li.active>a,
+.pagination.pg-primary>li.active>span {
+    background: #F2613F; /* Bright Orange for primary active page */
+    border-color: #F2613F;
+    color: #FFFFFF; /* White text */
+}
+
+.pagination.pg-secondary>li.active>a,
+.pagination.pg-secondary>li.active>span {
+    background: #9B3922; /* Muted Red for secondary active page */
+    border-color: #9B3922;
+    color: #FFFFFF; /* White text */
+}
+
+/* Slider Styles */
+.slider-primary .ui-slider-range {
+    background: #F2613F; /* Bright Orange for slider */
+}
+
+.slider-secondary .ui-slider-range {
+    background: #9B3922; /* Muted Red for secondary slider */
+}
+
+/* Modal Title Colors */
+.modal .bg-primary .modal-title,
+.modal .bg-secondary .modal-title {
+    color: #FFFFFF !important;
+}
+
+/* Modal Content */
+.modal-content {
+    border-radius: .4rem;
+    border: 0 !important;
+}
+
+/* Rating */
+.rating>label {
+    display: inline;
+    color: #e9eaeb !important;
+    line-height: 1;
+    float: right;
+    cursor: pointer;
+}
+
+.rating>label:hover {
+    color: #ffc600 !important;
+    opacity: .5;
+}
+
+.rating input[type=checkbox],
+.rating input[type=radio] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.rating input[type=checkbox]:checked~label,
+.rating input[type=radio]:checked~label {
+    color: #ffc600 !important;
+}
+
+/* SVG Icon Styles */
+.svg-icon {
+    fill: #FFFFFF; /* Default white color for SVG icons */
+    width: 18px;
+    height: 18px;
+}
+
+.button-svg-icon {
+    fill: #F2613F; /* Bright Orange for button SVG icons */
+}
+
+.button-svg-icon:hover {
+    fill: #FF8664; /* Hover state for button SVG icons */
+}
+/* Activity Feed */
+.activity-feed {
+    padding: 15px;
+    list-style: none;
+}
+
+.activity-feed .feed-item {
+    position: relative;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    border-left: 2px solid #9B3922; /* Muted Red for borders */
+}
+
+.activity-feed .feed-item:last-child {
+    border-color: transparent;
+}
+
+.activity-feed .feed-item::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #F2613F; /* Bright Orange for indicators */
+}
+
+.feed-item-black::after {
+    background: #1a2035 !important;
+}
+
+.feed-item-primary::after {
+    background: #9B3922 !important; /* Muted Red for primary feed */
+}
+
+.feed-item-secondary::after {
+    background: #6861ce !important; /* Secondary */
+}
+
+.feed-item-success::after {
+    background: #31ce36 !important; /* Success */
+}
+
+.feed-item-danger::after {
+    background: #F2613F !important; /* Bright Orange */
+}
+
+.feed-item-info::after {
+    background: #48abf7 !important; /* Info */
+}
+
+.feed-item-warning::after {
+    background: #FF8664 !important; /* Hover State Orange */
+}
+
+.activity-feed .feed-item .date {
+    display: block;
+    position: relative;
+    top: -5px;
+    color: #E5E5E5; /* Light Gray for text */
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.activity-feed .feed-item .text {
+    position: relative;
+    top: -3px;
+    color: #F5F5F5; /* Light Gray for body text */
+}
+
+/* Timeline */
+.timeline {
+    list-style: none;
+    padding: 20px 0 20px;
+    position: relative;
+}
+
+.timeline:before {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 3px;
+    background-color: #9B3922; /* Muted Red for line */
+    left: 50%;
+    margin-left: -1.5px;
+}
+
+.timeline>li {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline>li>.timeline-panel {
+    width: 50%;
+    float: left;
+    border: 1px solid #9B3922; /* Muted Red for border */
+    background: #333333; /* Dark background */
+    border-radius: 3px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 1px 20px 1px rgba(155, 57, 34, .06); /* Muted red shadow */
+}
+
+.timeline>li.timeline-inverted>.timeline-panel {
+    float: right;
+}
+
+.timeline>li>.timeline-badge {
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.8em;
+    text-align: center;
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    margin-left: -25px;
+    background-color: #9B3922; /* Muted Red for badge background */
+    z-index: 100;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline>li>.timeline-badge svg {
+    fill: #FFFFFF; /* White icons for SVGs */
+}
+
+.timeline-badge.black {
+    background-color: #0C0C0C !important; /* Dark background */
+}
+
+.timeline-badge.primary {
+    background-color: #9B3922 !important; /* Muted Red */
+}
+
+.timeline-badge.secondary {
+    background-color: #B5472E !important; /* Hover color for secondary button */
+}
+
+.timeline-badge.success {
+    background-color: #31ce36 !important; /* Success color */
+}
+
+.timeline-badge.warning {
+    background-color: #FF8664 !important; /* Hover color for primary button */
+}
+
+.timeline-badge.danger {
+    background-color: #F2613F !important; /* Bright Orange */
+}
+
+.timeline-badge.info {
+    background-color: #48abf7 !important; /* Info color */
+}
+
+.timeline-title {
+    font-size: 17px;
+    margin-top: 0;
+    color: #F2613F; /* Bright Orange for headings */
+}
+
+.timeline-body>p,
+.timeline-body>ul {
+    margin-bottom: 0;
+    color: #E5E5E5; /* Light gray for text */
+}
+
+.timeline-body>p+p {
+    margin-top: 5px;
+}
+
+/* SVG Icons in Button Areas */
+.button-area svg {
+    fill: #F2613F; /* Bright Orange for SVG icons in buttons */
+}
+
+/* Full Screen Map */
+.full-screen-maps {
+    height: 100vh !important;
+}
+
+/* Vector Map */
+.vmap {
+    width: 100%;
+    min-height: 265px;
+}
+
+.vmap>svg {
+    margin: auto;
+    display: flex;
+    width: 100% !important;
+}
+
+.vmap>svg>g {
+    transition: all ease-in-out .2s;
+    fill: #FFFFFF; /* White SVG icons for maps */
+}
+
+
+/* jqvmap label and pin */
+.jqvmap-label,
+.jqvmap-pin {
+    pointer-events: none;
+}
+
+.jqvmap-label {
+    position: absolute;
+    display: none;
+    border-radius: 3px;
+    background: #292929; /* Dark background */
+    color: #fff; /* White text */
+    font-size: smaller;
+    padding: 3px;
+}
+
+.jqvmap-zoomin,
+.jqvmap-zoomout {
+    position: absolute;
+    left: 10px;
+    border-radius: 4px;
+    background: #fff; /* White background */
+    font-weight: 600;
+    color: #8a95a0; /* Gray for zoom button text */
+    border: 1px solid #e2dddd !important; /* Light border */
+    cursor: pointer;
+    line-height: 25px;
+    text-align: center;
+    font-size: 1.25rem;
+    width: 25px;
+    height: 25px;
+}
+
+.jqvmap-zoomin {
+    top: 15px;
+}
+
+.jqvmap-zoomout {
+    top: 45px;
+}
+
+.jqvmap-region {
+    cursor: pointer;
+}
+
+.jqvmap-ajax_response {
+    width: 100%;
+    height: 500px;
+}
+
+/* Card Invoice */
+.card-invoice {
+    background-color: #333333; /* Card background */
+    border: 1px solid #9B3922; /* Card border */
+    box-shadow: 0 1px 10px #9B3922; /* Card shadow */
+}
+
+.card-invoice .invoice-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-invoice .invoice-header .invoice-title {
+    font-size: 27px;
+    font-weight: 400;
+    color: #F2613F; /* Bright Orange for headings */
+}
+
+.card-invoice .invoice-header .invoice-logo {
+    width: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.card-invoice .invoice-header .invoice-logo img {
+    width: 100%;
+}
+
+.card-invoice .sub {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #E5E5E5; /* Light gray for sub text */
+}
+
+.card-invoice .info-invoice {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.card-invoice .info-invoice p {
+    font-size: 13px;
+    color: #F5F5F5; /* Light gray for info text */
+}
+
+.card-invoice .invoice-desc {
+    text-align: right;
+    font-size: 13px;
+    color: #E5E5E5; /* Light gray for invoice descriptions */
+}
+
+.card-invoice .invoice-detail {
+    width: 100%;
+    display: block;
+}
+
+.card-invoice .invoice-detail .invoice-top .title {
+    font-size: 20px;
+    color: #F2613F; /* Bright Orange for titles */
+}
+
+.card-invoice .transfer-to .sub {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #E5E5E5; /* Light gray for sub text */
+}
+
+.card-invoice .transfer-to .account-transfer>div span:first-child {
+    font-weight: 600;
+    font-size: 13px;
+    color: #F5F5F5; /* Light gray for first span */
+}
+
+.card-invoice .transfer-to .account-transfer>div span:last-child {
+    font-size: 13px;
+    float: right;
+    color: #F5F5F5; /* Light gray for last span */
+}
+
+.card-invoice .transfer-total {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-invoice .transfer-total .sub {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #F5F5F5; /* Light gray for sub text */
+}
+
+.card-invoice .transfer-total .price {
+    font-size: 28px;
+    color: #1572e8; /* Primary blue for total price */
+    padding: 7px 0;
+    font-weight: 600;
+}
+
+.card-invoice .transfer-total span {
+    font-weight: 600;
+    font-size: 13px;
+    color: #F5F5F5; /* Light gray for span */
+}
+
+.card-invoice .card-body {
+    padding: 0;
+    border: 0 !important;
+    width: 75%;
+    margin: auto;
+    background-color: #333333; /* Card background */
+    color: #E5E5E5; /* Light gray for body text */
+}
+
+.card-invoice .card-header {
+    padding: 50px 0 20px;
+    border: 0 !important;
+    width: 75%;
+    margin: auto;
+    background-color: #333333; /* Card background */
+    color: #F5F5F5; /* Light gray for header text */
+}
+
+.card-invoice .card-footer {
+    padding: 5px 0 50px;
+    border: 0 !important;
+    width: 75%;
+    margin: auto;
+    background-color: #333333; /* Card background */
+    color: #E5E5E5; /* Light gray for footer text */
+}
+
+/* Button Areas with SVG Icons */
+.button-area svg {
+    fill: #F2613F; /* Bright Orange for SVG icons in buttons */
+}
+
+/* SVG icon color customization */
+.jqvmap-zoomin svg,
+.jqvmap-zoomout svg {
+    fill: #FFFFFF; /* White SVG icons for zoom controls */
+}
+/* List Group */
+.list-group .list-group-header {
+    font-size: 12px;
+    font-weight: 600;
+    padding: .75rem 1rem;
+    color: #E5E5E5; /* Light Gray for header text */
+    background-color: #0C0C0C; /* Dark background */
+}
+
+.list-group .list-group-item {
+    display: flex;
+    align-items: stretch;
+    border-width: 1px 0;
+    border-color: #9B3922; /* Muted Red for borders */
+    background-color: #333333; /* Dark Gray card background */
+    color: #E5E5E5; /* Light Gray text */
+}
+
+.list-group .list-group-item-figure {
+    align-self: start;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF; /* White for svg icons */
+}
+
+.list-group .list-group-item-body {
+    flex: 1;
+    min-width: 0;
+    align-self: center;
+    font-size: .875rem;
+    color: #E5E5E5; /* Light Gray text */
+}
+
+.list-group .list-group-item-text {
+    margin-bottom: 0;
+    line-height: 1.25rem;
+    color: #F5F5F5; /* Light Gray for secondary text */
+}
+
+/* List Group File Item */
+.list-group-file-item .list-group-item {
+    padding: 0;
+    background-color: #333333; /* Card background */
+}
+
+.list-group-file-item .list-group-item-figure {
+    padding: .75rem 1rem;
+}
+
+.list-group-file-item .list-group-item-body {
+    padding: .75rem 0;
+}
+
+/* Bordered List Group */
+.list-group-bordered .list-group-item {
+    border: 1px solid #9B3922; /* Muted Red for border */
+}
+
+.list-group-bordered .list-group-item.active {
+    background-color: #9B3922; /* Muted Red for active item */
+    border-color: #9B3922; /* Active border */
+    color: #E5E5E5; /* Light Gray active text */
+}
+
+/* Large List Group */
+.list-group-lg .list-group-item {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+/* Select Group */
+.selectgroup {
+    display: inline-flex;
+}
+
+.selectgroup-item {
+    flex-grow: 1;
+    position: relative;
+    font-weight: 400 !important;
+}
+
+.selectgroup-item+.selectgroup-item {
+    margin-left: -1px;
+}
+
+.selectgroup-item:not(:first-child) .selectgroup-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.selectgroup-item:not(:last-child) .selectgroup-button {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.selectgroup-input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.selectgroup-button {
+    display: block;
+    border: 1px solid rgba(0, 40, 100, .12);
+    text-align: center;
+    padding: .375rem 1rem;
+    position: relative;
+    cursor: pointer;
+    border-radius: 3px;
+    color: #E5E5E5; /* Light Gray text */
+    background-color: #9B3922; /* Muted Red button background */
+    user-select: none;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    min-width: 2.375rem;
+}
+
+.selectgroup-button-icon {
+    padding-left: .5rem;
+    padding-right: .5rem;
+    font-size: 1rem;
+}
+
+.selectgroup-input:checked+.selectgroup-button {
+    border-color: #F2613F; /* Bright Orange for active button */
+    z-index: 1;
+    color: #F2613F; /* Bright Orange active text */
+    background-color: rgba(242, 97, 63, .15); /* Light orange background for active */
+}
+
+.selectgroup-input:focus+.selectgroup-button {
+    border-color: #F2613F; /* Bright Orange focus state */
+    z-index: 2;
+    color: #F2613F; /* Bright Orange for focused text */
+    box-shadow: 0 0 0 2px rgba(242, 97, 63, .25); /* Orange shadow for focus */
+}
+
+/* Button Areas with SVG Icons */
+.button-area svg {
+    fill: #F2613F; /* Bright Orange for SVG icons in buttons */
+}
+
+/* SVG Icon Styling */
+.list-group .list-group-item-figure svg,
+.selectgroup-button svg {
+    fill: #FFFFFF; /* White icons */
+}
+
+/* Pills */
+.selectgroup-pills {
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.selectgroup-pills .selectgroup-item {
+    margin-right: .5rem;
+    flex-grow: 0;
+}
+
+.selectgroup-pills .selectgroup-button {
+    border-radius: 50px !important;
+    background-color: #9B3922; /* Muted Red background */
+    color: #E5E5E5; /* Light Gray text */
+}
+
+.selectgroup-pills .selectgroup-button:hover {
+    background-color: #B5472E; /* Darker red hover state */
+    color: #F5F5F5; /* Lighter text on hover */
+}
+
+/* Primary Select Group */
+.selectgroup.selectgroup-primary .selectgroup-input:checked+.selectgroup-button {
+    border-color: #F2613F; /* Bright Orange for primary button */
+    color: #F2613F;
+    background: rgba(242, 97, 63, .15);
+}
+
+.selectgroup.selectgroup-primary .selectgroup-input:focus+.selectgroup-button {
+    border-color: #F2613F;
+    color: #F2613F;
+    box-shadow: 0 0 0 2px rgba(242, 97, 63, .25);
+}
+
+/* Secondary Select Group */
+.selectgroup.selectgroup-secondary .selectgroup-input:checked+.selectgroup-button {
+    border-color: #9B3922; /* Muted Red for secondary button */
+    color: #9B3922;
+    background: rgba(155, 57, 34, .15);
+}
+
+.selectgroup.selectgroup-secondary .selectgroup-input:focus+.selectgroup-button {
+    border-color: #9B3922;
+    color: #9B3922;
+    box-shadow: 0 0 0 2px rgba(155, 57, 34, .25);
+}
+
+/* Info Select Group */
+.selectgroup.selectgroup-info .selectgroup-input:checked+.selectgroup-button {
+    border-color: #48abf7;
+    color: #48abf7;
+    background: rgba(72, 171, 247, .15);
+}
+
+.selectgroup.selectgroup-info .selectgroup-input:focus+.selectgroup-button {
+    border-color: #48abf7;
+    color: #48abf7;
+    box-shadow: 0 0 0 2px rgba(72, 171, 247, .25);
+}
+
+/* Success Select Group */
+.selectgroup.selectgroup-success .selectgroup-input:checked+.selectgroup-button {
+    border-color: #31ce36;
+    color: #31ce36;
+    background: rgba(49, 206, 54, .15);
+}
+
+.selectgroup.selectgroup-success .selectgroup-input:focus+.selectgroup-button {
+    border-color: #31ce36;
+    color: #31ce36;
+    box-shadow: 0 0 0 2px rgba(49, 206, 54, .25);
+}
+
+/* Warning Select Group */
+.selectgroup.selectgroup-warning .selectgroup-input:checked+.selectgroup-button {
+    border-color: #ffad46;
+    color: #ffad46;
+    background: rgba(255, 173, 70, .15);
+}
+
+.selectgroup.selectgroup-warning .selectgroup-input:focus+.selectgroup-button {
+    border-color: #ffad46;
+    color: #ffad46;
+    box-shadow: 0 0 0 2px rgba(255, 173, 70, .25);
+}
+
+/* Danger Select Group */
+.selectgroup.selectgroup-danger .selectgroup-input:checked+.selectgroup-button {
+    border-color: #f25961;
+    color: #f25961;
+    background: rgba(242, 89, 97, 0.15);
+}
+
+.selectgroup.selectgroup-danger .selectgroup-input:focus+.selectgroup-button {
+    border-color: #f25961;
+    color: #f25961;
+    box-shadow: 0 0 0 2px rgba(242, 89, 97, 0.25);
+}
+
+/* SVG Icon Styling */
+.selectgroup-button svg {
+    fill: #FFFFFF; /* White SVG icons */
+}
+
+.selectgroup-button:hover svg {
+    fill: #F2613F; /* Bright Orange on hover for icons */
+}
+
+/* Color Palette */
+:root {
+    --background-color: #0C0C0C;
+    --sidebar-color: #481E14;
+    --navbar-color: #9B3922;
+    --heading-button-color: #F2613F;
+    --body-text-color: #E5E5E5;
+    --primary-button-color: #F2613F;
+    --primary-button-hover-color: #FF8664;
+    --secondary-button-color: #9B3922;
+    --secondary-button-hover-color: #B5472E;
+    --svg-icon-color: #FFFFFF;
+    --svg-button-icon-color: #F2613F;
+    --card-background-color: #333333;
+    --card-border-color: #9B3922;
+    --card-text-color: #E5E5E5;
+}
+
+/* General body styles */
+body {
+    background-color: var(--background-color);
+    color: var(--body-text-color);
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: var(--sidebar-color);
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--navbar-color);
+}
+
+/* Headings & Buttons */
+h1, h2, h3, h4, h5, h6, button {
+    color: var(--heading-button-color);
+}
+
+/* Primary Button */
+button.primary {
+    background-color: var(--primary-button-color);
+    color: var(--svg-icon-color);
+}
+
+button.primary:hover {
+    background-color: var(--primary-button-hover-color);
+}
+
+/* Secondary Button */
+button.secondary {
+    background-color: var(--secondary-button-color);
+    color: var(--svg-icon-color);
+}
+
+button.secondary:hover {
+    background-color: var(--secondary-button-hover-color);
+}
+
+/* Cards */
+.card {
+    background-color: var(--card-background-color);
+    border: 1px solid var(--card-border-color);
+    color: var(--card-text-color);
+}
+
+/* SVG Icons */
+svg {
+    fill: var(--svg-icon-color);
+}
+
+button svg {
+    fill: var(--svg-button-icon-color);
+}
+
+/* Pills */
+.selectgroup-pills {
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.selectgroup-pills .selectgroup-item {
+    margin-right: .5rem;
+    flex-grow: 0;
+}
+
+.selectgroup-pills .selectgroup-button {
+    border-radius: 50px !important;
+}
+
+/* Primary Select Group */
+.selectgroup.selectgroup-primary .selectgroup-input:checked + .selectgroup-button {
+    border-color: var(--primary-button-color);
+    color: var(--primary-button-color);
+    background: rgba(242, 97, 63, .15); /* Adjusted to use var */
+}
+
+.selectgroup.selectgroup-primary .selectgroup-input:focus + .selectgroup-button {
+    border-color: var(--primary-button-color);
+    color: var(--primary-button-color);
+    box-shadow: 0 0 0 2px rgba(242, 97, 63, 0.25);
+}
+
+/* Secondary Select Group */
+.selectgroup.selectgroup-secondary .selectgroup-input:checked + .selectgroup-button {
+    border-color: var(--secondary-button-color);
+    color: var(--secondary-button-color);
+    background: rgba(155, 57, 34, .15); /* Adjusted to use var */
+}
+
+.selectgroup.selectgroup-secondary .selectgroup-input:focus + .selectgroup-button {
+    border-color: var(--secondary-button-color);
+    color: var(--secondary-button-color);
+    box-shadow: 0 0 0 2px rgba(155, 57, 34, 0.25);
+}
+
+/* Imagecheck updates */
+.imagecheck-input:focus ~ .imagecheck-figure {
+    border-color: var(--primary-button-color);
+    box-shadow: 0 0 0 2px rgba(242, 97, 63, 0.25);
+}
+
+.imagecheck-input:checked ~ .imagecheck-figure {
+    border-color: rgba(155, 57, 34, 0.24); /* Adjusted for secondary */
+}
+
+.imagecheck-figure:before {
+    background: var(--primary-button-color) url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E") no-repeat center center/50% 50%;
+}
+
+/* Message Styles */
+.messages-contact .contact-list .user a:hover {
+    background: rgba(242, 97, 63, 0.05); /* Hover adjustment */
+}
+
+.messages-wrapper .messages-body .message-content-wrapper .message-in .message-content {
+    background: var(--sidebar-color);
+    color: var(--body-text-color);
+}
+
+.messages-wrapper .messages-body .message-content-wrapper .message-out .message-content {
+    background: var(--primary-button-color);
+}
+
+
+.messages-form {
+    display: table;
+    width: 100%;
+    margin-top: 30px;
+    border-top: 1px solid #9B3922; /* Navbar color */
+    padding-top: 20px;
+    background-color: #0C0C0C; /* Background color */
+}
+
+.messages-form .messages-form-control {
+    display: table-cell;
+    padding-right: 15px;
+}
+
+.messages-form .messages-form-tool {
+    display: table-cell;
+    text-align: right;
+    width: 50px;
+}
+
+.messages-form .messages-form-tool .attachment {
+    height: 100%;
+    line-height: 1;
+    color: #FFFFFF; /* SVG icons color */
+    background: #9B3922; /* Navbar color */
+    font-size: 17px;
+    padding: 10px 12px;
+    border-radius: 50%;
+    margin-left: auto;
+}
+
+.show-chat .messages-contact {
+    left: calc(-100% - 40px);
+}
+
+.show-chat .messages-wrapper {
+    left: 0;
+}
+
+.chat-contacts .chat-username {
+    font-weight: 600;
+    color: #E5E5E5; /* Body Text color */
+}
+
+.chat-contacts .chat-msg {
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 175px;
+    text-overflow: ellipsis;
+    margin-top: 4px;
+    opacity: 0.8;
+    color: #F5F5F5; /* Light Gray Text */
+}
+
+.chat-contacts .list-group-item.unread {
+    background: #333333; /* Card Background */
+}
+
+.list-group-messages .btn-dropdown {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #B5472E; /* Hover State for Secondary Button */
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 10px;
+}
+
+.list-group-messages .list-group-item {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    background-color: #333333; /* Card Background */
+    border-color: #9B3922; /* Card Border */
+}
+
+.list-group-messages .list-group-item.unread .list-group-item-title {
+    font-weight: 600;
+    color: #E5E5E5; /* Card Text color */
+}
+
+.list-group-messages .list-group-item-title a {
+    color: #F2613F; /* Bright Orange */
+}
+
+.conversations {
+    display: flex;
+    height: calc(100vh - 57px);
+    flex-direction: column;
+    background-color: #0C0C0C; /* Background color */
+}
+
+.conversations .message-header {
+    background: #9B3922; /* Navbar color */
+    padding: 0.5rem;
+    box-shadow: 0 1px 0 0 rgba(61, 70, 79, 0.075);
+    z-index: 1;
+}
+
+.conversations .message-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: #F2613F; /* Bright Orange */
+}
+
+.conversations .message-title .user .name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #E5E5E5; /* Light Gray */
+}
+
+.conversations .conversations-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem 2rem;
+    background-color: #333333; /* Card Background */
+}
+
+.conversations .messages-form {
+    margin: 0;
+    padding: 0.7rem 1rem;
+    background: #0C0C0C; /* Background color */
+    border-top: 1px solid #9B3922; /* Card Border */
+}
+
+.conversations-action {
+    background: #481E14; /* Sidebar color */
+    padding: 10px 0;
+}
+
+.conversations-action .action {
+    display: flex;
+    padding: 1rem 1.5rem;
+    background: #333333; /* Card Background */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.conversations-action .action:hover {
+    background: #FF8664; /* Hover for Primary Button */
+}
+
+.conversations-action .action span {
+    font-size: 16px;
+    line-height: 21px;
+    color: #E5E5E5; /* Light Gray */
+}
+
+.conversations-action .action svg {
+    font-size: 21px;
+    width: 2.5rem;
+    color: #FFFFFF; /* SVG icons color */
+}
+
+.conversations-action .action.danger svg,
+.conversations-action .action.danger span {
+    color: #F25961;
+}
+@media screen and (max-width: 991.5px) {
+    .conversations {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}
+
+.tasks-wrapper .tasks-scroll {
+    height: calc(100vh - 130px);
+    overflow: auto;
+    margin-bottom: 15px;
+    background-color: #0C0C0C; /* Background */
+}
+
+.tasks-wrapper .tasks-content {
+    padding-bottom: 25px;
+}
+
+.tasks-wrapper .tasks-content .tasks-list {
+    padding: 0 10px;
+    list-style: none;
+}
+
+.tasks-wrapper .tasks-content .tasks-list li {
+    position: relative;
+    margin-bottom: 15px;
+    background-color: #333333; /* Card Background */
+    border: 1px solid #9B3922; /* Card Border */
+    color: #E5E5E5; /* Card Text */
+}
+
+.tasks-wrapper .tasks-content .tasks-list li .custom-control {
+    position: unset !important;
+}
+
+.tasks-wrapper .tasks-content .tasks-list li input[type=checkbox]:checked ~ .custom-control-label {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.tasks-wrapper .tasks-content .tasks-list li .custom-control.custom-checkbox {
+    margin-right: 50px !important;
+}
+
+.tasks-wrapper .tasks-content .tasks-list li .task-action {
+    display: none;
+    position: absolute;
+    font-size: 17px;
+    right: 0;
+    top: 0;
+}
+
+.tasks-wrapper .tasks-content .tasks-list li .task-action a.link {
+    margin-left: 10px;
+    color: #FFFFFF; /* SVG icon color */
+}
+
+.tasks-wrapper .tasks-content .tasks-list li .task-action a.link:hover {
+    text-decoration: none;
+    color: #F2613F; /* Bright Orange */
+}
+
+.tasks-wrapper .tasks-content .tasks-list li:hover .task-action {
+    display: block;
+}
+
+.settings-wrapper .settings-content .settings-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.settings-wrapper .settings-content .settings-list li {
+    display: table;
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: #333333; /* Card Background */
+    border: 1px solid #9B3922; /* Card Border */
+    color: #E5E5E5; /* Card Text */
+}
+
+.settings-wrapper .settings-content .settings-list li .item-label {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 13px;
+}
+
+.settings-wrapper .settings-content .settings-list li .item-control {
+    display: table-cell;
+    float: right;
+    margin-right: 5px;
+}
+
+.settings-wrapper .settings-content .settings-list li .item-control .toggle-group .toggle-off,
+.settings-wrapper .settings-content .settings-list li .item-control .toggle-group .toggle-on {
+    font-size: 11px !important;
+    color: #FFFFFF; /* SVG icon color */
+}
+
+.tasks-wrapper .tasks-content .tasks-list li .task-action svg, /* Replaced 'i' with 'svg' */
+.settings-wrapper .settings-content .settings-list li .item-control svg { /* Replaced 'i' with 'svg' */
+    color: #FFFFFF; /* Default SVG color */
+}
+
+.tasks-wrapper .tasks-content .tasks-list li .task-action:hover svg, /* Replaced 'i' with 'svg' */
+.settings-wrapper .settings-content .settings-list li .item-control:hover svg { /* Replaced 'i' with 'svg' */
+    color: #F2613F; /* SVG icon in button areas */
+}
+.is-loading:after,
+.loader {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: 0 0;
+    border: 3px solid #FFFFFF; /* SVG icons: White */
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: 1s spin linear infinite;
+}
+
+.is-loading-lg:after,
+.loader-lg {
+    width: 2rem;
+    height: 2rem;
+    border-width: 5px;
+}
+
+.is-loading-sm:after,
+.loader-sm {
+    width: 1rem;
+    height: 1rem;
+    border-width: 2px;
+}
+
+.is-loading {
+    position: relative;
+    color: transparent !important;
+}
+
+.is-loading > * {
+    opacity: 0.2 !important;
+}
+
+.is-loading:after {
+    position: absolute;
+    top: calc(50% - 1.5rem / 2);
+    left: calc(50% - 1.5rem / 2);
+    content: '';
+}
+
+.is-loading-lg:after {
+    top: calc(50% - 2rem / 2);
+    left: calc(50% - 2rem / 2);
+}
+
+.is-loading-sm:after {
+    top: calc(50% - 1rem / 2);
+    left: calc(50% - 1rem / 2);
+}
+
+.btn-black.is-loading:after,
+.btn-danger.is-loading:after,
+.btn-info.is-loading:after,
+.btn-primary.is-loading:after,
+.btn-secondary.is-loading:after,
+.btn-success.is-loading:after,
+.btn-warning.is-loading:after,
+.card-black.is-loading:after,
+.card-danger.is-loading:after,
+.card-info.is-loading:after,
+.card-primary.is-loading:after,
+.card-secondary.is-loading:after,
+.card-success.is-loading:after,
+.card-warning.is-loading:after,
+.is-loading-black:after,
+.is-loading-danger:after,
+.is-loading-info:after,
+.is-loading-primary:after,
+.is-loading-secondary:after,
+.is-loading-success:after,
+.is-loading-warning:after,
+.loader-black,
+.loader-danger,
+.loader-info,
+.loader-primary,
+.loader-secondary,
+.loader-success,
+.loader-warning {
+    border-bottom-color: transparent !important;
+}
+
+/* Color Themes */
+.btn-primary {
+    background-color: #F2613F; /* Bright Orange */
+    color: #FFFFFF; /* White text */
+}
+
+.btn-primary:hover {
+    background-color: #FF8664; /* Hover State */
+}
+
+.btn-secondary {
+    background-color: #9B3922; /* Muted Red */
+    color: #FFFFFF; /* White text */
+}
+
+.btn-secondary:hover {
+    background-color: #B5472E; /* Secondary Button Hover */
+}
+
+.card {
+    background-color: #333333; /* Card Background */
+    border: 1px solid #9B3922; /* Card Border */
+    color: #E5E5E5; /* Card Text */
+}
+
+svg {
+    fill: #FFFFFF; /* SVG Icons color: White */
+}
+
+.button svg {
+    fill: #F2613F; /* SVG Icons in button areas: Bright Orange */
+}
+.btn-black.is-loading:after,
+.btn-danger.is-loading:after,
+.btn-info.is-loading:after,
+.btn-primary.is-loading:after,
+.btn-secondary.is-loading:after,
+.btn-success.is-loading:after,
+.btn-warning.is-loading:after,
+.card-black.is-loading:after,
+.card-danger.is-loading:after,
+.card-info.is-loading:after,
+.card-primary.is-loading:after,
+.card-secondary.is-loading:after,
+.card-success.is-loading:after,
+.card-warning.is-loading:after {
+    border-color: #FFFFFF; /* SVG icons: White */
+}
+
+.is-loading-black:after,
+.loader-black {
+    border-color: #1a2035;
+}
+
+.is-loading-primary:after,
+.loader-primary {
+    border-color: #1572e8;
+}
+
+.is-loading-secondary:after,
+.loader-secondary {
+    border-color: #6861ce;
+}
+
+.is-loading-info:after,
+.loader-info {
+    border-color: #48abf7;
+}
+
+.is-loading-success:after,
+.loader-success {
+    border-color: #31ce36;
+}
+
+.is-loading-warning:after,
+.loader-warning {
+    border-color: #ffad46;
+}
+
+.is-loading-danger:after,
+.loader-danger {
+    border-color: #f25961;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Replacing all i elements with svg */
+svg {
+    fill: #FFFFFF; /* SVG icons color: White */
+}
+
+/* Specific styles for buttons and other components */
+.btn-primary {
+    background-color: #F2613F; /* Bright Orange */
+    color: #FFFFFF; /* White text */
+}
+
+.btn-primary:hover {
+    background-color: #FF8664; /* Hover State */
+}
+
+.btn-secondary {
+    background-color: #9B3922; /* Muted Red */
+    color: #FFFFFF; /* White text */
+}
+
+.btn-secondary:hover {
+    background-color: #B5472E; /* Secondary Button Hover */
+}
+
+.card {
+    background-color: #333333; /* Card Background */
+    border: 1px solid #9B3922; /* Card Border */
+    color: #E5E5E5; /* Card Text */
+}
+
+.body-text {
+    color: #E5E5E5; /* Light Gray Body Text */
+}
+
+.navbar {
+    background-color: #9B3922; /* Navbar: Muted Red */
+}
+
+.sidebar {
+    background-color: #481E14; /* Sidebar: Deep Brown */
+}
+
+h1, h2, h3, h4, h5, h6, button {
+    color: #F2613F; /* Headings/Buttons: Bright Orange */
+}
+
+.button svg {
+    fill: #F2613F; /* SVG Icons in button areas: Bright Orange */
+}
+
+/* Card borders and shadows */
+.card {
+    box-shadow: 0 4px 6px rgba(155, 57, 34, 0.5); /* Card Border/Shadow: Muted Red */
+}
+
+/* Background and general layout colors */
+body {
+    background-color: #0C0C0C; /* Background: Dark */
+    color: #E5E5E5; /* Body Text: Light Gray */
+}
+
+/* Custom loaders */
+.loader-primary {
+    border-color: #F2613F; /* Loader color matching primary button */
+}
+
+/* Menu icons */
+.gg-menu, .gg-menu-left, .gg-menu-right, .gg-menu-round, .gg-menu-boxed,
+.gg-more-vertical-alt, .gg-close, .gg-close-o, .gg-close-r {
+    fill: #FFFFFF; /* Menu SVG icons: White */
+}
+
+/* Hover effect for menu icons */
+.gg-menu-left:hover::after, .gg-menu-left:hover::before,
+.gg-menu-right:hover::after, .gg-menu-right:hover::before {
+    width: 100%;
+}
+
+
+
+/* Media Queries */
+
+@media screen and (max-width: 576px) {
+    .row-card-no-pd [class*=col-] .card:before {
+        width: calc(100% - 30px) !important;
+        right: 15px !important;
+        height: 1px !important;
+    }
+    .row-card-no-pd [class*=col-]:first-child .card:before {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .main-header .main-header-logo {
+        display: none;
+    }
+    .main-panel>.container.container-full {
+        padding: 0 !important;
+    }
+    .main-panel.full-height>.container, .main-panel.full-height>.container-full {
+        margin-top: 0;
+    }
+    .main-panel.full-height .navbar-header {
+        min-height: 62px;
+    }
+    .logo-header {
+        line-height: 57px;
+    }
+    .nav-toggle .sidenav-toggler {
+        display: none;
+    }
+    .nav-toggle .toggle-sidebar {
+        display: inline-block;
+    }
+    .toggle-nav-search {
+        display: none;
+    }
+    #search-nav {
+        display: block !important;
+    }
+    .sidebar .scroll-element {
+        opacity: 0;
+        transition: all .2s;
+    }
+    .sidebar:hover .scroll-element {
+        opacity: 1;
+    }
+    .sidebar[data-background-color]:before {
+        background: rgba(255, 255, 255, .2) !important;
+        z-index: 1000;
+    }
+}
+
+/* Customizing colors and replacing i with svg */
+
+body {
+    background-color: #0C0C0C; /* Background: Dark */
+    color: #E5E5E5; /* Body Text: Light Gray */
+}
+
+.sidebar {
+    background-color: #481E14; /* Sidebar: Deep Brown */
+}
+
+.navbar {
+    background-color: #9B3922; /* Navbar: Muted Red */
+}
+
+h1, h2, h3, h4, h5, h6, button {
+    color: #F2613F; /* Headings/Buttons: Bright Orange */
+}
+
+.card {
+    background-color: #333333; /* Card Background */
+    border: 1px solid #9B3922; /* Card Border */
+    color: #E5E5E5; /* Card Text */
+    box-shadow: 0 4px 6px rgba(155, 57, 34, 0.5); /* Card Border/Shadow */
+}
+
+button, .btn-primary {
+    background-color: #F2613F; /* Primary Button: Bright Orange */
+    color: #FFFFFF; /* Button Text: White */
+}
+
+button:hover, .btn-primary:hover {
+    background-color: #FF8664; /* Primary Button Hover: Light Orange */
+}
+
+.btn-secondary {
+    background-color: #9B3922; /* Secondary Button: Muted Red */
+    color: #FFFFFF; /* Button Text: White */
+}
+
+.btn-secondary:hover {
+    background-color: #B5472E; /* Secondary Button Hover: Reddish Brown */
+}
+
+/* SVG icon styles */
+svg {
+    fill: #FFFFFF; /* SVG icons color: White */
+}
+
+button svg {
+    fill: #F2613F; /* SVG Icons in button areas: Bright Orange */
+}
+
+.sidebar svg, .navbar svg {
+    fill: #FFFFFF; /* SVG icons in sidebar and navbar: White */
+}
+
+/* Loader colors */
+.loader-primary {
+    border-color: #F2613F; /* Loader color for primary button */
+}
+
+/* Hover effect for sidebar scroll */
+.sidebar:hover .scroll-element {
+    opacity: 1;
+}
+/* Global Theme Colors */
+:root {
+    --background-dark: #0C0C0C;
+    --sidebar-brown: #481E14;
+    --navbar-red: #9B3922;
+    --heading-btn-orange: #F2613F;
+    --body-text-light-gray: #E5E5E5;
+    --body-text-light-gray-alt: #F5F5F5;
+    --primary-btn-color: #F2613F;
+    --primary-btn-hover: #FF8664;
+    --secondary-btn-color: #9B3922;
+    --secondary-btn-hover: #B5472E;
+    --card-background-dark: #333333;
+    --card-border-shadow: #9B3922;
+    --card-text-color: #E5E5E5;
+    --icon-color-default: #FFFFFF;
+    --icon-color-button: #F2613F;
+}
+
+/* General body styles */
+body {
+    background: var(--background-dark);
+    color: var(--body-text-light-gray);
+}
+
+body[data-background-color="dark"] {
+    background: var(--background-dark);
+    color: var(--body-text-light-gray);
+}
+
+/* Navbar and Sidebar */
+.navbar {
+    background: var(--navbar-red) !important;
+    color: var(--body-text-light-gray);
+}
+
+.sidebar {
+    background: var(--sidebar-brown) !important;
+    color: var(--body-text-light-gray-alt);
+}
+
+/* Headings and Buttons */
+h1, h2, h3, h4, h5, h6, .btn {
+    color: var(--heading-btn-orange);
+}
+
+.btn-primary {
+    background-color: var(--primary-btn-color);
+    color: var(--icon-color-default);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-btn-hover);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-btn-color);
+    color: var(--icon-color-default);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-btn-hover);
+}
+
+/* Card Styles */
+.card {
+    background: var(--card-background-dark);
+    border-color: var(--card-border-shadow);
+    color: var(--card-text-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon Styles */
+svg {
+    fill: var(--icon-color-default);
+}
+
+button svg {
+    fill: var(--icon-color-button);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--card-background-dark) !important;
+    border-top: 1px solid var(--card-border-shadow);
+    color: var(--body-text-light-gray);
+}
+
+.footer a {
+    color: var(--body-text-light-gray);
+}
+
+.footer a:hover {
+    color: var(--icon-color-default);
+}
+
+/* Card elements */
+body[data-background-color="dark"] .card-danger .h1,
+body[data-background-color="dark"] .card-danger .h2,
+body[data-background-color="dark"] .card-danger .h3 {
+    color: var(--icon-color-default);
+}
+
+/* Pagination */
+.pagination > li > a {
+    color: var(--heading-btn-orange);
+}
+
+.pagination > li.active > a {
+    background-color: var(--primary-btn-color);
+}
+
+.pagination > li.disabled > a {
+    color: rgba(181, 181, 181, .1);
+}
+/* Color Theme */
+:root {
+  --background-color: #0C0C0C;
+  --sidebar-color: #481E14;
+  --navbar-color: #9B3922;
+  --heading-button-color: #F2613F;
+  --body-text-color: #E5E5E5;
+  --body-text-alt-color: #F5F5F5;
+  --primary-button-color: #F2613F;
+  --primary-button-hover: #FF8664;
+  --secondary-button-color: #9B3922;
+  --secondary-button-hover: #B5472E;
+  --svg-icon-color: #FFFFFF;
+  --card-background-color: #333333;
+  --card-border-color: #9B3922;
+  --card-text-color: #E5E5E5;
+}
+
+/* General Styling */
+body[data-background-color=dark2], body[data-background-color=dark] {
+  background-color: var(--background-color);
+  color: var(--body-text-color);
+}
+
+.navbar {
+  background-color: var(--navbar-color);
+}
+
+.navbar .nav-link {
+  color: #b1b1b1;
+}
+
+.navbar .nav-link:hover {
+  color: var(--svg-icon-color);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary-button-color);
+  border-color: var(--primary-button-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-button-hover);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-button-color);
+  border-color: var(--secondary-button-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-button-hover);
+}
+
+/* Modal Styling */
+.modal-content {
+  background-color: #303c4e;
+  color: var(--svg-icon-color);
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(181, 181, 181, 0.1);
+}
+
+.modal-footer {
+  border-top: 1px solid rgba(181, 181, 181, 0.1);
+}
+
+/* Cards */
+.card {
+  background-color: var(--card-background-color);
+  color: var(--card-text-color);
+  border: 1px solid var(--card-border-color);
+}
+
+.card-title, .card-category {
+  color: var(--svg-icon-color);
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: var(--sidebar-color);
+}
+
+/* Forms */
+.form-control {
+  background-color: #303c4e;
+  color: var(--svg-icon-color);
+  border: 1px solid rgba(181, 181, 181, 0.1);
+}
+
+.form-control:focus {
+  border-color: #00bcd4;
+}
+
+.form-check-input:checked {
+  background-color: #00bcd4;
+  border-color: #00bcd4;
+}
+
+/* Dropdown */
+.dropdown-menu {
+  background-color: #303c4e;
+}
+
+.dropdown-item:hover {
+  background-color: #606c76;
+}
+
+/* Pagination */
+.pagination > li > a {
+  color: #00bcd4;
+}
+
+.pagination > li.active > a {
+  background-color: #00bcd4;
+}
+
+/* SVG Icons */
+svg {
+  fill: var(--svg-icon-color);
+}
+
+/* Icons in buttons */
+.btn svg {
+  fill: var(--primary-button-color);
+}
+
+.btn:hover svg {
+  fill: var(--primary-button-hover);
+}
+/* General Background and Color Themes */
+body[data-background-color=dark2],
+body[data-background-color=dark] {
+    background-color: #0C0C0C; /* Background */
+}
+
+.sidebar {
+    background-color: #481E14; /* Sidebar */
+}
+
+.navbar {
+    background-color: #9B3922; /* Navbar */
+}
+
+h1, h2, h3, h4, h5, h6,
+button, .btn-primary {
+    color: #F2613F; /* Headings and Primary Button */
+}
+
+body, p, .text-body {
+    color: #E5E5E5; /* Body Text */
+}
+
+.btn-primary:hover {
+    background-color: #FF8664; /* Primary Button Hover */
+}
+
+.btn-secondary {
+    background-color: #9B3922; /* Secondary Button */
+}
+
+.btn-secondary:hover {
+    background-color: #B5472E; /* Secondary Button Hover */
+}
+
+.card {
+    background-color: #333333; /* Card Background */
+    border: 1px solid #9B3922; /* Card Border */
+    color: #E5E5E5; /* Card Text */
+    box-shadow: 0 4px 8px rgba(155, 57, 34, 0.1); /* Card Shadow */
+}
+
+.card .btn {
+    background-color: #F2613F; /* Button in Card */
+}
+
+.card .btn:hover {
+    background-color: #FF8664; /* Button Hover in Card */
+}
+
+input, .form-control, .form-select {
+    background-color: #1a2035;
+    border-color: #2f374b;
+    color: #E5E5E5; /* Light Gray for input text */
+}
+
+.form-group-default, .input-group-text {
+    background-color: #1f283e; /* Form background */
+    border-color: #2f374b;
+    color: #fff;
+}
+
+/* SVG Icons */
+.svg-icon {
+    fill: #FFFFFF; /* Default SVG Icons Color */
+}
+
+.btn .svg-icon {
+    fill: #F2613F; /* SVG Icons in Buttons */
+}
+
+/* Miscellaneous */
+.footer {
+    border-top: 1px solid #293247;
+    background-color: #1f283e; /* Footer Background */
+}
+
+.selectgroup-button {
+    border: 1px solid #2f374b;
+}
+
+.dropzone:hover {
+    background-color: #1a2035;
+}
+
+.bg-transparent {
+    background: transparent !important;
+}
+
+.bg-black-gradient {
+    background: linear-gradient(-45deg, #0a0b11, #151a2b);
+}
+
+/* General Background and Color Themes */
+body[data-background-color=dark2],
+body[data-background-color=dark] {
+    background-color: #0C0C0C; /* Background */
+}
+
+.sidebar {
+    background-color: #481E14; /* Sidebar */
+}
+
+.navbar {
+    background-color: #9B3922; /* Navbar */
+}
+
+h1, h2, h3, h4, h5, h6,
+button, .btn-primary {
+    color: #F2613F; /* Headings and Primary Button */
+}
+
+body, p, .text-body {
+    color: #E5E5E5; /* Body Text */
+}
+
+.btn-primary {
+    background-color: #F2613F; /* Primary Button */
+}
+
+.btn-primary:hover {
+    background-color: #FF8664; /* Primary Button Hover */
+}
+
+.btn-secondary {
+    background-color: #9B3922; /* Secondary Button */
+}
+
+.btn-secondary:hover {
+    background-color: #B5472E; /* Secondary Button Hover */
+}
+
+.card {
+    background-color: #333333; /* Card Background */
+    border: 1px solid #9B3922; /* Card Border */
+    color: #E5E5E5; /* Card Text */
+    box-shadow: 0 4px 8px rgba(155, 57, 34, 0.1); /* Card Shadow */
+}
+
+.card .btn {
+    background-color: #F2613F; /* Button in Card */
+}
+
+.card .btn:hover {
+    background-color: #FF8664; /* Button Hover in Card */
+}
+
+/* SVG Icons */
+.svg-icon {
+    display: inline-block; /* Display SVG icons */
+    fill: #FFFFFF; /* Default SVG Icons Color */
+}
+
+.btn .svg-icon {
+    fill: #F2613F; /* SVG Icons in Buttons */
+}
+
+/* Danger Gradient */
+.bg-danger-gradient {
+    background: #f25961 !important;
+    background: -webkit-linear-gradient(-45deg, #e80a15, #f25961) !important;
+    background: linear-gradient(-45deg, #e80a15, #f25961) !important;
+}
+
+/* Mail Wrapper Styles */
+.mail-wrapper .toggle-email-nav {
+    margin-top: 10px;
+    display: none;
+}
+
+.mail-wrapper .mail-content .email-head,
+.mail-wrapper .mail-content .inbox-head {
+    padding: 35px 25px 20px;
+}
+
+.mail-wrapper .mail-content .email-head h3,
+.mail-wrapper .mail-content .inbox-head h3 {
+    font-size: 22px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.mail-wrapper .mail-content .email-head {
+    padding: 35px 25px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.mail-wrapper .mail-content .email-head .favorite {
+    color: #eee;
+    margin-right: 5px;
+}
+
+.mail-wrapper .mail-content .email-head .favorite.active {
+    color: #ffc600;
+}
+
+.mail-wrapper .mail-content .email-head .controls {
+    margin-left: auto;
+}
+
+.mail-wrapper .mail-content .email-head .controls > a {
+    color: #9c9c9c;
+    font-size: 18px;
+    padding: 0 5px;
+}
+
+.mail-wrapper .mail-content .email-head .controls > a:hover {
+    text-decoration: none;
+    opacity: .8;
+}
+
+.mail-wrapper .mail-content .email-head .controls > a:last-child {
+    padding-right: 0;
+}
+
+.mail-wrapper .mail-content .email-sender {
+    padding: 14px 25px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.mail-wrapper .mail-content .email-sender .avatar {
+    padding-right: 12px;
+}
+
+.mail-wrapper .mail-content .email-sender .avatar img {
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 50%;
+}
+
+.mail-wrapper .mail-content .email-sender .date {
+    margin-left: auto;
+}
+
+.mail-wrapper .mail-content .email-sender .sender .action {
+    display: inline-block;
+}
+
+.mail-wrapper .mail-content .email-sender .sender .action > a {
+    cursor: pointer;
+}
+
+.mail-wrapper .mail-content .email-body {
+    padding: 30px 28px;
+}
+
+.mail-wrapper .mail-content .email-attachments {
+    padding: 25px 28px;
+    border-top: 1px solid #f1f1f1;
+}
+
+.mail-wrapper .mail-content .email-attachments .title {
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.mail-wrapper .mail-content .email-attachments .title span {
+    font-weight: 400;
+}
+
+.mail-wrapper .mail-content .email-attachments ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.mail-wrapper .mail-content .email-attachments ul li {
+    padding: 6px 0;
+}
+
+.mail-wrapper .mail-content .email-attachments ul li a {
+    font-weight: 400;
+}
+
+.mail-wrapper .mail-content .email-attachments ul li a:hover {
+    text-decoration: none;
+}
+
+/* Replace all <i> elements with <svg> */
+.mail-wrapper .mail-content .email-attachments ul li a svg {
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.mail-wrapper .mail-content .email-attachments ul li a span {
+    font-weight: 400;
+}
+
+.mail-wrapper .mail-content .inbox-body {
+    padding: 20px 0;
+}
+
+.mail-wrapper .mail-content .inbox-body .mail-option {
+    padding: 0 20px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.mail-wrapper .mail-content .inbox-body .mail-option .chk-all {
+    display: inline-block;
+}
+
+.mail-wrapper .mail-content .inbox-body .mail-option .btn-option {
+    color: #555 !important;
+    border: 1px solid #ebedf2 !important;
+    font-weight: 600;
+    background: #fff !important;
+    box-shadow: 2px 2px 3px 0 #f2f1f1 !important;
+}
+
+.mail-wrapper .mail-content .inbox-body .mail-option .form-check {
+    padding: 0;
+}
+
+.mail-wrapper .mail-content .inbox-body .mail-option .form-check .form-check-sign:before {
+    border: 1px solid #eee;
+    background: #eee;
+}
