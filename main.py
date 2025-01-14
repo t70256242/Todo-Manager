@@ -1237,6 +1237,7 @@ def delete_project_task(task_id, project_id):
 def add_project():
     if request.method == "POST":
 
+
         referrer_url = request.referrer
 
         with app.app_context():
