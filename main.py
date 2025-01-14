@@ -3,11 +3,9 @@ from sqlalchemy import Integer, String, Text, Table, Column, ForeignKey, Enum, D
 import html
 from datetime import date
 from flask import Flask, abort, render_template, redirect, url_for, flash, request, session, jsonify, current_app
-# from flask_bootstrap import Bootstrap5
 from flask_bootstrap import Bootstrap5
 from all_forms import SignUpForm
 from flask_ckeditor import CKEditor
-# from flask_gravatar import Gravatar
 from flask_login import UserMixin, login_user, LoginManager, current_user, logout_user, login_required
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -37,6 +35,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 login_manager = LoginManager()
 login_manager.init_app(app)
+login_manager.login_view = 'login'
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
@@ -50,23 +49,6 @@ project_users_association = db.Table(
     db.Column('project_id', db.Integer, db.ForeignKey('project.id'), primary_key=True),
     db.Column('user_id', db.Integer, db.ForeignKey('users.id'), primary_key=True)
 )
-
-
-# Models
-# class User(UserMixin, db.Model):
-#     __tablename__ = "users"
-#     id = db.Column(Integer, primary_key=True)
-#     name = db.Column(String(250), nullable=False)
-#     nickname = db.Column(String(250), nullable=True)
-#     email = db.Column(String(250), nullable=False, unique=True)
-#     password = db.Column(String(250), nullable=False)
-#     date = db.Column(String(250), nullable=False)
-#
-#     todo_list = relationship("Todo", back_populates="author")
-#     projects = relationship("Project", secondary=project_users_association, back_populates="users")
-#     owned_projects = relationship("Project", back_populates="author")
-#     birth_dates = relationship("Birthday", back_populates="author")
-#     messages = relationship("Message", back_populates="message_author")
 
 
 class User(UserMixin, db.Model):
@@ -85,7 +67,6 @@ class User(UserMixin, db.Model):
     bio = db.Column(String(250), nullable=True)
     profile_picture_path = db.Column(String(250), nullable=True)
 
-    # Define relationships
     friend_list = relationship("Friends", foreign_keys="Friends.author_id", back_populates="author")
     todo_list = relationship("Todo", back_populates="author")
     projects = relationship("Project", secondary=project_users_association, back_populates="users")
@@ -93,7 +74,6 @@ class User(UserMixin, db.Model):
     birth_dates = relationship("Birthday", back_populates="author")
     notifications = db.relationship('Notification', backref='recipient', lazy='dynamic')
 
-    # Updated relationships for messages to avoid ambiguity
     messages = relationship(
         "Message",
         primaryjoin="User.id == Message.author_id",
@@ -253,24 +233,6 @@ class Birthday(db.Model):
         }
 
 
-# class Message(db.Model):
-#     __tablename__ = "messages"
-#     id = db.Column(Integer, primary_key=True)
-#
-#     # Sender (author)
-#     author_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-#     message_author = relationship("User", foreign_keys=[author_id], back_populates="messages")
-#
-#     # Recipient
-#     recipient_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-#     recipient = relationship("User", foreign_keys=[recipient_id], backref="received_messages")
-#
-#     # Message content and metadata
-#     message_content = db.Column(String(5000), nullable=False)
-#     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
-#     read = db.Column(db.Boolean, default=False)
-
-
 class Message(db.Model):
     __tablename__ = "messages"
     id = db.Column(Integer, primary_key=True)
@@ -289,33 +251,29 @@ class Message(db.Model):
     read = db.Column(Boolean, default=False)
 
 
-# Create the database tables if they don't exist
 with app.app_context():
     db.create_all()
 
 
-# with open("messages.txt", "r") as files:
-#
-#     for line in files:
-#         try:
-#             print(line.strip().encode('latin1', errors='ignore').decode('utf-8'))
-#         except (UnicodeEncodeError, UnicodeDecodeError):
-#             print(line.strip())
-#         with app.app_context():
-#             try:
-#                 new_message = Message(
-#                     author_id=1,
-#                     message=line.strip().encode('latin1').decode('utf-8')
-#                 )
-#                 db.session.add(new_message)
-#                 db.session.commit()
-#             except (UnicodeEncodeError, UnicodeDecodeError):
-#                 new_message = Message(
-#                     author_id=1,
-#                     message=line.strip()
-#                 )
-#                 db.session.add(new_message)
-#                 db.session.commit()
+@login_manager.unauthorized_handler
+def custom_unauthorized():
+
+    flash("You have to login", "warning")
+    return redirect(url_for('login'))
+
+
+def check_delete_message(message_list):
+    for message in message_list:
+        conversation_length = len(message[conversation])
+        if conversation_length <= 8:
+            continue
+        else:
+            diff = conversation_length - 8
+            for i in range(diff):
+                oldest_message = conversation[i]
+                db.session.delete(oldest_message)
+            db.session.commit()
+    return message_list
 
 
 def track_activity(user, message, category, category_id):
@@ -426,7 +384,7 @@ def check_and_send_birthday_messages():
             if project['category'] == 7:
 
                 for pro in project['projects']:
-                    print(pro.title.title())
+
                     track_activity(user=pro.author_id,
                                    message=f"{pro.title.title()} is due in 7 days",
                                    category="project",
@@ -434,7 +392,7 @@ def check_and_send_birthday_messages():
                                    )
             elif project['category'] == 3:
                 for pro in project['projects']:
-                    print(pro.title.title())
+
                     track_activity(user=pro.author_id,
                                    message=f"{pro.title.title()} is due in 3 days",
                                    category="project",
@@ -442,7 +400,7 @@ def check_and_send_birthday_messages():
                                    )
             else:
                 for pro in project['projects']:
-                    print(pro.title.title())
+
                     track_activity(user=pro.author_id,
                                    message=f"{pro.title.title()} is due Today!",
                                    category="project",
@@ -484,22 +442,17 @@ def check_and_send_birthday_messages():
                 b_person = b.name
                 b_email = b.email
 
-                # Fetch a random message if none is provided
                 if b.message is None or not b.message.strip():
-                    # the_rand = random.randint(1, 501)
-                    # result = db.session.execute(db.select(Message).where(Message.id == the_rand)).scalar()
-                    # message = result.message
+
                     continue
                 else:
                     message = b.message
 
                 try:
-                    # SMTP Connection
                     connection = SMTP("smtp.gmail.com", 587)
                     connection.starttls()
                     connection.login(my_email, my_pass)
 
-                    # Email message formatting
                     email_message = (
                         f"Subject: Happy Birthday {b_person}\n"
                         f"From: {my_email}\n"
@@ -521,9 +474,7 @@ def check_and_send_birthday_messages():
                     print(f"Failed to send email to {b_person}: {e}")
 
 
-# Schedule the job to run every day at 12:00 AM
-scheduler.add_job(check_and_send_birthday_messages, 'cron', hour=8, minute=42)
-
+scheduler.add_job(check_and_send_birthday_messages, 'cron', hour=0, minute=12)
 scheduler.start()
 
 
@@ -538,31 +489,18 @@ def format_date(value):
     Formats a date string (e.g., "2024-12-17") to a desired format (e.g., "May, 22").
     """
     try:
-        # Parse the input date string
         date_obj = datetime.strptime(value, "%Y-%m-%d")
-        # Format it as "Month, Day"
         return date_obj.strftime("%B, %d")
     except (ValueError, TypeError):
-        return value  # Return the original value if parsing fails
+        return value
 
 
 @app.template_filter('calculate_age')
 def calculate_age(birthdate):
-    print(birthdate)
     birthdate = datetime.strptime(birthdate, '%Y-%m-%d')
     today = datetime.today()
     return today.year - birthdate.year - ((today.month, today.day) < (birthdate.month, birthdate.day))
 
-
-# @app.context_processor
-# def inject_global_data():
-#     the_user = db.session.execute(db.select(User).where(User.id == current_user.id)).scalar()
-#     return {
-#         'global_data': {
-#             'user': the_user,
-#             'user_name': f'{the_user.first_name} {the_user.last_name}',
-#         }
-#     }
 
 @app.context_processor
 def inject_global_data():
@@ -571,7 +509,7 @@ def inject_global_data():
             return {
                 'global_data': {
                     'user': None,
-                    'time': 'Guest',
+                    'time': datetime.now().strftime("%B %d, %Y"),
                     'projects': 'Guest',
                     'user_name': 'Guest',
                     'todos': 'Guest',
@@ -635,12 +573,11 @@ def inject_global_data():
                     this_month_birthday.append(b.birth_date)
 
         if the_user is None:
-            # Log a warning if the user is not found
             current_app.logger.warning(f"User with ID {current_user.id} not found in the database.")
             return {
                 'global_data': {
                     'user': None,
-                    'time': 'Unknown User',
+                    'time': datetime.now().strftime("%B %d, %Y"),
                     'projects': 'Unknown User',
                     'user_name': 'Unknown User',
                     'todos': 'Unknown User',
@@ -655,22 +592,6 @@ def inject_global_data():
                 }
             }
 
-        # Successfully fetched user
-        print({
-            'user': the_user,
-            'time': datetime.now().strftime("%B %d, %Y"),
-            'projects': the_project,
-            'user_name': f'{the_user.first_name} {the_user.last_name}',
-            'todos': the_todo,
-            'todo_count': todo_count,
-            'this_month_birthday': len(this_month_birthday),
-            'user_sent_messages': user_sent_messages,
-            'user_received_messages': user_received_messages,
-            'notifications': all_notification,
-            'unread_message': unread_message,
-            'unread_notifications': unread_notifications,
-            'notifications_dict': notifications_dict
-        })
         return {
             'global_data': {
                 'user': the_user,
@@ -689,12 +610,11 @@ def inject_global_data():
             }
         }
     except Exception as e:
-        # Log the exception for debugging purposes
         current_app.logger.error(f"Error in context processor: {e}")
         return {
             'global_data': {
                 'user': None,
-                'time': 'Error',
+                'time': datetime.now().strftime("%B %d, %Y"),
                 'projects': 'Error',
                 'user_name': 'Error',
                 'todos': 'Error',
@@ -771,7 +691,7 @@ def project_entry(project_ids):
         # Generate Stacked Bar Chart (Resource Allocation) data
         resource_allocation = defaultdict(lambda: {"todo": 0, "doing": 0, "done": 0})
         for task in project.tasks:
-            if task.assigned_to:  # Assume task.assigned_to gives the resource (e.g., team member)
+            if task.assigned_to:
                 resource_allocation[task.assigned_to][task.status] += 1
         stacked_data = [
             {"team_member": member, **statuses}
@@ -794,7 +714,7 @@ def project_entry(project_ids):
 def project_entry_single(project_id):
     project = db.session.execute(db.select(Project).where(Project.id == project_id)).scalar()
     if not project:
-        return None  # Return None if the project does not exist
+        return None
 
     task_statuses = [task.status for task in project.tasks]
     total_tasks = len(project.tasks)
@@ -865,16 +785,13 @@ def project_entry_single(project_id):
 
 @app.route('/project-progress', methods=['GET'])
 def project_progress():
-    # Fetch current user's projects
     project_ids = [
         project.id
         for project in db.session.query(Project).filter_by(author_id=current_user.id).all()
     ]
 
     get_project_entry = project_entry(project_ids)
-    for pro in get_project_entry:
-        print(pro)
-    # Return JSON
+
     return jsonify(get_project_entry)
 
 
@@ -885,7 +802,7 @@ def events():
     result = db.session.execute(db.select(Project).where(Project.author_id == current_user.id))
     all_project = result.scalars().all()
     for pro in all_project:
-        print(pro.end_date)
+
         events_.append({"date": pro.end_date, "title": f"{pro.title.title()} Due Date", "type": "projects"})
 
     all_todo = []
@@ -893,14 +810,14 @@ def events():
     if result is not None:
         all_todo = result.scalars().all()
     for to in all_todo:
-        print(to.task_name)
+
         events_.append({"date": to.due_date, "title": f"{to.task_name.title()} Due Date", "type": "todos"})
 
     all_birthday = []
     result = db.session.execute(db.select(Birthday).where(Birthday.author_id == current_user.id))
     all_birthday = result.scalars().all()
     for b in all_birthday:
-        print(b.birth_date)
+
         events_.append({"date": b.birth_date, "title": f"{b.first_name.title()}'s Birthday", "type": "birthdays"})
 
     return jsonify(events_)
@@ -934,9 +851,8 @@ def search_items(topic):
             if referrer:
                 return redirect(referrer)
             else:
-                # Fallback to a default route if referrer is not available
+
                 return redirect(url_for('dashboard'))
-            # return jsonify({"error": "No search term provided"}), 400
 
         search_term = f"%{search_term}%"
 
@@ -969,7 +885,7 @@ def search_items(topic):
         formatted_results = [
             result.to_dict() for result in results
         ]
-        print(formatted_results)
+
         return jsonify({"results": formatted_results}), 200
 
     except Exception as e:
@@ -991,48 +907,9 @@ def get_friends(user_id):
     return friends
 
 
-# @app.route('/update_notification', methods=['POST'])
-# def update_notifications():
-#     print('money')
-#     data = request.get_json()  # Parse the JSON body
-#     if not data or 'notifications' not in data:
-#         return jsonify({"error": "Invalid data"}), 400
-#     print('money2')
-#     notifications = data['notifications']  # List of IDs
-#     for notification_id in notifications:
-#         notification = Notification.query.get(notification_id)
-#         if notification:
-#             notification.read = True
-#     db.session.commit()  # Commit after processing all notifications
-#     return jsonify({"success": True}), 200
-
-
-# @app.route('/check_password/<username>', methods=['POST'])
-# def check_password(username):
-#     try:
-#         the_user = db.session.execute(
-#             db.select(User).where(User.username == username)
-#         ).scalar()
-#
-#         if not the_user:
-#             return jsonify({"error": "User not found"}), 404
-#
-#         if check_password_hash(the_user.password, request.json.get('password')):
-#             return jsonify({"success": "Password correct"}), 200
-#         else:
-#             return jsonify({"error": "Incorrect Password"}), 400
-#
-#     except Exception as e:
-#         return jsonify({"error": str(e)}), 500
-
-
 @app.route('/check_password/<username>', methods=['POST'])
 def check_password(username):
     try:
-        # Debugging: Log the received JSON
-        print("Request JSON:", request.json)
-
-        # Find the user
         the_user = db.session.execute(
             db.select(User).where(User.username == username)
         ).scalar()
@@ -1040,7 +917,6 @@ def check_password(username):
         if not the_user:
             return jsonify({"error": "User not found"}), 404
 
-        # Validate password
         password = request.json.get('password')
         if not password:
             return jsonify({"error": "Password is required"}), 400
@@ -1051,7 +927,7 @@ def check_password(username):
             return jsonify({"error": "Incorrect Password"}), 400
 
     except Exception as e:
-        print("Exception occurred:", str(e))  # Log the exception
+
         return jsonify({"error": str(e)}), 500
 
 
@@ -1065,18 +941,16 @@ def update_user_info(user_id):
         if not user:
             return jsonify({"error": "User not found"}), 404
 
-        # Fetch data from request
         nickname = request.form.get('nickname')
         birthday = request.form.get('birthday')
         phone = request.form.get('phone')
         address = request.form.get('address')
         bio = request.form.get('bio')
 
-        # Validate and update fields
         if nickname:
             user.nickname = nickname
         if birthday:
-            user.date_ = birthday  # Additional validation for date format could be added
+            user.date_ = birthday
         if phone:
             user.phone = phone
         if address:
@@ -1096,7 +970,6 @@ def add_user():
     the_user = db.session.execute(db.select(User).where(User.id == current_user.id)).scalar()
     form_id = request.form.get('form_id')
 
-    # username invite
     if form_id == 'form1':
         with app.app_context():
             the_friend = db.session.execute(
@@ -1122,13 +995,14 @@ def add_user():
         connection.starttls()
         connection.login(my_email, my_pass)
 
-        message = ("I hope this message finds you well. I would like to extend an invitation for you to join our team on "
-                   "[Platform/Tool Name]. This platform will allow us to collaborate effectively, track progress, "
-                   "and manage our tasks seamlessly. Please use the following link to sign up and get started: "
-                   "[Insert Invite Link]. "
-                   "If you encounter any issues during the sign-up process or have any questions, please don’t hesitate "
-                   "to reach out. I’ll be happy to assist. We look forward to having you on board and "
-                   f"collaborating with you. Best regards,{the_user.first_name} {the_user.last_name}")
+        message = (
+            "I hope this message finds you well. I would like to extend an invitation for you to join our team on "
+            "[Platform/Tool Name]. This platform will allow us to collaborate effectively, track progress, "
+            "and manage our tasks seamlessly. Please use the following link to sign up and get started: "
+            "[Insert Invite Link]. "
+            "If you encounter any issues during the sign-up process or have any questions, please don’t hesitate "
+            "to reach out. I’ll be happy to assist. We look forward to having you on board and "
+            f"collaborating with you. Best regards,{the_user.first_name} {the_user.last_name}")
         email_message = (
             f"Subject:  Invitation to Join Our Platform\n"
             f"From: {my_email}\n"
@@ -1168,10 +1042,8 @@ def upload_profile_picture(user_id):
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], f"user_{user_id}_{filename}")
         file_path = file_path.replace("\\", "/")
 
-        # Save file to the server
         file.save(file_path)
 
-        # Save file path to the database
         user = User.query.get(user_id)
         if not user:
             return jsonify({"error": "User not found"}), 404
@@ -1205,23 +1077,15 @@ def dashboard():
     all_project = []
     result = db.session.execute(db.select(Project).where(Project.author_id == current_user.id))
     all_project = result.scalars().all()
-    for pro in all_project:
-        print(pro.title)
 
     all_todo = []
     result = db.session.execute(db.select(Todo).where(Todo.author_id == current_user.id))
     if result is not None:
         all_todo = result.scalars().all()
-    for to in all_todo:
-        print(to.task_name)
 
     all_birthday = []
     result = db.session.execute(db.select(Birthday).where(Birthday.author_id == current_user.id))
     all_birthday = result.scalars().all()
-    for b in all_birthday:
-        print(b.birth_date)
-
-    # track_activity(current_user.id, "dashboard notify")
 
     return render_template('dashboard.html',
                            projects=all_project,
@@ -1239,7 +1103,6 @@ def project_list():
     project_ids = []
     for pro in all_project:
         project_ids.append(pro.id)
-        print(pro.title)
 
     project_entries = project_entry(project_ids)
     progressive = {}
@@ -1247,8 +1110,8 @@ def project_list():
     for entry in project_entries:
         if entry['progress'] is not None:
             progressive[project_ids[count]] = {
-                        'progress': round(entry['progress'])
-                    }
+                'progress': round(entry['progress'])
+            }
 
         else:
             progressive[project_ids[count]] = {
@@ -1256,8 +1119,6 @@ def project_list():
             }
         count += 1
 
-    # for p in progressive.items():
-    #     print(p)
     return render_template('project-list.html', projects=all_project, progress=progressive)
 
 
@@ -1265,14 +1126,9 @@ def project_list():
 @login_required
 def project_select(number):
     the_project = db.get_or_404(Project, number)
-    for task_ in the_project.tasks:
-        print(task_.task_name)
 
-    # all_project_task = []
-    # result = db.session.execute(db.select(ProjectTask).where(ProjectTask.project_id == number))
-    # all_project_task = result.scalars().all()
     project_data = project_entry_single(the_project.id)
-    print(project_data)
+
     friends = get_friends(current_user.id)
 
     return render_template('project-select.html',
@@ -1294,7 +1150,7 @@ def edit_project(project_id):
         the_project.comments = request.form.get('editProjectComments')
         db.session.commit()
         return redirect(url_for('project_list'))
-    project = db.get_or_404(Project, project_id)  # Replace with your ORM query
+    project = db.get_or_404(Project, project_id)
     if project:
         return jsonify({
             "editProjectTitle": project.title,
@@ -1307,6 +1163,7 @@ def edit_project(project_id):
 
 
 @app.route('/delete_project/<int:project_id>', methods=['GET'])
+@login_required
 def delete_project(project_id):
     the_project = db.get_or_404(Project, project_id)
     db.session.delete(the_project)
@@ -1315,8 +1172,9 @@ def delete_project(project_id):
 
 
 @app.route('/get-task-details/<int:task_id>', methods=['GET'])
+@login_required
 def get_task_details(task_id):
-    task = db.get_or_404(ProjectTask, task_id)  # Replace with your ORM query
+    task = db.get_or_404(ProjectTask, task_id)
     if task:
         return jsonify({
             "projectTitle": task.project.title,
@@ -1337,12 +1195,9 @@ def get_task_details(task_id):
 
 
 @app.route('/save_task_details/<int:project_id>/<int:task_id>', methods=['POST'])
+@login_required
 def save_task_details(task_id, project_id):
-    print('KKKKKKKKKKKKKKKMMMMMMMMMMMMMMMMNNNNNNNNNN')
-    print(request.form.get("taskSelectDependencies"))
     task = db.session.execute(db.select(ProjectTask).where(ProjectTask.id == task_id)).scalar_one_or_none()
-    # "projectTitle": task.project.title,
-    # "taskSelectName": task.task_name,
     task.description = request.form.get("taskSelectDescription")
     task.priority = request.form.get("taskSelectPriority")
     task.status = request.form.get("taskSelectStatus")
@@ -1369,6 +1224,7 @@ def save_task_details(task_id, project_id):
 
 
 @app.route('/delete_project_task/<int:task_id>/<int:project_id>', methods=['GET', 'POST'])
+@login_required
 def delete_project_task(task_id, project_id):
     the_task = db.get_or_404(ProjectTask, task_id)
     db.session.delete(the_task)
@@ -1377,14 +1233,12 @@ def delete_project_task(task_id, project_id):
 
 
 @app.route('/add-project', methods=['POST'])
+@login_required
 def add_project():
-
     if request.method == "POST":
-        print('pass')
+
         referrer_url = request.referrer
-        # print(str(referrer_url).split('/')[-1])
-        # print('hi')
-        # print(url_for('project_list').split('/')[-1])
+
         with app.app_context():
             the_user = db.session.execute(db.select(User).where(User.id == current_user.id)).scalar()
             new_project = Project(
@@ -1406,12 +1260,12 @@ def add_project():
 
 
 @app.route('/add_project_task/<int:number>', methods=['GET', 'POST'])
+@login_required
 def add_project_task(number):
     the_project = db.session.execute(db.select(Project).where(Project.id == number)).scalar()
 
     if request.method == 'POST':
-        print('--------------RRR______________')
-        print(request.form.get('dependencies'))
+
         new_task = ProjectTask(
             project_id=number,
             project_title=the_project.title,
@@ -1424,7 +1278,6 @@ def add_project_task(number):
             estimated_time=f"{request.form.get('estimatedTime')} - {request.form.get('timeRange')}",
             actual_time=datetime.utcnow(),
             assigned_to=request.form.get('assignedTo') if request.form.get('assignedTo') else "",
-            # tags=request.form.get('tags'),
             comments=request.form.get('taskComments'),
             status=request.form.get('status'),
         )
@@ -1444,6 +1297,7 @@ def add_project_task(number):
 
 
 @app.route('/todo')
+@login_required
 def todo_list():
     all_todo = []
     result = db.session.execute(db.select(Todo).where(Todo.author_id == current_user.id))
@@ -1453,6 +1307,7 @@ def todo_list():
 
 
 @app.route('/add_todo_task', methods=['GET', 'POST'])
+@login_required
 def add_todo_task():
     if request.method == 'POST':
         new_task = Todo(
@@ -1470,13 +1325,13 @@ def add_todo_task():
         )
         db.session.add(new_task)
         db.session.commit()
-        print(str(request.referrer).split('/')[-1])
         if str(request.referrer).split('/')[-1] == 'todo':
             return redirect(url_for('todo_list'))
     return redirect(url_for('dashboard'))
 
 
 @app.route('/get-todo-details/<int:todo_id>', methods=['GET'])
+@login_required
 def get_todo_details(todo_id):
     todo = db.get_or_404(Todo, todo_id)
     if todo:
@@ -1487,9 +1342,6 @@ def get_todo_details(todo_id):
             "dueTaskEditDate": todo.due_date,
             "taskEditAssignedTo": todo.assigned_to,
             "taskEditTags": todo.tags,
-            # "estimatedTimeTaskSelect": task.estimated_time.split('-')[0],
-            # "timeRangeTaskSelect": task.estimated_time.split('-')[1],
-            # "actualTimeTaskSelect": task.actual_time,
             "taskEditComments": todo.comments,
             "taskEditStatus": todo.status,
         })
@@ -1497,6 +1349,7 @@ def get_todo_details(todo_id):
 
 
 @app.route('/todo_edit_save/<int:todo_id>', methods=['GET', 'POST'])
+@login_required
 def todo_edit_save(todo_id):
     the_todo = db.session.execute(db.select(Todo).where(Todo.id == todo_id)).scalar()
     the_todo.task_name = request.form.get("taskEditName")
@@ -1513,6 +1366,7 @@ def todo_edit_save(todo_id):
 
 
 @app.route('/change_todo_status/<int:todo_id>', methods=['GET', 'POST'])
+@login_required
 def change_todo_status(todo_id):
     the_todo = db.session.execute(db.select(Todo).where(Todo.id == todo_id)).scalar()
     if the_todo.status == "todo":
@@ -1524,6 +1378,7 @@ def change_todo_status(todo_id):
 
 
 @app.route('/delete_todo/<int:todo_id>', methods=['GET', 'POST'])
+@login_required
 def delete_todo(todo_id):
     the_todo = db.get_or_404(Todo, todo_id)
     db.session.delete(the_todo)
@@ -1532,6 +1387,7 @@ def delete_todo(todo_id):
 
 
 @app.route('/add_birth_date', methods=['GET', 'POST'])
+@login_required
 def add_birth_date():
     if request.method == 'POST':
         new_birth_date = Birthday(
@@ -1552,6 +1408,7 @@ def add_birth_date():
 
 
 @app.route('/add_birth_date_message/<int:number>', methods=['GET', 'POST'])
+@login_required
 def add_birth_date_message(number):
     if request.method == 'POST':
         with app.app_context():
@@ -1564,6 +1421,7 @@ def add_birth_date_message(number):
 
 
 @app.route('/ignore_birth_date/<int:number>', methods=['GET', 'POST'])
+@login_required
 def ignore_birth_date(number):
     with app.app_context():
         the_birthday = db.session.execute(db.select(Birthday).where(Birthday.id == number)).scalar()
@@ -1579,6 +1437,7 @@ def ignore_birth_date(number):
 
 
 @app.route('/birthdays')
+@login_required
 def birthday_list():
     all_birthday = []
     this_month_birthday = []
@@ -1596,18 +1455,14 @@ def birthday_list():
 
     else:
         for b in all_birthday:
-            print('hello')
-            print(current_day)
-            print(b)
+
             b_month = int(b.birth_date.split('-')[1])
 
             if current_month == b_month:
                 if int(b.birth_date.split('-')[-1]) >= current_day and b.ignore == "false":
                     this_month_birthday.append(b.birth_date)
             sorted_dates = sorted(this_month_birthday, key=lambda date: int(date.split("-")[-1]))
-            print(sorted_dates)
 
-            print(b.birth_date, b.ignore)
         return render_template('birthday-list.html',
                                birthdays=sorted_birthdays,
                                this_month_birthday=sorted_dates,
@@ -1616,6 +1471,7 @@ def birthday_list():
 
 
 @app.route('/get-birth-details/<int:birth_id>', methods=['GET'])
+@login_required
 def get_birth_details(birth_id):
     birth = db.get_or_404(Birthday, birth_id)
     if birth:
@@ -1632,6 +1488,7 @@ def get_birth_details(birth_id):
 
 
 @app.route('/birth_edit_save/<int:birth_id>', methods=['POST'])
+@login_required
 def birth_edit_save(birth_id):
     the_birth = db.session.execute(db.select(Birthday).where(Birthday.id == birth_id)).scalar()
     the_birth.first_name = request.form.get("birthEditFirstName")
@@ -1640,45 +1497,31 @@ def birth_edit_save(birth_id):
     the_birth.message = request.form.get("birthEditMessage")
     the_birth.email = request.form.get("birthEditEmail")
     the_birth.ignore = request.form.get("birthEditIgnore")
-    print(request.form.get("birthEditFirstName"))
     db.session.commit()
     return redirect(url_for('birthday_list'))
 
 
 @app.route('/calender')
+@login_required
 def calender_list():
     return render_template('calender-list.html')
 
 
 @app.route('/charts')
+@login_required
 def chart_list():
     return render_template('chart-list.html')
 
 
-@app.route('/settings')
-def settings():
-    return render_template('settings.html')
-
-
 @app.route('/friend-list')
+@login_required
 def friends_list():
-    # m_list = []
-    #
-    # im_friend = db.session.execute(db.select(Friends).where(Friends.author_id == current_user.id)).scalars().all()
-    #
-    # for f in im_friend:
-    #     m_list.append(f.friend_id)
-    # friends = []
-    # for m in m_list:
-    #     print(m)
-    #     the_friend = db.session.execute(db.select(User).where(User.id == m)).scalar()
-    #     friends.append(the_friend)
-
     friends = get_friends(current_user.id)
     return render_template('friend-list.html', friends_list=friends)
 
 
 @app.route('/delete-friend/<int:friend_id>', methods=['GET', 'POST'])
+@login_required
 def delete_friend(friend_id):
     the_friend = db.session.execute(
         db.select(Friends).where(
@@ -1695,6 +1538,7 @@ def delete_friend(friend_id):
 
 
 @app.route('/messages')
+@login_required
 def messages():
     friend_list = []
     im_sender = db.session.execute(db.select(Message).where(Message.author_id == current_user.id)).scalars().all()
@@ -1717,7 +1561,7 @@ def messages():
         return render_template('messages-list.html')
 
     message_list = []
-    print(friend_list)
+
     for recipient in friend_list:
         the_recipient = db.session.execute(db.select(User).where(User.id == recipient)).scalar()
         conversation = get_conversation_between_users(current_user.id, recipient, order_by=True)
@@ -1728,14 +1572,13 @@ def messages():
                 'conversation': conversation})
 
     message_list = sorted(message_list, key=lambda x: x['time_stamp'], reverse=True)
-    for mess in message_list:
-        for converse in mess['conversation']:
-            print('-------------------------')
-            print(converse)
+    message_list = check_delete_message(message_list)
+    
     return render_template('messages-list.html', message_list=message_list, current_user=current_user)
 
 
 @app.route('/messages/<int:message_id>')
+@login_required
 def message_select(message_id):
     the_message = db.session.execute(db.select(Message).where(Message.id == message_id)).scalar()
     # the_message.read = True
@@ -1744,8 +1587,7 @@ def message_select(message_id):
     user_2 = the_message.recipient_id
     conversation = get_conversation_between_users(user_1, user_2)
     for co in conversation:
-        print('hey')
-        print(co.id)
+
         if co.recipient_id is current_user.id:
             r_message = db.session.execute(db.select(Message).where(Message.id == co.id)).scalar()
             r_message.read = True
@@ -1767,6 +1609,7 @@ def message_select(message_id):
 
 
 @app.route('/send_message/<recipient>', methods=['POST'])
+@login_required
 def send_message(recipient):
     recipient_ = db.session.execute(db.select(User).where(User.username == recipient)).scalar()
     recipient_id = recipient_.id
@@ -1811,19 +1654,13 @@ def send_message(recipient):
     return redirect(url_for('message_select', message_id=int(message_id)))
 
 
-@app.route('/avatar')
-def avatar():
-    return render_template('avatars.html')
-
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         email = request.form.get('email')
-        print(email)
+
         with app.app_context():
             user_log = db.session.execute(db.select(User).where(User.email == email)).scalar()
-            # print(user_log.password)
             if user_log is None:
                 flash("This email is not registered", "warning")
                 return redirect(url_for('login'))
@@ -1844,9 +1681,8 @@ def register():
     if request.method == "POST":
 
         with app.app_context():
-            print("im here ")
             if db.session.execute(db.select(User).where(User.email == request.form.get('email'))).scalar() is None:
-                # name = request.form.get('name')
+
                 if db.session.execute(
                         db.select(User).where(User.username == request.form.get('username'))).scalar() is None:
                     new_user = User(
@@ -1855,7 +1691,7 @@ def register():
                         email=request.form.get('email'),
                         password=generate_password_hash(
                             request.form.get('password'),
-                            method='pbkdf2:sha256',
+                            method=os.getenv('SALT_METHOD'),
                             salt_length=8),
                         date_=f"{request.form.get('day')}-{request.form.get('month')}-{request.form.get('year')}",
                         gender=request.form.get('gender'),
@@ -1880,123 +1716,13 @@ def register():
     return render_template("register.html", logged_in=current_user.is_authenticated, form=form)
 
 
-# @app.route('/dashboard', methods=["GET", "POST"])
-# @login_required
-# def dashboard():
-#     form_data = session.pop('form_data', None)
-#     edit_ = session.get('edit', False)
-#     birth_id = session.get('birth_id', None)
-#     print(edit_)
-#     if request.method == "POST":
-#         if edit_ is True:
-#             birthday = db.get_or_404(Birthday, birth_id)
-#             birthday.author_id = current_user.id
-#             birthday.name = request.form.get('name')
-#             birthday.email = request.form.get('email')
-#             birthday.birth_date = request.form.get('birth_date')
-#             birthday.message = request.form.get('message')
-#             db.session.commit()
-#             flash("Date updated successfully")
-#
-#             session.pop('edit', None)
-#             session.pop('birth_id', None)
-#             return redirect(url_for('dashboard'))
-#
-#         else:
-#
-#             for _ in db.session.execute(
-#                     db.select(Birthday).where(Birthday.author_id == current_user.id)).scalars().all():
-#                 if _.name == request.form.get('name'):
-#                     flash("Name already exist")
-#                     return redirect(url_for('dashboard'))
-#                 else:
-#                     with app.app_context():
-#                         new_date = Birthday(
-#                             author_id=current_user.id,
-#                             name=request.form.get('name'),
-#                             email=request.form.get('email'),
-#                             birth_date=request.form.get('birth_date'),
-#                             message=request.form.get('message')
-#                         )
-#                         db.session.add(new_date)
-#
-#                         db.session.commit()
-#                         flash("Date successfully Added", 'success')
-#                         return redirect(url_for('dashboard'))
-#
-#     # current_user.id
-#     print(current_user.id)
-#     user_ = db.session.execute(db.select(User).where(User.id == current_user.id)).scalar()
-#
-#     all_messages = []
-#     result = db.session.execute(db.select(Message))
-#     all_messages = result.scalars().all()
-#     random.shuffle(all_messages)
-#
-#     birthdays = []
-#     user_birthdays = db.session.execute(db.select(Birthday).where(Birthday.author_id == current_user.id))
-#     birthdays = user_birthdays.scalars().all()
-#
-#     todo = []
-#     user_todo = db.session.execute(db.select(Todo).where(Todo.author_id == current_user.id))
-#     todo = user_todo.scalars().all()
-#
-#     user_projects = []
-#     user_projects = db.session.execute(
-#         db.select(Project).where(Project.users.any(id=current_user.id))
-#     ).scalars().all()
-#
-#     for _ in birthdays:
-#         print(_)
-#
-#     return render_template('dashboard.html', edit=edit_, form_data=form_data, user=user_,
-#                            all_messages=all_messages[:10], birthdays=birthdays, todo=todo, user_projects=user_projects)
-
-#
-# @app.route('/edit/<int:birth_id>', methods=['GET', 'POST'])
-# def edit(birth_id):
-#     birth_date = db.get_or_404(Birthday, birth_id)
-#
-#     form_data = {
-#         'name': birth_date.name,
-#         'email': birth_date.email,
-#         'birth_date': birth_date.birth_date,
-#         'message': birth_date.message
-#     }
-#     session['form_data'] = form_data
-#     session['edit'] = True
-#     session['birth_id'] = birth_id
-#     return redirect(url_for('dashboard'))
-#
-#
-# @app.route('/delete-birthday/<int:birth_id>')
-# def delete(birth_id):
-#     birth_date = db.get_or_404(Birthday, birth_id)
-#     db.session.delete(birth_date)
-#     db.session.commit()
-#     return redirect(url_for('dashboard'))
-
-
-@app.route('/forgot-password', methods=['GET', 'POST'])
-def forgot_password():
-    if request.method == 'POST':
-        if db.session.execute(db.select(User).where(User.email == request.form.get('email'))).scalar() is None:
-            flash("User with email does not exist", 'info')
-            return redirect(url_for('forgot_password'))
-        else:
-            the_user = db.session.execute(db.select(User).where(User.email == request.form.get('email'))).scalar()
-            return redirect(url_for('reset_password', user_id=the_user.id))
-    return render_template('forgot-password.html')
-
-
 @app.route('/reset-password', methods=['GET', 'POST'])
 def reset_password():
-
     if request.method == 'POST':
-        the_user = db.session.execute(db.select(User).where(User.id == request.form.get('username'))).scalar()
+        the_user = db.session.execute(db.select(User).where(User.username == request.form.get('username'))).scalar()
         if the_user:
             if request.form.get('password') == request.form.get('re_password'):
-                the_user.password = generate_password_hash(request.form.get('password'), method='pbkdf2:sha256',
+                the_user.password = generate_password_hash(request.form.get('password'), method=os.getenv('SALT_METHOD'),
                                                            salt_length=8)
                 db.session.commit()
                 flash('Password changed Successfully', 'success')
