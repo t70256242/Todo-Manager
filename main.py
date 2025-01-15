@@ -4,7 +4,6 @@ import html
 from datetime import date
 from flask import Flask, abort, render_template, redirect, url_for, flash, request, session, jsonify, current_app
 from flask_bootstrap import Bootstrap5
-from all_forms import SignUpForm
 from flask_ckeditor import CKEditor
 from flask_login import UserMixin, login_user, LoginManager, current_user, logout_user, login_required
 from flask_sqlalchemy import SQLAlchemy
@@ -12,6 +11,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 import random
 from smtplib import SMTP
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 from apscheduler.schedulers.background import BackgroundScheduler
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta
@@ -995,33 +996,39 @@ def add_user():
         connection.starttls()
         connection.login(my_email, my_pass)
 
-        message = (
+        # Create email content with UTF-8 encoding
+        subject = "Invitation to Join Our Platform"
+        body = (
             "I hope this message finds you well. I would like to extend an invitation for you to join our team on "
             "[Platform/Tool Name]. This platform will allow us to collaborate effectively, track progress, "
             "and manage our tasks seamlessly. Please use the following link to sign up and get started: "
             "[Insert Invite Link]. "
             "If you encounter any issues during the sign-up process or have any questions, please don’t hesitate "
             "to reach out. I’ll be happy to assist. We look forward to having you on board and "
-            f"collaborating with you. Best regards,{the_user.first_name} {the_user.last_name}")
-        email_message = (
-            f"Subject:  Invitation to Join Our Platform\n"
-            f"From: {my_email}\n"
-            f"To: {request.form.get("friend_email")}, {my_email}\n\n"
-            f"Hello!\n\n"
-            f"{message}.\n"
-            f"From: {the_user.first_name} {the_user.last_name} with love.\n\n\n\n"
-            f"This service is provided by EA Shed Birthday wisher app."
+            f"collaborating with you. Best regards, {the_user.first_name} {the_user.last_name}."
         )
+
+        # Use MIMEMultipart for richer email content
+        email_message = MIMEMultipart()
+        email_message["Subject"] = subject
+        email_message["From"] = my_email
+        email_message["To"] = request.form.get("friend_email")
+
+        # Attach the email body
+        email_message.attach(MIMEText(body, "plain", "utf-8"))
+
+        # Send the email
         connection.sendmail(
             from_addr=my_email,
-            to_addrs=request.form.get("friend_email"),
-            msg=message
+            to_addrs=[request.form.get("friend_email"), my_email],
+            msg=email_message.as_string()
         )
-        print("Email sent Successfully")
+        print("Email sent successfully")
         connection.quit()
         return redirect(request.referrer)
     except Exception as e:
-        print(f"Failed to send email to {request.form.get("friend_email")}: {e}")
+        print(f"Failed to send email to {request.form.get('friend_email')}: {e}")
+        return redirect(request.referrer)
 
 
 def allowed_file(filename):
@@ -1678,7 +1685,7 @@ def login():
 
 @app.route('/register', methods=['POST', 'GET'])
 def register():
-    form = SignUpForm()
+
     if request.method == "POST":
 
         with app.app_context():
@@ -1714,7 +1721,7 @@ def register():
                 flash("You already registered with this email, login instead.", "info")
                 return redirect(url_for('login'))
 
-    return render_template("register.html", logged_in=current_user.is_authenticated, form=form)
+    return render_template("register.html", logged_in=current_user.is_authenticated, )
 
 
 @app.route('/reset-password', methods=['GET', 'POST'])
