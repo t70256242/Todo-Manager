@@ -1,4 +1,4 @@
-# 📝 Todo Manager  
+# 📝 PrOrganize Todo Manager  
 
 A simple and efficient **Todo Manager** application built with **Flask** and **SQLite**, designed to help users organize their daily tasks effortlessly.  
 
@@ -16,6 +16,8 @@ A simple and efficient **Todo Manager** application built with **Flask** and **S
 - **Database**: SQLite  
 - **Frontend**: HTML, CSS, Bootstrap  
 - **Authentication**: Flask-Login  
+
+[Visit PrOrganize Manager](http://ec2-13-51-162-119.eu-north-1.compute.amazonaws.com/)
 
 ## 📦 Installation  
 
